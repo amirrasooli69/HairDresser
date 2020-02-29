@@ -21,7 +21,6 @@ namespace Service
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            dtEnter.Today_Click(null, null);
         }
 
 
@@ -43,7 +42,7 @@ namespace Service
                 }
                 else
                 {
-                    using (var context = new kitchenEntities())
+                    using (var context = new StimulsoftEntities())
                     {
 
                         bool isContact = context.User.Where(check => check.Eshterak == txtEshterak.Text).Any();
@@ -63,7 +62,7 @@ namespace Service
                                 Name = txtName.Text,
                                 Phone = txtPhone.Text,
                                 Eshterak = txtEshterak.Text,
-                                Date = int.Parse(dtEnter.Text.Replace("/","")),
+                                Date = int.Parse(DateEnter.Text.Replace("/","")),
                                 Email = txtEmail.Text,
                                 //************
                             };
@@ -125,7 +124,7 @@ namespace Service
 
         private void txtEshterak_TextChanged(object sender, EventArgs e)
         {
-            using (var context = new kitchenEntities())
+            using (var context = new StimulsoftEntities())
             {
 
                 bool isContact = context.User.Where(check => check.Eshterak == txtEshterak.Text).Any();
@@ -179,5 +178,15 @@ namespace Service
             else 
                 lblError.Text = "";
         }
-   }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

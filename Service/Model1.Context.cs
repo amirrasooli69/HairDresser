@@ -13,10 +13,10 @@ namespace Service
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class kitchenEntities : DbContext
+    public partial class StimulsoftEntities : DbContext
     {
-        public kitchenEntities()
-            : base("name=kitchenEntities")
+        public StimulsoftEntities()
+            : base("name=StimulsoftEntities")
         {
         }
     
@@ -27,6 +27,7 @@ namespace Service
     
         public virtual DbSet<Anbar> Anbar { get; set; }
         public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<Colleague> Colleague { get; set; }
         public virtual DbSet<Device> Device { get; set; }
         public virtual DbSet<ErsalNashode> ErsalNashode { get; set; }
         public virtual DbSet<Manage> Manage { get; set; }

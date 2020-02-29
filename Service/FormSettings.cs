@@ -1638,5 +1638,23 @@ namespace Service
             FormNewUser frmNewUser = new FormNewUser();
             frmNewUser.Show();
         }
+
+        private void btnDelColleague_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var context = new StimulsoftEntities())
+                {
+                    var delCollleague = context.Colleague.Where(c => c.Name == comCalleague.Text).FirstOrDefault();
+                    context.Colleague.Remove(delCollleague);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("مشکل در حذف همکار", "حذف", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

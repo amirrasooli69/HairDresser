@@ -1109,6 +1109,7 @@
             this.btnDelColleague.TabIndex = 90;
             this.btnDelColleague.Text = "-";
             this.btnDelColleague.UseVisualStyleBackColor = false;
+            this.btnDelColleague.Click += new System.EventHandler(this.btnDelColleague_Click);
             // 
             // FormSettings
             // 

@@ -28,7 +28,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     Category k = new Category();
                     k.Name = txtAddKindService.Text;
@@ -51,7 +51,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     Prodoct kindkala = new Prodoct();
                     kindkala.Name = txtAddKindkala.Text;
@@ -88,7 +88,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     NameService kkk = new NameService();
                     kkk.Name = txtAddNameService.Text;
@@ -119,7 +119,7 @@ namespace Service
         }
         private void Save_Combobox_Print()
         {
-            using (var context = new kitchenEntities())
+            using (var context = new StimulsoftEntities())
             {
                 
                 if (context.Device.Count() > 0)
@@ -220,7 +220,7 @@ namespace Service
             }
             try
             {
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 var selectReg = context.Reg.FirstOrDefault();
                 string shenase = "";
                 if (selectReg != null)
@@ -294,11 +294,11 @@ namespace Service
             PrinterList(comPrinter3);
 
         }
-        private void fill_ComboFood() // por kardane combobox sefareshat
+        private void fill_ComboFormServiceSetting() // por kardane combobox sefareshat
         {
             //-----por kardane combobox sefareshat
             string firstFieldCategory = "";
-            kitchenEntities context = new kitchenEntities();
+            StimulsoftEntities context = new StimulsoftEntities();
             if (context.Category.Count() > 0)
             {
                 comServiceKind.DataSource = context.Category.ToList();
@@ -318,11 +318,18 @@ namespace Service
             //}
             //----------
 
-            var nameServcom = context.NameService.ToList();
-            if (nameServcom.Count > 0)
+            if (context.NameService.Count() > 0)
             {
+                var nameServcom = context.NameService.ToList();
                 comServiceName.DataSource = nameServcom;
                 comServiceName.DisplayMember = "Name";
+            }
+            if(context.Colleague.Count() >0 )
+            {
+                var collleague = context.Colleague.FirstOrDefault();
+                comCalleague.DataSource = collleague;
+                comCalleague.DisplayMember = "Name";
+
             }
             //----------
             var welcome = context.WhiteSms.Where(c => c.W1 != null || c.W1 != "").FirstOrDefault();
@@ -340,7 +347,7 @@ namespace Service
         }
         private void fill_Setting() // por kardane checkBox Sms va chek kardane fl boodan Application
         {
-            kitchenEntities context = new kitchenEntities();
+            StimulsoftEntities context = new StimulsoftEntities();
             if (context.Device.Count() > 0)
             {
                 var fillPrint = context.Device.FirstOrDefault();
@@ -462,7 +469,7 @@ namespace Service
             try
             {
                 Thread t1 = new Thread(fill_ComboPrinter);
-                Thread t2 = new Thread(fill_ComboFood);
+                Thread t2 = new Thread(fill_ComboFormServiceSetting);
                 Thread t3 = new Thread(fill_Setting);
                 t1.Start();
                 t2.Start();
@@ -470,7 +477,7 @@ namespace Service
                 //PrinterList(comPrinter1);
                 //PrinterList(comPrinter2);
                 //PrinterList(comPrinter3);
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     //--------
                     var ser = context.Reg.FirstOrDefault();
@@ -580,7 +587,7 @@ namespace Service
             }
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var save = context.Setting.FirstOrDefault();
                     //var welcom = context.WhiteSms.Where(c => c.W1 != "" || c.W1 != null).FirstOrDefault();
@@ -641,7 +648,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var save = context.Setting.FirstOrDefault();
                     //---------------bekhatere inke table faghat 1 record dashte bashad if gozashtam
@@ -673,7 +680,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var save = context.Setting.FirstOrDefault();
                     //---------------bekhatere inke table faghat 1 record dashte bashad if gozashtam
@@ -705,7 +712,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var setting = context.Setting.FirstOrDefault();
                     if (setting.GroupSms == "true")
@@ -735,7 +742,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var setting = context.Setting.FirstOrDefault();
                     if (setting.WelcomeSms == "true")
@@ -765,7 +772,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var setting = context.Setting.FirstOrDefault();
                     if (setting.AcceptSms == "true")
@@ -795,7 +802,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var setting = context.Setting.FirstOrDefault();
                     if (setting.ReadySms == "true")
@@ -825,7 +832,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var setting = context.Setting.FirstOrDefault();
                     if (setting.DeliverySms == "true")
@@ -855,7 +862,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var setting = context.Setting.FirstOrDefault();
                     if (setting.BirthDaySms == "true")
@@ -885,7 +892,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var setting = context.Setting.FirstOrDefault();
                     if (setting.InviteClubeSms == "true")
@@ -964,7 +971,7 @@ namespace Service
             try
             {
                 btnSendRegisterCode.Enabled = false;
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 var countSmsRegister = context.WhiteSms.Where(c => c.Id == 1).FirstOrDefault();
                 string count = countSmsRegister.R10;
                 int reg = int.Parse(count);
@@ -1140,7 +1147,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var select = context.WhiteSms.FirstOrDefault();
                     select.R10 = txtWarningCreadit.Text;
@@ -1166,7 +1173,7 @@ namespace Service
             try
             {
 
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 if (key == 1)
                 {
                     var welcome = context.WhiteSms.Where(c => c.W1 != null || c.W1 != "").FirstOrDefault();
@@ -1325,7 +1332,7 @@ namespace Service
             {
                 if (comServiceKind.Items.Count == 0)
                     return;
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     
                     var del = context.Category.Where(c => c.Name == comServiceKind.Text).FirstOrDefault();
@@ -1355,7 +1362,7 @@ namespace Service
             {
 
                 
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     //var kindkala = context.KindKala.ToList();
                     var del = context.Prodoct.Where(c => c.Name == comKindKala.Text).FirstOrDefault();
@@ -1390,7 +1397,7 @@ namespace Service
             {
                 if (comServiceName.Items.Count == 0)
                     return;
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var del = context.NameService.Where(c => c.Name == comServiceName.Text).FirstOrDefault();
                     context.NameService.Remove(del);
@@ -1430,7 +1437,7 @@ namespace Service
             {
                 if (e.KeyData == Keys.Enter)
                 {
-                    using (var context = new kitchenEntities())
+                    using (var context = new StimulsoftEntities())
                     {
                         //KindKala kk = new KindKala();
                         //kk.Name = txtAddKindkala.Text;
@@ -1502,7 +1509,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var food = context.Prodoct.Where(c => c.NameService == comServiceKind.Text).ToList();
                     comKindKala.DataSource = food;
@@ -1528,7 +1535,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var valueAdded = context.Setting.FirstOrDefault();
                     if(valueAdded.ValueAddedPercent==0)
@@ -1555,7 +1562,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     if (txtValueAdded.Text != "")
                     {
@@ -1624,6 +1631,12 @@ namespace Service
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddColleague_Click(object sender, EventArgs e)
+        {
+            FormNewUser frmNewUser = new FormNewUser();
+            frmNewUser.Show();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="StimulsoftModelStoreContainer" CdmEntityContainer="kitchenEntities">
+  <EntityContainerMapping StorageEntityContainer="StimulsoftModelStoreContainer" CdmEntityContainer="StimulsoftEntities">
     <EntitySetMapping Name="Anbar">
       <EntityTypeMapping TypeName="StimulsoftModel.Anbar">
         <MappingFragment StoreEntitySet="Anbar">
@@ -18,6 +18,23 @@
       <EntityTypeMapping TypeName="StimulsoftModel.Category">
         <MappingFragment StoreEntitySet="Category">
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colleague">
+      <EntityTypeMapping TypeName="StimulsoftModel.Colleague">
+        <MappingFragment StoreEntitySet="Colleague">
+          <ScalarProperty Name="Name" ColumnName=" Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="DateEnter" ColumnName="DateEnter" />
+          <ScalarProperty Name="DateBirthDay" ColumnName="DateBirthDay" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

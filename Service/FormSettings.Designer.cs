@@ -112,6 +112,10 @@
             this.comPrinter3 = new System.Windows.Forms.ComboBox();
             this.comPrinter2 = new System.Windows.Forms.ComboBox();
             this.comPrinter1 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comCalleague = new System.Windows.Forms.ComboBox();
+            this.btnAddColleague = new System.Windows.Forms.Button();
+            this.btnDelColleague = new System.Windows.Forms.Button();
             this.tabSmsSetting.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabWelcomeWhiteSms.SuspendLayout();
@@ -749,6 +753,10 @@
             // 
             // tabPrinter
             // 
+            this.tabPrinter.Controls.Add(this.label15);
+            this.tabPrinter.Controls.Add(this.comCalleague);
+            this.tabPrinter.Controls.Add(this.btnAddColleague);
+            this.tabPrinter.Controls.Add(this.btnDelColleague);
             this.tabPrinter.Controls.Add(this.chxPrinter3);
             this.tabPrinter.Controls.Add(this.chxPrinter2);
             this.tabPrinter.Controls.Add(this.chxPrinter1);
@@ -1058,6 +1066,50 @@
             this.comPrinter1.TabIndex = 28;
             this.comPrinter1.SelectedIndexChanged += new System.EventHandler(this.comPrinter1_SelectedIndexChanged);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(471, 183);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(53, 16);
+            this.label15.TabIndex = 91;
+            this.label15.Text = "همکاران";
+            // 
+            // comCalleague
+            // 
+            this.comCalleague.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comCalleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comCalleague.FormattingEnabled = true;
+            this.comCalleague.Location = new System.Drawing.Point(313, 178);
+            this.comCalleague.Name = "comCalleague";
+            this.comCalleague.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comCalleague.Size = new System.Drawing.Size(154, 24);
+            this.comCalleague.TabIndex = 88;
+            // 
+            // btnAddColleague
+            // 
+            this.btnAddColleague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddColleague.Location = new System.Drawing.Point(287, 176);
+            this.btnAddColleague.Name = "btnAddColleague";
+            this.btnAddColleague.Size = new System.Drawing.Size(20, 27);
+            this.btnAddColleague.TabIndex = 89;
+            this.btnAddColleague.Text = "+";
+            this.btnAddColleague.UseVisualStyleBackColor = false;
+            this.btnAddColleague.Click += new System.EventHandler(this.btnAddColleague_Click);
+            // 
+            // btnDelColleague
+            // 
+            this.btnDelColleague.BackColor = System.Drawing.Color.Red;
+            this.btnDelColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelColleague.Location = new System.Drawing.Point(267, 176);
+            this.btnDelColleague.Name = "btnDelColleague";
+            this.btnDelColleague.Size = new System.Drawing.Size(20, 27);
+            this.btnDelColleague.TabIndex = 90;
+            this.btnDelColleague.Text = "-";
+            this.btnDelColleague.UseVisualStyleBackColor = false;
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1174,5 +1226,9 @@
         private System.Windows.Forms.CheckBox chxPrinter1;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox txtRegister;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.ComboBox comCalleague;
+        public System.Windows.Forms.Button btnAddColleague;
+        public System.Windows.Forms.Button btnDelColleague;
     }
 }

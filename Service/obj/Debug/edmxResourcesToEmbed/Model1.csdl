@@ -19,6 +19,22 @@
     <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
+  <EntityType Name="Colleague">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DateEnter" Type="Int64" />
+    <Property Name="DateBirthDay" Type="Int64" />
+    <Property Name="Email" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CardNumber" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="AccountNumber" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
   <EntityType Name="Device">
     <Key>
       <PropertyRef Name="Id" />
@@ -229,9 +245,10 @@
     <Property Name="S13" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="S14" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="kitchenEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="StimulsoftEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Anbar" EntityType="Self.Anbar" />
     <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Colleague" EntityType="Self.Colleague" />
     <EntitySet Name="Device" EntityType="Self.Device" />
     <EntitySet Name="ErsalNashode" EntityType="Self.ErsalNashode" />
     <EntitySet Name="Manage" EntityType="Self.Manage" />

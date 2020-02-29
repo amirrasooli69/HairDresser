@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="StimulsoftModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=&quot;C:\Users\Amir\Desktop\Develop\C#\Service Project ------\Service\bin\Debug\Stimulsoft.dll&quot;" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="StimulsoftModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\Stimulsoft.dll" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Anbar">
     <Key>
       <PropertyRef Name="Id" />
@@ -17,6 +17,22 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Colleague">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name=" Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DateEnter" Type="integer" />
+    <Property Name="DateBirthDay" Type="integer" />
+    <Property Name="Email" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="Device">
@@ -232,6 +248,7 @@
   <EntityContainer Name="StimulsoftModelStoreContainer">
     <EntitySet Name="Anbar" EntityType="Self.Anbar" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" store:Type="Tables" />
+    <EntitySet Name="Colleague" EntityType="Self.Colleague" store:Type="Tables" />
     <EntitySet Name="Device" EntityType="Self.Device" store:Type="Tables" />
     <EntitySet Name="ErsalNashode" EntityType="Self.ErsalNashode" store:Type="Tables" />
     <EntitySet Name="Manage" EntityType="Self.Manage" store:Type="Tables" />

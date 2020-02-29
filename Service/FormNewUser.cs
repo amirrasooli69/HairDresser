@@ -12,11 +12,11 @@ namespace Service
 {
     public partial class FormNewUser : Form
     {
-        
+
         public FormNewUser()
         {
             InitializeComponent();
- 
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace Service
                                 Name = txtName.Text,
                                 Phone = txtPhone.Text,
                                 Eshterak = txtEshterak.Text,
-                                Date = int.Parse(DateEnter.Text.Replace("/","")),
+                                Date = int.Parse(DateEnter.Text.Replace("/", "")),
                                 Email = txtEmail.Text,
                                 //************
                             };
@@ -83,7 +83,7 @@ namespace Service
             //-----ersal sms
             try
             {
-            
+
                 // PARSGREEN.API_SendSMS.SendSMS send = new PARSGREEN.API_SendSMS.SendSMS();
                 PARSGREEN.API.SMS.Send.SendSMS send = new PARSGREEN.API.SMS.Send.SendSMS();
                 int successCount = 0;
@@ -118,8 +118,8 @@ namespace Service
                 lblError.Text = "شماره تلفن را به صورت درست وارد کنید";
             if (txtPhone.TextLength <= 11)
                 lblError.Text = "";
-            
-            
+
+
         }
 
         private void txtEshterak_TextChanged(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace Service
                     //MessageBox.Show("کاربری بااین شماره اشتراک وجود دارد", "اشتراک", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     lblError.ForeColor = Color.Red;
                     lblError.Text = "کاربری بااین شماره اشتراک وجود دارد";
-                    
+
                 }
                 else
                 {
@@ -169,24 +169,42 @@ namespace Service
         private void txtPhone_TextChanged_1(object sender, EventArgs e)
         {
             lblError.Text = "";
-            if(txtPhone.TextLength>12)
+            if (txtPhone.TextLength > 12)
             {
                 lblError.ForeColor = Color.Red;
                 lblError.Text = "شماره موبایل اشتباه است";
                 txtEshterak.Focus();
             }
-            else 
+            else
                 lblError.Text = "";
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btnSaveUser_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-        }
+                using (var context = new StimulsoftEntities())
+                {
+                    Colleague colleague = new Colleague();
+                    colleague.Name = txtName.Text;
+                    colleague.Phone = txtPhone.Text;
+                    colleague.Tel = txtTel.Text;
+                    colleague.DateEnter = int.Parse(DateEnter.Text.Replace("/", ""));
+                    colleague.DateBirthDay = int.Parse(DateBirthDay.Text.Replace("/", ""));
+                    colleague.Address = txtAddress.Text;
+                    colleague.CardNumber = txtCardNumber.Text;
+                    colleague.AccountNumber = txtAccountNumber.Text;
+                    colleague.Description = txtDescription.Text;
+                    context.Colleague.Add(colleague);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+                MessageBox.Show("مشکل در ثبت همکار","همکار",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
     }
 }

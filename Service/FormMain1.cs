@@ -370,7 +370,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     if (context.Reg.Count() > 0)
                     {
@@ -442,7 +442,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     strlblVersion.Text = "برنامه کامل";
                     Accsess();
@@ -459,7 +459,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     string date = DateTime.Now.ToShortDateString().Replace("/", "");
                     string hard = Get_Serial_Hard();
@@ -574,7 +574,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var Access = context.Manage.Where(current => current.UserName == stripLblLogin.Text).FirstOrDefault();
                     if (Access.NewService == "1")
@@ -778,7 +778,7 @@ namespace Service
         private void delToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            using (var context = new kitchenEntities())
+            using (var context = new StimulsoftEntities())
             {
                 if (context.Reg.Count() > 0)
                 {
@@ -887,7 +887,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
 
                     string today = selectDate.Text.Replace("/", "").Substring(4, 4);
@@ -919,7 +919,7 @@ namespace Service
 
                 if (pingStatus.Status == IPStatus.Success)
                 {
-                    kitchenEntities context = new kitchenEntities();
+                    StimulsoftEntities context = new StimulsoftEntities();
                     var sign = context.Setting.FirstOrDefault();
                     if (sign != null)
                     {
@@ -980,7 +980,7 @@ namespace Service
         {
             try
             {
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 // baraye inke tashkhis dahad db por ast ya khali agar khali bashad true mishavad
                 var set = context.Setting.FirstOrDefault();
                 var countOpen = context.Reg.FirstOrDefault();
@@ -1196,7 +1196,7 @@ namespace Service
             {
                 selectDate.Today_Click(null, null);
                 string stPath = Application.StartupPath;
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 if (context.Reg.Count() > 0)
                 {
                     var check = context.Reg.Where(c => c.State != "" || c.State != null).FirstOrDefault();
@@ -1387,7 +1387,7 @@ namespace Service
                 {
                     Ping ping = new Ping();
                     PingReply pingStatus = ping.Send("papiloo.ir");
-                    kitchenEntities context = new kitchenEntities();
+                    StimulsoftEntities context = new StimulsoftEntities();
                     if (pingStatus.Status == IPStatus.Success)
                     {
                         var sign = context.Setting.FirstOrDefault();
@@ -1474,7 +1474,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
 
                     string today = selectDate.Text.Replace("/", "").Substring(4, 4);

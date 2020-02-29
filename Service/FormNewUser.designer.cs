@@ -32,7 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtAccountNumber = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCardNumber = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnSaveUser = new System.Windows.Forms.Button();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,12 +53,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -79,11 +79,11 @@
             // 
             this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtAccountNumber);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtCardNumber);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnSaveUser);
             this.groupBox1.Controls.Add(this.txtTel);
             this.groupBox1.Controls.Add(this.txtPhone);
             this.groupBox1.Controls.Add(this.label6);
@@ -108,17 +108,72 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ثبت اطلاعات همکار";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button1
+            // txtDescription
             // 
-            this.button1.Location = new System.Drawing.Point(13, 253);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 37);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "ثبت";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtDescription.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(229, 229);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtDescription.Size = new System.Drawing.Size(468, 61);
+            this.txtDescription.TabIndex = 23;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(733, 235);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(67, 19);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "توضیحات";
+            // 
+            // txtAccountNumber
+            // 
+            this.txtAccountNumber.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAccountNumber.Location = new System.Drawing.Point(13, 81);
+            this.txtAccountNumber.Name = "txtAccountNumber";
+            this.txtAccountNumber.Size = new System.Drawing.Size(175, 27);
+            this.txtAccountNumber.TabIndex = 22;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(194, 86);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 19);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "شماره حساب";
+            // 
+            // txtCardNumber
+            // 
+            this.txtCardNumber.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCardNumber.Location = new System.Drawing.Point(303, 83);
+            this.txtCardNumber.Name = "txtCardNumber";
+            this.txtCardNumber.Size = new System.Drawing.Size(139, 27);
+            this.txtCardNumber.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(448, 86);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 19);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "شماره کارت";
+            // 
+            // btnSaveUser
+            // 
+            this.btnSaveUser.Location = new System.Drawing.Point(13, 253);
+            this.btnSaveUser.Name = "btnSaveUser";
+            this.btnSaveUser.Size = new System.Drawing.Size(75, 37);
+            this.btnSaveUser.TabIndex = 18;
+            this.btnSaveUser.Text = "ثبت";
+            this.btnSaveUser.UseVisualStyleBackColor = true;
+            this.btnSaveUser.Click += new System.EventHandler(this.btnSaveUser_Click);
             // 
             // txtTel
             // 
@@ -251,62 +306,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "شماره موبایل";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(303, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 27);
-            this.textBox1.TabIndex = 20;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(448, 86);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 19);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "شماره کارت";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(13, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 27);
-            this.textBox2.TabIndex = 22;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(194, 86);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 19);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "شماره حساب";
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(229, 229);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtDescription.Size = new System.Drawing.Size(468, 61);
-            this.txtDescription.TabIndex = 23;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(733, 235);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 19);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "توضیحات";
-            // 
             // lblError
             // 
             this.lblError.AutoSize = true;
@@ -327,7 +326,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormNewUser";
-            this.Text = "مشترک جدید";
+            this.Text = "همکار جدید";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -347,7 +346,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox txtEshterak;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSaveUser;
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label6;
@@ -356,11 +355,11 @@
         private ERA.FDate DateBirthDay;
         private System.Windows.Forms.Label label4;
         private ERA.FDate DateEnter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCardNumber;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAccountNumber;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblError;
     }

@@ -14,7 +14,7 @@ namespace Service
     
     public partial class Colleague
     {
-        public string C_Name { get; set; }
+        public string Name { get; set; }
         public string Phone { get; set; }
         public string Tel { get; set; }
         public Nullable<long> DateEnter { get; set; }

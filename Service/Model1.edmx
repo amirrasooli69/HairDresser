@@ -295,7 +295,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="C_Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Tel" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="DateEnter" Type="Int64" />
@@ -564,7 +564,7 @@
           <EntitySetMapping Name="Colleague">
             <EntityTypeMapping TypeName="StimulsoftModel.Colleague">
               <MappingFragment StoreEntitySet="Colleague">
-                <ScalarProperty Name="C_Name" ColumnName=" Name" />
+                <ScalarProperty Name="Name" ColumnName=" Name" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Tel" ColumnName="Tel" />
                 <ScalarProperty Name="DateEnter" ColumnName="DateEnter" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="StimulsoftModelStoreContainer" CdmEntityContainer="StimulsoftEntities">
+  <EntityContainerMapping StorageEntityContainer="StimulsoftModelStoreContainer" CdmEntityContainer="StimulsoftEntities1">
     <EntitySetMapping Name="Anbar">
       <EntityTypeMapping TypeName="StimulsoftModel.Anbar">
         <MappingFragment StoreEntitySet="Anbar">
@@ -36,6 +36,7 @@
           <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Eshterak" ColumnName="Eshterak" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

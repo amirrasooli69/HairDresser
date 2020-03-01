@@ -265,7 +265,6 @@
             this.delToolStripMenuItem.Name = "delToolStripMenuItem";
             this.delToolStripMenuItem.Size = new System.Drawing.Size(42, 23);
             this.delToolStripMenuItem.Text = "del";
-            this.delToolStripMenuItem.Visible = false;
             this.delToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
             // 
             // splitContainer1

@@ -8,8 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
 using PopupControl;
-using ERA;
-namespace ERA
+namespace PapilooDate
 {
     public partial class FDate : UserControl
     {
@@ -58,7 +57,7 @@ namespace ERA
                  }
                 catch
                 {
-                    MessageBox.Show("تاریخ وارد شده اشتباه می باشد", "توجه", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show("تاریخ وارد شده اشتباه می باشد", "توجه",MessageBoxButtons.OK,MessageBoxIcon.Stop);
                     S_Date.Text = "";
                 }
             }

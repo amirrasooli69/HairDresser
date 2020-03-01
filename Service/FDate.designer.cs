@@ -1,4 +1,4 @@
-﻿namespace ERA
+﻿namespace PapilooDate
 {
     partial class FDate
     {

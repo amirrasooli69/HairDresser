@@ -1,12 +1,75 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Forms;
+using System.Globalization;
+using System;
 
 namespace Service
 {
-    class practical
+    public class Practical
     {
+        public static string split_3Number(string input)//joda kardane 3ragham 3ragham
+        {
+            if (input != string.Empty)
+            {
+                input = Convert.ToInt64(input.Replace(",", "")).ToString("#,0");
+
+            }
+            return input;
+        }
+        public static string split_4Number(string input)//joda kardane 3ragham 3ragham
+        {
+            //input = input.Replace("-", "");
+           //     if ((input.Length / 4) == 1)
+           //     {
+           //         input = input + "-";
+
+           //     }
+           //else if ((input.Length / 9) == 1)
+           // {
+           //     input = input + "-";
+
+           // }
+           //else if ((input.Length / 14) == 1)
+           // {
+           //     input = input + "-";
+
+           // }
+           //else if ((input.Length / 19) == 1)
+           // {
+           //     input = input + "-";
+
+           // }
+
+            return input;
+        }
+        public static string Build_Eshterak_Number(string Number) // dorost kardane shomare eshterak 5 raghami
+        {
+            string eshterak = "";
+            if(Number.Length==11)
+            {
+                eshterak = Number.Substring(Number.Length - 5,5);
+                
+            }
+            return eshterak;
+
+        }
+        public static void Enter_Number(object sender, KeyPressEventArgs e) // kontorele inke karbar faghat betavanad adad vared konad
+        {
+            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+        public static string Today_Date() // entekhab rooz ba estefade az kelase PersianCalendar windows
+        {
+            PersianCalendar pc = new PersianCalendar();
+            string day;
+            string month;
+            string year;
+            day = pc.GetDayOfMonth(System.DateTime.Now).ToString();
+            month = pc.GetMonth(System.DateTime.Now).ToString();
+            year = pc.GetYear(System.DateTime.Now).ToString();
+            return year + "/" + month + "/" + day;
+
+        }
     }
 }

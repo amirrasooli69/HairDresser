@@ -21,6 +21,8 @@ namespace Service
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            dateEnter.Text = Practical.Today_Date();
+            //dateBirthDay.Text = Practical.Today_Date(); 
         }
 
 
@@ -62,7 +64,7 @@ namespace Service
                                 Name = txtName.Text,
                                 Phone = txtPhone.Text,
                                 Eshterak = txtEshterak.Text,
-                                Date = int.Parse(DateEnter.Text.Replace("/", "")),
+                                //Date = int.Parse(DateEnter.Text.Replace("/", "")),
                                 Email = txtEmail.Text,
                                 //************
                             };
@@ -152,10 +154,7 @@ namespace Service
 
         private void txtEshterak_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar)))
-            {
-                e.Handled = true;
-            }
+            Practical.Enter_Number(sender, e);
         }
 
         private void txtYearCreate_KeyPress(object sender, KeyPressEventArgs e)
@@ -190,12 +189,33 @@ namespace Service
                     colleague.Name = txtName.Text;
                     colleague.Phone = txtPhone.Text;
                     colleague.Tel = txtTel.Text;
-                    colleague.DateEnter = int.Parse(DateEnter.Text.Replace("/", ""));
-                    colleague.DateBirthDay = int.Parse(DateBirthDay.Text.Replace("/", ""));
+                    //----
+                    string selectDay= dateEnter.Text.Replace("/", "");
+                    selectDay = selectDay.Replace(" ", "");
+                    if(selectDay=="")
+                    {
+                        colleague.DateEnter = 0;
+                    }
+                    else
+                    {
+                        colleague.DateEnter = int.Parse(selectDay);
+                    }
+                    selectDay = dateBirthDay.Text.Replace("/", "");
+                    selectDay = selectDay.Replace(" ", "");
+                    if (selectDay == "")
+                    {
+                        colleague.DateBirthDay = 0;
+                    }
+                    else
+                    {
+                        colleague.DateBirthDay = int.Parse(selectDay);
+                    }
                     colleague.Address = txtAddress.Text;
                     colleague.CardNumber = txtCardNumber.Text;
                     colleague.AccountNumber = txtAccountNumber.Text;
                     colleague.Description = txtDescription.Text;
+                    colleague.Email = txtEmail.Text;
+                    colleague.Eshterak = txtEshterak.Text;
                     context.Colleague.Add(colleague);
                     context.SaveChanges();
                 }
@@ -203,8 +223,41 @@ namespace Service
             catch (Exception)
             {
 
-                MessageBox.Show("مشکل در ثبت همکار","همکار",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("مشکل در ثبت همکار", "همکار", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtPhone_TextChanged_2(object sender, EventArgs e)
+        {
+
+            txtEshterak.Text = Practical.Build_Eshterak_Number(txtPhone.Text);
+        }
+
+        private void txtPhone_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            Practical.Enter_Number(sender, e);
+        }
+
+        private void txtTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Practical.Enter_Number(sender, e);
+        }
+
+        private void txtCardNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Practical.Enter_Number(sender, e);
+        }
+
+        private void txtAccountNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Practical.Enter_Number(sender, e);
+        }
+
+        private void txtCardNumber_TextChanged(object sender, EventArgs e)
+        {
+            txtCardNumber.Text= Practical.split_4Number(txtCardNumber.Text);
+            txtCardNumber.Select(txtCardNumber.TextLength, 0);
+
         }
     }
 }

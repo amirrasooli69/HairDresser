@@ -324,10 +324,10 @@ namespace Service
                 comServiceName.DataSource = nameServcom;
                 comServiceName.DisplayMember = "Name";
             }
-            if(context.Colleague.Count() >0 )
+            if (context.Colleague.Count() >0 )
             {
-                var collleague = context.Colleague.FirstOrDefault();
-                comCalleague.DataSource = collleague;
+                var colleague = context.Colleague.ToList();
+                comCalleague.DataSource = colleague;
                 comCalleague.DisplayMember = "Name";
 
             }

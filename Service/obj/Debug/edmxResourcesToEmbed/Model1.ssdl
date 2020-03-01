@@ -34,6 +34,7 @@
     <Property Name="AccountNumber" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Eshterak" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
   <EntityType Name="Device">
     <Key>

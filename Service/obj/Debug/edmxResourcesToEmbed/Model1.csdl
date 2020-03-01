@@ -34,6 +34,7 @@
     <Property Name="AccountNumber" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Eshterak" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Device">
     <Key>
@@ -245,7 +246,7 @@
     <Property Name="S13" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="S14" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="StimulsoftEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="StimulsoftEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Anbar" EntityType="Self.Anbar" />
     <EntitySet Name="Category" EntityType="Self.Category" />
     <EntitySet Name="Colleague" EntityType="Self.Colleague" />

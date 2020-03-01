@@ -777,18 +777,20 @@ namespace Service
 
         private void delToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormNewUser frmNewUser = new FormNewUser();
+            frmNewUser.Show();
 
-            using (var context = new StimulsoftEntities())
-            {
-                if (context.Reg.Count() > 0)
-                {
-                    var deleteReg = context.Reg.ToList();
-                    context.Reg.RemoveRange(deleteReg);
+            //using (var context = new StimulsoftEntities())
+            //{
+            //    if (context.Reg.Count() > 0)
+            //    {
+            //        var deleteReg = context.Reg.ToList();
+            //        context.Reg.RemoveRange(deleteReg);
                     
-                    //context.Reg.SqlQuery("DBCC CHECKIDENT (Reg, RESEED, 0)");
-                }
-                context.SaveChanges();
-            }
+            //        //context.Reg.SqlQuery("DBCC CHECKIDENT (Reg, RESEED, 0)");
+            //    }
+            //    context.SaveChanges();
+            //}
 
             //------ // BARAYE INKE IdPaye ra begirad
             //string strReq;

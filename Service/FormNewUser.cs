@@ -210,8 +210,16 @@ namespace Service
                     {
                         colleague.DateBirthDay = int.Parse(selectDay);
                     }
+                    if(radFemale.Enabled)
+                    {
+                        colleague.Sex = "زن";
+                    }
+                    else
+                    {
+                        colleague.Sex = "مرد";
+                    }
                     colleague.Address = txtAddress.Text;
-                    colleague.CardNumber = txtCardNumber.Text;
+                    colleague.CardNumber = mtxtCardNumber.Text;
                     colleague.AccountNumber = txtAccountNumber.Text;
                     colleague.Description = txtDescription.Text;
                     colleague.Email = txtEmail.Text;
@@ -255,8 +263,6 @@ namespace Service
 
         private void txtCardNumber_TextChanged(object sender, EventArgs e)
         {
-            txtCardNumber.Text= Practical.split_4Number(txtCardNumber.Text);
-            txtCardNumber.Select(txtCardNumber.TextLength, 0);
 
         }
     }

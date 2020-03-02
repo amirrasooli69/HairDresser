@@ -120,6 +120,9 @@
             this.panelPaye = new System.Windows.Forms.Panel();
             this.radNaghdi = new System.Windows.Forms.RadioButton();
             this.radKart = new System.Windows.Forms.RadioButton();
+            this.groupSex = new System.Windows.Forms.GroupBox();
+            this.radFemale = new System.Windows.Forms.RadioButton();
+            this.radMale = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).BeginInit();
@@ -131,6 +134,7 @@
             this.panelOrder.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelPaye.SuspendLayout();
+            this.groupSex.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtNewService
@@ -138,14 +142,14 @@
             this.dtNewService.BackColor = System.Drawing.Color.White;
             this.dtNewService.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dtNewService.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.dtNewService.Location = new System.Drawing.Point(860, 9);
+            this.dtNewService.Location = new System.Drawing.Point(890, 7);
             this.dtNewService.Miladi = new System.DateTime(((long)(0)));
             this.dtNewService.Name = "dtNewService";
             this.dtNewService.NowDateSelected = false;
             this.dtNewService.ReadOnly = true;
             this.dtNewService.SelectedDate = null;
             this.dtNewService.Shamsi = null;
-            this.dtNewService.Size = new System.Drawing.Size(140, 23);
+            this.dtNewService.Size = new System.Drawing.Size(162, 23);
             this.dtNewService.TabIndex = 1;
             this.dtNewService.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -153,17 +157,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label4.Location = new System.Drawing.Point(1022, 11);
+            this.label4.Location = new System.Drawing.Point(1057, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 16);
+            this.label4.Size = new System.Drawing.Size(38, 16);
             this.label4.TabIndex = 4;
-            this.label4.Text = "تاریخ سفارش";
+            this.label4.Text = "تاریخ ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.Location = new System.Drawing.Point(712, 12);
+            this.label5.Location = new System.Drawing.Point(769, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 16);
             this.label5.TabIndex = 7;
@@ -173,7 +177,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label11.Location = new System.Drawing.Point(44, 11);
+            this.label11.Location = new System.Drawing.Point(118, 11);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(79, 16);
             this.label11.TabIndex = 36;
@@ -183,7 +187,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(295, 11);
+            this.label7.Location = new System.Drawing.Point(391, 12);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 16);
             this.label7.TabIndex = 45;
@@ -193,7 +197,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label8.Location = new System.Drawing.Point(578, 12);
+            this.label8.Location = new System.Drawing.Point(652, 12);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(24, 16);
             this.label8.TabIndex = 47;
@@ -202,17 +206,17 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtEmail.Location = new System.Drawing.Point(737, 69);
+            this.txtEmail.Location = new System.Drawing.Point(765, 75);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtEmail.Size = new System.Drawing.Size(315, 23);
+            this.txtEmail.Size = new System.Drawing.Size(286, 23);
             this.txtEmail.TabIndex = 8;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label10.Location = new System.Drawing.Point(1068, 73);
+            this.label10.Location = new System.Drawing.Point(1058, 80);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(37, 16);
             this.label10.TabIndex = 49;
@@ -221,7 +225,7 @@
             // btnSaveUser
             // 
             this.btnSaveUser.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnSaveUser.Location = new System.Drawing.Point(12, 65);
+            this.btnSaveUser.Location = new System.Drawing.Point(9, 70);
             this.btnSaveUser.Name = "btnSaveUser";
             this.btnSaveUser.Size = new System.Drawing.Size(111, 32);
             this.btnSaveUser.TabIndex = 9;
@@ -233,7 +237,7 @@
             // 
             this.lblSomeService.AutoSize = true;
             this.lblSomeService.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblSomeService.Location = new System.Drawing.Point(20, 12);
+            this.lblSomeService.Location = new System.Drawing.Point(94, 12);
             this.lblSomeService.Name = "lblSomeService";
             this.lblSomeService.Size = new System.Drawing.Size(0, 16);
             this.lblSomeService.TabIndex = 39;
@@ -241,6 +245,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.groupSex);
             this.panel2.Controls.Add(this.btnViewService);
             this.panel2.Controls.Add(this.txtEndRahgiri);
             this.panel2.Controls.Add(this.lblTotalPrice);
@@ -268,7 +273,7 @@
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Location = new System.Drawing.Point(9, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1113, 108);
+            this.panel2.Size = new System.Drawing.Size(1106, 108);
             this.panel2.TabIndex = 0;
             // 
             // btnViewService
@@ -276,7 +281,7 @@
             this.btnViewService.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewService.BackgroundImage")));
             this.btnViewService.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnViewService.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewService.Location = new System.Drawing.Point(446, 71);
+            this.btnViewService.Location = new System.Drawing.Point(389, 74);
             this.btnViewService.Name = "btnViewService";
             this.btnViewService.Size = new System.Drawing.Size(42, 24);
             this.btnViewService.TabIndex = 88;
@@ -288,7 +293,7 @@
             this.txtEndRahgiri.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtEndRahgiri.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtEndRahgiri.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndRahgiri.Location = new System.Drawing.Point(494, 72);
+            this.txtEndRahgiri.Location = new System.Drawing.Point(437, 76);
             this.txtEndRahgiri.MaxLength = 8;
             this.txtEndRahgiri.Name = "txtEndRahgiri";
             this.txtEndRahgiri.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -300,7 +305,7 @@
             // 
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(169, 72);
+            this.lblTotalPrice.Location = new System.Drawing.Point(172, 80);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(0, 16);
             this.lblTotalPrice.TabIndex = 86;
@@ -309,7 +314,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label24.Location = new System.Drawing.Point(326, 72);
+            this.label24.Location = new System.Drawing.Point(280, 79);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(106, 16);
             this.label24.TabIndex = 85;
@@ -319,7 +324,7 @@
             // 
             this.chxNewCustomer.AutoSize = true;
             this.chxNewCustomer.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.chxNewCustomer.Location = new System.Drawing.Point(783, 11);
+            this.chxNewCustomer.Location = new System.Drawing.Point(820, 10);
             this.chxNewCustomer.Name = "chxNewCustomer";
             this.chxNewCustomer.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.chxNewCustomer.Size = new System.Drawing.Size(54, 20);
@@ -333,7 +338,7 @@
             this.txtPhone.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtPhone.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtPhone.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtPhone.Location = new System.Drawing.Point(147, 8);
+            this.txtPhone.Location = new System.Drawing.Point(237, 12);
             this.txtPhone.MaxLength = 11;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -348,7 +353,7 @@
             this.txtName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtName.Location = new System.Drawing.Point(400, 9);
+            this.txtName.Location = new System.Drawing.Point(474, 9);
             this.txtName.MaxLength = 45;
             this.txtName.Name = "txtName";
             this.txtName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -361,22 +366,22 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label22.Location = new System.Drawing.Point(576, 72);
+            this.label22.Location = new System.Drawing.Point(520, 79);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(148, 16);
+            this.label22.Size = new System.Drawing.Size(107, 16);
             this.label22.TabIndex = 57;
-            this.label22.Text = ":آخرین کد رهگیری این فرد";
+            this.label22.Text = ":آخرین کد رهگیری";
             // 
             // txtEshterak
             // 
             this.txtEshterak.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtEshterak.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtEshterak.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtEshterak.Location = new System.Drawing.Point(611, 9);
+            this.txtEshterak.Location = new System.Drawing.Point(682, 9);
             this.txtEshterak.MaxLength = 5;
             this.txtEshterak.Name = "txtEshterak";
             this.txtEshterak.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtEshterak.Size = new System.Drawing.Size(93, 23);
+            this.txtEshterak.Size = new System.Drawing.Size(81, 23);
             this.txtEshterak.TabIndex = 2;
             this.txtEshterak.TextChanged += new System.EventHandler(this.txtEshterak_TextChanged_2);
             this.txtEshterak.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEshterak_KeyPress_1);
@@ -386,11 +391,11 @@
             // txtPostiCode
             // 
             this.txtPostiCode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtPostiCode.Location = new System.Drawing.Point(250, 39);
+            this.txtPostiCode.Location = new System.Drawing.Point(237, 40);
             this.txtPostiCode.MaxLength = 10;
             this.txtPostiCode.Name = "txtPostiCode";
             this.txtPostiCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtPostiCode.Size = new System.Drawing.Size(145, 23);
+            this.txtPostiCode.Size = new System.Drawing.Size(171, 23);
             this.txtPostiCode.TabIndex = 6;
             this.txtPostiCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPostiCode_KeyPress);
             // 
@@ -398,7 +403,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label16.Location = new System.Drawing.Point(401, 42);
+            this.label16.Location = new System.Drawing.Point(414, 44);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(57, 16);
             this.label16.TabIndex = 56;
@@ -408,7 +413,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label15.Location = new System.Drawing.Point(1065, 39);
+            this.label15.Location = new System.Drawing.Point(1058, 44);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(38, 16);
             this.label15.TabIndex = 54;
@@ -417,10 +422,10 @@
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtAddress.Location = new System.Drawing.Point(464, 39);
+            this.txtAddress.Location = new System.Drawing.Point(475, 41);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtAddress.Size = new System.Drawing.Size(588, 23);
+            this.txtAddress.Size = new System.Drawing.Size(577, 23);
             this.txtAddress.TabIndex = 5;
             // 
             // dtBirthDay
@@ -428,7 +433,7 @@
             this.dtBirthDay.BackColor = System.Drawing.Color.White;
             this.dtBirthDay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.dtBirthDay.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.dtBirthDay.Location = new System.Drawing.Point(15, 39);
+            this.dtBirthDay.Location = new System.Drawing.Point(9, 40);
             this.dtBirthDay.Miladi = new System.DateTime(((long)(0)));
             this.dtBirthDay.Name = "dtBirthDay";
             this.dtBirthDay.NowDateSelected = false;
@@ -443,7 +448,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label14.Location = new System.Drawing.Point(175, 42);
+            this.label14.Location = new System.Drawing.Point(172, 44);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 16);
             this.label14.TabIndex = 52;
@@ -465,7 +470,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(104, 157);
+            this.label6.Location = new System.Drawing.Point(110, 157);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 16);
             this.label6.TabIndex = 54;
@@ -591,7 +596,7 @@
             this.dgShow.ReadOnly = true;
             this.dgShow.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgShow.RowHeadersWidth = 20;
-            this.dgShow.Size = new System.Drawing.Size(1084, 201);
+            this.dgShow.Size = new System.Drawing.Size(1085, 201);
             this.dgShow.TabIndex = 48;
             this.dgShow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgShow_CellContentClick);
             this.dgShow.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgShow_RowsAdded);
@@ -1051,7 +1056,7 @@
             this.btnAddService.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddService.Location = new System.Drawing.Point(12, 179);
             this.btnAddService.Name = "btnAddService";
-            this.btnAddService.Size = new System.Drawing.Size(157, 27);
+            this.btnAddService.Size = new System.Drawing.Size(159, 27);
             this.btnAddService.TabIndex = 26;
             this.btnAddService.Text = "اضافه/ ویرایش کردن قیمت";
             this.btnAddService.UseVisualStyleBackColor = true;
@@ -1142,7 +1147,7 @@
             this.panel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(9, 119);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1113, 559);
+            this.panel1.Size = new System.Drawing.Size(1106, 559);
             this.panel1.TabIndex = 58;
             // 
             // txtPrice
@@ -1231,6 +1236,41 @@
             this.radKart.Text = "کارت";
             this.radKart.UseVisualStyleBackColor = true;
             // 
+            // groupSex
+            // 
+            this.groupSex.Controls.Add(this.radFemale);
+            this.groupSex.Controls.Add(this.radMale);
+            this.groupSex.Location = new System.Drawing.Point(633, 64);
+            this.groupSex.Name = "groupSex";
+            this.groupSex.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupSex.Size = new System.Drawing.Size(126, 40);
+            this.groupSex.TabIndex = 89;
+            this.groupSex.TabStop = false;
+            // 
+            // radFemale
+            // 
+            this.radFemale.AutoSize = true;
+            this.radFemale.Checked = true;
+            this.radFemale.Location = new System.Drawing.Point(20, 14);
+            this.radFemale.Name = "radFemale";
+            this.radFemale.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radFemale.Size = new System.Drawing.Size(36, 17);
+            this.radFemale.TabIndex = 27;
+            this.radFemale.TabStop = true;
+            this.radFemale.Text = "زن";
+            this.radFemale.UseVisualStyleBackColor = true;
+            // 
+            // radMale
+            // 
+            this.radMale.AutoSize = true;
+            this.radMale.Location = new System.Drawing.Point(77, 14);
+            this.radMale.Name = "radMale";
+            this.radMale.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radMale.Size = new System.Drawing.Size(41, 17);
+            this.radMale.TabIndex = 28;
+            this.radMale.Text = "مرد";
+            this.radMale.UseVisualStyleBackColor = true;
+            // 
             // FormServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1260,6 +1300,8 @@
             this.panel1.PerformLayout();
             this.panelPaye.ResumeLayout(false);
             this.panelPaye.PerformLayout();
+            this.groupSex.ResumeLayout(false);
+            this.groupSex.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1354,5 +1396,8 @@
         public System.Windows.Forms.Button btnViewService;
         private System.Windows.Forms.TextBox numSome;
         private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.GroupBox groupSex;
+        private System.Windows.Forms.RadioButton radFemale;
+        private System.Windows.Forms.RadioButton radMale;
     }
 }

@@ -1178,6 +1178,14 @@ namespace Service
                     user.Email = txtEmail.Text;
                     user.Address = txtAddress.Text;
                     user.PostiCode = txtPostiCode.Text;
+                    if (radFemale.Checked)
+                    {
+                        user.Sex = "زن";
+                    }
+                    else
+                    {
+                        user.Sex = "مرد";
+                    }
                     if (dtBirthDay.Text == "")
                         user.BirthDayDate = 0;
                     else
@@ -2445,18 +2453,18 @@ namespace Service
                     frmEditUser.txtName.Text = editUser.Name;
                     //---------------------
                     if (editUser.Date == 0)
-                        frmEditUser.txtEnter.Text = "";
+                        frmEditUser.DateEnter.Text = "";
                     else
-                        frmEditUser.txtEnter.Text = editUser.Date.ToString();
+                        frmEditUser.DateEnter.Text = editUser.Date.ToString();
                     //---------------------
                     frmEditUser.txtPhone.Text = editUser.Phone;
                     //---------------------
                     frmEditUser.txtEmail.Text = editUser.Email;
                     //---------------------
                     if (editUser.BirthDayDate == 0)
-                        frmEditUser.txtBirthDay.Text = "";
+                        frmEditUser.DateBirthDay.Text = "";
                     else
-                        frmEditUser.txtBirthDay.Text = editUser.BirthDayDate.ToString();
+                        frmEditUser.DateBirthDay.Text = editUser.BirthDayDate.ToString();
                     //---------------------
                     frmEditUser.txtAddress.Text = editUser.Address;
                     //---------------------
@@ -2480,13 +2488,13 @@ namespace Service
                     //---------------------
                     frmEditUser.txtName.Text = editUser.Name;
                     //---------------------
-                    frmEditUser.txtEnter.Text = editUser.Date.ToString();
+                    frmEditUser.DateEnter.Text = editUser.Date.ToString();
                     //---------------------
                     frmEditUser.txtPhone.Text = editUser.Phone;
                     //---------------------
                     frmEditUser.txtEmail.Text = editUser.Email;
                     //---------------------
-                    frmEditUser.txtBirthDay.Text = editUser.BirthDayDate.ToString();
+                    frmEditUser.DateBirthDay.Text = editUser.BirthDayDate.ToString();
                     //---------------------
                     frmEditUser.txtAddress.Text = editUser.Address;
                     //---------------------
@@ -2509,17 +2517,25 @@ namespace Service
                     //---------------------
                     frmEditUser.txtName.Text = editUser.Name;
                     //---------------------
-                    frmEditUser.txtEnter.Text = editUser.Date.ToString();
+                    frmEditUser.DateEnter.Text = editUser.Date.ToString();
                     //---------------------
                     frmEditUser.txtPhone.Text = editUser.Phone;
                     //---------------------
                     frmEditUser.txtEmail.Text = editUser.Email;
                     //---------------------
-                    frmEditUser.txtBirthDay.Text = editUser.BirthDayDate.ToString();
+                    frmEditUser.DateBirthDay.Text = editUser.BirthDayDate.ToString();
                     //---------------------
                     frmEditUser.txtAddress.Text = editUser.Address;
                     //---------------------
                     frmEditUser.txtPostiCode.Text = editUser.PostiCode;
+                    if (editUser.Sex == "زن")
+                    {
+                        frmEditUser.sex = "female";
+                    }
+                    else
+                    {
+                        frmEditUser.sex = "male";
+                    }
                     //---------------------
                     frmEditUser.Show();
                 }

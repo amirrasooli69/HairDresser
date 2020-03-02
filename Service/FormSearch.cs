@@ -101,7 +101,7 @@ namespace Service
             dgSearch.Columns[7].HeaderText = "کد پستی";
             dgSearch.Columns[8].Visible = false;
             dgSearch.Columns[8].HeaderText = "شماره ";
-
+            dgSearch.Columns[9].HeaderText = "جنسیت";
         }
         private void Design_GrideView_Service()
         {
@@ -573,13 +573,13 @@ namespace Service
                     //---------------------
                     frmEditUser.txtName.Text = dgSearch.CurrentRow.Cells[1].Value.ToString();
                     //---------------------
-                    frmEditUser.txtEnter.Text = dgSearch.CurrentRow.Cells[2].Value.ToString();
+                    frmEditUser.DateEnter.Text = dgSearch.CurrentRow.Cells[2].Value.ToString();
                     //---------------------
                     frmEditUser.txtPhone.Text = dgSearch.CurrentRow.Cells[3].Value.ToString();
                     //---------------------
                     frmEditUser.txtEmail.Text = dgSearch.CurrentRow.Cells[4].Value.ToString();
                     //---------------------
-                    frmEditUser.txtBirthDay.Text = dgSearch.CurrentRow.Cells[5].Value.ToString();
+                    frmEditUser.DateBirthDay.Text = dgSearch.CurrentRow.Cells[5].Value.ToString();
                     //---------------------
                     frmEditUser.txtAddress.Text = dgSearch.CurrentRow.Cells[6].Value.ToString();
                     //---------------------

@@ -17,30 +17,40 @@ namespace Service
         }
         public static string split_4Number(string input)//joda kardane 3ragham 3ragham
         {
-            //input = input.Replace("-", "");
-           //     if ((input.Length / 4) == 1)
-           //     {
-           //         input = input + "-";
+            
+            switch (input.Length)
+            {
+                // baraye ezafe kardane -
+                case 4:
+                    {
+                        input += "-";
+                        return input;
+                    }
+                case 9:
+                    {
+                        input+= "-";
+                        return input;
+                    }
+                case 14:
+                    {
+                        input += "-";
+                        break;
+                    }
 
-           //     }
-           //else if ((input.Length / 9) == 1)
-           // {
-           //     input = input + "-";
-
-           // }
-           //else if ((input.Length / 14) == 1)
-           // {
-           //     input = input + "-";
-
-           // }
-           //else if ((input.Length / 19) == 1)
-           // {
-           //     input = input + "-";
-
-           // }
-
+            }
             return input;
         }
+        public static string Delete_Char(string input)
+        {
+            string lastChar = "";
+            if (input.Length > 4)
+                lastChar = input.Substring(input.Length - 1, 1);
+            if (lastChar == "-")
+            {
+                input = input.Substring(0, input.Length - 1);
+            }
+            return input;
+        } 
         public static string Build_Eshterak_Number(string Number) // dorost kardane shomare eshterak 5 raghami
         {
             string eshterak = "";

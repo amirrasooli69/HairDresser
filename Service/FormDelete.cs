@@ -180,6 +180,7 @@ namespace Service
                     dgDelete.Columns[7].HeaderText = "کد پستی";
                     dgDelete.Columns[8].Visible = false;
                     dgDelete.Columns[8].HeaderText = "شماره ";
+                    dgDelete.Columns[9].HeaderText = "جنسیت";
                 }
             }
             catch (Exception ex)

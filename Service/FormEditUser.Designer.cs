@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditUser));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtBirthDay = new System.Windows.Forms.MaskedTextBox();
-            this.txtEnter = new System.Windows.Forms.MaskedTextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtPostiCode = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -47,16 +46,22 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.groupSex = new System.Windows.Forms.GroupBox();
+            this.radFemale = new System.Windows.Forms.RadioButton();
+            this.radMale = new System.Windows.Forms.RadioButton();
+            this.DateEnter = new PapilooDate.FDate();
+            this.DateBirthDay = new PapilooDate.FDate();
             this.panel2.SuspendLayout();
+            this.groupSex.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.DateBirthDay);
+            this.panel2.Controls.Add(this.DateEnter);
+            this.panel2.Controls.Add(this.groupSex);
             this.panel2.Controls.Add(this.txtPhone);
-            this.panel2.Controls.Add(this.txtBirthDay);
-            this.panel2.Controls.Add(this.txtEnter);
             this.panel2.Controls.Add(this.txtPostiCode);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label15);
@@ -78,27 +83,15 @@
             this.panel2.Size = new System.Drawing.Size(934, 320);
             this.panel2.TabIndex = 60;
             // 
-            // txtBirthDay
+            // txtPhone
             // 
-            this.txtBirthDay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBirthDay.Location = new System.Drawing.Point(317, 70);
-            this.txtBirthDay.Mask = "0000/00/00";
-            this.txtBirthDay.Name = "txtBirthDay";
-            this.txtBirthDay.Size = new System.Drawing.Size(162, 27);
-            this.txtBirthDay.TabIndex = 59;
-            this.txtBirthDay.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtBirthDay_MaskInputRejected);
-            this.txtBirthDay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBirthDay_KeyPress);
-            // 
-            // txtEnter
-            // 
-            this.txtEnter.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnter.Location = new System.Drawing.Point(618, 70);
-            this.txtEnter.Mask = "0000/00/00";
-            this.txtEnter.Name = "txtEnter";
-            this.txtEnter.Size = new System.Drawing.Size(162, 27);
-            this.txtEnter.TabIndex = 58;
-            this.txtEnter.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtEnter_MaskInputRejected);
-            this.txtEnter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEnter_KeyPress);
+            this.txtPhone.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(23, 14);
+            this.txtPhone.MaxLength = 11;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPhone.Size = new System.Drawing.Size(145, 27);
+            this.txtPhone.TabIndex = 60;
             // 
             // txtPostiCode
             // 
@@ -116,7 +109,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(174, 73);
+            this.label16.Location = new System.Drawing.Point(203, 78);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(69, 19);
             this.label16.TabIndex = 56;
@@ -159,7 +152,7 @@
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(23, 233);
+            this.btnEdit.Location = new System.Drawing.Point(23, 187);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(111, 40);
             this.btnEdit.TabIndex = 9;
@@ -262,15 +255,59 @@
             this.txtEmail.TabIndex = 8;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
-            // txtPhone
+            // groupSex
             // 
-            this.txtPhone.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(23, 14);
-            this.txtPhone.MaxLength = 11;
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtPhone.Size = new System.Drawing.Size(145, 27);
-            this.txtPhone.TabIndex = 60;
+            this.groupSex.Controls.Add(this.radFemale);
+            this.groupSex.Controls.Add(this.radMale);
+            this.groupSex.Location = new System.Drawing.Point(23, 120);
+            this.groupSex.Name = "groupSex";
+            this.groupSex.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupSex.Size = new System.Drawing.Size(163, 40);
+            this.groupSex.TabIndex = 90;
+            this.groupSex.TabStop = false;
+            this.groupSex.Text = "جنسیت";
+            // 
+            // radFemale
+            // 
+            this.radFemale.AutoSize = true;
+            this.radFemale.Checked = true;
+            this.radFemale.Location = new System.Drawing.Point(20, 14);
+            this.radFemale.Name = "radFemale";
+            this.radFemale.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radFemale.Size = new System.Drawing.Size(37, 17);
+            this.radFemale.TabIndex = 27;
+            this.radFemale.TabStop = true;
+            this.radFemale.Text = "زن";
+            this.radFemale.UseVisualStyleBackColor = true;
+            // 
+            // radMale
+            // 
+            this.radMale.AutoSize = true;
+            this.radMale.Location = new System.Drawing.Point(99, 14);
+            this.radMale.Name = "radMale";
+            this.radMale.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radMale.Size = new System.Drawing.Size(40, 17);
+            this.radMale.TabIndex = 28;
+            this.radMale.Text = "مرد";
+            this.radMale.UseVisualStyleBackColor = true;
+            // 
+            // DateEnter
+            // 
+            this.DateEnter.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.DateEnter.Location = new System.Drawing.Point(618, 70);
+            this.DateEnter.Name = "DateEnter";
+            this.DateEnter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DateEnter.Size = new System.Drawing.Size(140, 31);
+            this.DateEnter.TabIndex = 91;
+            // 
+            // DateBirthDay
+            // 
+            this.DateBirthDay.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.DateBirthDay.Location = new System.Drawing.Point(317, 70);
+            this.DateBirthDay.Name = "DateBirthDay";
+            this.DateBirthDay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DateBirthDay.Size = new System.Drawing.Size(140, 31);
+            this.DateBirthDay.TabIndex = 92;
             // 
             // FormEditUser
             // 
@@ -288,6 +325,8 @@
             this.Load += new System.EventHandler(this.FormEditUser_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupSex.ResumeLayout(false);
+            this.groupSex.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -310,8 +349,11 @@
         public System.Windows.Forms.Button btnEdit;
         public System.Windows.Forms.Label label10;
         public System.Windows.Forms.TextBox txtEmail;
-        public System.Windows.Forms.MaskedTextBox txtBirthDay;
-        public System.Windows.Forms.MaskedTextBox txtEnter;
         public System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.GroupBox groupSex;
+        public System.Windows.Forms.RadioButton radFemale;
+        public System.Windows.Forms.RadioButton radMale;
+        public PapilooDate.FDate DateBirthDay;
+        public PapilooDate.FDate DateEnter;
     }
 }

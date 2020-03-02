@@ -36,7 +36,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtAccountNumber = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtCardNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSaveUser = new System.Windows.Forms.Button();
             this.txtTel = new System.Windows.Forms.TextBox();
@@ -52,9 +51,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
+            this.mtxtCardNumber = new System.Windows.Forms.MaskedTextBox();
+            this.radFemale = new System.Windows.Forms.RadioButton();
+            this.radMale = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dateBirthDay = new PapilooDate.FDate();
             this.dateEnter = new PapilooDate.FDate();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -78,13 +82,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.mtxtCardNumber);
             this.groupBox1.Controls.Add(this.dateBirthDay);
             this.groupBox1.Controls.Add(this.dateEnter);
             this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtAccountNumber);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtCardNumber);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnSaveUser);
             this.groupBox1.Controls.Add(this.txtTel);
@@ -137,7 +142,7 @@
             this.txtAccountNumber.Location = new System.Drawing.Point(13, 118);
             this.txtAccountNumber.Name = "txtAccountNumber";
             this.txtAccountNumber.Size = new System.Drawing.Size(298, 23);
-            this.txtAccountNumber.TabIndex = 11;
+            this.txtAccountNumber.TabIndex = 10;
             this.txtAccountNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtAccountNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAccountNumber_KeyPress);
             // 
@@ -150,18 +155,6 @@
             this.label8.Size = new System.Drawing.Size(86, 16);
             this.label8.TabIndex = 21;
             this.label8.Text = "شماره حساب";
-            // 
-            // txtCardNumber
-            // 
-            this.txtCardNumber.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCardNumber.Location = new System.Drawing.Point(431, 118);
-            this.txtCardNumber.MaxLength = 20;
-            this.txtCardNumber.Name = "txtCardNumber";
-            this.txtCardNumber.Size = new System.Drawing.Size(283, 23);
-            this.txtCardNumber.TabIndex = 9;
-            this.txtCardNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCardNumber.TextChanged += new System.EventHandler(this.txtCardNumber_TextChanged);
-            this.txtCardNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCardNumber_KeyPress);
             // 
             // label7
             // 
@@ -315,6 +308,51 @@
             this.lblError.Size = new System.Drawing.Size(0, 19);
             this.lblError.TabIndex = 25;
             // 
+            // mtxtCardNumber
+            // 
+            this.mtxtCardNumber.Location = new System.Drawing.Point(431, 118);
+            this.mtxtCardNumber.Mask = "0000-0000-0000-0000";
+            this.mtxtCardNumber.Name = "mtxtCardNumber";
+            this.mtxtCardNumber.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.mtxtCardNumber.Size = new System.Drawing.Size(283, 23);
+            this.mtxtCardNumber.TabIndex = 9;
+            this.mtxtCardNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // radFemale
+            // 
+            this.radFemale.AutoSize = true;
+            this.radFemale.Checked = true;
+            this.radFemale.Location = new System.Drawing.Point(6, 14);
+            this.radFemale.Name = "radFemale";
+            this.radFemale.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radFemale.Size = new System.Drawing.Size(40, 20);
+            this.radFemale.TabIndex = 9;
+            this.radFemale.TabStop = true;
+            this.radFemale.Text = "زن";
+            this.radFemale.UseVisualStyleBackColor = true;
+            // 
+            // radMale
+            // 
+            this.radMale.AutoSize = true;
+            this.radMale.Location = new System.Drawing.Point(85, 16);
+            this.radMale.Name = "radMale";
+            this.radMale.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radMale.Size = new System.Drawing.Size(44, 20);
+            this.radMale.TabIndex = 8;
+            this.radMale.Text = "مرد";
+            this.radMale.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radFemale);
+            this.groupBox2.Controls.Add(this.radMale);
+            this.groupBox2.Location = new System.Drawing.Point(299, 58);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(161, 40);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "جنسیت";
+            // 
             // dateBirthDay
             // 
             this.dateBirthDay.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -323,7 +361,7 @@
             this.dateBirthDay.Name = "dateBirthDay";
             this.dateBirthDay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateBirthDay.Size = new System.Drawing.Size(141, 31);
-            this.dateBirthDay.TabIndex = 26;
+            this.dateBirthDay.TabIndex = 17;
             // 
             // dateEnter
             // 
@@ -333,7 +371,7 @@
             this.dateEnter.Name = "dateEnter";
             this.dateEnter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateEnter.Size = new System.Drawing.Size(141, 31);
-            this.dateEnter.TabIndex = 25;
+            this.dateEnter.TabIndex = 11;
             // 
             // FormNewUser
             // 
@@ -350,6 +388,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,7 +413,6 @@
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCardNumber;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label11;
@@ -382,6 +421,10 @@
         private System.Windows.Forms.Label lblError;
         private PapilooDate.FDate dateEnter;
         private PapilooDate.FDate dateBirthDay;
+        private System.Windows.Forms.MaskedTextBox mtxtCardNumber;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radFemale;
+        private System.Windows.Forms.RadioButton radMale;
     }
 }
 

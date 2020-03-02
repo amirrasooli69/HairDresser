@@ -40,6 +40,7 @@
           <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Eshterak" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="Device">
           <Key>
@@ -199,6 +200,7 @@
           <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="PostiCode" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="WhiteSms">
           <Key>
@@ -308,6 +310,7 @@
           <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Eshterak" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Device">
           <Key>
@@ -467,6 +470,7 @@
           <Property Name="Address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="PostiCode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sex" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="WhiteSms">
           <Key>
@@ -519,7 +523,7 @@
           <Property Name="S13" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="S14" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="StimulsoftEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="StimulsoftEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Anbar" EntityType="Self.Anbar" />
           <EntitySet Name="Category" EntityType="Self.Category" />
           <EntitySet Name="Colleague" EntityType="Self.Colleague" />
@@ -541,7 +545,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="StimulsoftModelStoreContainer" CdmEntityContainer="StimulsoftEntities1">
+        <EntityContainerMapping StorageEntityContainer="StimulsoftModelStoreContainer" CdmEntityContainer="StimulsoftEntities">
           <EntitySetMapping Name="Anbar">
             <EntityTypeMapping TypeName="StimulsoftModel.Anbar">
               <MappingFragment StoreEntitySet="Anbar">
@@ -578,6 +582,7 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Eshterak" ColumnName="Eshterak" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -748,6 +753,7 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="PostiCode" ColumnName="PostiCode" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

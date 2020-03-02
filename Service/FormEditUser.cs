@@ -13,6 +13,7 @@ namespace Service
     public partial class FormEditUser : Form
     {
         public string phoneNumber = "";
+        public string sex = "";
         public FormEditUser()
         {
             InitializeComponent();
@@ -57,24 +58,32 @@ namespace Service
                     editUser.Name = txtName.Text;
                     editUser.Phone = txtPhone.Text;
                     //editUser.Eshterak = txtEshterak.Text;
-                    if (txtEnter.Text == "    /  /")
+                    if (DateEnter.Text == "    /  /")
                     {
 
                         editUser.Date = 0;
                     }
                     else
-                        editUser.Date = Int64.Parse(txtEnter.Text.Replace("/", ""));
+                        editUser.Date = Int64.Parse(DateEnter.Text.Replace("/", ""));
                     editUser.Email = txtEmail.Text;
                     editUser.Address = txtAddress.Text;
                     editUser.PostiCode = txtPostiCode.Text;
-                    if (txtBirthDay.Text == "    /  /")
+                    if (DateBirthDay.Text == "    /  /")
                     {
                         
                         editUser.BirthDayDate = 0;
                     }
                     else
-                        editUser.BirthDayDate = Int64.Parse(txtBirthDay.Text.Replace("/", ""));
+                        editUser.BirthDayDate = Int64.Parse(DateBirthDay.Text.Replace("/", ""));
                     //************
+                    if (radFemale.Checked)
+                    {
+                        editUser.Sex = "زن";
+                    }
+                    else
+                    {
+                        editUser.Sex = "مرد";
+                    }
                     context.SaveChanges();
                     lblError.ForeColor = Color.Green;
                     lblError.Text = "اطلاعات با موفقیت ثبت شد";
@@ -89,9 +98,17 @@ namespace Service
 
         private void FormEditUser_Load(object sender, EventArgs e)
         {
-            if (txtBirthDay.Text == "0")
-                txtBirthDay.Text = "";
+            if (DateBirthDay.Text == "0")
+                DateBirthDay.Text = "";
             phoneNumber = txtPhone.Text;
+            if(sex=="female")
+            {
+                radFemale.Checked = true;
+            }
+            else
+            {
+                radMale.Checked = true;
+            }
             //if (txtBirthDay.TextLength >7)
             //{
             //    string birthday = txtBirthDay.Text;

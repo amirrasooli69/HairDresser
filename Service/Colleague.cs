@@ -26,5 +26,6 @@ namespace Service
         public string Description { get; set; }
         public long Id { get; set; }
         public string Eshterak { get; set; }
+        public string Sex { get; set; }
     }
 }

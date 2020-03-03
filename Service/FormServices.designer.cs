@@ -42,6 +42,9 @@
             this.btnSaveUser = new System.Windows.Forms.Button();
             this.lblSomeService = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupSex = new System.Windows.Forms.GroupBox();
+            this.radFemale = new System.Windows.Forms.RadioButton();
+            this.radMale = new System.Windows.Forms.RadioButton();
             this.btnViewService = new System.Windows.Forms.Button();
             this.txtEndRahgiri = new System.Windows.Forms.TextBox();
             this.lblTotalPrice = new System.Windows.Forms.Label();
@@ -105,8 +108,7 @@
             this.dgServ = new System.Windows.Forms.DataGridView();
             this.dgFood2 = new System.Windows.Forms.DataGridView();
             this.food2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgFood3 = new System.Windows.Forms.DataGridView();
-            this.food3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgColleauge = new System.Windows.Forms.DataGridView();
             this.dgFoods = new System.Windows.Forms.DataGridView();
             this.btnAddService = new System.Windows.Forms.Button();
             this.panelOrder = new System.Windows.Forms.Panel();
@@ -120,21 +122,18 @@
             this.panelPaye = new System.Windows.Forms.Panel();
             this.radNaghdi = new System.Windows.Forms.RadioButton();
             this.radKart = new System.Windows.Forms.RadioButton();
-            this.groupSex = new System.Windows.Forms.GroupBox();
-            this.radFemale = new System.Windows.Forms.RadioButton();
-            this.radMale = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
+            this.groupSex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgServ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFood2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgFood3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgColleauge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFoods)).BeginInit();
             this.panelOrder.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelPaye.SuspendLayout();
-            this.groupSex.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtNewService
@@ -275,6 +274,41 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1106, 108);
             this.panel2.TabIndex = 0;
+            // 
+            // groupSex
+            // 
+            this.groupSex.Controls.Add(this.radFemale);
+            this.groupSex.Controls.Add(this.radMale);
+            this.groupSex.Location = new System.Drawing.Point(633, 64);
+            this.groupSex.Name = "groupSex";
+            this.groupSex.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupSex.Size = new System.Drawing.Size(126, 40);
+            this.groupSex.TabIndex = 89;
+            this.groupSex.TabStop = false;
+            // 
+            // radFemale
+            // 
+            this.radFemale.AutoSize = true;
+            this.radFemale.Checked = true;
+            this.radFemale.Location = new System.Drawing.Point(20, 14);
+            this.radFemale.Name = "radFemale";
+            this.radFemale.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radFemale.Size = new System.Drawing.Size(36, 17);
+            this.radFemale.TabIndex = 27;
+            this.radFemale.TabStop = true;
+            this.radFemale.Text = "زن";
+            this.radFemale.UseVisualStyleBackColor = true;
+            // 
+            // radMale
+            // 
+            this.radMale.AutoSize = true;
+            this.radMale.Location = new System.Drawing.Point(77, 14);
+            this.radMale.Name = "radMale";
+            this.radMale.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radMale.Size = new System.Drawing.Size(41, 17);
+            this.radMale.TabIndex = 28;
+            this.radMale.Text = "مرد";
+            this.radMale.UseVisualStyleBackColor = true;
             // 
             // btnViewService
             // 
@@ -965,13 +999,13 @@
             this.dgServ.AllowUserToDeleteRows = false;
             this.dgServ.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgServ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgServ.Location = new System.Drawing.Point(195, 2);
+            this.dgServ.Location = new System.Drawing.Point(381, 3);
             this.dgServ.Name = "dgServ";
             this.dgServ.ReadOnly = true;
             this.dgServ.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgServ.RowHeadersVisible = false;
             this.dgServ.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgServ.Size = new System.Drawing.Size(181, 204);
+            this.dgServ.Size = new System.Drawing.Size(175, 204);
             this.dgServ.TabIndex = 14;
             this.dgServ.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgServ_CellClick);
             // 
@@ -1004,34 +1038,22 @@
             this.food2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.food2.Width = 177;
             // 
-            // dgFood3
+            // dgColleauge
             // 
-            this.dgFood3.AllowUserToAddRows = false;
-            this.dgFood3.AllowUserToDeleteRows = false;
-            this.dgFood3.AllowUserToOrderColumns = true;
-            this.dgFood3.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dgFood3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgFood3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgFood3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.food3});
-            this.dgFood3.Location = new System.Drawing.Point(376, 2);
-            this.dgFood3.Name = "dgFood3";
-            this.dgFood3.ReadOnly = true;
-            this.dgFood3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgFood3.RowHeadersVisible = false;
-            this.dgFood3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgFood3.Size = new System.Drawing.Size(180, 204);
-            this.dgFood3.TabIndex = 13;
-            this.dgFood3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFood3_CellClick);
-            this.dgFood3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFood3_CellDoubleClick);
-            // 
-            // food3
-            // 
-            this.food3.HeaderText = "محصول";
-            this.food3.Name = "food3";
-            this.food3.ReadOnly = true;
-            this.food3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.food3.Width = 177;
+            this.dgColleauge.AllowUserToAddRows = false;
+            this.dgColleauge.AllowUserToDeleteRows = false;
+            this.dgColleauge.AllowUserToOrderColumns = true;
+            this.dgColleauge.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dgColleauge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgColleauge.Location = new System.Drawing.Point(201, 3);
+            this.dgColleauge.Name = "dgColleauge";
+            this.dgColleauge.ReadOnly = true;
+            this.dgColleauge.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgColleauge.RowHeadersVisible = false;
+            this.dgColleauge.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgColleauge.Size = new System.Drawing.Size(180, 204);
+            this.dgColleauge.TabIndex = 13;
+            this.dgColleauge.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFood3_CellDoubleClick);
             // 
             // dgFoods
             // 
@@ -1106,7 +1128,7 @@
             this.panel1.Controls.Add(this.panelOrder);
             this.panel1.Controls.Add(this.btnAddService);
             this.panel1.Controls.Add(this.dgFoods);
-            this.panel1.Controls.Add(this.dgFood3);
+            this.panel1.Controls.Add(this.dgColleauge);
             this.panel1.Controls.Add(this.dgFood2);
             this.panel1.Controls.Add(this.dgServ);
             this.panel1.Controls.Add(this.dgFood);
@@ -1236,41 +1258,6 @@
             this.radKart.Text = "کارت";
             this.radKart.UseVisualStyleBackColor = true;
             // 
-            // groupSex
-            // 
-            this.groupSex.Controls.Add(this.radFemale);
-            this.groupSex.Controls.Add(this.radMale);
-            this.groupSex.Location = new System.Drawing.Point(633, 64);
-            this.groupSex.Name = "groupSex";
-            this.groupSex.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupSex.Size = new System.Drawing.Size(126, 40);
-            this.groupSex.TabIndex = 89;
-            this.groupSex.TabStop = false;
-            // 
-            // radFemale
-            // 
-            this.radFemale.AutoSize = true;
-            this.radFemale.Checked = true;
-            this.radFemale.Location = new System.Drawing.Point(20, 14);
-            this.radFemale.Name = "radFemale";
-            this.radFemale.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radFemale.Size = new System.Drawing.Size(36, 17);
-            this.radFemale.TabIndex = 27;
-            this.radFemale.TabStop = true;
-            this.radFemale.Text = "زن";
-            this.radFemale.UseVisualStyleBackColor = true;
-            // 
-            // radMale
-            // 
-            this.radMale.AutoSize = true;
-            this.radMale.Location = new System.Drawing.Point(77, 14);
-            this.radMale.Name = "radMale";
-            this.radMale.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.radMale.Size = new System.Drawing.Size(41, 17);
-            this.radMale.TabIndex = 28;
-            this.radMale.Text = "مرد";
-            this.radMale.UseVisualStyleBackColor = true;
-            // 
             // FormServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1287,12 +1274,14 @@
             this.Load += new System.EventHandler(this.FormServices_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.groupSex.ResumeLayout(false);
+            this.groupSex.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgServ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFood2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgFood3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgColleauge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFoods)).EndInit();
             this.panelOrder.ResumeLayout(false);
             this.panelOrder.PerformLayout();
@@ -1300,8 +1289,6 @@
             this.panel1.PerformLayout();
             this.panelPaye.ResumeLayout(false);
             this.panelPaye.PerformLayout();
-            this.groupSex.ResumeLayout(false);
-            this.groupSex.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1370,8 +1357,7 @@
         private System.Windows.Forms.DataGridView dgServ;
         private System.Windows.Forms.DataGridView dgFood2;
         private System.Windows.Forms.DataGridViewTextBoxColumn food2;
-        private System.Windows.Forms.DataGridView dgFood3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn food3;
+        private System.Windows.Forms.DataGridView dgColleauge;
         private System.Windows.Forms.DataGridView dgFoods;
         private System.Windows.Forms.Button btnAddService;
         private System.Windows.Forms.Panel panelOrder;

@@ -688,7 +688,7 @@ namespace Service
         {
             dgFood.Rows.Clear();
             dgFood2.Rows.Clear();
-            dgFood3.Rows.Clear();
+            //dgColleauge.Rows.Clear();
             try
             {
                 using (var context = new StimulsoftEntities())
@@ -709,10 +709,10 @@ namespace Service
                         {
                             if (i <= 7)
                                 dgFood.Rows.Add(dgFoods.Rows[i].Cells[0].Value);
-                            if (i >= 8 && i <= 15)
+                            if (i >= 8)
                                 dgFood2.Rows.Add(dgFoods.Rows[i].Cells[0].Value);
-                            if (i >= 16)
-                                dgFood3.Rows.Add(dgFoods.Rows[i].Cells[0].Value);
+                            //if (i >= 16)
+                            //    dgColleauge.Rows.Add(dgFoods.Rows[i].Cells[0].Value);
 
                         }
                         //-----
@@ -721,18 +721,41 @@ namespace Service
                         //dgCategory.DataSource = kindServ;
 
                     }
-                    if (dgServ.RowCount <= 0)
+                    if (dgServ.RowCount <= 0) //por kardane datagride dgDerv
                     {
                         var nameServ = context.NameService.ToList();
                         if (nameServ.Count > 0)
                         {
                             dgServ.DataSource = nameServ;
-                            dgServ.Columns[1].Visible = false;
-                            dgServ.Columns[2].Visible = false;
                             dgServ.Columns[0].HeaderText = "سرویس";
                             dgServ.Columns[0].Width = 177;
+                            dgServ.Columns[1].Visible = false;
+                            dgServ.Columns[2].Visible = false;
                         }
                     }
+                    if (dgColleauge.RowCount <= 0)
+                    {
+                        var colleauge = context.Colleague.ToList();
+                        dgColleauge.DataSource = colleauge;
+                        dgColleauge.Columns[0].HeaderText = "همکاران";
+                        dgColleauge.Columns[0].Width = 177;
+                        dgColleauge.Columns[1].Visible = false;
+                        dgColleauge.Columns[2].Visible = false;
+                        dgColleauge.Columns[3].Visible = false;
+                        dgColleauge.Columns[4].Visible = false;
+                        dgColleauge.Columns[5].Visible = false;
+                        dgColleauge.Columns[6].Visible = false;
+                        dgColleauge.Columns[7].Visible = false;
+                        dgColleauge.Columns[8].Visible = false;
+                        dgColleauge.Columns[9].Visible = false;
+                        dgColleauge.Columns[10].Visible = false;
+                        dgColleauge.Columns[11].Visible = false;
+                        dgColleauge.Columns[12].Visible = false;
+                        dgColleauge.Columns[13].Visible = false;
+
+
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -760,7 +783,7 @@ namespace Service
                         Change_Category(categorySelect); // estefade az metode Change_Category baraye dorost kardane list mahsolat
                         //foodSelect = dgFood.CurrentCell.Value.ToString();
                         dgFood2.ClearSelection();
-                        dgFood3.ClearSelection();
+                        //dgColleauge.ClearSelection();
                         lblCategory.Text = dgCategory.CurrentCell.Value.ToString();
 
                         dgCategory.Columns[1].Visible = false;
@@ -770,6 +793,7 @@ namespace Service
                             serviceSelect = dgServ.CurrentCell.Value.ToString();
 
                     }
+
 
                     //*******Auto Fill Eshterak - Name - Phone
                     if (chxNewCustomer.Checked == false)
@@ -2586,9 +2610,11 @@ namespace Service
         {
             categorySelect = dgCategory.CurrentCell.Value.ToString();
             Change_Category(categorySelect);
-            dgFood.ClearSelection();
+            //dgFood.ClearSelection();
+            foodSelect = dgFood.CurrentCell.Value.ToString();
             dgFood2.ClearSelection();
-            dgFood3.ClearSelection();
+            //dgColleauge.ClearSelection();
+            select_price();
         }
 
         private void dgFood_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -2598,7 +2624,7 @@ namespace Service
 
             dgFood2.ClearSelection();
 
-            dgFood3.ClearSelection();
+            //dgColleauge.ClearSelection();
         }
 
         private void dgServ_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -2612,16 +2638,7 @@ namespace Service
             foodSelect = dgFood2.CurrentCell.Value.ToString();
             select_price();
             dgFood.ClearSelection();
-            dgFood3.ClearSelection();
-        }
-
-        private void dgFood3_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            foodSelect = dgFood3.CurrentCell.Value.ToString();
-            select_price();
-
-            dgFood.ClearSelection();
-            dgFood2.ClearSelection();
+            //dgColleauge.ClearSelection();
         }
 
         private void dgFood_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

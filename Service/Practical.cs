@@ -24,12 +24,12 @@ namespace Service
                 case 4:
                     {
                         input += "-";
-                        return input;
+                        break;
                     }
                 case 9:
                     {
                         input+= "-";
-                        return input;
+                        break;
                     }
                 case 14:
                     {

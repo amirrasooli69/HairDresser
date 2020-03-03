@@ -17,10 +17,10 @@ namespace PapilooDate
         DateTime selectedMiladiDate;
         Popup popup;
         public FDate()
-     
+
         {
             InitializeComponent();
-         
+
         }
         public string Text
         {
@@ -33,36 +33,75 @@ namespace PapilooDate
                 S_Date.Text = value;
             }
         }
-       private void popup_Closed(object sender, ToolStripDropDownClosedEventArgs e)
+        private void popup_Closed(object sender, ToolStripDropDownClosedEventArgs e)
         {
             S_Date.Text = PCalander.Pc_Date;
         }
+
+        private void S_Date_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8)
+            {
+                if (e.KeyChar < 48 || e.KeyChar > 57)
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    switch (S_Date.TextLength)
+                    {
+                        case 4:
+                            {
+                                S_Date.Text += "/";
+                                S_Date.SelectionStart = S_Date.Text.Length + 1;
+                                break;
+                            }
+                        case 7:
+                            {
+                                S_Date.Text += "/";
+
+                                S_Date.SelectionStart = S_Date.Text.Length + 1;
+                                break;
+                            }
+                    }
+
+
+                }
+            }
+
+        }
+
         private void T_Date_Click(object sender, EventArgs e)
         {
-            PCalander frm= new PCalander();
+            PCalander frm = new PCalander();
             popup = new Popup(frm);
             popup.Closed += popup_Closed;
             popup.Show(this);
-         }
+        }
         private void S_Date_TextChanged(object sender, EventArgs e)
         {
-            if (S_Date.Text.Length == 10)
+            try
             {
-                try
+                switch (S_Date.TextLength)
                 {
-                    selectedDay = int.Parse(S_Date.Text.Substring(8, 2));
-                    selectdMonth = int.Parse(S_Date.Text.Substring(5, 2));
-                    selectedYear = int.Parse(S_Date.Text.Substring(0, 4));
-                    selectedMiladiDate = pc.ToDateTime(selectedYear, selectdMonth, selectedDay, 0, 0, 0, 0);
-                 }
-                catch
-                {
-                    MessageBox.Show("تاریخ وارد شده اشتباه می باشد", "توجه",MessageBoxButtons.OK,MessageBoxIcon.Stop);
-                    S_Date.Text = "";
+                    case 10:
+                        {
+                            selectedDay = int.Parse(S_Date.Text.Substring(8, 2));
+                            selectdMonth = int.Parse(S_Date.Text.Substring(5, 2));
+                            selectedYear = int.Parse(S_Date.Text.Substring(0, 4));
+                            selectedMiladiDate = pc.ToDateTime(selectedYear, selectdMonth, selectedDay, 0, 0, 0, 0);
+                            break;
+                        }
                 }
             }
-           
-         
+            catch
+            {
+                MessageBox.Show("تاریخ وارد شده اشتباه می باشد", "توجه", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                S_Date.Text = "";
+            }
         }
+
+
     }
 }
+

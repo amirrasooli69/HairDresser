@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormServices));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtNewService = new BPersianCalender.BPersianCalenderTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -108,7 +108,7 @@
             this.dgServ = new System.Windows.Forms.DataGridView();
             this.dgFood2 = new System.Windows.Forms.DataGridView();
             this.food2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgColleauge = new System.Windows.Forms.DataGridView();
+            this.dgColleague = new System.Windows.Forms.DataGridView();
             this.dgFoods = new System.Windows.Forms.DataGridView();
             this.btnAddService = new System.Windows.Forms.Button();
             this.panelOrder = new System.Windows.Forms.Panel();
@@ -129,7 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgFood)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgServ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFood2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgColleauge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgColleague)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFoods)).BeginInit();
             this.panelOrder.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -617,14 +617,14 @@
             this.CodeRahgiri,
             this.Delete,
             this.ValueAdded});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgShow.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgShow.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgShow.Location = new System.Drawing.Point(12, 209);
             this.dgShow.Name = "dgShow";
             this.dgShow.ReadOnly = true;
@@ -1038,22 +1038,23 @@
             this.food2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.food2.Width = 177;
             // 
-            // dgColleauge
+            // dgColleague
             // 
-            this.dgColleauge.AllowUserToAddRows = false;
-            this.dgColleauge.AllowUserToDeleteRows = false;
-            this.dgColleauge.AllowUserToOrderColumns = true;
-            this.dgColleauge.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dgColleauge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgColleauge.Location = new System.Drawing.Point(201, 3);
-            this.dgColleauge.Name = "dgColleauge";
-            this.dgColleauge.ReadOnly = true;
-            this.dgColleauge.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgColleauge.RowHeadersVisible = false;
-            this.dgColleauge.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgColleauge.Size = new System.Drawing.Size(180, 204);
-            this.dgColleauge.TabIndex = 13;
-            this.dgColleauge.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFood3_CellDoubleClick);
+            this.dgColleague.AllowUserToAddRows = false;
+            this.dgColleague.AllowUserToDeleteRows = false;
+            this.dgColleague.AllowUserToOrderColumns = true;
+            this.dgColleague.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.dgColleague.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgColleague.Location = new System.Drawing.Point(201, 3);
+            this.dgColleague.Name = "dgColleague";
+            this.dgColleague.ReadOnly = true;
+            this.dgColleague.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgColleague.RowHeadersVisible = false;
+            this.dgColleague.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgColleague.Size = new System.Drawing.Size(180, 204);
+            this.dgColleague.TabIndex = 13;
+            this.dgColleague.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgColleague_CellClick);
+            this.dgColleague.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgFood3_CellDoubleClick);
             // 
             // dgFoods
             // 
@@ -1128,7 +1129,7 @@
             this.panel1.Controls.Add(this.panelOrder);
             this.panel1.Controls.Add(this.btnAddService);
             this.panel1.Controls.Add(this.dgFoods);
-            this.panel1.Controls.Add(this.dgColleauge);
+            this.panel1.Controls.Add(this.dgColleague);
             this.panel1.Controls.Add(this.dgFood2);
             this.panel1.Controls.Add(this.dgServ);
             this.panel1.Controls.Add(this.dgFood);
@@ -1281,7 +1282,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgFood)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgServ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFood2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgColleauge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgColleague)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgFoods)).EndInit();
             this.panelOrder.ResumeLayout(false);
             this.panelOrder.PerformLayout();
@@ -1357,7 +1358,7 @@
         private System.Windows.Forms.DataGridView dgServ;
         private System.Windows.Forms.DataGridView dgFood2;
         private System.Windows.Forms.DataGridViewTextBoxColumn food2;
-        private System.Windows.Forms.DataGridView dgColleauge;
+        private System.Windows.Forms.DataGridView dgColleague;
         private System.Windows.Forms.DataGridView dgFoods;
         private System.Windows.Forms.Button btnAddService;
         private System.Windows.Forms.Panel panelOrder;

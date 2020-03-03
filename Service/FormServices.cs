@@ -30,6 +30,7 @@ namespace Service
         string foodSelect = "";
         string categorySelect = "";
         string serviceSelect = "";
+        string colleagueSelect = "";
         public void Service_Register() // sabte ghaza 
         {
             //btnSave2.Enabled = true;
@@ -718,8 +719,6 @@ namespace Service
                         //-----
                         foodSelect = dgFood.Rows[0].Cells[0].Value.ToString();
 
-                        //dgCategory.DataSource = kindServ;
-
                     }
                     if (dgServ.RowCount <= 0) //por kardane datagride dgDerv
                     {
@@ -733,29 +732,28 @@ namespace Service
                             dgServ.Columns[2].Visible = false;
                         }
                     }
-                    if (dgColleauge.RowCount <= 0)
+                    if (dgColleague.RowCount <= 0)
                     {
                         var colleauge = context.Colleague.ToList();
-                        dgColleauge.DataSource = colleauge;
-                        dgColleauge.Columns[0].HeaderText = "همکاران";
-                        dgColleauge.Columns[0].Width = 177;
-                        dgColleauge.Columns[1].Visible = false;
-                        dgColleauge.Columns[2].Visible = false;
-                        dgColleauge.Columns[3].Visible = false;
-                        dgColleauge.Columns[4].Visible = false;
-                        dgColleauge.Columns[5].Visible = false;
-                        dgColleauge.Columns[6].Visible = false;
-                        dgColleauge.Columns[7].Visible = false;
-                        dgColleauge.Columns[8].Visible = false;
-                        dgColleauge.Columns[9].Visible = false;
-                        dgColleauge.Columns[10].Visible = false;
-                        dgColleauge.Columns[11].Visible = false;
-                        dgColleauge.Columns[12].Visible = false;
-                        dgColleauge.Columns[13].Visible = false;
-
+                        dgColleague.DataSource = colleauge;
+                        dgColleague.Columns[0].HeaderText = "همکاران";
+                        dgColleague.Columns[0].Width = 177;
+                        dgColleague.Columns[1].Visible = false;
+                        dgColleague.Columns[2].Visible = false;
+                        dgColleague.Columns[3].Visible = false;
+                        dgColleague.Columns[4].Visible = false;
+                        dgColleague.Columns[5].Visible = false;
+                        dgColleague.Columns[6].Visible = false;
+                        dgColleague.Columns[7].Visible = false;
+                        dgColleague.Columns[8].Visible = false;
+                        dgColleague.Columns[9].Visible = false;
+                        dgColleague.Columns[10].Visible = false;
+                        dgColleague.Columns[11].Visible = false;
+                        dgColleague.Columns[12].Visible = false;
+                        dgColleague.Columns[13].Visible = false;
+                        colleagueSelect = dgColleague.CurrentCell.Value.ToString();
 
                     }
-
                 }
             }
             catch (Exception ex)
@@ -2712,6 +2710,11 @@ namespace Service
             {
                 Some_Paye();
             }
+        }
+
+        private void dgColleague_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            colleagueSelect = dgColleague.CurrentCell.Value.ToString();
         }
     }
 }

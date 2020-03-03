@@ -706,6 +706,10 @@ namespace Service
                     {
 
                         dgFoods.DataSource = kindKala;
+                        dgFood.Columns[0].HeaderText = "محصول";
+                        dgFood.Columns[0].Width = 177;
+                        dgFood2.Columns[0].HeaderText = "محصول";
+                        dgFood2.Columns[0].Width = 177;
                         for (int i = 0; i < dgFoods.RowCount; i++)
                         {
                             if (i <= 7)
@@ -750,7 +754,7 @@ namespace Service
                         dgColleague.Columns[10].Visible = false;
                         dgColleague.Columns[11].Visible = false;
                         dgColleague.Columns[12].Visible = false;
-                        dgColleague.Columns[13].Visible = false;
+                        //dgColleague.Columns[13].Visible = false;
                         colleagueSelect = dgColleague.CurrentCell.Value.ToString();
 
                     }

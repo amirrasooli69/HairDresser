@@ -125,6 +125,7 @@
     <Property Name="NumberServise" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ValueAdded" Type="integer" />
+    <Property Name="Colleauge" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
   <EntityType Name="Service">
     <Key>
@@ -146,7 +147,7 @@
     <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="IdService" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OrderState" Type="nvarchar" MaxLength="2147483647" />
-    <Property Name="TabelState" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Colleauge" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="PayeState" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
   <EntityType Name="ServicesPrice">

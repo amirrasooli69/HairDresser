@@ -77,6 +77,10 @@ namespace Service
                 dgSearch.Columns[11].Name = "ValueAdded";
                 dgSearch.Columns[11].DataPropertyName = "ValueAdded";
                 dgSearch.Columns[11].HeaderText = "ارزش افزوده";
+                //------
+                dgSearch.Columns[12].Name = "Colleauge";
+                dgSearch.Columns[12].DataPropertyName = "Colleauge";
+                dgSearch.Columns[12].HeaderText = "همکار";
             }
 
 
@@ -125,8 +129,9 @@ namespace Service
             dgSearch.Columns[14].HeaderText = "شماره ";
             dgSearch.Columns[14].Visible = false;
             dgSearch.Columns[15].HeaderText = "نحوه سفارش";
-            dgSearch.Columns[16].HeaderText = "وضعیت میز";
-            dgSearch.Columns[16].Visible = false;
+            dgSearch.Columns[15].Visible = false;
+            dgSearch.Columns[16].HeaderText ="همکار";
+            //dgSearch.Columns[16].Visible = false;
             dgSearch.Columns[17].HeaderText = "پرداخت";
             //dgSearch.Columns[17].Visible = false;
             //dgSearch.Width = 750;

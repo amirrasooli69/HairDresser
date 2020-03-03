@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormServices));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtNewService = new BPersianCalender.BPersianCalenderTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -72,15 +72,6 @@
             this.lblCodeRahgiri = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dgShow = new System.Windows.Forms.DataGridView();
-            this.ServiceKind = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.kindKala = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.ServiceName = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.Some = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.Price = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.TotalPrice = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.CodeRahgiri = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ValueAdded = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
@@ -122,6 +113,15 @@
             this.panelPaye = new System.Windows.Forms.Panel();
             this.radNaghdi = new System.Windows.Forms.RadioButton();
             this.radKart = new System.Windows.Forms.RadioButton();
+            this.ServiceKind = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.kindKala = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.ServiceName = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.Colleauge = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.Some = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.Price = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.TotalPrice = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ValueAdded = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
             this.panel2.SuspendLayout();
             this.groupSex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow)).BeginInit();
@@ -611,20 +611,20 @@
             this.ServiceKind,
             this.kindKala,
             this.ServiceName,
+            this.Colleauge,
             this.Some,
             this.Price,
             this.TotalPrice,
-            this.CodeRahgiri,
             this.Delete,
             this.ValueAdded});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gold;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgShow.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gold;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgShow.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgShow.Location = new System.Drawing.Point(12, 209);
             this.dgShow.Name = "dgShow";
             this.dgShow.ReadOnly = true;
@@ -635,77 +635,6 @@
             this.dgShow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgShow_CellContentClick);
             this.dgShow.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgShow_RowsAdded);
             this.dgShow.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgShow_RowsRemoved);
-            // 
-            // ServiceKind
-            // 
-            this.ServiceKind.HeaderText = "دسته";
-            this.ServiceKind.Name = "ServiceKind";
-            this.ServiceKind.ReadOnly = true;
-            this.ServiceKind.Width = 200;
-            // 
-            // kindKala
-            // 
-            this.kindKala.FillWeight = 150F;
-            this.kindKala.HeaderText = "محصول";
-            this.kindKala.Name = "kindKala";
-            this.kindKala.ReadOnly = true;
-            this.kindKala.Width = 150;
-            // 
-            // ServiceName
-            // 
-            this.ServiceName.FillWeight = 150F;
-            this.ServiceName.HeaderText = "سرویس";
-            this.ServiceName.Name = "ServiceName";
-            this.ServiceName.ReadOnly = true;
-            this.ServiceName.Width = 150;
-            // 
-            // Some
-            // 
-            this.Some.HeaderText = "تعداد";
-            this.Some.Name = "Some";
-            this.Some.ReadOnly = true;
-            this.Some.Width = 50;
-            // 
-            // Price
-            // 
-            this.Price.FillWeight = 130F;
-            this.Price.HeaderText = "قیمت فی";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 130;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.FillWeight = 150F;
-            this.TotalPrice.HeaderText = "قیمت کل";
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 150;
-            // 
-            // CodeRahgiri
-            // 
-            this.CodeRahgiri.HeaderText = "کد رهگیری";
-            this.CodeRahgiri.Name = "CodeRahgiri";
-            this.CodeRahgiri.ReadOnly = true;
-            this.CodeRahgiri.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CodeRahgiri.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.CodeRahgiri.Width = 130;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "حذف";
-            this.Delete.UseColumnTextForButtonValue = true;
-            // 
-            // ValueAdded
-            // 
-            this.ValueAdded.HeaderText = "ارزش افزوده";
-            this.ValueAdded.Name = "ValueAdded";
-            this.ValueAdded.ReadOnly = true;
-            this.ValueAdded.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ValueAdded.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // button1
             // 
@@ -1259,6 +1188,74 @@
             this.radKart.Text = "کارت";
             this.radKart.UseVisualStyleBackColor = true;
             // 
+            // ServiceKind
+            // 
+            this.ServiceKind.HeaderText = "دسته";
+            this.ServiceKind.Name = "ServiceKind";
+            this.ServiceKind.ReadOnly = true;
+            this.ServiceKind.Width = 200;
+            // 
+            // kindKala
+            // 
+            this.kindKala.FillWeight = 150F;
+            this.kindKala.HeaderText = "محصول";
+            this.kindKala.Name = "kindKala";
+            this.kindKala.ReadOnly = true;
+            this.kindKala.Width = 150;
+            // 
+            // ServiceName
+            // 
+            this.ServiceName.FillWeight = 150F;
+            this.ServiceName.HeaderText = "سرویس";
+            this.ServiceName.Name = "ServiceName";
+            this.ServiceName.ReadOnly = true;
+            this.ServiceName.Width = 150;
+            // 
+            // Colleauge
+            // 
+            this.Colleauge.HeaderText = "همکار";
+            this.Colleauge.Name = "Colleauge";
+            this.Colleauge.ReadOnly = true;
+            // 
+            // Some
+            // 
+            this.Some.HeaderText = "تعداد";
+            this.Some.Name = "Some";
+            this.Some.ReadOnly = true;
+            this.Some.Width = 50;
+            // 
+            // Price
+            // 
+            this.Price.FillWeight = 130F;
+            this.Price.HeaderText = "قیمت فی";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 130;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.FillWeight = 150F;
+            this.TotalPrice.HeaderText = "قیمت کل";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            this.TotalPrice.Width = 150;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "حذف";
+            this.Delete.UseColumnTextForButtonValue = true;
+            // 
+            // ValueAdded
+            // 
+            this.ValueAdded.HeaderText = "ارزش افزوده";
+            this.ValueAdded.Name = "ValueAdded";
+            this.ValueAdded.ReadOnly = true;
+            this.ValueAdded.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ValueAdded.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // FormServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1370,15 +1367,6 @@
         private System.Windows.Forms.RadioButton radKart;
         private System.Windows.Forms.TextBox txtValueAdded;
         public System.Windows.Forms.Label lblValueAdded;
-        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn ServiceKind;
-        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn kindKala;
-        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn ServiceName;
-        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn Some;
-        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn Price;
-        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn TotalPrice;
-        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn CodeRahgiri;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn ValueAdded;
         private System.Windows.Forms.TextBox txtEndRahgiri;
         public System.Windows.Forms.Button btnViewService;
         private System.Windows.Forms.TextBox numSome;
@@ -1386,5 +1374,14 @@
         private System.Windows.Forms.GroupBox groupSex;
         private System.Windows.Forms.RadioButton radFemale;
         private System.Windows.Forms.RadioButton radMale;
+        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn ServiceKind;
+        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn kindKala;
+        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn ServiceName;
+        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn Colleauge;
+        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn Some;
+        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn Price;
+        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn TotalPrice;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn ValueAdded;
     }
 }

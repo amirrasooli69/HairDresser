@@ -98,10 +98,12 @@ namespace Service
                 dgSearch.Columns[15].Name = "OrderState";
                 dgSearch.Columns[15].DataPropertyName = "OrderState";
                 dgSearch.Columns[15].HeaderText = "نحوه سفارش";
+                dgSearch.Columns[15].Visible = false;
+
                 //-------
-                dgSearch.Columns[16].Name = "TabelState";
-                dgSearch.Columns[16].DataPropertyName = "TabelState";
-                dgSearch.Columns[16].HeaderText = "میز";
+                dgSearch.Columns[16].Name = "Colleauge";
+                dgSearch.Columns[16].DataPropertyName = "Colleauge";
+                dgSearch.Columns[16].HeaderText = "همکار";
                 //-------
                 dgSearch.Columns[17].Name = "PayeState";
                 dgSearch.Columns[17].DataPropertyName = "PayeState";
@@ -141,6 +143,7 @@ namespace Service
             dgSearch.Columns[10].HeaderText = " شماره";
             //dgSearch.Columns[11].DisplayIndex = 0;
             dgSearch.Columns[11].HeaderText = "ارزش افزوده";
+            dgSearch.Columns[12].HeaderText = "همکار";
 
         }
         //********

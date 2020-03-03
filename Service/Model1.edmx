@@ -130,6 +130,7 @@
           <Property Name="NumberServise" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ValueAdded" Type="integer" />
+          <Property Name="Colleauge" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -151,7 +152,7 @@
           <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="IdService" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderState" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="TabelState" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Colleauge" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="PayeState" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="ServicesPrice">
@@ -400,6 +401,7 @@
           <Property Name="NumberServise" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ValueAdded" Type="Int64" />
+          <Property Name="Colleauge" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -421,7 +423,7 @@
           <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="IdService" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OrderState" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="TabelState" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Colleauge" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="PayeState" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ServicesPrice">
@@ -679,6 +681,7 @@
                 <ScalarProperty Name="NumberServise" ColumnName="NumberServise" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ValueAdded" ColumnName="ValueAdded" />
+                <ScalarProperty Name="Colleauge" ColumnName="Colleauge" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -701,7 +704,7 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="IdService" ColumnName="IdService" />
                 <ScalarProperty Name="OrderState" ColumnName="OrderState" />
-                <ScalarProperty Name="TabelState" ColumnName="TabelState" />
+                <ScalarProperty Name="Colleauge" ColumnName="Colleauge" />
                 <ScalarProperty Name="PayeState" ColumnName="PayeState" />
               </MappingFragment>
             </EntityTypeMapping>

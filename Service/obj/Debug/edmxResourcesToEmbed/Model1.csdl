@@ -125,6 +125,7 @@
     <Property Name="NumberServise" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ValueAdded" Type="Int64" />
+    <Property Name="Colleauge" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Service">
     <Key>
@@ -146,7 +147,7 @@
     <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="IdService" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OrderState" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <Property Name="TabelState" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Colleauge" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="PayeState" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="ServicesPrice">

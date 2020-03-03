@@ -58,7 +58,7 @@ namespace Service
         #endregion
 
         #region Search Service
-        private void Search_Service()
+        public void Search_Service()
         {
             try
             {
@@ -135,10 +135,12 @@ namespace Service
                     dgDelete.Columns[15].Name = "OrderState";
                     dgDelete.Columns[15].DataPropertyName = "OrderState";
                     dgDelete.Columns[15].HeaderText = "نحوه سفارش";
+                    dgDelete.Columns[15].Visible = false;
+
                     //-------
-                    dgDelete.Columns[16].Name = "TabelState";
-                    dgDelete.Columns[16].DataPropertyName = "TabelState";
-                    dgDelete.Columns[16].HeaderText = "میز";
+                    dgDelete.Columns[16].Name = "Colleauge";
+                    dgDelete.Columns[16].DataPropertyName = "Colleauge";
+                    dgDelete.Columns[16].HeaderText = "همکار";
                     //-------
                     dgDelete.Columns[17].Name = "PayeState";
                     dgDelete.Columns[17].DataPropertyName = "PayeState";

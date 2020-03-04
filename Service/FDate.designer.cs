@@ -58,6 +58,7 @@
             this.S_Date.TabIndex = 307;
             this.S_Date.TextChanged += new System.EventHandler(this.S_Date_TextChanged);
             this.S_Date.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.S_Date_KeyPress);
+            this.S_Date.Leave += new System.EventHandler(this.S_Date_Leave);
             // 
             // FDate
             // 

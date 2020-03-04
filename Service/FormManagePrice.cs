@@ -196,16 +196,18 @@ namespace Service
             {
                 using (var context = new StimulsoftEntities())
                 {
-                    int x = Convert.ToInt16(dgShow.CurrentRow.Cells[4].Value.ToString());
+                    foreach (DataGridViewRow row in dgShow.SelectedRows)
+                    {
+                        string id = row.Cells[4].Value.ToString();
+                        int x = Convert.ToInt16(id);
+                        var del = context.ServicesPrice.Where(current => current.Id == x).FirstOrDefault();
+                        context.ServicesPrice.Remove(del);
+                    }
 
-                    ServicesPrice del = context.ServicesPrice.Where(current => current.Id == x).FirstOrDefault();
-                    context.ServicesPrice.Remove(del);
                     context.SaveChanges();
                     lblError.ForeColor = Color.Green;
                     lblError.Text = "خدمت با موفقیت حذف شد";
                     context.Dispose();
-
-
 
                     Refresh_Price();
                     comGroup.Text = "";

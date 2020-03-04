@@ -183,6 +183,7 @@
             this.dgShow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgShow.Location = new System.Drawing.Point(12, 19);
             this.dgShow.Name = "dgShow";
+            this.dgShow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgShow.Size = new System.Drawing.Size(526, 579);
             this.dgShow.TabIndex = 24;
             this.dgShow.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgShow_CellClick);

@@ -27,7 +27,7 @@ namespace Service
             InitializeComponent();
 
         }
-        string foodSelect = "";
+        string prodoctSelect = "";
         string categorySelect = "";
         string serviceSelect = "";
         string colleagueSelect = "";
@@ -55,29 +55,30 @@ namespace Service
                 double totalPrice = Convert.ToDouble(txtPrice.Text) * Convert.ToDouble(numSome.Text);
 
                 //baraye mohasebe arzeshe afzoode
-                double price = 0;
-                var selectProdoct = context.Prodoct.Where(c => c.Name == foodSelect).FirstOrDefault();
+                double ValueAddedprice = 0;
+                var selectProdoct = context.Prodoct.Where(c => c.Name == prodoctSelect).FirstOrDefault();
                 if (selectProdoct.ValueAdded == "0")
                 {
                     var selectValueAdded = context.Setting.FirstOrDefault();
 
                     double ValueAdded = Convert.ToDouble(selectProdoct.ValueAddedPercent);
-                    price = totalPrice * double.Parse(selectValueAdded.ValueAddedPercent.ToString());
-                    price = price / 100;
+                    ValueAddedprice = totalPrice * double.Parse(selectValueAdded.ValueAddedPercent.ToString());
+                    ValueAddedprice = ValueAddedprice / 100;
                     if (txtValueAdded.Text == "")
                         txtValueAdded.Text = "0";
                     double beforeValueAdded = double.Parse(txtValueAdded.Text);
-                    txtValueAdded.Text = (beforeValueAdded + price).ToString();
+                    txtValueAdded.Text = (beforeValueAdded + ValueAddedprice).ToString();
                 }
                 string stTotalPrice = totalPrice.ToString();
-                dgShow.Rows.Add(categorySelect, foodSelect, serviceSelect, numSome.Text, txtPrice.Text, totalPrice.ToString(), lblCodeRahgiri.Text, "", price.ToString());
+                dgShow.Rows.Add(categorySelect, prodoctSelect, serviceSelect, colleagueSelect, numSome.Text, txtPrice.Text, totalPrice.ToString(), "", ValueAddedprice.ToString());
+                //dgShow.Rows.Add(categorySelect, prodoctSelect, serviceSelect, numSome.Text, txtPrice.Text, totalPrice.ToString(), colleagueSelect, "", price.ToString());
 
                 numSome.Text = "1";
                 double sum = 0;
                 for (int i = 0; i < dgShow.RowCount; i++)
                 {
 
-                    sum = sum + Convert.ToInt64(dgShow.Rows[i].Cells[5].Value.ToString());
+                    sum = sum + Convert.ToInt64(dgShow.Rows[i].Cells[6].Value.ToString());
                 }
                 txtSumServices.Text = sum.ToString();
             }
@@ -93,7 +94,7 @@ namespace Service
             {
                 using (var context = new StimulsoftEntities())
                 {
-                    var price = context.ServicesPrice.Where(c => c.ServisKind == categorySelect && c.ServiceKala == foodSelect && c.ServiseName == serviceSelect).FirstOrDefault();
+                    var price = context.ServicesPrice.Where(c => c.ServisKind == categorySelect && c.ServiceKala == prodoctSelect && c.ServiseName == serviceSelect).FirstOrDefault();
                     if (price != null)
                     {
                         if (price.ServicePrice.Value.ToString() == "" || price.ServicePrice.Value.ToString() == null)
@@ -721,7 +722,7 @@ namespace Service
 
                         }
                         //-----
-                        foodSelect = dgFood.Rows[0].Cells[0].Value.ToString();
+                        prodoctSelect = dgFood.Rows[0].Cells[0].Value.ToString();
 
                     }
                     if (dgServ.RowCount <= 0) //por kardane datagride dgDerv
@@ -1510,12 +1511,12 @@ namespace Service
             {
                 using (var context = new StimulsoftEntities())
                 {
-                    var name = context.ServicesPrice.Where(c => c.ServisKind == categorySelect && c.ServiceKala == foodSelect && c.ServiseName == serviceSelect).FirstOrDefault();
+                    var name = context.ServicesPrice.Where(c => c.ServisKind == categorySelect && c.ServiceKala == prodoctSelect && c.ServiseName == serviceSelect).FirstOrDefault();
                     if (name == null)
                     {
                         ServicesPrice pri = new ServicesPrice();
                         pri.ServisKind = categorySelect;
-                        pri.ServiceKala = foodSelect;
+                        pri.ServiceKala = prodoctSelect;
                         pri.ServiseName = serviceSelect;
 
                         //if (txtServisPrice.Text != "")
@@ -2613,7 +2614,7 @@ namespace Service
             categorySelect = dgCategory.CurrentCell.Value.ToString();
             Change_Category(categorySelect);
             //dgFood.ClearSelection();
-            foodSelect = dgFood.CurrentCell.Value.ToString();
+            prodoctSelect = dgFood.CurrentCell.Value.ToString();
             dgFood2.ClearSelection();
             //dgColleauge.ClearSelection();
             select_price();
@@ -2621,7 +2622,7 @@ namespace Service
 
         private void dgFood_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            foodSelect = dgFood.CurrentCell.Value.ToString();
+            prodoctSelect = dgFood.CurrentCell.Value.ToString();
             select_price();
 
             dgFood2.ClearSelection();
@@ -2637,7 +2638,7 @@ namespace Service
 
         private void dgFood2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            foodSelect = dgFood2.CurrentCell.Value.ToString();
+            prodoctSelect = dgFood2.CurrentCell.Value.ToString();
             select_price();
             dgFood.ClearSelection();
             //dgColleauge.ClearSelection();

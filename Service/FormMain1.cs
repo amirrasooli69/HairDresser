@@ -376,8 +376,6 @@ namespace Service
                     {
                         var deleteReg = context.Reg.ToList();
                         context.Reg.RemoveRange(deleteReg);
-                        context.Reg.SqlQuery("DBCC CHECKIDENT (Reg, RESEED, 0)");
-
                     }
                     //------
                     if (context.Setting.Count() > 0)

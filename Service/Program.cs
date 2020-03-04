@@ -13,7 +13,7 @@ namespace Service
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new log());
+           Application.Run(new log());
         }
         public class AppContext:ApplicationContext
         {

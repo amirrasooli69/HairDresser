@@ -285,3 +285,4 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\Stimulsoft.Report
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\System.Data.SQLite.xml
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\PapilooDate.FDate.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\PapilooDate.PCalander.resources
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.test.resources

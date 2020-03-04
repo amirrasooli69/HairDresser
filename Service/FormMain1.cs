@@ -777,8 +777,10 @@ namespace Service
 
         private void delToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormNewUser frmNewUser = new FormNewUser();
-            frmNewUser.Show();
+            test frmTest = new test();
+            frmTest.Show();
+            //FormNewUser frmNewUser = new FormNewUser();
+            //frmNewUser.Show();
 
             //using (var context = new StimulsoftEntities())
             //{

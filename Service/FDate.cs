@@ -40,7 +40,7 @@ namespace PapilooDate
 
         private void S_Date_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != 8)
+            if (e.KeyChar != 8 && e.KeyChar !=3 && e.KeyChar!=22) // kodjaye ascii 8 = / , 3 = ctrl + c , 22 = ctrl + V
             {
                 if (e.KeyChar < 48 || e.KeyChar > 57)
                 {

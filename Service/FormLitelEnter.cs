@@ -15,7 +15,23 @@ namespace Service
         public FormLitelEnter()
         {
             InitializeComponent();
+
         }
 
+        private void FormLitelEnter_Load(object sender, EventArgs e)
+        {
+            //FormAnbar frmAnbar = new FormAnbar();
+            //this.Location = frmAnbar.btnAddProdoct.Location;
+        }
+
+        private void panelStore_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toolExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

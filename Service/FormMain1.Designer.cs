@@ -64,6 +64,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.strlblVersion = new System.Windows.Forms.Label();
             this.timSms = new System.Windows.Forms.Timer(this.components);
+            this.toolAnbar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -86,7 +87,8 @@
             this.toolManageToolStripMenuItem,
             this.toolAbuot,
             this.tooExitToolStripMenuItem,
-            this.delToolStripMenuItem});
+            this.delToolStripMenuItem,
+            this.toolAnbar});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -409,6 +411,13 @@
             this.timSms.Interval = 60000;
             this.timSms.Tick += new System.EventHandler(this.timSms_Tick);
             // 
+            // toolAnbar
+            // 
+            this.toolAnbar.Name = "toolAnbar";
+            this.toolAnbar.Size = new System.Drawing.Size(46, 23);
+            this.toolAnbar.Text = "انبار";
+            this.toolAnbar.Click += new System.EventHandler(this.toolAnbar_Click);
+            // 
             // FormMain1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,6 +486,7 @@
         private System.Windows.Forms.Label lblCountSmsNoti;
         private System.Windows.Forms.PictureBox picSmsNoti;
         private System.Windows.Forms.Timer timSms;
+        private System.Windows.Forms.ToolStripMenuItem toolAnbar;
     }
 }
 

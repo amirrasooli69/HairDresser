@@ -1523,5 +1523,12 @@ namespace Service
         {
             frmNoti.Visible = false;
         }
+
+        private void toolAnbar_Click(object sender, EventArgs e)
+        {
+            FormAnbar frmAnbar = new FormAnbar();
+            frmAnbar.ShowDialog();
+
+        }
     }
 }

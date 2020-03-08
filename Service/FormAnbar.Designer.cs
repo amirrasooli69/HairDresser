@@ -43,19 +43,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.fDate1 = new PapilooDate.FDate();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.fDate3 = new PapilooDate.FDate();
             this.label5 = new System.Windows.Forms.Label();
-            this.fDate2 = new PapilooDate.FDate();
             this.label7 = new System.Windows.Forms.Label();
-            this.fDate4 = new PapilooDate.FDate();
             this.comCase = new System.Windows.Forms.ComboBox();
             this.btnAddProdoct = new System.Windows.Forms.Button();
             this.btnDelProdoct = new System.Windows.Forms.Button();
             this.btnAddStore = new System.Windows.Forms.Button();
             this.btnDelStore = new System.Windows.Forms.Button();
+            this.fDate4 = new PapilooDate.FDate();
+            this.fDate2 = new PapilooDate.FDate();
+            this.fDate3 = new PapilooDate.FDate();
+            this.fDate1 = new PapilooDate.FDate();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -226,16 +226,6 @@
             this.label3.TabIndex = 29;
             this.label3.Text = "نام";
             // 
-            // fDate1
-            // 
-            this.fDate1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.fDate1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.fDate1.Location = new System.Drawing.Point(454, 139);
-            this.fDate1.Name = "fDate1";
-            this.fDate1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fDate1.Size = new System.Drawing.Size(141, 31);
-            this.fDate1.TabIndex = 30;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -256,16 +246,6 @@
             this.label6.TabIndex = 35;
             this.label6.Text = "تاریخ ساخت";
             // 
-            // fDate3
-            // 
-            this.fDate3.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.fDate3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.fDate3.Location = new System.Drawing.Point(454, 173);
-            this.fDate3.Name = "fDate3";
-            this.fDate3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fDate3.Size = new System.Drawing.Size(141, 31);
-            this.fDate3.TabIndex = 34;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -276,16 +256,6 @@
             this.label5.TabIndex = 37;
             this.label5.Text = "تاریخ خروج";
             // 
-            // fDate2
-            // 
-            this.fDate2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.fDate2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.fDate2.Location = new System.Drawing.Point(220, 139);
-            this.fDate2.Name = "fDate2";
-            this.fDate2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fDate2.Size = new System.Drawing.Size(141, 31);
-            this.fDate2.TabIndex = 36;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -295,16 +265,6 @@
             this.label7.Size = new System.Drawing.Size(74, 18);
             this.label7.TabIndex = 39;
             this.label7.Text = "تاریخ انقضا";
-            // 
-            // fDate4
-            // 
-            this.fDate4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.fDate4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.fDate4.Location = new System.Drawing.Point(220, 173);
-            this.fDate4.Name = "fDate4";
-            this.fDate4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fDate4.Size = new System.Drawing.Size(141, 31);
-            this.fDate4.TabIndex = 38;
             // 
             // comCase
             // 
@@ -326,6 +286,7 @@
             this.btnAddProdoct.TabIndex = 91;
             this.btnAddProdoct.Text = "+";
             this.btnAddProdoct.UseVisualStyleBackColor = false;
+            this.btnAddProdoct.Click += new System.EventHandler(this.btnAddProdoct_Click);
             // 
             // btnDelProdoct
             // 
@@ -348,6 +309,7 @@
             this.btnAddStore.TabIndex = 93;
             this.btnAddStore.Text = "+";
             this.btnAddStore.UseVisualStyleBackColor = false;
+            this.btnAddStore.Click += new System.EventHandler(this.btnAddStore_Click);
             // 
             // btnDelStore
             // 
@@ -359,6 +321,46 @@
             this.btnDelStore.TabIndex = 94;
             this.btnDelStore.Text = "-";
             this.btnDelStore.UseVisualStyleBackColor = false;
+            // 
+            // fDate4
+            // 
+            this.fDate4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.fDate4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.fDate4.Location = new System.Drawing.Point(220, 173);
+            this.fDate4.Name = "fDate4";
+            this.fDate4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fDate4.Size = new System.Drawing.Size(141, 31);
+            this.fDate4.TabIndex = 38;
+            // 
+            // fDate2
+            // 
+            this.fDate2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.fDate2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.fDate2.Location = new System.Drawing.Point(220, 139);
+            this.fDate2.Name = "fDate2";
+            this.fDate2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fDate2.Size = new System.Drawing.Size(141, 31);
+            this.fDate2.TabIndex = 36;
+            // 
+            // fDate3
+            // 
+            this.fDate3.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.fDate3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.fDate3.Location = new System.Drawing.Point(454, 173);
+            this.fDate3.Name = "fDate3";
+            this.fDate3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fDate3.Size = new System.Drawing.Size(141, 31);
+            this.fDate3.TabIndex = 34;
+            // 
+            // fDate1
+            // 
+            this.fDate1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.fDate1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.fDate1.Location = new System.Drawing.Point(454, 139);
+            this.fDate1.Name = "fDate1";
+            this.fDate1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fDate1.Size = new System.Drawing.Size(141, 31);
+            this.fDate1.TabIndex = 30;
             // 
             // FormAnbar
             // 
@@ -372,6 +374,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "انبار";
+            this.Click += new System.EventHandler(this.FormAnbar_Click);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -286,3 +286,5 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\System.Data.SQLit
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\PapilooDate.FDate.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\PapilooDate.PCalander.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.test.resources
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormAnbar.resources
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormLitelEnter.resources

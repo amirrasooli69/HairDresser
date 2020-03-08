@@ -366,8 +366,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 406);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(753, 445);
+            this.MinimumSize = new System.Drawing.Size(753, 445);
             this.Name = "FormAnbar";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "انبار";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

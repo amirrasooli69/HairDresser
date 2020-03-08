@@ -87,6 +87,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.tabPrinter = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comCalleague = new System.Windows.Forms.ComboBox();
+            this.btnAddColleague = new System.Windows.Forms.Button();
+            this.btnDelColleague = new System.Windows.Forms.Button();
             this.chxPrinter3 = new System.Windows.Forms.CheckBox();
             this.chxPrinter2 = new System.Windows.Forms.CheckBox();
             this.chxPrinter1 = new System.Windows.Forms.CheckBox();
@@ -112,10 +116,29 @@
             this.comPrinter3 = new System.Windows.Forms.ComboBox();
             this.comPrinter2 = new System.Windows.Forms.ComboBox();
             this.comPrinter1 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comCalleague = new System.Windows.Forms.ComboBox();
-            this.btnAddColleague = new System.Windows.Forms.Button();
-            this.btnDelColleague = new System.Windows.Forms.Button();
+            this.tabAnbarProdoct = new System.Windows.Forms.TabPage();
+            this.panelProdoct = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtProdoct = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtCodeProdoct = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtRFID = new System.Windows.Forms.TextBox();
+            this.txtDetails = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
+            this.panelStore = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtStoreName = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.tabSmsSetting.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabWelcomeWhiteSms.SuspendLayout();
@@ -123,6 +146,9 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabPrinter.SuspendLayout();
+            this.tabAnbarProdoct.SuspendLayout();
+            this.panelProdoct.SuspendLayout();
+            this.panelStore.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabSmsSetting
@@ -437,6 +463,7 @@
             this.tabWelcomeWhiteSms.Controls.Add(this.tabApplicationSetting);
             this.tabWelcomeWhiteSms.Controls.Add(this.tabSmsSetting);
             this.tabWelcomeWhiteSms.Controls.Add(this.tabPrinter);
+            this.tabWelcomeWhiteSms.Controls.Add(this.tabAnbarProdoct);
             this.tabWelcomeWhiteSms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabWelcomeWhiteSms.Location = new System.Drawing.Point(0, 0);
             this.tabWelcomeWhiteSms.Margin = new System.Windows.Forms.Padding(4);
@@ -791,6 +818,51 @@
             this.tabPrinter.UseVisualStyleBackColor = true;
             this.tabPrinter.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabPrinter_MouseClick);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(471, 183);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(53, 16);
+            this.label15.TabIndex = 91;
+            this.label15.Text = "همکاران";
+            // 
+            // comCalleague
+            // 
+            this.comCalleague.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comCalleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comCalleague.FormattingEnabled = true;
+            this.comCalleague.Location = new System.Drawing.Point(313, 178);
+            this.comCalleague.Name = "comCalleague";
+            this.comCalleague.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comCalleague.Size = new System.Drawing.Size(154, 24);
+            this.comCalleague.TabIndex = 88;
+            // 
+            // btnAddColleague
+            // 
+            this.btnAddColleague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddColleague.Location = new System.Drawing.Point(287, 176);
+            this.btnAddColleague.Name = "btnAddColleague";
+            this.btnAddColleague.Size = new System.Drawing.Size(20, 27);
+            this.btnAddColleague.TabIndex = 89;
+            this.btnAddColleague.Text = "+";
+            this.btnAddColleague.UseVisualStyleBackColor = false;
+            this.btnAddColleague.Click += new System.EventHandler(this.btnAddColleague_Click);
+            // 
+            // btnDelColleague
+            // 
+            this.btnDelColleague.BackColor = System.Drawing.Color.Red;
+            this.btnDelColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelColleague.Location = new System.Drawing.Point(267, 176);
+            this.btnDelColleague.Name = "btnDelColleague";
+            this.btnDelColleague.Size = new System.Drawing.Size(20, 27);
+            this.btnDelColleague.TabIndex = 90;
+            this.btnDelColleague.Text = "-";
+            this.btnDelColleague.UseVisualStyleBackColor = false;
+            this.btnDelColleague.Click += new System.EventHandler(this.btnDelColleague_Click);
+            // 
             // chxPrinter3
             // 
             this.chxPrinter3.AutoSize = true;
@@ -1066,50 +1138,236 @@
             this.comPrinter1.TabIndex = 28;
             this.comPrinter1.SelectedIndexChanged += new System.EventHandler(this.comPrinter1_SelectedIndexChanged);
             // 
-            // label15
+            // tabAnbarProdoct
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(471, 183);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 16);
-            this.label15.TabIndex = 91;
-            this.label15.Text = "همکاران";
+            this.tabAnbarProdoct.Controls.Add(this.panelStore);
+            this.tabAnbarProdoct.Controls.Add(this.panelProdoct);
+            this.tabAnbarProdoct.Location = new System.Drawing.Point(4, 28);
+            this.tabAnbarProdoct.Name = "tabAnbarProdoct";
+            this.tabAnbarProdoct.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAnbarProdoct.Size = new System.Drawing.Size(776, 407);
+            this.tabAnbarProdoct.TabIndex = 3;
+            this.tabAnbarProdoct.Text = "انبار";
+            this.tabAnbarProdoct.UseVisualStyleBackColor = true;
             // 
-            // comCalleague
+            // panelProdoct
             // 
-            this.comCalleague.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comCalleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comCalleague.FormattingEnabled = true;
-            this.comCalleague.Location = new System.Drawing.Point(313, 178);
-            this.comCalleague.Name = "comCalleague";
-            this.comCalleague.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comCalleague.Size = new System.Drawing.Size(154, 24);
-            this.comCalleague.TabIndex = 88;
+            this.panelProdoct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelProdoct.Controls.Add(this.button2);
+            this.panelProdoct.Controls.Add(this.txtProdoct);
+            this.panelProdoct.Controls.Add(this.label28);
+            this.panelProdoct.Controls.Add(this.txtCodeProdoct);
+            this.panelProdoct.Controls.Add(this.label29);
+            this.panelProdoct.Controls.Add(this.label30);
+            this.panelProdoct.Controls.Add(this.txtRFID);
+            this.panelProdoct.Controls.Add(this.txtDetails);
+            this.panelProdoct.Controls.Add(this.label31);
+            this.panelProdoct.Controls.Add(this.label32);
+            this.panelProdoct.Controls.Add(this.txtBarcode);
+            this.panelProdoct.Location = new System.Drawing.Point(487, 6);
+            this.panelProdoct.Name = "panelProdoct";
+            this.panelProdoct.Size = new System.Drawing.Size(281, 236);
+            this.panelProdoct.TabIndex = 13;
             // 
-            // btnAddColleague
+            // button2
             // 
-            this.btnAddColleague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddColleague.Location = new System.Drawing.Point(287, 176);
-            this.btnAddColleague.Name = "btnAddColleague";
-            this.btnAddColleague.Size = new System.Drawing.Size(20, 27);
-            this.btnAddColleague.TabIndex = 89;
-            this.btnAddColleague.Text = "+";
-            this.btnAddColleague.UseVisualStyleBackColor = false;
-            this.btnAddColleague.Click += new System.EventHandler(this.btnAddColleague_Click);
+            this.button2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(8, 186);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(110, 34);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "ثبت و ویرایش";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // btnDelColleague
+            // txtProdoct
             // 
-            this.btnDelColleague.BackColor = System.Drawing.Color.Red;
-            this.btnDelColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelColleague.Location = new System.Drawing.Point(267, 176);
-            this.btnDelColleague.Name = "btnDelColleague";
-            this.btnDelColleague.Size = new System.Drawing.Size(20, 27);
-            this.btnDelColleague.TabIndex = 90;
-            this.btnDelColleague.Text = "-";
-            this.btnDelColleague.UseVisualStyleBackColor = false;
-            this.btnDelColleague.Click += new System.EventHandler(this.btnDelColleague_Click);
+            this.txtProdoct.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProdoct.Location = new System.Drawing.Point(8, 6);
+            this.txtProdoct.Name = "txtProdoct";
+            this.txtProdoct.Size = new System.Drawing.Size(199, 22);
+            this.txtProdoct.TabIndex = 0;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(232, 9);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(42, 14);
+            this.label28.TabIndex = 1;
+            this.label28.Text = "نام کالا";
+            // 
+            // txtCodeProdoct
+            // 
+            this.txtCodeProdoct.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodeProdoct.Location = new System.Drawing.Point(8, 41);
+            this.txtCodeProdoct.Name = "txtCodeProdoct";
+            this.txtCodeProdoct.Size = new System.Drawing.Size(199, 22);
+            this.txtCodeProdoct.TabIndex = 2;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(152, 152);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(122, 14);
+            this.label29.TabIndex = 9;
+            this.label29.Text = "شناسه خودکار (RFID)";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(231, 44);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 14);
+            this.label30.TabIndex = 3;
+            this.label30.Text = "کد کالا";
+            // 
+            // txtRFID
+            // 
+            this.txtRFID.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRFID.Location = new System.Drawing.Point(9, 149);
+            this.txtRFID.Name = "txtRFID";
+            this.txtRFID.Size = new System.Drawing.Size(138, 22);
+            this.txtRFID.TabIndex = 8;
+            // 
+            // txtDetails
+            // 
+            this.txtDetails.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDetails.Location = new System.Drawing.Point(8, 75);
+            this.txtDetails.Name = "txtDetails";
+            this.txtDetails.Size = new System.Drawing.Size(199, 22);
+            this.txtDetails.TabIndex = 4;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(241, 114);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(31, 14);
+            this.label31.TabIndex = 7;
+            this.label31.Text = "بارکد";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(224, 78);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(50, 14);
+            this.label32.TabIndex = 5;
+            this.label32.Text = "توضیحات";
+            // 
+            // txtBarcode
+            // 
+            this.txtBarcode.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBarcode.Location = new System.Drawing.Point(9, 111);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(198, 22);
+            this.txtBarcode.TabIndex = 6;
+            // 
+            // panelStore
+            // 
+            this.panelStore.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelStore.Controls.Add(this.button3);
+            this.panelStore.Controls.Add(this.txtStoreName);
+            this.panelStore.Controls.Add(this.label16);
+            this.panelStore.Controls.Add(this.textBox2);
+            this.panelStore.Controls.Add(this.label25);
+            this.panelStore.Controls.Add(this.textBox4);
+            this.panelStore.Controls.Add(this.label26);
+            this.panelStore.Controls.Add(this.label27);
+            this.panelStore.Controls.Add(this.textBox5);
+            this.panelStore.Location = new System.Drawing.Point(200, 6);
+            this.panelStore.Name = "panelStore";
+            this.panelStore.Size = new System.Drawing.Size(281, 236);
+            this.panelStore.TabIndex = 14;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(8, 186);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(110, 34);
+            this.button3.TabIndex = 12;
+            this.button3.Text = "ثبت و ویرایش";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // txtStoreName
+            // 
+            this.txtStoreName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStoreName.Location = new System.Drawing.Point(8, 6);
+            this.txtStoreName.Name = "txtStoreName";
+            this.txtStoreName.Size = new System.Drawing.Size(199, 22);
+            this.txtStoreName.TabIndex = 0;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(212, 9);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(68, 14);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "نام فروشگاه";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(8, 41);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(199, 22);
+            this.textBox2.TabIndex = 2;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(245, 44);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(29, 14);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "تلفن";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(8, 75);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(199, 22);
+            this.textBox4.TabIndex = 4;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(241, 114);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(35, 14);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "آدرس";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(239, 78);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(37, 14);
+            this.label27.TabIndex = 5;
+            this.label27.Text = "موبایل";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(9, 111);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(198, 55);
+            this.textBox5.TabIndex = 6;
             // 
             // FormSettings
             // 
@@ -1138,6 +1396,11 @@
             this.panel2.PerformLayout();
             this.tabPrinter.ResumeLayout(false);
             this.tabPrinter.PerformLayout();
+            this.tabAnbarProdoct.ResumeLayout(false);
+            this.panelProdoct.ResumeLayout(false);
+            this.panelProdoct.PerformLayout();
+            this.panelStore.ResumeLayout(false);
+            this.panelStore.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1231,5 +1494,28 @@
         public System.Windows.Forms.ComboBox comCalleague;
         public System.Windows.Forms.Button btnAddColleague;
         public System.Windows.Forms.Button btnDelColleague;
+        private System.Windows.Forms.TabPage tabAnbarProdoct;
+        private System.Windows.Forms.Panel panelStore;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtStoreName;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Panel panelProdoct;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtProdoct;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox txtCodeProdoct;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtRFID;
+        private System.Windows.Forms.TextBox txtDetails;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtBarcode;
     }
 }

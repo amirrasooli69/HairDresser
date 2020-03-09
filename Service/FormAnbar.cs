@@ -44,5 +44,12 @@ namespace Service
         {
 
         }
+
+        private void btnSaveEdit_Click(object sender, EventArgs e)
+        {
+            StimulsoftEntities context = new StimulsoftEntities();
+            var newProdoct = context.Anbar.Where(c => c.IdProdoct == int.Parse(txtIdProdoct.Text)).FirstOrDefault();
+            
+        }
     }
 }

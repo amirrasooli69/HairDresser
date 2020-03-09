@@ -37,6 +37,15 @@
             this.dgAnbar = new System.Windows.Forms.DataGridView();
             this.btnNew = new System.Windows.Forms.Button();
             this.Date = new PapilooDate.FDate();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdStore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateBuild = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateExpierd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdParent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.SuspendLayout();
@@ -113,9 +122,20 @@
             // dgAnbar
             // 
             this.dgAnbar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAnbar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Name,
+            this.Count,
+            this.Price,
+            this.IdStore,
+            this.Description,
+            this.DateBuild,
+            this.DateExpierd,
+            this.IdParent,
+            this.Id});
             this.dgAnbar.Enabled = false;
             this.dgAnbar.Location = new System.Drawing.Point(12, 76);
             this.dgAnbar.Name = "dgAnbar";
+            this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgAnbar.Size = new System.Drawing.Size(905, 338);
             this.dgAnbar.TabIndex = 1;
             // 
@@ -139,6 +159,52 @@
             this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Date.Size = new System.Drawing.Size(141, 31);
             this.Date.TabIndex = 30;
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "نام";
+            this.Name.Name = "Name";
+            // 
+            // Count
+            // 
+            this.Count.HeaderText = "تعداد";
+            this.Count.Name = "Count";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "قیمت";
+            this.Price.Name = "Price";
+            // 
+            // IdStore
+            // 
+            this.IdStore.HeaderText = "کد فروشگاه یا فرد";
+            this.IdStore.Name = "IdStore";
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "توضیحات";
+            this.Description.Name = "Description";
+            this.Description.Width = 300;
+            // 
+            // DateBuild
+            // 
+            this.DateBuild.HeaderText = "تاریخ ساخت";
+            this.DateBuild.Name = "DateBuild";
+            // 
+            // DateExpierd
+            // 
+            this.DateExpierd.HeaderText = "تاریخ انقضا";
+            this.DateExpierd.Name = "DateExpierd";
+            // 
+            // IdParent
+            // 
+            this.IdParent.HeaderText = "شماره سند";
+            this.IdParent.Name = "IdParent";
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "شماره";
+            this.Id.Name = "Id";
             // 
             // FormAnbar
             // 
@@ -172,5 +238,14 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.DataGridView dgAnbar;
         private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdStore;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateBuild;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateExpierd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdParent;
+        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn Id;
     }
 }

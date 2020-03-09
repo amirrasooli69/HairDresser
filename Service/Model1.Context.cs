@@ -26,6 +26,7 @@ namespace Service
         }
     
         public virtual DbSet<Anbar> Anbar { get; set; }
+        public virtual DbSet<AnbarParent> AnbarParent { get; set; }
         public virtual DbSet<AnbarProdoct> AnbarProdoct { get; set; }
         public virtual DbSet<Category> Category { get; set; }
         public virtual DbSet<Colleague> Colleague { get; set; }

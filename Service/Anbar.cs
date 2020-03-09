@@ -15,7 +15,7 @@ namespace Service
     public partial class Anbar
     {
         public Nullable<long> Count { get; set; }
-        public string Case { get; set; }
+        public Nullable<long> IdParent { get; set; }
         public Nullable<long> Price { get; set; }
         public string Description { get; set; }
         public Nullable<long> DateBuild { get; set; }

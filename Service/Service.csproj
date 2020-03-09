@@ -107,6 +107,9 @@
     <Compile Include="Anbar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="AnbarParent.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="AnbarProdoct.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

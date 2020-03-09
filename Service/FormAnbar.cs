@@ -22,7 +22,6 @@ namespace Service
             FormLittelEnter frmLittelEnter = new FormLittelEnter();            
             frmLittelEnter.panelStore.Visible = false;
             frmLittelEnter.panelProdoct.Visible = true;
-            frmLittelEnter.Location = new Point(btnAddProdoct.Location.X+30,btnAddProdoct.Location.Y+220);
             //frmLitelEnter.panelProdoct.Location = new Point(0, 0);
             frmLittelEnter.ShowDialog();
 
@@ -33,7 +32,6 @@ namespace Service
             FormLittelEnter frmLittelEnter = new FormLittelEnter();
             frmLittelEnter.panelStore.Visible = true;
             frmLittelEnter.panelProdoct.Visible = false;
-            frmLittelEnter.Location = new Point(btnAddStore.Location.X+30, btnAddStore.Location.Y + 220);
             //frmLitelEnter.panelProdoct.Location = new Point(0, 0);
             frmLittelEnter.ShowDialog();
 
@@ -48,7 +46,27 @@ namespace Service
         private void btnSaveEdit_Click(object sender, EventArgs e)
         {
             StimulsoftEntities context = new StimulsoftEntities();
-            var newProdoct = context.Anbar.Where(c => c.IdProdoct == int.Parse(txtIdProdoct.Text)).FirstOrDefault();
+            
+        }
+
+        private void FormAnbar_Load(object sender, EventArgs e)
+        {
+            comCase.SelectedIndex = 0;
+            Date.Text = Practical.Today_Date();
+
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            StimulsoftEntities context = new StimulsoftEntities();
+            AnbarParent anbarParent = new AnbarParent();
+            anbarParent.Case = comCase.SelectedIndex;
+            anbarParent.Date =int.Parse(Date.Text.Replace("/", ""));
+            anbarParent.Description = txtDetails.Text;
+            context.AnbarParent.Add(anbarParent);
+            context.SaveChanges();
+            //----
+            dgAnbar.Enabled = true;
             
         }
     }

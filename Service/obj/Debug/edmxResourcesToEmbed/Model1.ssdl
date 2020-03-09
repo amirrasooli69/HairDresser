@@ -5,7 +5,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Count" Type="integer" />
-    <Property Name="Case" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="IdParent" Type="integer" />
     <Property Name="Price" Type="integer" />
     <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="DateBuild" Type="integer" />
@@ -15,6 +15,15 @@
     <Property Name="IdProdoct" Type="integer" />
     <Property Name="IdStore" Type="integer" />
     <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AnbarParent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Case" Type="integer" />
+    <Property Name="Date" Type="integer" />
+    <Property Name="Description" Type="integer" />
   </EntityType>
   <EntityType Name="AnbarProdoct">
     <Key>
@@ -320,6 +329,7 @@
   </Association>
   <EntityContainer Name="StimulsoftModelStoreContainer">
     <EntitySet Name="Anbar" EntityType="Self.Anbar" store:Type="Tables" />
+    <EntitySet Name="AnbarParent" EntityType="Self.AnbarParent" store:Type="Tables" />
     <EntitySet Name="AnbarProdoct" EntityType="Self.AnbarProdoct" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" store:Type="Tables" />
     <EntitySet Name="Colleague" EntityType="Self.Colleague" store:Type="Tables" />

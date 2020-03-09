@@ -5,7 +5,7 @@
       <EntityTypeMapping TypeName="StimulsoftModel.Anbar">
         <MappingFragment StoreEntitySet="Anbar">
           <ScalarProperty Name="Count" ColumnName="Count" />
-          <ScalarProperty Name="Case" ColumnName="Case" />
+          <ScalarProperty Name="IdParent" ColumnName="IdParent" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="DateBuild" ColumnName="DateBuild" />
@@ -15,6 +15,16 @@
           <ScalarProperty Name="IdProdoct" ColumnName="IdProdoct" />
           <ScalarProperty Name="IdStore" ColumnName="IdStore" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnbarParent">
+      <EntityTypeMapping TypeName="StimulsoftModel.AnbarParent">
+        <MappingFragment StoreEntitySet="AnbarParent">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Case" ColumnName="Case" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

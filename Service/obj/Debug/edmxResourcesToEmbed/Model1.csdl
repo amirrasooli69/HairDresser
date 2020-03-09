@@ -5,7 +5,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Count" Type="Int64" />
-    <Property Name="Case" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="IdParent" Type="Int64" />
     <Property Name="Price" Type="Int64" />
     <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="DateBuild" Type="Int64" />
@@ -17,6 +17,15 @@
     <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="AnbarProdoct" Relationship="Self.FK_Anbar_0_0" FromRole="Anbar" ToRole="AnbarProdoct" />
     <NavigationProperty Name="Store" Relationship="Self.FK_Anbar_1_0" FromRole="Anbar" ToRole="Store" />
+  </EntityType>
+  <EntityType Name="AnbarParent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Case" Type="Int64" />
+    <Property Name="Date" Type="Int64" />
+    <Property Name="Description" Type="String" />
   </EntityType>
   <EntityType Name="AnbarProdoct">
     <Key>
@@ -326,6 +335,7 @@
   </Association>
   <EntityContainer Name="StimulsoftEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Anbar" EntityType="Self.Anbar" />
+    <EntitySet Name="AnbarParent" EntityType="Self.AnbarParent" />
     <EntitySet Name="AnbarProdoct" EntityType="Self.AnbarProdoct" />
     <EntitySet Name="Category" EntityType="Self.Category" />
     <EntitySet Name="Colleague" EntityType="Self.Colleague" />

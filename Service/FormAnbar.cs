@@ -16,26 +16,25 @@ namespace Service
         {
             InitializeComponent();
         }
-        FormLitelEnter frmLitelEnter = new FormLitelEnter();
 
         private void btnAddProdoct_Click(object sender, EventArgs e)
         {
-            FormLitelEnter frmLitelEnter = new FormLitelEnter();
-            
+            FormLitelEnter frmLitelEnter = new FormLitelEnter();            
             frmLitelEnter.panelStore.Visible = false;
             frmLitelEnter.panelProdoct.Visible = true;
-          
+            frmLitelEnter.Location = new Point(btnAddProdoct.Location.X,btnAddProdoct.Location.Y+220);
+            //frmLitelEnter.panelProdoct.Location = new Point(0, 0);
             frmLitelEnter.ShowDialog();
 
         }
 
         private void btnAddStore_Click(object sender, EventArgs e)
         {
-            frmLitelEnter.panelProdoct.Visible = false;
+            FormLitelEnter frmLitelEnter = new FormLitelEnter();
             frmLitelEnter.panelStore.Visible = true;
-            //frmLitelEnter.panelStore.BringToFront();
-            frmLitelEnter.panelStore.Location = btnAddProdoct.Location;
-            //frmLitelEnter.Show();
+            frmLitelEnter.panelProdoct.Visible = false;
+            frmLitelEnter.Location = new Point(btnAddStore.Location.X, btnAddStore.Location.Y + 220);
+            //frmLitelEnter.panelProdoct.Location = new Point(0, 0);
             frmLitelEnter.ShowDialog();
 
             
@@ -43,8 +42,7 @@ namespace Service
 
         private void FormAnbar_Click(object sender, EventArgs e)
         {
-            //frmLitelEnter.Close();
-            //frmLitelEnter.Dispose();
+
         }
     }
 }

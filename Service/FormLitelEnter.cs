@@ -21,6 +21,10 @@ namespace Service
         private void FormLitelEnter_Load(object sender, EventArgs e)
         {
             //FormAnbar frmAnbar = new FormAnbar();
+            //this.Location =frmAnbar.btnAddProdoct.Location;
+            
+            //panelStore.Location = new Point(0, 0);
+            //FormAnbar frmAnbar = new FormAnbar();
             //this.Location = frmAnbar.btnAddProdoct.Location;
         }
 

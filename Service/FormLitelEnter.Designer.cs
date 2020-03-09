@@ -71,6 +71,7 @@
             this.panelProdoct.Controls.Add(this.label31);
             this.panelProdoct.Controls.Add(this.label32);
             this.panelProdoct.Controls.Add(this.txtBarcode);
+            this.panelProdoct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelProdoct.Location = new System.Drawing.Point(0, 24);
             this.panelProdoct.Name = "panelProdoct";
             this.panelProdoct.Size = new System.Drawing.Size(292, 220);
@@ -87,6 +88,7 @@
             this.panelStore.Controls.Add(this.label26);
             this.panelStore.Controls.Add(this.label27);
             this.panelStore.Controls.Add(this.textBox5);
+            this.panelStore.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelStore.Location = new System.Drawing.Point(0, 24);
             this.panelStore.Name = "panelStore";
             this.panelStore.Size = new System.Drawing.Size(292, 220);

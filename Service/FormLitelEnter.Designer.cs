@@ -1,6 +1,6 @@
 ﻿namespace Service
 {
-    partial class FormLitelEnter
+    partial class FormLittelEnter
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLitelEnter));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLittelEnter));
             this.panelProdoct = new System.Windows.Forms.Panel();
             this.panelStore = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -298,7 +298,7 @@
             this.toolExit.Size = new System.Drawing.Size(28, 20);
             this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
             // 
-            // FormLitelEnter
+            // FormLittelEnter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -308,7 +308,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FormLitelEnter";
+            this.Name = "FormLittelEnter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FormLitelEnter";
             this.Load += new System.EventHandler(this.FormLitelEnter_Load);

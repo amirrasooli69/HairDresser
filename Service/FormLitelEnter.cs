@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Service
 {
-    public partial class FormLitelEnter : Form
+    public partial class FormLittelEnter : Form
     {
-        public FormLitelEnter()
+        public FormLittelEnter()
         {
             InitializeComponent();
 

@@ -19,23 +19,23 @@ namespace Service
 
         private void btnAddProdoct_Click(object sender, EventArgs e)
         {
-            FormLitelEnter frmLitelEnter = new FormLitelEnter();            
-            frmLitelEnter.panelStore.Visible = false;
-            frmLitelEnter.panelProdoct.Visible = true;
-            frmLitelEnter.Location = new Point(btnAddProdoct.Location.X,btnAddProdoct.Location.Y+220);
+            FormLittelEnter frmLittelEnter = new FormLittelEnter();            
+            frmLittelEnter.panelStore.Visible = false;
+            frmLittelEnter.panelProdoct.Visible = true;
+            frmLittelEnter.Location = new Point(btnAddProdoct.Location.X+30,btnAddProdoct.Location.Y+220);
             //frmLitelEnter.panelProdoct.Location = new Point(0, 0);
-            frmLitelEnter.ShowDialog();
+            frmLittelEnter.ShowDialog();
 
         }
 
         private void btnAddStore_Click(object sender, EventArgs e)
         {
-            FormLitelEnter frmLitelEnter = new FormLitelEnter();
-            frmLitelEnter.panelStore.Visible = true;
-            frmLitelEnter.panelProdoct.Visible = false;
-            frmLitelEnter.Location = new Point(btnAddStore.Location.X, btnAddStore.Location.Y + 220);
+            FormLittelEnter frmLittelEnter = new FormLittelEnter();
+            frmLittelEnter.panelStore.Visible = true;
+            frmLittelEnter.panelProdoct.Visible = false;
+            frmLittelEnter.Location = new Point(btnAddStore.Location.X+30, btnAddStore.Location.Y + 220);
             //frmLitelEnter.panelProdoct.Location = new Point(0, 0);
-            frmLitelEnter.ShowDialog();
+            frmLittelEnter.ShowDialog();
 
             
         }

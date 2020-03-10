@@ -25,7 +25,7 @@
     <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Case" Type="Int64" />
     <Property Name="Date" Type="Int64" />
-    <Property Name="Description" Type="String" />
+    <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="AnbarProdoct">
     <Key>

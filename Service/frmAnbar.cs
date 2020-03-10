@@ -67,6 +67,7 @@ namespace Service
             context.SaveChanges();
             //----
             dgAnbar.Enabled = true;
+            MessageBox.Show("ثبت شد");
             
         }
     }

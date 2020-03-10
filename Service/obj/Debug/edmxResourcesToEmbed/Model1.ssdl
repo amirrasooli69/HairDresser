@@ -23,7 +23,7 @@
     <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Case" Type="integer" />
     <Property Name="Date" Type="integer" />
-    <Property Name="Description" Type="integer" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
   <EntityType Name="AnbarProdoct">
     <Key>

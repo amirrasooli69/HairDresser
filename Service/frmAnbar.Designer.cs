@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+    private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -35,8 +35,6 @@
             this.txtDetails = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.dgAnbar = new System.Windows.Forms.DataGridView();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.Date = new PapilooDate.FDate();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +44,8 @@
             this.DateExpierd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdParent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.Date = new PapilooDate.FDate();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +77,7 @@
             this.comCase.Name = "comCase";
             this.comCase.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comCase.Size = new System.Drawing.Size(162, 26);
-            this.comCase.TabIndex = 40;
+            this.comCase.TabIndex = 0;
             // 
             // label4
             // 
@@ -107,7 +107,7 @@
             this.txtDetails.Name = "txtDetails";
             this.txtDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtDetails.Size = new System.Drawing.Size(312, 28);
-            this.txtDetails.TabIndex = 17;
+            this.txtDetails.TabIndex = 3;
             // 
             // label32
             // 
@@ -137,28 +137,7 @@
             this.dgAnbar.Name = "dgAnbar";
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgAnbar.Size = new System.Drawing.Size(905, 338);
-            this.dgAnbar.TabIndex = 1;
-            // 
-            // btnNew
-            // 
-            this.btnNew.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(18, 23);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(57, 32);
-            this.btnNew.TabIndex = 95;
-            this.btnNew.Text = "جدید";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // Date
-            // 
-            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Date.Location = new System.Drawing.Point(455, 20);
-            this.Date.Name = "Date";
-            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Date.Size = new System.Drawing.Size(141, 31);
-            this.Date.TabIndex = 30;
+            this.dgAnbar.TabIndex = 5;
             // 
             // Name
             // 
@@ -179,6 +158,7 @@
             // 
             this.IdStore.HeaderText = "کد فروشگاه یا فرد";
             this.IdStore.Name = "IdStore";
+            this.IdStore.Width = 150;
             // 
             // Description
             // 
@@ -205,6 +185,27 @@
             // 
             this.Id.HeaderText = "شماره";
             this.Id.Name = "Id";
+            // 
+            // btnNew
+            // 
+            this.btnNew.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.Location = new System.Drawing.Point(18, 23);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(57, 32);
+            this.btnNew.TabIndex = 4;
+            this.btnNew.Text = "جدید";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // Date
+            // 
+            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Date.Location = new System.Drawing.Point(455, 20);
+            this.Date.Name = "Date";
+            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Date.Size = new System.Drawing.Size(141, 31);
+            this.Date.TabIndex = 1;
             // 
             // FormAnbar
             // 

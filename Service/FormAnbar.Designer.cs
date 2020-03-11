@@ -71,7 +71,7 @@
             this.btnNew.Location = new System.Drawing.Point(5, 22);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(73, 29);
-            this.btnNew.TabIndex = 32;
+            this.btnNew.TabIndex = 4;
             this.btnNew.Text = "جدید";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -159,6 +159,7 @@
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgAnbar.Size = new System.Drawing.Size(900, 373);
             this.dgAnbar.TabIndex = 9;
+            this.dgAnbar.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAnbar_CellEnter);
             // 
             // ProdoctCode
             // 
@@ -216,7 +217,8 @@
             this.Controls.Add(this.dgAnbar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormAnbar";
-            this.Text = "FormAnbar";
+            this.Text = "انبار";
+            this.Load += new System.EventHandler(this.FormAnbar_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).EndInit();

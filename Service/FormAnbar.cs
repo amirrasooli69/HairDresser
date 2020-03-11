@@ -20,7 +20,34 @@ namespace Service
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            AnbarParent parent = new AnbarParent();
+            parent.Case = comCase.SelectedIndex;
+            parent.Date = int.Parse(Date.Text.Replace("/",""));
+            parent.Description = txtDetails.Text;
+            context.AnbarParent.Add(parent);
+            context.SaveChanges();
+            //------
+            dgAnbar.Enabled = true;
+            dgAnbar.Focus();
             
+            
+            
+        }
+
+        private void FormAnbar_Load(object sender, EventArgs e)
+        {
+            Date.Text = Practical.Today_Date();
+            comCase.SelectedIndex = 0;
+            dgAnbar.Enabled = false;
+        }
+
+        private void dgAnbar_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                FormLittelEnter frmlittel = new FormLittelEnter();                
+                frmlittel.ShowDialog();
+            }
         }
     }
 }

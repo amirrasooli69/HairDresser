@@ -133,11 +133,11 @@
     <Compile Include="FDate.designer.cs">
       <DependentUpon>FDate.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAnbar.cs">
+    <Compile Include="FormAnbar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAnbar.Designer.cs">
-      <DependentUpon>FrmAnbar.cs</DependentUpon>
+    <Compile Include="FormAnbar.Designer.cs">
+      <DependentUpon>FormAnbar.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBirthDay.cs">
       <SubType>Form</SubType>
@@ -367,8 +367,8 @@
     <EmbeddedResource Include="FDate.resx">
       <DependentUpon>FDate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAnbar.resx">
-      <DependentUpon>FrmAnbar.cs</DependentUpon>
+    <EmbeddedResource Include="FormAnbar.resx">
+      <DependentUpon>FormAnbar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBirthDay.resx">
       <DependentUpon>FormBirthDay.cs</DependentUpon>

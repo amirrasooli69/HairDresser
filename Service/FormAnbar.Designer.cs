@@ -215,7 +215,6 @@
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.dgAnbar);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FormAnbar";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "انبار";

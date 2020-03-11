@@ -229,7 +229,6 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser 98-12-10\Service\bin\Debug\System.D
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\Service.exe.config
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.exe
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.pdb
-C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormBirthDay.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormDelete.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormEditService.resources
@@ -288,3 +287,6 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\PapilooDate.PCala
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.test.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormAnbar.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormLittelEnter.resources
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csprojAssemblyReference.cache
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csproj.CopyComplete

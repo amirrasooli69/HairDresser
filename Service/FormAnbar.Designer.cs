@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-    private System.ComponentModel.IContainer components = null;
+        private System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,40 +29,52 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnNew = new System.Windows.Forms.Button();
             this.comCase = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.Date = new PapilooDate.FDate();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDetails = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.dgAnbar = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdoctCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdoctName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameStore = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdStore = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateBuild = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateExpierd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdParent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.Date = new PapilooDate.FDate();
+            this.DateExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnNew);
             this.groupBox1.Controls.Add(this.comCase);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.Date);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtDetails);
             this.groupBox1.Controls.Add(this.label32);
-            this.groupBox1.Location = new System.Drawing.Point(12, 4);
+            this.groupBox1.Location = new System.Drawing.Point(7, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(905, 66);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
+            // 
+            // btnNew
+            // 
+            this.btnNew.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnNew.Location = new System.Drawing.Point(5, 22);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(73, 29);
+            this.btnNew.TabIndex = 32;
+            this.btnNew.Text = "جدید";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // comCase
             // 
@@ -89,6 +101,16 @@
             this.label4.TabIndex = 31;
             this.label4.Text = "تاریخ ورود";
             // 
+            // Date
+            // 
+            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Date.Location = new System.Drawing.Point(455, 20);
+            this.Date.Name = "Date";
+            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Date.Size = new System.Drawing.Size(141, 31);
+            this.Date.TabIndex = 1;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -102,11 +124,11 @@
             // txtDetails
             // 
             this.txtDetails.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetails.Location = new System.Drawing.Point(69, 22);
+            this.txtDetails.Location = new System.Drawing.Point(84, 22);
             this.txtDetails.Multiline = true;
             this.txtDetails.Name = "txtDetails";
             this.txtDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtDetails.Size = new System.Drawing.Size(312, 28);
+            this.txtDetails.Size = new System.Drawing.Size(297, 28);
             this.txtDetails.TabIndex = 3;
             // 
             // label32
@@ -123,26 +145,36 @@
             // 
             this.dgAnbar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgAnbar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
+            this.ProdoctCode,
+            this.ProdoctName,
+            this.NameStore,
             this.Count,
             this.Price,
-            this.IdStore,
             this.Description,
             this.DateBuild,
-            this.DateExpierd,
-            this.IdParent,
-            this.Id});
-            this.dgAnbar.Enabled = false;
-            this.dgAnbar.Location = new System.Drawing.Point(12, 76);
+            this.DateExpired,
+            this.btnDelete});
+            this.dgAnbar.Location = new System.Drawing.Point(7, 77);
             this.dgAnbar.Name = "dgAnbar";
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgAnbar.Size = new System.Drawing.Size(905, 338);
-            this.dgAnbar.TabIndex = 5;
+            this.dgAnbar.Size = new System.Drawing.Size(900, 373);
+            this.dgAnbar.TabIndex = 9;
             // 
-            // Name
+            // ProdoctCode
             // 
-            this.Name.HeaderText = "نام";
-            this.Name.Name = "Name";
+            this.ProdoctCode.HeaderText = "کدکلا";
+            this.ProdoctCode.Name = "ProdoctCode";
+            // 
+            // ProdoctName
+            // 
+            this.ProdoctName.HeaderText = "نام کالا";
+            this.ProdoctName.Name = "ProdoctName";
+            // 
+            // NameStore
+            // 
+            this.NameStore.HeaderText = "نام فروشگاه یا فرد";
+            this.NameStore.Name = "NameStore";
+            this.NameStore.Width = 120;
             // 
             // Count
             // 
@@ -154,72 +186,37 @@
             this.Price.HeaderText = "قیمت";
             this.Price.Name = "Price";
             // 
-            // IdStore
-            // 
-            this.IdStore.HeaderText = "کد فروشگاه یا فرد";
-            this.IdStore.Name = "IdStore";
-            this.IdStore.Width = 150;
-            // 
             // Description
             // 
             this.Description.HeaderText = "توضیحات";
             this.Description.Name = "Description";
-            this.Description.Width = 300;
+            this.Description.Width = 200;
             // 
             // DateBuild
             // 
             this.DateBuild.HeaderText = "تاریخ ساخت";
             this.DateBuild.Name = "DateBuild";
             // 
-            // DateExpierd
+            // DateExpired
             // 
-            this.DateExpierd.HeaderText = "تاریخ انقضا";
-            this.DateExpierd.Name = "DateExpierd";
+            this.DateExpired.HeaderText = "تاریخ انقصا";
+            this.DateExpired.Name = "DateExpired";
             // 
-            // IdParent
+            // btnDelete
             // 
-            this.IdParent.HeaderText = "شماره سند";
-            this.IdParent.Name = "IdParent";
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "شماره";
-            this.Id.Name = "Id";
-            // 
-            // btnNew
-            // 
-            this.btnNew.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(18, 23);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(57, 32);
-            this.btnNew.TabIndex = 4;
-            this.btnNew.Text = "جدید";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // Date
-            // 
-            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Date.Location = new System.Drawing.Point(455, 20);
-            this.Date.Name = "Date";
-            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Date.Size = new System.Drawing.Size(141, 31);
-            this.Date.TabIndex = 1;
+            this.btnDelete.FillWeight = 50F;
+            this.btnDelete.HeaderText = "";
+            this.btnDelete.Name = "btnDelete";
             // 
             // FormAnbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(929, 418);
-            this.Controls.Add(this.btnNew);
+            this.ClientSize = new System.Drawing.Size(919, 503);
             this.Controls.Add(this.dgAnbar);
             this.Controls.Add(this.groupBox1);
-            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "انبار";
-            this.Load += new System.EventHandler(this.FormAnbar_Load);
-            this.Click += new System.EventHandler(this.FormAnbar_Click);
+            this.Name = "FormAnbar";
+            this.Text = "FormAnbar";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).EndInit();
@@ -228,7 +225,6 @@
         }
 
         #endregion
-
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comCase;
         private System.Windows.Forms.Label label4;
@@ -236,16 +232,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDetails;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.DataGridView dgAnbar;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridView dgAnbar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProdoctCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProdoctName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameStore;
         private System.Windows.Forms.DataGridViewTextBoxColumn Count;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdStore;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateBuild;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateExpierd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdParent;
-        private Stimulsoft.Controls.Win.DotNetBar.Controls.DataGridViewLabelXColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateExpired;
+        private System.Windows.Forms.DataGridViewTextBoxColumn btnDelete;
     }
 }

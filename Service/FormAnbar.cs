@@ -45,7 +45,11 @@ namespace Service
         {
             if (e.ColumnIndex == 0)
             {
-                FormLittelEnter frmlittel = new FormLittelEnter();                
+                FormLittelEnter frmlittel = new FormLittelEnter();
+                frmlittel.panelProdoct.Visible = false;
+                frmlittel.panelStore.Visible = false;
+                frmlittel.dgSearch.BringToFront();
+                frmlittel.dgSearch.Dock = DockStyle.Fill;                
                 frmlittel.ShowDialog();
             }
         }

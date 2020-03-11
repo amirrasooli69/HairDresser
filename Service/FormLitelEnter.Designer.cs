@@ -53,9 +53,11 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgSearch = new System.Windows.Forms.DataGridView();
             this.panelProdoct.SuspendLayout();
             this.panelStore.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // panelProdoct
@@ -71,10 +73,9 @@
             this.panelProdoct.Controls.Add(this.label31);
             this.panelProdoct.Controls.Add(this.label32);
             this.panelProdoct.Controls.Add(this.txtBarcode);
-            this.panelProdoct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelProdoct.Location = new System.Drawing.Point(0, 24);
+            this.panelProdoct.Location = new System.Drawing.Point(0, 85);
             this.panelProdoct.Name = "panelProdoct";
-            this.panelProdoct.Size = new System.Drawing.Size(292, 220);
+            this.panelProdoct.Size = new System.Drawing.Size(292, 194);
             this.panelProdoct.TabIndex = 14;
             // 
             // button2
@@ -189,10 +190,9 @@
             this.panelStore.Controls.Add(this.label26);
             this.panelStore.Controls.Add(this.label27);
             this.panelStore.Controls.Add(this.textBox5);
-            this.panelStore.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelStore.Location = new System.Drawing.Point(0, 24);
+            this.panelStore.Location = new System.Drawing.Point(3, 66);
             this.panelStore.Name = "panelStore";
-            this.panelStore.Size = new System.Drawing.Size(292, 220);
+            this.panelStore.Size = new System.Drawing.Size(292, 161);
             this.panelStore.TabIndex = 15;
             this.panelStore.Paint += new System.Windows.Forms.PaintEventHandler(this.panelStore_Paint);
             // 
@@ -298,11 +298,21 @@
             this.toolExit.Size = new System.Drawing.Size(28, 20);
             this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
             // 
+            // dgSearch
+            // 
+            this.dgSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgSearch.Location = new System.Drawing.Point(0, 24);
+            this.dgSearch.Name = "dgSearch";
+            this.dgSearch.Size = new System.Drawing.Size(292, 220);
+            this.dgSearch.TabIndex = 13;
+            // 
             // FormLittelEnter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 244);
+            this.Controls.Add(this.dgSearch);
             this.Controls.Add(this.panelStore);
             this.Controls.Add(this.panelProdoct);
             this.Controls.Add(this.menuStrip1);
@@ -318,6 +328,7 @@
             this.panelStore.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,5 +359,6 @@
         public System.Windows.Forms.Panel panelProdoct;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolExit;
+        public System.Windows.Forms.DataGridView dgSearch;
     }
 }

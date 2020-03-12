@@ -40,7 +40,7 @@
             // txtUnitName
             // 
             this.txtUnitName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUnitName.Location = new System.Drawing.Point(75, 28);
+            this.txtUnitName.Location = new System.Drawing.Point(71, 28);
             this.txtUnitName.Name = "txtUnitName";
             this.txtUnitName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtUnitName.Size = new System.Drawing.Size(138, 22);
@@ -50,11 +50,11 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(222, 31);
+            this.label28.Location = new System.Drawing.Point(214, 33);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(42, 14);
+            this.label28.Size = new System.Drawing.Size(48, 14);
             this.label28.TabIndex = 17;
-            this.label28.Text = "نام کالا";
+            this.label28.Text = "نام واحد";
             // 
             // menuStrip1
             // 
@@ -78,7 +78,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(12, 27);
+            this.btnSave.Location = new System.Drawing.Point(8, 27);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(57, 23);
             this.btnSave.TabIndex = 19;

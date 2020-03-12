@@ -18,6 +18,25 @@ namespace Service
 
         }
         StimulsoftEntities context = new StimulsoftEntities();
+        private void Add_Prodoct()
+        {
+            AnbarProdoct newprodoct = new AnbarProdoct();
+            newprodoct.Name = txtNameProdoct.Text;
+            newprodoct.code = long.Parse(txtCodeProdoct.Text);
+            newprodoct.IdUnit = comUnit.SelectedIndex;
+            newprodoct.Description = txtDetails.Text;
+            newprodoct.Barcode = txtBarcode.Text;
+            newprodoct.Rfid = txtRFID.Text;
+            context.AnbarProdoct.Add(newprodoct);
+            context.SaveChanges();
+            MessageBox.Show("محصول ثبت شد", "ثبت", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtNameProdoct.Text = "";
+            txtCodeProdoct.Text = "";
+            txtDetails.Text = "";
+            txtBarcode.Text = "";
+            txtRFID.Text = "";
+            txtNameProdoct.Focus();
+        }
         public void Fill_ComUnit()
         {
             comUnit.DataSource = context.Unit.ToList();
@@ -40,24 +59,26 @@ namespace Service
 
         private void btnSaveProdoct_Click(object sender, EventArgs e)
         {
-            using(var context=new StimulsoftEntities())
+            using (var context = new StimulsoftEntities())
             {
-                bool exist = false;
-                var allProdoct = context.AnbarProdoct.ToList();
-                for(int i=0;i<allProdoct.Count;i++)
+                if (context.AnbarProdoct.Count() > 0)
                 {
-                    if(allProdoct[i].Name==txtNameProdoct.Text)
+                    bool existProdoct = context.AnbarProdoct.Where(c => c.Name == txtNameProdoct.Text).Any();
+                    if (existProdoct)
                     {
-                        MessageBox.Show("این نام محصول تکراری است");
-                        exist = true;
-                        break;
+                        MessageBox.Show("این نام محصول تکراری است", "ثبت", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+
+                        Add_Prodoct();
+
+
                     }
                 }
-                if(exist==false)
+                else
                 {
-                    AnbarProdoct prodoct = new AnbarProdoct();
-                    prodoct.Name = txtNameProdoct.Text;
-                   
+                    Add_Prodoct();
                 }
 
             }
@@ -69,7 +90,7 @@ namespace Service
             //frmUnit.Location = new Point(btnAddUnit.Location.X,btnAddUnit.Location.Y);
             frmUnit.ShowDialog();
             Fill_ComUnit();
-            
+
         }
     }
 }

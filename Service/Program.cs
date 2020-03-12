@@ -13,7 +13,7 @@ namespace Service
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new FormAnbar());
+           Application.Run(new FormLittelEnter());
             //log
         }
         public class AppContext:ApplicationContext

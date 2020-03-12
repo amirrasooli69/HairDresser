@@ -18,16 +18,14 @@ namespace Service
 
         }
         StimulsoftEntities context = new StimulsoftEntities();
-        private void FormLitelEnter_Load(object sender, EventArgs e)
+        public void Fill_ComUnit()
         {
             comUnit.DataSource = context.Unit.ToList();
             comUnit.DisplayMember = "Name";
-            //FormAnbar frmAnbar = new FormAnbar();
-            //this.Location =frmAnbar.btnAddProdoct.Location;
-            
-            //panelStore.Location = new Point(0, 0);
-            //FormAnbar frmAnbar = new FormAnbar();
-            //this.Location = frmAnbar.btnAddProdoct.Location;
+        }
+        private void FormLitelEnter_Load(object sender, EventArgs e)
+        {
+            Fill_ComUnit();
         }
 
         private void panelStore_Paint(object sender, PaintEventArgs e)
@@ -70,6 +68,7 @@ namespace Service
             FormAddUnit frmUnit = new FormAddUnit();
             //frmUnit.Location = new Point(btnAddUnit.Location.X,btnAddUnit.Location.Y);
             frmUnit.ShowDialog();
+            Fill_ComUnit();
             
         }
     }

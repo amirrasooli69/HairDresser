@@ -33,6 +33,17 @@ namespace Service
                     {
                         MessageBox.Show("این واحد وجود دارد", "واحد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+                    else
+                    {
+                        Unit newUnit = new Unit();
+                        newUnit.Name = txtUnitName.Text;
+                        context.Unit.Add(newUnit);
+                        context.SaveChanges();
+                        MessageBox.Show("واحد ثبت شد", "ثبت", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtUnitName.Text = "";
+                        txtUnitName.Focus();
+
+                    }
 
                 }
                 else

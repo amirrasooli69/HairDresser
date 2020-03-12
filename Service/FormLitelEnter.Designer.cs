@@ -91,7 +91,7 @@
             this.btnSaveProdoct.Location = new System.Drawing.Point(8, 181);
             this.btnSaveProdoct.Name = "btnSaveProdoct";
             this.btnSaveProdoct.Size = new System.Drawing.Size(85, 27);
-            this.btnSaveProdoct.TabIndex = 12;
+            this.btnSaveProdoct.TabIndex = 9;
             this.btnSaveProdoct.Text = "ثبت و ویرایش";
             this.btnSaveProdoct.UseVisualStyleBackColor = true;
             this.btnSaveProdoct.Click += new System.EventHandler(this.btnSaveProdoct_Click);
@@ -159,7 +159,7 @@
             this.txtDetails.Name = "txtDetails";
             this.txtDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtDetails.Size = new System.Drawing.Size(199, 22);
-            this.txtDetails.TabIndex = 4;
+            this.txtDetails.TabIndex = 6;
             // 
             // label31
             // 
@@ -187,7 +187,7 @@
             this.txtBarcode.Location = new System.Drawing.Point(10, 121);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(198, 22);
-            this.txtBarcode.TabIndex = 6;
+            this.txtBarcode.TabIndex = 7;
             // 
             // panelStore
             // 
@@ -326,7 +326,7 @@
             this.comUnit.Name = "comUnit";
             this.comUnit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comUnit.Size = new System.Drawing.Size(148, 21);
-            this.comUnit.TabIndex = 17;
+            this.comUnit.TabIndex = 3;
             // 
             // btnAddUnit
             // 
@@ -335,7 +335,7 @@
             this.btnAddUnit.Location = new System.Drawing.Point(33, 61);
             this.btnAddUnit.Name = "btnAddUnit";
             this.btnAddUnit.Size = new System.Drawing.Size(20, 24);
-            this.btnAddUnit.TabIndex = 91;
+            this.btnAddUnit.TabIndex = 4;
             this.btnAddUnit.Text = "+";
             this.btnAddUnit.UseVisualStyleBackColor = false;
             this.btnAddUnit.Click += new System.EventHandler(this.btnAddUnit_Click);
@@ -347,7 +347,7 @@
             this.btnDelUnit.Location = new System.Drawing.Point(9, 61);
             this.btnDelUnit.Name = "btnDelUnit";
             this.btnDelUnit.Size = new System.Drawing.Size(20, 24);
-            this.btnDelUnit.TabIndex = 92;
+            this.btnDelUnit.TabIndex = 5;
             this.btnDelUnit.Text = "-";
             this.btnDelUnit.UseVisualStyleBackColor = false;
             // 
@@ -400,9 +400,9 @@
         public System.Windows.Forms.Panel panelProdoct;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolExit;
-        private System.Windows.Forms.ComboBox comUnit;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button btnAddUnit;
         public System.Windows.Forms.Button btnDelUnit;
+        public System.Windows.Forms.ComboBox comUnit;
     }
 }

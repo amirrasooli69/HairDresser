@@ -290,3 +290,4 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormLitte
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csprojAssemblyReference.cache
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csproj.CopyComplete
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormAddUnit.resources

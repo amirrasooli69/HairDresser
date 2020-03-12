@@ -64,5 +64,13 @@ namespace Service
 
             }
         }
+
+        private void btnAddUnit_Click(object sender, EventArgs e)
+        {
+            FormAddUnit frmUnit = new FormAddUnit();
+            //frmUnit.Location = new Point(btnAddUnit.Location.X,btnAddUnit.Location.Y);
+            frmUnit.ShowDialog();
+            
+        }
     }
 }

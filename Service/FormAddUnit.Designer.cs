@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddUnit));
-            this.txtNameProdoct = new System.Windows.Forms.TextBox();
+            this.txtUnitName = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,14 +37,14 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtNameProdoct
+            // txtUnitName
             // 
-            this.txtNameProdoct.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameProdoct.Location = new System.Drawing.Point(75, 28);
-            this.txtNameProdoct.Name = "txtNameProdoct";
-            this.txtNameProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtNameProdoct.Size = new System.Drawing.Size(138, 22);
-            this.txtNameProdoct.TabIndex = 16;
+            this.txtUnitName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnitName.Location = new System.Drawing.Point(75, 28);
+            this.txtUnitName.Name = "txtUnitName";
+            this.txtUnitName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtUnitName.Size = new System.Drawing.Size(138, 22);
+            this.txtUnitName.TabIndex = 16;
             // 
             // label28
             // 
@@ -62,7 +62,7 @@
             this.toolExit});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.menuStrip1.Size = new System.Drawing.Size(266, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
@@ -92,12 +92,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(266, 64);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtNameProdoct);
+            this.Controls.Add(this.txtUnitName);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAddUnit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddUnit";
+            this.Load += new System.EventHandler(this.FormAddUnit_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -107,7 +109,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtNameProdoct;
+        private System.Windows.Forms.TextBox txtUnitName;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolExit;

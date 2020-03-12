@@ -55,6 +55,8 @@
             this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.comUnit = new System.Windows.Forms.ComboBox();
+            this.btnAddColleague = new System.Windows.Forms.Button();
+            this.btnDelColleague = new System.Windows.Forms.Button();
             this.panelProdoct.SuspendLayout();
             this.panelStore.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -62,6 +64,8 @@
             // 
             // panelProdoct
             // 
+            this.panelProdoct.Controls.Add(this.btnAddColleague);
+            this.panelProdoct.Controls.Add(this.btnDelColleague);
             this.panelProdoct.Controls.Add(this.comUnit);
             this.panelProdoct.Controls.Add(this.label1);
             this.panelProdoct.Controls.Add(this.panelStore);
@@ -324,6 +328,28 @@
             this.comUnit.Size = new System.Drawing.Size(148, 21);
             this.comUnit.TabIndex = 17;
             // 
+            // btnAddColleague
+            // 
+            this.btnAddColleague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddColleague.Location = new System.Drawing.Point(33, 61);
+            this.btnAddColleague.Name = "btnAddColleague";
+            this.btnAddColleague.Size = new System.Drawing.Size(20, 24);
+            this.btnAddColleague.TabIndex = 91;
+            this.btnAddColleague.Text = "+";
+            this.btnAddColleague.UseVisualStyleBackColor = false;
+            // 
+            // btnDelColleague
+            // 
+            this.btnDelColleague.BackColor = System.Drawing.Color.Red;
+            this.btnDelColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelColleague.Location = new System.Drawing.Point(9, 61);
+            this.btnDelColleague.Name = "btnDelColleague";
+            this.btnDelColleague.Size = new System.Drawing.Size(20, 24);
+            this.btnDelColleague.TabIndex = 92;
+            this.btnDelColleague.Text = "-";
+            this.btnDelColleague.UseVisualStyleBackColor = false;
+            // 
             // FormLittelEnter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,5 +401,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolExit;
         private System.Windows.Forms.ComboBox comUnit;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btnAddColleague;
+        public System.Windows.Forms.Button btnDelColleague;
     }
 }

@@ -133,6 +133,12 @@
     <Compile Include="FDate.designer.cs">
       <DependentUpon>FDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddUnit.Designer.cs">
+      <DependentUpon>FormAddUnit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAnbar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,6 +372,9 @@
     </Compile>
     <EmbeddedResource Include="FDate.resx">
       <DependentUpon>FDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddUnit.resx">
+      <DependentUpon>FormAddUnit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAnbar.resx">
       <DependentUpon>FormAnbar.cs</DependentUpon>

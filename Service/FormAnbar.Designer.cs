@@ -159,7 +159,8 @@
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgAnbar.Size = new System.Drawing.Size(900, 373);
             this.dgAnbar.TabIndex = 9;
-            this.dgAnbar.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAnbar_CellEnter);
+            this.dgAnbar.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAnbar_CellEndEdit);
+            this.dgAnbar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgAnbar_KeyPress);
             // 
             // ProdoctCode
             // 

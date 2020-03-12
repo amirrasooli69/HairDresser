@@ -29,7 +29,7 @@ namespace Service
             //------
             dgAnbar.Enabled = true;
             dgAnbar.Focus();
-            
+
             
             
         }
@@ -41,16 +41,44 @@ namespace Service
             dgAnbar.Enabled = false;
         }
 
-        private void dgAnbar_CellEnter(object sender, DataGridViewCellEventArgs e)
+        private void dgAnbar_Enter(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgAnbar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+
+            }
+        }
+
+        private void dgAnbar_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
-                FormLittelEnter frmlittel = new FormLittelEnter();
-                frmlittel.panelProdoct.Visible = false;
-                frmlittel.panelStore.Visible = false;
-                frmlittel.dgSearch.BringToFront();
-                frmlittel.dgSearch.Dock = DockStyle.Fill;                
-                frmlittel.ShowDialog();
+                if (context.AnbarProdoct.Count() > 0)
+                {
+                    //long x=long.Parse( dgAnbar.CurrentCell.Value.ToString());
+                    var search = context.AnbarProdoct.Where(c => c.code == long.Parse(dgAnbar.CurrentCell.Value.ToString())).FirstOrDefault();
+                    if(search !=null)
+                    {
+                        dgAnbar.CurrentRow.Cells[1].Value = search.Name;
+                        dgAnbar.CurrentRow.Cells[2].ReadOnly = true;
+                    }
+
+                }
+                else
+                {
+                    FormLittelEnter frmlittel = new FormLittelEnter();
+                    frmlittel.panelProdoct.Visible = true;
+                    frmlittel.panelStore.Visible = false;
+                    //frmlittel.dgSearch.BringToFront();
+                    frmlittel.panelProdoct.Dock = DockStyle.Fill;
+                    frmlittel.ShowDialog();
+                }
+
             }
         }
     }

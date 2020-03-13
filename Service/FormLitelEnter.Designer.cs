@@ -30,6 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLittelEnter));
             this.panelProdoct = new System.Windows.Forms.Panel();
+            this.btnAddUnit = new System.Windows.Forms.Button();
+            this.btnDelUnit = new System.Windows.Forms.Button();
+            this.comUnit = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelStore = new System.Windows.Forms.Panel();
+            this.btnSaveStore = new System.Windows.Forms.Button();
+            this.txtStoreName = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.btnSaveProdoct = new System.Windows.Forms.Button();
             this.txtNameProdoct = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -41,25 +55,13 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.txtBarcode = new System.Windows.Forms.TextBox();
-            this.panelStore = new System.Windows.Forms.Panel();
-            this.btnSaveStore = new System.Windows.Forms.Button();
-            this.txtStoreName = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comUnit = new System.Windows.Forms.ComboBox();
-            this.btnAddUnit = new System.Windows.Forms.Button();
-            this.btnDelUnit = new System.Windows.Forms.Button();
+            this.dgSearch = new System.Windows.Forms.DataGridView();
             this.panelProdoct.SuspendLayout();
             this.panelStore.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // panelProdoct
@@ -68,7 +70,6 @@
             this.panelProdoct.Controls.Add(this.btnDelUnit);
             this.panelProdoct.Controls.Add(this.comUnit);
             this.panelProdoct.Controls.Add(this.label1);
-            this.panelProdoct.Controls.Add(this.panelStore);
             this.panelProdoct.Controls.Add(this.btnSaveProdoct);
             this.panelProdoct.Controls.Add(this.txtNameProdoct);
             this.panelProdoct.Controls.Add(this.label28);
@@ -80,10 +81,153 @@
             this.panelProdoct.Controls.Add(this.label31);
             this.panelProdoct.Controls.Add(this.label32);
             this.panelProdoct.Controls.Add(this.txtBarcode);
-            this.panelProdoct.Location = new System.Drawing.Point(0, 27);
+            this.panelProdoct.Location = new System.Drawing.Point(0, 57);
             this.panelProdoct.Name = "panelProdoct";
             this.panelProdoct.Size = new System.Drawing.Size(292, 217);
             this.panelProdoct.TabIndex = 14;
+            // 
+            // btnAddUnit
+            // 
+            this.btnAddUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddUnit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddUnit.Location = new System.Drawing.Point(33, 61);
+            this.btnAddUnit.Name = "btnAddUnit";
+            this.btnAddUnit.Size = new System.Drawing.Size(20, 24);
+            this.btnAddUnit.TabIndex = 4;
+            this.btnAddUnit.Text = "+";
+            this.btnAddUnit.UseVisualStyleBackColor = false;
+            this.btnAddUnit.Click += new System.EventHandler(this.btnAddUnit_Click);
+            // 
+            // btnDelUnit
+            // 
+            this.btnDelUnit.BackColor = System.Drawing.Color.Red;
+            this.btnDelUnit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelUnit.Location = new System.Drawing.Point(9, 61);
+            this.btnDelUnit.Name = "btnDelUnit";
+            this.btnDelUnit.Size = new System.Drawing.Size(20, 24);
+            this.btnDelUnit.TabIndex = 5;
+            this.btnDelUnit.Text = "-";
+            this.btnDelUnit.UseVisualStyleBackColor = false;
+            // 
+            // comUnit
+            // 
+            this.comUnit.FormattingEnabled = true;
+            this.comUnit.Location = new System.Drawing.Point(60, 62);
+            this.comUnit.Name = "comUnit";
+            this.comUnit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comUnit.Size = new System.Drawing.Size(148, 21);
+            this.comUnit.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(242, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 14);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "واحد";
+            // 
+            // panelStore
+            // 
+            this.panelStore.Controls.Add(this.btnSaveStore);
+            this.panelStore.Controls.Add(this.txtStoreName);
+            this.panelStore.Controls.Add(this.label16);
+            this.panelStore.Controls.Add(this.textBox2);
+            this.panelStore.Controls.Add(this.label25);
+            this.panelStore.Controls.Add(this.textBox4);
+            this.panelStore.Controls.Add(this.label26);
+            this.panelStore.Controls.Add(this.label27);
+            this.panelStore.Controls.Add(this.textBox5);
+            this.panelStore.Location = new System.Drawing.Point(190, 27);
+            this.panelStore.Name = "panelStore";
+            this.panelStore.Size = new System.Drawing.Size(292, 188);
+            this.panelStore.TabIndex = 15;
+            this.panelStore.Paint += new System.Windows.Forms.PaintEventHandler(this.panelStore_Paint);
+            // 
+            // btnSaveStore
+            // 
+            this.btnSaveStore.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveStore.Location = new System.Drawing.Point(9, 169);
+            this.btnSaveStore.Name = "btnSaveStore";
+            this.btnSaveStore.Size = new System.Drawing.Size(89, 28);
+            this.btnSaveStore.TabIndex = 12;
+            this.btnSaveStore.Text = "ثبت و ویرایش";
+            this.btnSaveStore.UseVisualStyleBackColor = true;
+            this.btnSaveStore.Click += new System.EventHandler(this.btnSaveProdoct_Click);
+            // 
+            // txtStoreName
+            // 
+            this.txtStoreName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStoreName.Location = new System.Drawing.Point(8, 15);
+            this.txtStoreName.Name = "txtStoreName";
+            this.txtStoreName.Size = new System.Drawing.Size(199, 22);
+            this.txtStoreName.TabIndex = 0;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(208, 18);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(68, 14);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "نام فروشگاه";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(8, 45);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(199, 22);
+            this.textBox2.TabIndex = 2;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(247, 48);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(29, 14);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "تلفن";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(8, 76);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(199, 22);
+            this.textBox4.TabIndex = 4;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(241, 111);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(35, 14);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "آدرس";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(239, 79);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(37, 14);
+            this.label27.TabIndex = 5;
+            this.label27.Text = "موبایل";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(9, 108);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(198, 55);
+            this.textBox5.TabIndex = 6;
             // 
             // btnSaveProdoct
             // 
@@ -189,107 +333,6 @@
             this.txtBarcode.Size = new System.Drawing.Size(198, 22);
             this.txtBarcode.TabIndex = 7;
             // 
-            // panelStore
-            // 
-            this.panelStore.Controls.Add(this.btnSaveStore);
-            this.panelStore.Controls.Add(this.txtStoreName);
-            this.panelStore.Controls.Add(this.label16);
-            this.panelStore.Controls.Add(this.textBox2);
-            this.panelStore.Controls.Add(this.label25);
-            this.panelStore.Controls.Add(this.textBox4);
-            this.panelStore.Controls.Add(this.label26);
-            this.panelStore.Controls.Add(this.label27);
-            this.panelStore.Controls.Add(this.textBox5);
-            this.panelStore.Location = new System.Drawing.Point(163, 177);
-            this.panelStore.Name = "panelStore";
-            this.panelStore.Size = new System.Drawing.Size(292, 188);
-            this.panelStore.TabIndex = 15;
-            this.panelStore.Paint += new System.Windows.Forms.PaintEventHandler(this.panelStore_Paint);
-            // 
-            // btnSaveStore
-            // 
-            this.btnSaveStore.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveStore.Location = new System.Drawing.Point(9, 169);
-            this.btnSaveStore.Name = "btnSaveStore";
-            this.btnSaveStore.Size = new System.Drawing.Size(89, 28);
-            this.btnSaveStore.TabIndex = 12;
-            this.btnSaveStore.Text = "ثبت و ویرایش";
-            this.btnSaveStore.UseVisualStyleBackColor = true;
-            this.btnSaveStore.Click += new System.EventHandler(this.btnSaveProdoct_Click);
-            // 
-            // txtStoreName
-            // 
-            this.txtStoreName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStoreName.Location = new System.Drawing.Point(8, 15);
-            this.txtStoreName.Name = "txtStoreName";
-            this.txtStoreName.Size = new System.Drawing.Size(199, 22);
-            this.txtStoreName.TabIndex = 0;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(208, 18);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(68, 14);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "نام فروشگاه";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(8, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 22);
-            this.textBox2.TabIndex = 2;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(247, 48);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(29, 14);
-            this.label25.TabIndex = 3;
-            this.label25.Text = "تلفن";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(8, 76);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(199, 22);
-            this.textBox4.TabIndex = 4;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(241, 111);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(35, 14);
-            this.label26.TabIndex = 7;
-            this.label26.Text = "آدرس";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(239, 79);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(37, 14);
-            this.label27.TabIndex = 5;
-            this.label27.Text = "موبایل";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(9, 108);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(198, 55);
-            this.textBox5.TabIndex = 6;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -309,55 +352,23 @@
             this.toolExit.Size = new System.Drawing.Size(28, 20);
             this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
             // 
-            // label1
+            // dgSearch
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(242, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 14);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "واحد";
-            // 
-            // comUnit
-            // 
-            this.comUnit.FormattingEnabled = true;
-            this.comUnit.Location = new System.Drawing.Point(60, 62);
-            this.comUnit.Name = "comUnit";
-            this.comUnit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comUnit.Size = new System.Drawing.Size(148, 21);
-            this.comUnit.TabIndex = 3;
-            // 
-            // btnAddUnit
-            // 
-            this.btnAddUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddUnit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddUnit.Location = new System.Drawing.Point(33, 61);
-            this.btnAddUnit.Name = "btnAddUnit";
-            this.btnAddUnit.Size = new System.Drawing.Size(20, 24);
-            this.btnAddUnit.TabIndex = 4;
-            this.btnAddUnit.Text = "+";
-            this.btnAddUnit.UseVisualStyleBackColor = false;
-            this.btnAddUnit.Click += new System.EventHandler(this.btnAddUnit_Click);
-            // 
-            // btnDelUnit
-            // 
-            this.btnDelUnit.BackColor = System.Drawing.Color.Red;
-            this.btnDelUnit.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelUnit.Location = new System.Drawing.Point(9, 61);
-            this.btnDelUnit.Name = "btnDelUnit";
-            this.btnDelUnit.Size = new System.Drawing.Size(20, 24);
-            this.btnDelUnit.TabIndex = 5;
-            this.btnDelUnit.Text = "-";
-            this.btnDelUnit.UseVisualStyleBackColor = false;
+            this.dgSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSearch.Location = new System.Drawing.Point(33, 30);
+            this.dgSearch.Name = "dgSearch";
+            this.dgSearch.Size = new System.Drawing.Size(77, 26);
+            this.dgSearch.TabIndex = 17;
             // 
             // FormLittelEnter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 244);
+            this.Controls.Add(this.dgSearch);
             this.Controls.Add(this.panelProdoct);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panelStore);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormLittelEnter";
@@ -370,6 +381,7 @@
             this.panelStore.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,5 +416,6 @@
         public System.Windows.Forms.Button btnAddUnit;
         public System.Windows.Forms.Button btnDelUnit;
         public System.Windows.Forms.ComboBox comUnit;
+        public System.Windows.Forms.DataGridView dgSearch;
     }
 }

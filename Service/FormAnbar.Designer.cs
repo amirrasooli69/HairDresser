@@ -46,6 +46,7 @@
             this.DateBuild = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addProdoct1 = new PapilooDate.AddProdoct();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             this.groupBox1.Controls.Add(this.label32);
             this.groupBox1.Location = new System.Drawing.Point(7, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(905, 66);
+            this.groupBox1.Size = new System.Drawing.Size(946, 66);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
@@ -85,17 +86,17 @@
             "حواله(فروش)",
             "حواله(مصرف)",
             "رسید(تولید)"});
-            this.comCase.Location = new System.Drawing.Point(679, 22);
+            this.comCase.Location = new System.Drawing.Point(729, 22);
             this.comCase.Name = "comCase";
             this.comCase.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comCase.Size = new System.Drawing.Size(162, 26);
+            this.comCase.Size = new System.Drawing.Size(152, 26);
             this.comCase.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(602, 25);
+            this.label4.Location = new System.Drawing.Point(640, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 18);
             this.label4.TabIndex = 31;
@@ -105,7 +106,7 @@
             // 
             this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Date.Location = new System.Drawing.Point(455, 20);
+            this.Date.Location = new System.Drawing.Point(493, 20);
             this.Date.Name = "Date";
             this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Date.Size = new System.Drawing.Size(141, 31);
@@ -115,7 +116,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.Location = new System.Drawing.Point(847, 25);
+            this.label2.Location = new System.Drawing.Point(887, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 18);
             this.label2.TabIndex = 27;
@@ -154,10 +155,10 @@
             this.DateBuild,
             this.DateExpired,
             this.btnDelete});
-            this.dgAnbar.Location = new System.Drawing.Point(7, 77);
+            this.dgAnbar.Location = new System.Drawing.Point(7, 233);
             this.dgAnbar.Name = "dgAnbar";
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgAnbar.Size = new System.Drawing.Size(900, 373);
+            this.dgAnbar.Size = new System.Drawing.Size(941, 217);
             this.dgAnbar.TabIndex = 9;
             this.dgAnbar.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAnbar_CellEndEdit);
             this.dgAnbar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgAnbar_KeyPress);
@@ -210,11 +211,19 @@
             this.btnDelete.HeaderText = "";
             this.btnDelete.Name = "btnDelete";
             // 
+            // addProdoct1
+            // 
+            this.addProdoct1.Location = new System.Drawing.Point(4, 77);
+            this.addProdoct1.Name = "addProdoct1";
+            this.addProdoct1.Size = new System.Drawing.Size(949, 43);
+            this.addProdoct1.TabIndex = 32;
+            // 
             // FormAnbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 503);
+            this.ClientSize = new System.Drawing.Size(960, 503);
+            this.Controls.Add(this.addProdoct1);
             this.Controls.Add(this.dgAnbar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormAnbar";
@@ -246,5 +255,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DateBuild;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateExpired;
         private System.Windows.Forms.DataGridViewTextBoxColumn btnDelete;
+        private PapilooDate.AddProdoct addProdoct1;
     }
 }

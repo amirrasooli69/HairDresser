@@ -291,3 +291,4 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csproj.Ge
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csproj.CopyComplete
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.exe
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.pdb
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\PapilooDate.AddProdoct.resources

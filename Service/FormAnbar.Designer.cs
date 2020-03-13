@@ -46,7 +46,9 @@
             this.DateBuild = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addProdoct1 = new PapilooDate.AddProdoct();
+            this.newProdoct1 = new PapilooDate.AddProdoct();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.SuspendLayout();
@@ -155,11 +157,12 @@
             this.DateBuild,
             this.DateExpired,
             this.btnDelete});
-            this.dgAnbar.Location = new System.Drawing.Point(7, 233);
+            this.dgAnbar.Location = new System.Drawing.Point(4, 206);
             this.dgAnbar.Name = "dgAnbar";
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgAnbar.Size = new System.Drawing.Size(941, 217);
+            this.dgAnbar.Size = new System.Drawing.Size(949, 217);
             this.dgAnbar.TabIndex = 9;
+            this.dgAnbar.Visible = false;
             this.dgAnbar.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAnbar_CellEndEdit);
             this.dgAnbar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgAnbar_KeyPress);
             // 
@@ -211,19 +214,38 @@
             this.btnDelete.HeaderText = "";
             this.btnDelete.Name = "btnDelete";
             // 
-            // addProdoct1
+            // newProdoct1
             // 
-            this.addProdoct1.Location = new System.Drawing.Point(4, 77);
-            this.addProdoct1.Name = "addProdoct1";
-            this.addProdoct1.Size = new System.Drawing.Size(949, 43);
-            this.addProdoct1.TabIndex = 32;
+            this.newProdoct1.Location = new System.Drawing.Point(4, 70);
+            this.newProdoct1.Name = "newProdoct1";
+            this.newProdoct1.Size = new System.Drawing.Size(949, 33);
+            this.newProdoct1.TabIndex = 32;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(359, 432);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(7, 100);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(946, 100);
+            this.panel1.TabIndex = 34;
             // 
             // FormAnbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 503);
-            this.Controls.Add(this.addProdoct1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.newProdoct1);
             this.Controls.Add(this.dgAnbar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormAnbar";
@@ -255,6 +277,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DateBuild;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateExpired;
         private System.Windows.Forms.DataGridViewTextBoxColumn btnDelete;
-        private PapilooDate.AddProdoct addProdoct1;
+        private PapilooDate.AddProdoct newProdoct1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PapilooDate;
 
 namespace Service
 {
@@ -22,7 +23,7 @@ namespace Service
         {
             AnbarParent parent = new AnbarParent();
             parent.Case = comCase.SelectedIndex;
-            parent.Date = int.Parse(Date.Text.Replace("/",""));
+            parent.Date = int.Parse(Date.Text.Replace("/", ""));
             parent.Description = txtDetails.Text;
             context.AnbarParent.Add(parent);
             context.SaveChanges();
@@ -30,8 +31,8 @@ namespace Service
             dgAnbar.Enabled = true;
             dgAnbar.Focus();
 
-            
-            
+
+
         }
 
         private void FormAnbar_Load(object sender, EventArgs e)
@@ -110,5 +111,25 @@ namespace Service
 
             }
         }
+
+        int x = 0;
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            string name = "name" + x.ToString();
+            create_prodoct(name);
+            x++;
+        }
+        public void create_prodoct(string Name)
+        {
+            AddProdoct Name = new AddProdoct();
+
+                panel1.Controls.Add(Name);
+            
+        }
+
+
     }
 }
+
+

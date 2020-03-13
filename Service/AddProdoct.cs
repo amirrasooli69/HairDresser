@@ -16,5 +16,48 @@ namespace PapilooDate
         {
             InitializeComponent();
         }
+
+        private void txtCodeProdoct_Enter(object sender, EventArgs e)
+        {
+            txtCodeProdoct.Text = "";
+
+        }
+
+        private void txtCodeProdoct_TabIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNameProdoct_Enter(object sender, EventArgs e)
+        {
+            txtNameProdoct.Text = "";
+        }
+
+        private void txtNameProdoct_TabIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddNew_Click(object sender, EventArgs e)
+        {
+            AddProdoct pro = new AddProdoct();
+            pro.Location = new Point(10, 240);
+        }
+
+        private void txtCodeProdoct_Leave(object sender, EventArgs e)
+        {
+            if (txtCodeProdoct.Text == "")
+            {
+                txtCodeProdoct.Text = "کد کالا";
+            }
+        }
+
+        private void txtNameProdoct_Leave(object sender, EventArgs e)
+        {
+            if (txtNameProdoct.Text == "")
+            {
+                txtNameProdoct.Text = "نام کالا";
+            }
+        }
     }
 }

@@ -112,23 +112,10 @@ namespace Service
             }
         }
 
-        int x = 0;
-        private void button1_Click(object sender, EventArgs e)
+        private void newProdoct1_Load(object sender, EventArgs e)
         {
-
-            string name = "name" + x.ToString();
-            create_prodoct(name);
-            x++;
-        }
-        public void create_prodoct(string Name)
-        {
-            AddProdoct Name = new AddProdoct();
-
-                panel1.Controls.Add(Name);
             
         }
-
-
     }
 }
 

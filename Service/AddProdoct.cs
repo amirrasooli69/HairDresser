@@ -59,5 +59,16 @@ namespace PapilooDate
                 txtNameProdoct.Text = "نام کالا";
             }
         }
+        public string prodoct()
+        {
+                string prodoct1= txtCodeProdoct.Text + "," + txtNameProdoct.Text + "," + txtStoreProdoct.Text + "," +
+            txtSomeProdoct.Text + "," + txtPriceProdoct.Text + "," + txtDetailProdoct.Text + "," + dateExpired.Text;
+            return prodoct1;
+        }
+
+        private void btnSaveProdoct_Click(object sender, EventArgs e)
+        {
+            prodoct();
+        }
     }
 }

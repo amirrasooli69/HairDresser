@@ -35,7 +35,7 @@
             this.txtNameProdoct = new System.Windows.Forms.TextBox();
             this.txtCodeProdoct = new System.Windows.Forms.TextBox();
             this.txtDetailProdoct = new System.Windows.Forms.TextBox();
-            this.fDate1 = new PapilooDate.FDate();
+            this.dateExpired = new PapilooDate.FDate();
             this.SuspendLayout();
             // 
             // btnSaveProdoct
@@ -47,6 +47,7 @@
             this.btnSaveProdoct.TabIndex = 15;
             this.btnSaveProdoct.Text = "ثبت";
             this.btnSaveProdoct.UseVisualStyleBackColor = true;
+            this.btnSaveProdoct.Click += new System.EventHandler(this.btnSaveProdoct_Click);
             // 
             // txtPriceProdoct
             // 
@@ -120,20 +121,20 @@
             this.txtDetailProdoct.TabIndex = 11;
             this.txtDetailProdoct.Text = "توضیحات";
             // 
-            // fDate1
+            // dateExpired
             // 
-            this.fDate1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.fDate1.Location = new System.Drawing.Point(60, 0);
-            this.fDate1.Name = "fDate1";
-            this.fDate1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fDate1.Size = new System.Drawing.Size(141, 29);
-            this.fDate1.TabIndex = 13;
+            this.dateExpired.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dateExpired.Location = new System.Drawing.Point(60, 0);
+            this.dateExpired.Name = "dateExpired";
+            this.dateExpired.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dateExpired.Size = new System.Drawing.Size(141, 29);
+            this.dateExpired.TabIndex = 13;
             // 
             // AddProdoct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.fDate1);
+            this.Controls.Add(this.dateExpired);
             this.Controls.Add(this.txtDetailProdoct);
             this.Controls.Add(this.txtCodeProdoct);
             this.Controls.Add(this.txtNameProdoct);
@@ -157,6 +158,6 @@
         private System.Windows.Forms.TextBox txtNameProdoct;
         private System.Windows.Forms.TextBox txtCodeProdoct;
         private System.Windows.Forms.TextBox txtDetailProdoct;
-        private PapilooDate.FDate fDate1;
+        private PapilooDate.FDate dateExpired;
     }
 }

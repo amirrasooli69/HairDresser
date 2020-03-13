@@ -48,7 +48,6 @@
             this.btnDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.newProdoct1 = new PapilooDate.AddProdoct();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +72,7 @@
             this.btnNew.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnNew.Location = new System.Drawing.Point(5, 22);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(73, 29);
+            this.btnNew.Size = new System.Drawing.Size(54, 29);
             this.btnNew.TabIndex = 4;
             this.btnNew.Text = "جدید";
             this.btnNew.UseVisualStyleBackColor = true;
@@ -127,18 +126,18 @@
             // txtDetails
             // 
             this.txtDetails.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDetails.Location = new System.Drawing.Point(84, 22);
+            this.txtDetails.Location = new System.Drawing.Point(65, 22);
             this.txtDetails.Multiline = true;
             this.txtDetails.Name = "txtDetails";
             this.txtDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtDetails.Size = new System.Drawing.Size(297, 28);
+            this.txtDetails.Size = new System.Drawing.Size(354, 28);
             this.txtDetails.TabIndex = 3;
             // 
             // label32
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(387, 25);
+            this.label32.Location = new System.Drawing.Point(425, 27);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(62, 18);
             this.label32.TabIndex = 18;
@@ -157,7 +156,7 @@
             this.DateBuild,
             this.DateExpired,
             this.btnDelete});
-            this.dgAnbar.Location = new System.Drawing.Point(4, 206);
+            this.dgAnbar.Location = new System.Drawing.Point(4, 111);
             this.dgAnbar.Name = "dgAnbar";
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgAnbar.Size = new System.Drawing.Size(949, 217);
@@ -220,6 +219,7 @@
             this.newProdoct1.Name = "newProdoct1";
             this.newProdoct1.Size = new System.Drawing.Size(949, 33);
             this.newProdoct1.TabIndex = 32;
+            this.newProdoct1.Load += new System.EventHandler(this.newProdoct1_Load);
             // 
             // button1
             // 
@@ -229,21 +229,12 @@
             this.button1.TabIndex = 33;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(7, 100);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(946, 100);
-            this.panel1.TabIndex = 34;
             // 
             // FormAnbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 503);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.newProdoct1);
             this.Controls.Add(this.dgAnbar);
@@ -279,6 +270,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn btnDelete;
         private PapilooDate.AddProdoct newProdoct1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
     }
 }

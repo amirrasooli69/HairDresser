@@ -152,10 +152,10 @@
             this.Description,
             this.DateExpired,
             this.btnDelete});
-            this.dgAnbar.Location = new System.Drawing.Point(7, 133);
+            this.dgAnbar.Location = new System.Drawing.Point(7, 147);
             this.dgAnbar.Name = "dgAnbar";
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgAnbar.Size = new System.Drawing.Size(949, 365);
+            this.dgAnbar.Size = new System.Drawing.Size(949, 351);
             this.dgAnbar.TabIndex = 9;
             this.dgAnbar.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAnbar_CellEndEdit);
             this.dgAnbar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgAnbar_KeyPress);
@@ -207,10 +207,10 @@
             // 
             this.txtDetailProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtDetailProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtDetailProdoct.Location = new System.Drawing.Point(199, 19);
+            this.txtDetailProdoct.Location = new System.Drawing.Point(205, 26);
             this.txtDetailProdoct.Name = "txtDetailProdoct";
             this.txtDetailProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtDetailProdoct.Size = new System.Drawing.Size(265, 26);
+            this.txtDetailProdoct.Size = new System.Drawing.Size(259, 26);
             this.txtDetailProdoct.TabIndex = 39;
             this.txtDetailProdoct.Text = "توضیحات";
             this.txtDetailProdoct.Enter += new System.EventHandler(this.txtDetailProdoct_Enter);
@@ -220,7 +220,7 @@
             // 
             this.txtCodeProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtCodeProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtCodeProdoct.Location = new System.Drawing.Point(865, 19);
+            this.txtCodeProdoct.Location = new System.Drawing.Point(865, 26);
             this.txtCodeProdoct.Name = "txtCodeProdoct";
             this.txtCodeProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtCodeProdoct.Size = new System.Drawing.Size(76, 26);
@@ -235,7 +235,7 @@
             // 
             this.txtNameProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtNameProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtNameProdoct.Location = new System.Drawing.Point(760, 19);
+            this.txtNameProdoct.Location = new System.Drawing.Point(760, 26);
             this.txtNameProdoct.Name = "txtNameProdoct";
             this.txtNameProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtNameProdoct.Size = new System.Drawing.Size(103, 26);
@@ -248,7 +248,7 @@
             // 
             this.txtStoreProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtStoreProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtStoreProdoct.Location = new System.Drawing.Point(623, 19);
+            this.txtStoreProdoct.Location = new System.Drawing.Point(623, 26);
             this.txtStoreProdoct.Name = "txtStoreProdoct";
             this.txtStoreProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtStoreProdoct.Size = new System.Drawing.Size(136, 26);
@@ -261,7 +261,7 @@
             // 
             this.txtSomeProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtSomeProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtSomeProdoct.Location = new System.Drawing.Point(571, 19);
+            this.txtSomeProdoct.Location = new System.Drawing.Point(571, 26);
             this.txtSomeProdoct.Name = "txtSomeProdoct";
             this.txtSomeProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtSomeProdoct.Size = new System.Drawing.Size(49, 26);
@@ -274,7 +274,7 @@
             // 
             this.txtPriceProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtPriceProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtPriceProdoct.Location = new System.Drawing.Point(467, 19);
+            this.txtPriceProdoct.Location = new System.Drawing.Point(467, 26);
             this.txtPriceProdoct.Name = "txtPriceProdoct";
             this.txtPriceProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtPriceProdoct.Size = new System.Drawing.Size(101, 26);
@@ -286,9 +286,9 @@
             // btnSaveProdoct
             // 
             this.btnSaveProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnSaveProdoct.Location = new System.Drawing.Point(0, 17);
+            this.btnSaveProdoct.Location = new System.Drawing.Point(5, 23);
             this.btnSaveProdoct.Name = "btnSaveProdoct";
-            this.btnSaveProdoct.Size = new System.Drawing.Size(57, 29);
+            this.btnSaveProdoct.Size = new System.Drawing.Size(54, 29);
             this.btnSaveProdoct.TabIndex = 41;
             this.btnSaveProdoct.Text = "ثبت";
             this.btnSaveProdoct.UseVisualStyleBackColor = true;
@@ -305,10 +305,10 @@
             this.groupProdoct.Controls.Add(this.txtSomeProdoct);
             this.groupProdoct.Controls.Add(this.txtStoreProdoct);
             this.groupProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.groupProdoct.Location = new System.Drawing.Point(7, 71);
+            this.groupProdoct.Location = new System.Drawing.Point(7, 73);
             this.groupProdoct.Name = "groupProdoct";
             this.groupProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupProdoct.Size = new System.Drawing.Size(946, 55);
+            this.groupProdoct.Size = new System.Drawing.Size(946, 68);
             this.groupProdoct.TabIndex = 42;
             this.groupProdoct.TabStop = false;
             this.groupProdoct.Text = "اضافه کردن کلا";
@@ -316,11 +316,13 @@
             // dateExpird
             // 
             this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dateExpird.Location = new System.Drawing.Point(58, 16);
+            this.dateExpird.Location = new System.Drawing.Point(64, 23);
             this.dateExpird.Name = "dateExpird";
             this.dateExpird.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateExpird.Size = new System.Drawing.Size(141, 29);
             this.dateExpird.TabIndex = 40;
+            this.dateExpird.Enter += new System.EventHandler(this.dateExpird_Enter);
+            this.dateExpird.Leave += new System.EventHandler(this.dateExpird_Leave);
             // 
             // Date
             // 

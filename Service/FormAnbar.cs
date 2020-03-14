@@ -30,6 +30,9 @@ namespace Service
             //------
             groupProdoct.Enabled = true;
             txtCodeProdoct.Focus();
+            txtCodeProdoct.ForeColor = Color.Black;
+
+
 
 
 
@@ -41,7 +44,9 @@ namespace Service
             comCase.SelectedIndex = 0;
             dgAnbar.Enabled = false;
             groupProdoct.Enabled = false;
-            dateExpird.Text = Practical.Today_Date();
+            //dateExpird.Text = Practical.Today_Date();
+            dateExpird.ForeColor = Color.DarkGray;
+            dateExpird.Text = "تاریخ انقضا";
         }
 
         private void dgAnbar_Enter(object sender, DataGridViewCellEventArgs e)
@@ -118,7 +123,7 @@ namespace Service
         }
         private void newProdoct1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnSaveProdoct_Click(object sender, EventArgs e)
@@ -128,7 +133,7 @@ namespace Service
                 string[] pro = prodoct();
                 dgAnbar.Rows.Add(pro[0], pro[1], pro[2], pro[3], pro[4], pro[5], pro[6]);
                 dgAnbar.Enabled = true;
-                
+
             }
             catch (Exception ex)
             {
@@ -145,7 +150,10 @@ namespace Service
 
         private void txtCodeProdoct_Enter(object sender, EventArgs e)
         {
-            txtCodeProdoct.Text = "";
+            if (txtCodeProdoct.Text == "کد کالا")
+            {
+                txtCodeProdoct.Text = "";
+            }
         }
 
         private void txtCodeProdoct_TabIndexChanged(object sender, EventArgs e)
@@ -155,74 +163,118 @@ namespace Service
 
         private void txtCodeProdoct_Leave(object sender, EventArgs e)
         {
-            if(txtCodeProdoct.Text=="")
+            if (txtCodeProdoct.Text == "")
             {
+                txtCodeProdoct.ForeColor = Color.DarkGray;
                 txtCodeProdoct.Text = "کدکالا";
             }
         }
 
         private void txtNameProdoct_Enter(object sender, EventArgs e)
         {
-            txtNameProdoct.Text = "";
+            if (txtNameProdoct.Text == "نام کالا")
+            {
+                txtNameProdoct.ForeColor = Color.Black;
+                txtNameProdoct.Text = "";
+            }
         }
 
         private void txtNameProdoct_Leave(object sender, EventArgs e)
         {
-            if(txtNameProdoct.Text=="")
+            if (txtNameProdoct.Text == "")
             {
+                txtNameProdoct.ForeColor = Color.DarkGray;
                 txtNameProdoct.Text = "نام کالا";
             }
         }
 
         private void txtStoreProdoct_Leave(object sender, EventArgs e)
         {
-            if(txtStoreProdoct.Text=="")
+            if (txtStoreProdoct.Text == "")
             {
+                txtStoreProdoct.ForeColor = Color.DarkGray;
                 txtStoreProdoct.Text = "نام فروشگاه یا فرد";
             }
         }
 
         private void txtStoreProdoct_Enter(object sender, EventArgs e)
         {
-            txtStoreProdoct.Text = "";
+            if (txtStoreProdoct.Text == "نام فروشگاه یا فرد")
+            {
+                txtStoreProdoct.ForeColor = Color.Black;
+                txtStoreProdoct.Text = "";
+            }
         }
 
         private void txtSomeProdoct_Enter(object sender, EventArgs e)
         {
-            txtSomeProdoct.Text = "";
+            if (txtSomeProdoct.Text == "مقدار")
+            {
+                txtSomeProdoct.ForeColor = Color.Black;
+                txtSomeProdoct.Text = "";
+            }
         }
 
         private void txtSomeProdoct_Leave(object sender, EventArgs e)
         {
-            if(txtSomeProdoct.Text=="")
+            if (txtSomeProdoct.Text == "")
             {
+                txtSomeProdoct.ForeColor = Color.DarkGray;
                 txtSomeProdoct.Text = "مقدار";
             }
         }
 
         private void txtPriceProdoct_Leave(object sender, EventArgs e)
         {
-            if(txtPriceProdoct.Text=="")
+            if (txtPriceProdoct.Text == "")
             {
+                txtPriceProdoct.ForeColor = Color.DarkGray;
                 txtPriceProdoct.Text = "قیمت";
             }
         }
 
         private void txtPriceProdoct_Enter(object sender, EventArgs e)
         {
-            txtPriceProdoct.Text = "";
+            if (txtPriceProdoct.Text == "قیمت")
+            {
+                txtPriceProdoct.ForeColor = Color.Black;
+                txtPriceProdoct.Text = "";
+            }
         }
 
         private void txtDetailProdoct_Enter(object sender, EventArgs e)
         {
-            txtPriceProdoct.Text = "";
+            if (txtDetailProdoct.Text == "توضیحات")
+            {
+                txtDetailProdoct.ForeColor = Color.Black;
+                txtDetailProdoct.Text = "";
+            }
         }
 
         private void txtDetailProdoct_Leave(object sender, EventArgs e)
         {
-            if(txtPriceProdoct.Text=="")
+            if (txtDetailProdoct.Text == "")
             {
-                txtPriceProdoct.Text = "توضیحات";
+                txtDetailProdoct.ForeColor = Color.DarkGray;
+                txtDetailProdoct.Text = "توضیحات";
+            }
+        }
+
+        private void dateExpird_Enter(object sender, EventArgs e)
+        {
+            if (dateExpird.Text == "تاریخ انقضا")
+            {
+                dateExpird.ForeColor = Color.Black;
+                dateExpird.Text = "";
+            }
+        }
+
+        private void dateExpird_Leave(object sender, EventArgs e)
+        {
+            if (dateExpird.Text == "")
+            {
+                dateExpird.ForeColor = Color.DarkGray;
+                dateExpird.Text = "تاریخ انقضا";
             }
         }
     }

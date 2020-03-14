@@ -28,8 +28,8 @@ namespace Service
             context.AnbarParent.Add(parent);
             context.SaveChanges();
             //------
-            dgAnbar.Enabled = true;
-            dgAnbar.Focus();
+            groupProdoct.Enabled = true;
+            txtCodeProdoct.Focus();
 
 
 
@@ -40,6 +40,8 @@ namespace Service
             Date.Text = Practical.Today_Date();
             comCase.SelectedIndex = 0;
             dgAnbar.Enabled = false;
+            groupProdoct.Enabled = false;
+            dateExpird.Text = Practical.Today_Date();
         }
 
         private void dgAnbar_Enter(object sender, DataGridViewCellEventArgs e)
@@ -49,10 +51,7 @@ namespace Service
 
         private void dgAnbar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
-            {
 
-            }
         }
 
         private void dgAnbar_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -128,6 +127,7 @@ namespace Service
             {
                 string[] pro = prodoct();
                 dgAnbar.Rows.Add(pro[0], pro[1], pro[2], pro[3], pro[4], pro[5], pro[6]);
+                dgAnbar.Enabled = true;
                 
             }
             catch (Exception ex)
@@ -136,6 +136,94 @@ namespace Service
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void txtCodeProdoct_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodeProdoct_Enter(object sender, EventArgs e)
+        {
+            txtCodeProdoct.Text = "";
+        }
+
+        private void txtCodeProdoct_TabIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodeProdoct_Leave(object sender, EventArgs e)
+        {
+            if(txtCodeProdoct.Text=="")
+            {
+                txtCodeProdoct.Text = "کدکالا";
+            }
+        }
+
+        private void txtNameProdoct_Enter(object sender, EventArgs e)
+        {
+            txtNameProdoct.Text = "";
+        }
+
+        private void txtNameProdoct_Leave(object sender, EventArgs e)
+        {
+            if(txtNameProdoct.Text=="")
+            {
+                txtNameProdoct.Text = "نام کالا";
+            }
+        }
+
+        private void txtStoreProdoct_Leave(object sender, EventArgs e)
+        {
+            if(txtStoreProdoct.Text=="")
+            {
+                txtStoreProdoct.Text = "نام فروشگاه یا فرد";
+            }
+        }
+
+        private void txtStoreProdoct_Enter(object sender, EventArgs e)
+        {
+            txtStoreProdoct.Text = "";
+        }
+
+        private void txtSomeProdoct_Enter(object sender, EventArgs e)
+        {
+            txtSomeProdoct.Text = "";
+        }
+
+        private void txtSomeProdoct_Leave(object sender, EventArgs e)
+        {
+            if(txtSomeProdoct.Text=="")
+            {
+                txtSomeProdoct.Text = "مقدار";
+            }
+        }
+
+        private void txtPriceProdoct_Leave(object sender, EventArgs e)
+        {
+            if(txtPriceProdoct.Text=="")
+            {
+                txtPriceProdoct.Text = "قیمت";
+            }
+        }
+
+        private void txtPriceProdoct_Enter(object sender, EventArgs e)
+        {
+            txtPriceProdoct.Text = "";
+        }
+
+        private void txtDetailProdoct_Enter(object sender, EventArgs e)
+        {
+            txtPriceProdoct.Text = "";
+        }
+
+        private void txtDetailProdoct_Leave(object sender, EventArgs e)
+        {
+            if(txtPriceProdoct.Text=="")
+            {
+                txtPriceProdoct.Text = "توضیحات";
+            }
         }
     }
 }

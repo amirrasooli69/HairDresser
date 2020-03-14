@@ -51,9 +51,9 @@
             this.txtSomeProdoct = new System.Windows.Forms.TextBox();
             this.txtPriceProdoct = new System.Windows.Forms.TextBox();
             this.btnSaveProdoct = new System.Windows.Forms.Button();
+            this.groupProdoct = new System.Windows.Forms.GroupBox();
             this.dateExpird = new PapilooDate.FDate();
             this.Date = new PapilooDate.FDate();
-            this.groupProdoct = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
@@ -213,6 +213,8 @@
             this.txtDetailProdoct.Size = new System.Drawing.Size(265, 26);
             this.txtDetailProdoct.TabIndex = 39;
             this.txtDetailProdoct.Text = "توضیحات";
+            this.txtDetailProdoct.Enter += new System.EventHandler(this.txtDetailProdoct_Enter);
+            this.txtDetailProdoct.Leave += new System.EventHandler(this.txtDetailProdoct_Leave);
             // 
             // txtCodeProdoct
             // 
@@ -224,6 +226,10 @@
             this.txtCodeProdoct.Size = new System.Drawing.Size(76, 26);
             this.txtCodeProdoct.TabIndex = 34;
             this.txtCodeProdoct.Text = "کد کالا";
+            this.txtCodeProdoct.TabIndexChanged += new System.EventHandler(this.txtCodeProdoct_TabIndexChanged);
+            this.txtCodeProdoct.TextChanged += new System.EventHandler(this.txtCodeProdoct_TextChanged);
+            this.txtCodeProdoct.Enter += new System.EventHandler(this.txtCodeProdoct_Enter);
+            this.txtCodeProdoct.Leave += new System.EventHandler(this.txtCodeProdoct_Leave);
             // 
             // txtNameProdoct
             // 
@@ -235,6 +241,8 @@
             this.txtNameProdoct.Size = new System.Drawing.Size(103, 26);
             this.txtNameProdoct.TabIndex = 35;
             this.txtNameProdoct.Text = "نام کالا";
+            this.txtNameProdoct.Enter += new System.EventHandler(this.txtNameProdoct_Enter);
+            this.txtNameProdoct.Leave += new System.EventHandler(this.txtNameProdoct_Leave);
             // 
             // txtStoreProdoct
             // 
@@ -246,6 +254,8 @@
             this.txtStoreProdoct.Size = new System.Drawing.Size(136, 26);
             this.txtStoreProdoct.TabIndex = 36;
             this.txtStoreProdoct.Text = "نام فروشگاه یا فرد";
+            this.txtStoreProdoct.Enter += new System.EventHandler(this.txtStoreProdoct_Enter);
+            this.txtStoreProdoct.Leave += new System.EventHandler(this.txtStoreProdoct_Leave);
             // 
             // txtSomeProdoct
             // 
@@ -257,6 +267,8 @@
             this.txtSomeProdoct.Size = new System.Drawing.Size(49, 26);
             this.txtSomeProdoct.TabIndex = 37;
             this.txtSomeProdoct.Text = "مقدار";
+            this.txtSomeProdoct.Enter += new System.EventHandler(this.txtSomeProdoct_Enter);
+            this.txtSomeProdoct.Leave += new System.EventHandler(this.txtSomeProdoct_Leave);
             // 
             // txtPriceProdoct
             // 
@@ -268,6 +280,8 @@
             this.txtPriceProdoct.Size = new System.Drawing.Size(101, 26);
             this.txtPriceProdoct.TabIndex = 38;
             this.txtPriceProdoct.Text = "قیمت";
+            this.txtPriceProdoct.Enter += new System.EventHandler(this.txtPriceProdoct_Enter);
+            this.txtPriceProdoct.Leave += new System.EventHandler(this.txtPriceProdoct_Leave);
             // 
             // btnSaveProdoct
             // 
@@ -279,25 +293,6 @@
             this.btnSaveProdoct.Text = "ثبت";
             this.btnSaveProdoct.UseVisualStyleBackColor = true;
             this.btnSaveProdoct.Click += new System.EventHandler(this.btnSaveProdoct_Click);
-            // 
-            // dateExpird
-            // 
-            this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dateExpird.Location = new System.Drawing.Point(58, 16);
-            this.dateExpird.Name = "dateExpird";
-            this.dateExpird.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dateExpird.Size = new System.Drawing.Size(141, 29);
-            this.dateExpird.TabIndex = 40;
-            // 
-            // Date
-            // 
-            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Date.Location = new System.Drawing.Point(493, 20);
-            this.Date.Name = "Date";
-            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Date.Size = new System.Drawing.Size(141, 31);
-            this.Date.TabIndex = 1;
             // 
             // groupProdoct
             // 
@@ -317,6 +312,25 @@
             this.groupProdoct.TabIndex = 42;
             this.groupProdoct.TabStop = false;
             this.groupProdoct.Text = "اضافه کردن کلا";
+            // 
+            // dateExpird
+            // 
+            this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dateExpird.Location = new System.Drawing.Point(58, 16);
+            this.dateExpird.Name = "dateExpird";
+            this.dateExpird.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dateExpird.Size = new System.Drawing.Size(141, 29);
+            this.dateExpird.TabIndex = 40;
+            // 
+            // Date
+            // 
+            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Date.Location = new System.Drawing.Point(493, 20);
+            this.Date.Name = "Date";
+            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Date.Size = new System.Drawing.Size(141, 31);
+            this.Date.TabIndex = 1;
             // 
             // FormAnbar
             // 

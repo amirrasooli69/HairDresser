@@ -254,8 +254,6 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\Stimulsoft.Report
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\Stimulsoft.Report.Win.pdb
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\Stimulsoft.Report.Win.xml
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\System.Data.SQLite.xml
-C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csprojAssemblyReference.cache
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\PapilooDate.FDate.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormAddUnit.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormAnbar.resources
@@ -288,7 +286,9 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\PapilooDate.PCala
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.Properties.Resources.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.test.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csproj.GenerateResource.cache
-C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csproj.CopyComplete
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.exe
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.pdb
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\PapilooDate.AddProdoct.resources
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csprojAssemblyReference.cache
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csproj.CopyComplete

@@ -111,10 +111,31 @@ namespace Service
 
             }
         }
-
+        public string[] prodoct()
+        {
+            string[] prodoct1 = {txtCodeProdoct.Text , txtNameProdoct.Text , txtStoreProdoct.Text ,
+            txtSomeProdoct.Text , txtPriceProdoct.Text , txtDetailProdoct.Text , dateExpird.Text };
+            return prodoct1;
+        }
         private void newProdoct1_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnSaveProdoct_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] pro = prodoct();
+                dgAnbar.Rows.Add(pro[0], pro[1], pro[2], pro[3], pro[4], pro[5], pro[6]);
+                
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

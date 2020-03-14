@@ -59,16 +59,19 @@ namespace PapilooDate
                 txtNameProdoct.Text = "نام کالا";
             }
         }
-        public string prodoct()
+        public string[] prodoct()
         {
-                string prodoct1= txtCodeProdoct.Text + "," + txtNameProdoct.Text + "," + txtStoreProdoct.Text + "," +
-            txtSomeProdoct.Text + "," + txtPriceProdoct.Text + "," + txtDetailProdoct.Text + "," + dateExpired.Text;
+                string []prodoct1= {txtCodeProdoct.Text , txtNameProdoct.Text , txtStoreProdoct.Text ,
+            txtSomeProdoct.Text , txtPriceProdoct.Text , txtDetailProdoct.Text , dateExpired.Text };
             return prodoct1;
         }
-
         private void btnSaveProdoct_Click(object sender, EventArgs e)
         {
-            prodoct();
+           string [] pro= prodoct();
+            DataGridView dgAnbar = new DataGridView();
+            
+            dgAnbar.Rows.Add(pro[0], pro[1],pro[2],pro[3],pro[4],pro[5],pro[6]);
+            
         }
     }
 }

@@ -357,9 +357,11 @@
             this.dgSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgSearch.Location = new System.Drawing.Point(33, 30);
             this.dgSearch.Name = "dgSearch";
+            this.dgSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgSearch.Size = new System.Drawing.Size(77, 26);
             this.dgSearch.TabIndex = 17;
             this.dgSearch.Visible = false;
+            this.dgSearch.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSearch_CellDoubleClick);
             // 
             // FormLittelEnter
             // 

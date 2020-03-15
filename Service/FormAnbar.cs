@@ -19,6 +19,7 @@ namespace Service
             InitializeComponent();
         }
         StimulsoftEntities context = new StimulsoftEntities();
+        //public string majhool1 = "",majhool2="";
         public void  Add_Parent_Prodoct()
         {
             try
@@ -57,7 +58,7 @@ namespace Service
             Date.Text = Practical.Today_Date();
             comCase.SelectedIndex = 0;
             dgAnbar.Enabled = false;
-            groupProdoct.Enabled = false;
+            //groupProdoct.Enabled = false;
             //dateExpird.Text = Practical.Today_Date();
             dateExpird.ForeColor = Color.DarkGray;
             dateExpird.Text = "تاریخ انقضا";
@@ -96,7 +97,7 @@ namespace Service
                 dgAnbar.Rows.Add(pro[0], pro[1], pro[2], pro[3], pro[4], pro[5], pro[6]);
                 dgAnbar.Enabled = true;
                 //------
-                Anbar newProdoct = new Anbar();
+                //Anbar newProdoct = new Anbar();
 
 
             }
@@ -133,11 +134,19 @@ namespace Service
                 if (txtCodeProdoct.Text == "" || txtCodeProdoct == null)
                 {
                     FormLittelEnter frmlittel = new FormLittelEnter();
-                    frmlittel.panelProdoct.Visible = true;
-                    frmlittel.panelStore.Visible = false;
-                    frmlittel.panelProdoct.Dock = DockStyle.Fill;
-                    frmlittel.dgSearch.DataSource = context.AnbarProdoct.ToList();
+                    //frmlittel.panelProdoct.Visible = true;
+                    //frmlittel.panelStore.Visible = false;
+                    //frmlittel.panelProdoct.Dock = DockStyle.Fill;
+                    //frmlittel.dgSearch.DataSource = context.AnbarProdoct.ToList();
+                    //frmlittel.ShowDialog();
+                    frmlittel.see = 2;
                     frmlittel.ShowDialog();
+                    //txtStoreProdoct.Focus();
+                    //txtCodeProdoct.Text = majhool1;
+                    //txtNameProdoct.Text = majhool2;
+
+
+
                 }
                 else
                 {
@@ -158,6 +167,11 @@ namespace Service
                             frmlittel.dgSearch.Visible = true;
                             frmlittel.see = 1;
                             frmlittel.ShowDialog();
+                            txtCodeProdoct.Text = frmlittel.majhool1;
+                            txtNameProdoct.Text = frmlittel.majhool2;
+                            txtCodeProdoct.ForeColor = Color.Black;
+                            txtNameProdoct.ForeColor = Color.Black;
+                            txtStoreProdoct.Focus();
                         }
                     }
                     else
@@ -293,6 +307,8 @@ namespace Service
 
         private void txtCodeProdoct_Click(object sender, EventArgs e)
         {
+            txtCodeProdoct.Text = "";
+            txtCodeProdoct.ForeColor = Color.Black;
         }
     }
 }

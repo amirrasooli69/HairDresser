@@ -19,6 +19,8 @@ namespace Service
         }
         StimulsoftEntities context = new StimulsoftEntities();
         public int see = 0; //baraye por kardan dgshow va por kardanesh
+        public string majhool1 = "";
+        public string majhool2 = "";
         private void Add_Prodoct()
         {
             AnbarProdoct newprodoct = new AnbarProdoct();
@@ -45,7 +47,16 @@ namespace Service
         }
         private void FormLitelEnter_Load(object sender, EventArgs e)
         {
-            Fill_ComUnit();
+            if (see == 2)
+            {
+                panelStore.Visible = false;
+                dgSearch.Visible = false;
+                panelProdoct.Visible = true;
+                panelProdoct.Dock = DockStyle.Fill;
+                Fill_ComUnit();
+
+
+            }
             if(see==1)
             {
                 panelProdoct.Visible = false;
@@ -110,6 +121,15 @@ namespace Service
             //frmUnit.Location = new Point(btnAddUnit.Location.X,btnAddUnit.Location.Y);
             frmUnit.ShowDialog();
             Fill_ComUnit();
+
+        }
+
+        private void dgSearch_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormAnbar frmAnbar = new FormAnbar();
+            majhool1 = dgSearch.CurrentRow.Cells[3].Value.ToString();
+            majhool2= dgSearch.CurrentRow.Cells[2].Value.ToString();
+            this.Close();
 
         }
     }

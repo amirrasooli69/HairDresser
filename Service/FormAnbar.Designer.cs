@@ -400,8 +400,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn btnDelete;
         private PapilooDate.FDate dateExpird;
         private System.Windows.Forms.TextBox txtDetailProdoct;
-        private System.Windows.Forms.TextBox txtCodeProdoct;
-        private System.Windows.Forms.TextBox txtNameProdoct;
         private System.Windows.Forms.TextBox txtStoreProdoct;
         private System.Windows.Forms.TextBox txtSomeProdoct;
         private System.Windows.Forms.TextBox txtPriceProdoct;
@@ -409,5 +407,7 @@
         private System.Windows.Forms.GroupBox groupProdoct;
         private System.Windows.Forms.Label lblCodeRahgiri;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox txtCodeProdoct;
+        public System.Windows.Forms.TextBox txtNameProdoct;
     }
 }

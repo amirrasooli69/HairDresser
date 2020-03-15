@@ -34,7 +34,9 @@ namespace Service
             //-----
             if (context.Anbar.Count() > 0)
             {
-                string selectCodeRahgiri = context.Anbar.LastOrDefault().CodeRahgiri.ToString();
+                int endCodeRahgiri = int.Parse(context.Anbar.LastOrDefault().CodeRahgiri.ToString());
+                endCodeRahgiri++;
+                lblCodeRahgiri.Text = endCodeRahgiri.ToString();
             }
 
         }
@@ -62,59 +64,7 @@ namespace Service
 
         private void dgAnbar_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
-            {
-                if (context.AnbarProdoct.Count() > 0)
-                {
-                    if (dgAnbar.CurrentCell.Value.ToString() == "" || dgAnbar.CurrentCell.Value == null)
-                    {
-                        FormLittelEnter frmlittel = new FormLittelEnter();
-                        frmlittel.panelProdoct.Visible = false;
-                        frmlittel.panelStore.Visible = false;
-                        frmlittel.dgSearch.Dock = DockStyle.Fill;
-                        frmlittel.dgSearch.DataSource = context.AnbarProdoct.ToList();
-                        frmlittel.ShowDialog();
-                    }
-                    else
-                    {
-                        if (char.IsDigit(dgAnbar.CurrentRow.Cells[0].Value.ToString(), 0))
-                        {
-                            Int32 x = int.Parse(dgAnbar.CurrentRow.Cells[0].Value.ToString());
-                            var search = context.AnbarProdoct.Where(c => c.Code == x).FirstOrDefault();
-                            if (search != null)
-                            {
-                                dgAnbar.CurrentRow.Cells[1].Value = search.Name;
-                                dgAnbar.CurrentRow.Cells[2].ReadOnly = true;
-                            }
-                            if (search == null)
-                            {
-                                FormLittelEnter frmlittel = new FormLittelEnter();
-                                frmlittel.panelProdoct.Visible = true;
-                                frmlittel.panelStore.Visible = false;
-                                frmlittel.dgSearch.Visible = false;
-                                //frmlittel.dgSearch.BringToFront();
-                                frmlittel.panelProdoct.Dock = DockStyle.Fill;
-                                frmlittel.ShowDialog();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("عدد وارد کنید", "ورودی", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
 
-                }
-                else
-                {
-                    FormLittelEnter frmlittel = new FormLittelEnter();
-                    frmlittel.panelProdoct.Visible = true;
-                    frmlittel.panelStore.Visible = false;
-                    //frmlittel.dgSearch.BringToFront();
-                    frmlittel.panelProdoct.Dock = DockStyle.Fill;
-                    frmlittel.ShowDialog();
-                }
-
-            }
         }
         public string[] prodoct()
         {
@@ -135,6 +85,7 @@ namespace Service
                 dgAnbar.Rows.Add(pro[0], pro[1], pro[2], pro[3], pro[4], pro[5], pro[6]);
                 dgAnbar.Enabled = true;
                 //------
+                Anbar newProdoct = new Anbar();
 
 
             }
@@ -161,6 +112,57 @@ namespace Service
 
         private void txtCodeProdoct_TabIndexChanged(object sender, EventArgs e)
         {
+
+            if (context.AnbarProdoct.Count() > 0)
+            {
+                if (dgAnbar.CurrentCell.Value.ToString() == "" || dgAnbar.CurrentCell.Value == null)
+                {
+                    FormLittelEnter frmlittel = new FormLittelEnter();
+                    frmlittel.panelProdoct.Visible = false;
+                    frmlittel.panelStore.Visible = false;
+                    frmlittel.dgSearch.Dock = DockStyle.Fill;
+                    frmlittel.dgSearch.DataSource = context.AnbarProdoct.ToList();
+                    frmlittel.ShowDialog();
+                }
+                else
+                {
+                    if (char.IsDigit(dgAnbar.CurrentRow.Cells[0].Value.ToString(), 0))
+                    {
+                        Int32 x = int.Parse(dgAnbar.CurrentRow.Cells[0].Value.ToString());
+                        var search = context.AnbarProdoct.Where(c => c.Code == x).FirstOrDefault();
+                        if (search != null)
+                        {
+                            dgAnbar.CurrentRow.Cells[1].Value = search.Name;
+                            dgAnbar.CurrentRow.Cells[2].ReadOnly = true;
+                        }
+                        if (search == null)
+                        {
+                            FormLittelEnter frmlittel = new FormLittelEnter();
+                            frmlittel.panelProdoct.Visible = true;
+                            frmlittel.panelStore.Visible = false;
+                            frmlittel.dgSearch.Visible = false;
+                            //frmlittel.dgSearch.BringToFront();
+                            frmlittel.panelProdoct.Dock = DockStyle.Fill;
+                            frmlittel.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("عدد وارد کنید", "ورودی", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
+            }
+            else
+            {
+                FormLittelEnter frmlittel = new FormLittelEnter();
+                frmlittel.panelProdoct.Visible = true;
+                frmlittel.panelStore.Visible = false;
+                //frmlittel.dgSearch.BringToFront();
+                frmlittel.panelProdoct.Dock = DockStyle.Fill;
+                frmlittel.ShowDialog();
+            }
+
 
         }
 

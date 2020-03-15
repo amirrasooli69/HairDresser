@@ -32,6 +32,7 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.comCase = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.Date = new PapilooDate.FDate();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDetails = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -53,7 +54,8 @@
             this.btnSaveProdoct = new System.Windows.Forms.Button();
             this.groupProdoct = new System.Windows.Forms.GroupBox();
             this.dateExpird = new PapilooDate.FDate();
-            this.Date = new PapilooDate.FDate();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblCodeRahgiri = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
@@ -110,6 +112,16 @@
             this.label4.TabIndex = 31;
             this.label4.Text = "تاریخ ورود";
             // 
+            // Date
+            // 
+            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Date.Location = new System.Drawing.Point(493, 20);
+            this.Date.Name = "Date";
+            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Date.Size = new System.Drawing.Size(141, 31);
+            this.Date.TabIndex = 1;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -152,10 +164,10 @@
             this.Description,
             this.DateExpired,
             this.btnDelete});
-            this.dgAnbar.Location = new System.Drawing.Point(7, 147);
+            this.dgAnbar.Location = new System.Drawing.Point(7, 174);
             this.dgAnbar.Name = "dgAnbar";
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgAnbar.Size = new System.Drawing.Size(949, 351);
+            this.dgAnbar.Size = new System.Drawing.Size(949, 324);
             this.dgAnbar.TabIndex = 9;
             this.dgAnbar.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAnbar_CellEndEdit);
             this.dgAnbar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgAnbar_KeyPress);
@@ -296,6 +308,8 @@
             // 
             // groupProdoct
             // 
+            this.groupProdoct.Controls.Add(this.lblCodeRahgiri);
+            this.groupProdoct.Controls.Add(this.label1);
             this.groupProdoct.Controls.Add(this.txtNameProdoct);
             this.groupProdoct.Controls.Add(this.dateExpird);
             this.groupProdoct.Controls.Add(this.btnSaveProdoct);
@@ -308,7 +322,7 @@
             this.groupProdoct.Location = new System.Drawing.Point(7, 73);
             this.groupProdoct.Name = "groupProdoct";
             this.groupProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupProdoct.Size = new System.Drawing.Size(946, 68);
+            this.groupProdoct.Size = new System.Drawing.Size(946, 95);
             this.groupProdoct.TabIndex = 42;
             this.groupProdoct.TabStop = false;
             this.groupProdoct.Text = "اضافه کردن کلا";
@@ -324,15 +338,26 @@
             this.dateExpird.Enter += new System.EventHandler(this.dateExpird_Enter);
             this.dateExpird.Leave += new System.EventHandler(this.dateExpird_Leave);
             // 
-            // Date
+            // label1
             // 
-            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Date.Location = new System.Drawing.Point(493, 20);
-            this.Date.Name = "Date";
-            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Date.Size = new System.Drawing.Size(141, 31);
-            this.Date.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(136, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 18);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "کد رهگیری:";
+            // 
+            // lblCodeRahgiri
+            // 
+            this.lblCodeRahgiri.AutoSize = true;
+            this.lblCodeRahgiri.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodeRahgiri.Location = new System.Drawing.Point(65, 64);
+            this.lblCodeRahgiri.Name = "lblCodeRahgiri";
+            this.lblCodeRahgiri.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCodeRahgiri.Size = new System.Drawing.Size(65, 18);
+            this.lblCodeRahgiri.TabIndex = 43;
+            this.lblCodeRahgiri.Text = "تاریخ ورود";
             // 
             // FormAnbar
             // 
@@ -381,5 +406,7 @@
         private System.Windows.Forms.TextBox txtPriceProdoct;
         private System.Windows.Forms.Button btnSaveProdoct;
         private System.Windows.Forms.GroupBox groupProdoct;
+        private System.Windows.Forms.Label lblCodeRahgiri;
+        private System.Windows.Forms.Label label1;
     }
 }

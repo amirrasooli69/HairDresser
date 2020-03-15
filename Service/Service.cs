@@ -30,7 +30,7 @@ namespace Service
         public string Description { get; set; }
         public long IdService { get; set; }
         public string OrderState { get; set; }
-        public string Colleauge { get; set; }
+        public string TabelState { get; set; }
         public string PayeState { get; set; }
     }
 }

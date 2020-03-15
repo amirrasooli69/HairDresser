@@ -133,6 +133,8 @@ namespace Service
                 string[] pro = prodoct();
                 dgAnbar.Rows.Add(pro[0], pro[1], pro[2], pro[3], pro[4], pro[5], pro[6]);
                 dgAnbar.Enabled = true;
+                //------
+
 
             }
             catch (Exception ex)

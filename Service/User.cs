@@ -23,6 +23,5 @@ namespace Service
         public string Address { get; set; }
         public string PostiCode { get; set; }
         public long Id { get; set; }
-        public string Sex { get; set; }
     }
 }

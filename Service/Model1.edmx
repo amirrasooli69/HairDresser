@@ -9,15 +9,16 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Count" Type="integer" />
+          <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="IdProdoct" Type="integer" />
           <Property Name="IdParent" Type="integer" />
+          <Property Name="Count" Type="integer" />
+          <Property Name="Some" Type="integer" />
           <Property Name="Price" Type="integer" />
           <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="DateBuild" Type="integer" />
           <Property Name="DateExpierd" Type="integer" />
-          <Property Name="DateEnter" Type="integer" />
-          <Property Name="DateOut" Type="integer" />
-          <Property Name="IdProdoct" Type="integer" />
+          <Property Name="CodeRahgiri" Type="integer" />
           <Property Name="IdStore" Type="integer" />
           <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
@@ -37,10 +38,10 @@
           <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdUnit" Type="integer" />
           <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="code" Type="integer" />
+          <Property Name="Code" Type="integer" />
           <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Barcode" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="Rfid" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="RfID" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -48,24 +49,6 @@
           </Key>
           <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Colleague">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name=" Name" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="Tel" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="DateEnter" Type="integer" />
-          <Property Name="DateBirthDay" Type="integer" />
-          <Property Name="Email" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="CardNumber" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="AccountNumber" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Eshterak" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="Sex" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="Device">
           <Key>
@@ -155,7 +138,6 @@
           <Property Name="NumberServise" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ValueAdded" Type="integer" />
-          <Property Name="Colleauge" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -177,7 +159,7 @@
           <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="IdService" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderState" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="Colleauge" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="TabelState" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="PayeState" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="ServicesPrice">
@@ -219,8 +201,7 @@
           </Key>
           <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="Tel" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="Mobile" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="Unit">
@@ -243,7 +224,6 @@
           <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="PostiCode" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Sex" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="WhiteSms">
           <Key>
@@ -297,14 +277,14 @@
           <Property Name="S14" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <Association Name="FK_Anbar_0_0">
-          <End Role="AnbarProdoct" Type="Self.AnbarProdoct" Multiplicity="0..1" />
+          <End Role="AnbarParent" Type="Self.AnbarParent" Multiplicity="0..1" />
           <End Role="Anbar" Type="Self.Anbar" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="AnbarProdoct">
+            <Principal Role="AnbarParent">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Anbar">
-              <PropertyRef Name="IdProdoct" />
+              <PropertyRef Name="IdParent" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -317,6 +297,18 @@
             </Principal>
             <Dependent Role="Anbar">
               <PropertyRef Name="IdStore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Anbar_2_0">
+          <End Role="AnbarProdoct" Type="Self.AnbarProdoct" Multiplicity="0..1" />
+          <End Role="Anbar" Type="Self.Anbar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnbarProdoct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Anbar">
+              <PropertyRef Name="IdProdoct" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -337,7 +329,6 @@
           <EntitySet Name="AnbarParent" EntityType="Self.AnbarParent" store:Type="Tables" />
           <EntitySet Name="AnbarProdoct" EntityType="Self.AnbarProdoct" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" store:Type="Tables" />
-          <EntitySet Name="Colleague" EntityType="Self.Colleague" store:Type="Tables" />
           <EntitySet Name="Device" EntityType="Self.Device" store:Type="Tables" />
           <EntitySet Name="ErsalNashode" EntityType="Self.ErsalNashode" store:Type="Tables" />
           <EntitySet Name="Manage" EntityType="Self.Manage" store:Type="Tables" />
@@ -353,11 +344,15 @@
           <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" />
           <EntitySet Name="WhiteSms" EntityType="Self.WhiteSms" store:Type="Tables" />
           <AssociationSet Name="FK_Anbar_0_0" Association="Self.FK_Anbar_0_0">
-            <End Role="AnbarProdoct" EntitySet="AnbarProdoct" />
+            <End Role="AnbarParent" EntitySet="AnbarParent" />
             <End Role="Anbar" EntitySet="Anbar" />
           </AssociationSet>
           <AssociationSet Name="FK_Anbar_1_0" Association="Self.FK_Anbar_1_0">
             <End Role="Store" EntitySet="Store" />
+            <End Role="Anbar" EntitySet="Anbar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Anbar_2_0" Association="Self.FK_Anbar_2_0">
+            <End Role="AnbarProdoct" EntitySet="AnbarProdoct" />
             <End Role="Anbar" EntitySet="Anbar" />
           </AssociationSet>
           <AssociationSet Name="FK_AnbarProdoct_0_0" Association="Self.FK_AnbarProdoct_0_0">
@@ -374,19 +369,21 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Count" Type="Int64" />
+          <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="IdProdoct" Type="Int64" />
           <Property Name="IdParent" Type="Int64" />
+          <Property Name="Count" Type="Int64" />
+          <Property Name="Some" Type="Int64" />
           <Property Name="Price" Type="Int64" />
           <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="DateBuild" Type="Int64" />
           <Property Name="DateExpierd" Type="Int64" />
-          <Property Name="DateEnter" Type="Int64" />
-          <Property Name="DateOut" Type="Int64" />
-          <Property Name="IdProdoct" Type="Int64" />
+          <Property Name="CodeRahgiri" Type="Int64" />
           <Property Name="IdStore" Type="Int64" />
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="AnbarProdoct" Relationship="Self.FK_Anbar_0_0" FromRole="Anbar" ToRole="AnbarProdoct" />
+          <NavigationProperty Name="AnbarParent" Relationship="Self.FK_Anbar_0_0" FromRole="Anbar" ToRole="AnbarParent" />
           <NavigationProperty Name="Store" Relationship="Self.FK_Anbar_1_0" FromRole="Anbar" ToRole="Store" />
+          <NavigationProperty Name="AnbarProdoct" Relationship="Self.FK_Anbar_2_0" FromRole="Anbar" ToRole="AnbarProdoct" />
         </EntityType>
         <EntityType Name="AnbarParent">
           <Key>
@@ -396,6 +393,7 @@
           <Property Name="Case" Type="Int64" />
           <Property Name="Date" Type="Int64" />
           <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Anbar" Relationship="Self.FK_Anbar_0_0" FromRole="AnbarParent" ToRole="Anbar" />
         </EntityType>
         <EntityType Name="AnbarProdoct">
           <Key>
@@ -404,11 +402,11 @@
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdUnit" Type="Int64" />
           <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="code" Type="Int64" />
+          <Property Name="Code" Type="Int64" />
           <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Barcode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="Rfid" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Anbar" Relationship="Self.FK_Anbar_0_0" FromRole="AnbarProdoct" ToRole="Anbar" />
+          <Property Name="RfID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Anbar" Relationship="Self.FK_Anbar_2_0" FromRole="AnbarProdoct" ToRole="Anbar" />
           <NavigationProperty Name="Unit" Relationship="Self.FK_AnbarProdoct_0_0" FromRole="AnbarProdoct" ToRole="Unit" />
         </EntityType>
         <EntityType Name="Category">
@@ -417,24 +415,6 @@
           </Key>
           <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
-        <EntityType Name="Colleague">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="Tel" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="DateEnter" Type="Int64" />
-          <Property Name="DateBirthDay" Type="Int64" />
-          <Property Name="Email" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="CardNumber" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="AccountNumber" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Eshterak" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="Sex" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Device">
           <Key>
@@ -524,7 +504,6 @@
           <Property Name="NumberServise" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ValueAdded" Type="Int64" />
-          <Property Name="Colleauge" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -546,7 +525,7 @@
           <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="IdService" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OrderState" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="Colleauge" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TabelState" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="PayeState" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ServicesPrice">
@@ -588,8 +567,7 @@
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="Tel" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="Mobile" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Anbar" Relationship="Self.FK_Anbar_1_0" FromRole="Store" ToRole="Anbar" />
         </EntityType>
@@ -614,7 +592,6 @@
           <Property Name="Address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="PostiCode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Sex" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="WhiteSms">
           <Key>
@@ -668,14 +645,14 @@
           <Property Name="S14" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_Anbar_0_0">
-          <End Role="AnbarProdoct" Type="Self.AnbarProdoct" Multiplicity="0..1" />
+          <End Role="AnbarParent" Type="Self.AnbarParent" Multiplicity="0..1" />
           <End Role="Anbar" Type="Self.Anbar" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="AnbarProdoct">
+            <Principal Role="AnbarParent">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Anbar">
-              <PropertyRef Name="IdProdoct" />
+              <PropertyRef Name="IdParent" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -688,6 +665,18 @@
             </Principal>
             <Dependent Role="Anbar">
               <PropertyRef Name="IdStore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Anbar_2_0">
+          <End Role="AnbarProdoct" Type="Self.AnbarProdoct" Multiplicity="0..1" />
+          <End Role="Anbar" Type="Self.Anbar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnbarProdoct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Anbar">
+              <PropertyRef Name="IdProdoct" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -708,7 +697,6 @@
           <EntitySet Name="AnbarParent" EntityType="Self.AnbarParent" />
           <EntitySet Name="AnbarProdoct" EntityType="Self.AnbarProdoct" />
           <EntitySet Name="Category" EntityType="Self.Category" />
-          <EntitySet Name="Colleague" EntityType="Self.Colleague" />
           <EntitySet Name="Device" EntityType="Self.Device" />
           <EntitySet Name="ErsalNashode" EntityType="Self.ErsalNashode" />
           <EntitySet Name="Manage" EntityType="Self.Manage" />
@@ -724,11 +712,15 @@
           <EntitySet Name="User" EntityType="Self.User" />
           <EntitySet Name="WhiteSms" EntityType="Self.WhiteSms" />
           <AssociationSet Name="FK_Anbar_0_0" Association="Self.FK_Anbar_0_0">
-            <End Role="AnbarProdoct" EntitySet="AnbarProdoct" />
+            <End Role="AnbarParent" EntitySet="AnbarParent" />
             <End Role="Anbar" EntitySet="Anbar" />
           </AssociationSet>
           <AssociationSet Name="FK_Anbar_1_0" Association="Self.FK_Anbar_1_0">
             <End Role="Store" EntitySet="Store" />
+            <End Role="Anbar" EntitySet="Anbar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Anbar_2_0" Association="Self.FK_Anbar_2_0">
+            <End Role="AnbarProdoct" EntitySet="AnbarProdoct" />
             <End Role="Anbar" EntitySet="Anbar" />
           </AssociationSet>
           <AssociationSet Name="FK_AnbarProdoct_0_0" Association="Self.FK_AnbarProdoct_0_0">
@@ -745,15 +737,16 @@
           <EntitySetMapping Name="Anbar">
             <EntityTypeMapping TypeName="StimulsoftModel.Anbar">
               <MappingFragment StoreEntitySet="Anbar">
-                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IdProdoct" ColumnName="IdProdoct" />
                 <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Some" ColumnName="Some" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="DateBuild" ColumnName="DateBuild" />
                 <ScalarProperty Name="DateExpierd" ColumnName="DateExpierd" />
-                <ScalarProperty Name="DateEnter" ColumnName="DateEnter" />
-                <ScalarProperty Name="DateOut" ColumnName="DateOut" />
-                <ScalarProperty Name="IdProdoct" ColumnName="IdProdoct" />
+                <ScalarProperty Name="CodeRahgiri" ColumnName="CodeRahgiri" />
                 <ScalarProperty Name="IdStore" ColumnName="IdStore" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
@@ -775,10 +768,10 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Barcode" ColumnName="Barcode" />
-                <ScalarProperty Name="Rfid" ColumnName="Rfid" />
+                <ScalarProperty Name="RfID" ColumnName="RfID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -787,25 +780,6 @@
               <MappingFragment StoreEntitySet="Category">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Colleague">
-            <EntityTypeMapping TypeName="StimulsoftModel.Colleague">
-              <MappingFragment StoreEntitySet="Colleague">
-                <ScalarProperty Name="Name" ColumnName=" Name" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Tel" ColumnName="Tel" />
-                <ScalarProperty Name="DateEnter" ColumnName="DateEnter" />
-                <ScalarProperty Name="DateBirthDay" ColumnName="DateBirthDay" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
-                <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Eshterak" ColumnName="Eshterak" />
-                <ScalarProperty Name="Sex" ColumnName="Sex" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -902,7 +876,6 @@
                 <ScalarProperty Name="NumberServise" ColumnName="NumberServise" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ValueAdded" ColumnName="ValueAdded" />
-                <ScalarProperty Name="Colleauge" ColumnName="Colleauge" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -925,7 +898,7 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="IdService" ColumnName="IdService" />
                 <ScalarProperty Name="OrderState" ColumnName="OrderState" />
-                <ScalarProperty Name="Colleauge" ColumnName="Colleauge" />
+                <ScalarProperty Name="TabelState" ColumnName="TabelState" />
                 <ScalarProperty Name="PayeState" ColumnName="PayeState" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -970,8 +943,7 @@
               <MappingFragment StoreEntitySet="Store">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Tel" ColumnName="Tel" />
-                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -996,7 +968,6 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="PostiCode" ColumnName="PostiCode" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Sex" ColumnName="Sex" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

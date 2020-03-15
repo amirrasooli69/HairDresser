@@ -23,10 +23,10 @@ namespace Service
         public long Id { get; set; }
         public Nullable<long> IdUnit { get; set; }
         public string Name { get; set; }
-        public Nullable<long> code { get; set; }
+        public Nullable<long> Code { get; set; }
         public string Description { get; set; }
         public string Barcode { get; set; }
-        public string Rfid { get; set; }
+        public string RfID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Anbar> Anbar { get; set; }

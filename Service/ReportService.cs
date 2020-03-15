@@ -26,6 +26,5 @@ namespace Service
         public string NumberServise { get; set; }
         public long Id { get; set; }
         public Nullable<long> ValueAdded { get; set; }
-        public string Colleauge { get; set; }
     }
 }

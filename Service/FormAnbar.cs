@@ -49,11 +49,7 @@ namespace Service
         }
         private void btnNew_Click(object sender, EventArgs e)
         {
-            Thread t1 = new Thread(Add_Parent_Prodoct);
-            t1.Start();
-
-
-
+            Add_Parent_Prodoct();
         }
 
         private void FormAnbar_Load(object sender, EventArgs e)
@@ -128,6 +124,10 @@ namespace Service
         private void txtCodeProdoct_TabIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtCodeProdoct_Leave(object sender, EventArgs e)
+        {
             if (context.AnbarProdoct.Count() > 0)
             {
                 if (txtCodeProdoct.Text == "" || txtCodeProdoct == null)
@@ -156,8 +156,7 @@ namespace Service
                             frmlittel.panelProdoct.Visible = false;
                             frmlittel.panelStore.Visible = false;
                             frmlittel.dgSearch.Visible = true;
-                            //frmlittel.dgSearch.BringToFront();
-                            frmlittel.dgSearch.Dock = DockStyle.Fill;
+                            frmlittel.see = 1;
                             frmlittel.ShowDialog();
                         }
                     }
@@ -177,12 +176,6 @@ namespace Service
                 frmlittel.panelProdoct.Dock = DockStyle.Fill;
                 frmlittel.ShowDialog();
             }
-
-
-        }
-
-        private void txtCodeProdoct_Leave(object sender, EventArgs e)
-        {
             if (txtCodeProdoct.Text == "")
             {
                 txtCodeProdoct.ForeColor = Color.DarkGray;
@@ -296,6 +289,10 @@ namespace Service
                 dateExpird.ForeColor = Color.DarkGray;
                 dateExpird.Text = "تاریخ انقضا";
             }
+        }
+
+        private void txtCodeProdoct_Click(object sender, EventArgs e)
+        {
         }
     }
 }

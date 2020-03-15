@@ -22,11 +22,11 @@ namespace Service
         {
             AnbarProdoct newprodoct = new AnbarProdoct();
             newprodoct.Name = txtNameProdoct.Text;
-            newprodoct.code = long.Parse(txtCodeProdoct.Text);
+            newprodoct.Code = long.Parse(txtCodeProdoct.Text);
             newprodoct.IdUnit = comUnit.SelectedIndex;
             newprodoct.Description = txtDetails.Text;
             newprodoct.Barcode = txtBarcode.Text;
-            newprodoct.Rfid = txtRFID.Text;
+            newprodoct.RfID = txtRFID.Text;
             context.AnbarProdoct.Add(newprodoct);
             context.SaveChanges();
             MessageBox.Show("محصول ثبت شد", "ثبت", MessageBoxButtons.OK, MessageBoxIcon.Information);

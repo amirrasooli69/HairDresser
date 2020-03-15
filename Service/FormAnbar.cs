@@ -31,10 +31,11 @@ namespace Service
             groupProdoct.Enabled = true;
             txtCodeProdoct.Focus();
             txtCodeProdoct.ForeColor = Color.Black;
-
-
-
-
+            //-----
+            if (context.Anbar.Count() > 0)
+            {
+                string selectCodeRahgiri = context.Anbar.LastOrDefault().CodeRahgiri.ToString();
+            }
 
         }
 
@@ -79,7 +80,7 @@ namespace Service
                         if (char.IsDigit(dgAnbar.CurrentRow.Cells[0].Value.ToString(), 0))
                         {
                             Int32 x = int.Parse(dgAnbar.CurrentRow.Cells[0].Value.ToString());
-                            var search = context.AnbarProdoct.Where(c => c.code == x).FirstOrDefault();
+                            var search = context.AnbarProdoct.Where(c => c.Code == x).FirstOrDefault();
                             if (search != null)
                             {
                                 dgAnbar.CurrentRow.Cells[1].Value = search.Name;

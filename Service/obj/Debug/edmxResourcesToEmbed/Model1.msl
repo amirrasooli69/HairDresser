@@ -4,15 +4,16 @@
     <EntitySetMapping Name="Anbar">
       <EntityTypeMapping TypeName="StimulsoftModel.Anbar">
         <MappingFragment StoreEntitySet="Anbar">
-          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IdProdoct" ColumnName="IdProdoct" />
           <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Some" ColumnName="Some" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="DateBuild" ColumnName="DateBuild" />
           <ScalarProperty Name="DateExpierd" ColumnName="DateExpierd" />
-          <ScalarProperty Name="DateEnter" ColumnName="DateEnter" />
-          <ScalarProperty Name="DateOut" ColumnName="DateOut" />
-          <ScalarProperty Name="IdProdoct" ColumnName="IdProdoct" />
+          <ScalarProperty Name="CodeRahgiri" ColumnName="CodeRahgiri" />
           <ScalarProperty Name="IdStore" ColumnName="IdStore" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
@@ -34,10 +35,10 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdUnit" ColumnName="IdUnit" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Barcode" ColumnName="Barcode" />
-          <ScalarProperty Name="Rfid" ColumnName="Rfid" />
+          <ScalarProperty Name="RfID" ColumnName="RfID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -46,25 +47,6 @@
         <MappingFragment StoreEntitySet="Category">
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Colleague">
-      <EntityTypeMapping TypeName="StimulsoftModel.Colleague">
-        <MappingFragment StoreEntitySet="Colleague">
-          <ScalarProperty Name="Name" ColumnName=" Name" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Tel" ColumnName="Tel" />
-          <ScalarProperty Name="DateEnter" ColumnName="DateEnter" />
-          <ScalarProperty Name="DateBirthDay" ColumnName="DateBirthDay" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
-          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Eshterak" ColumnName="Eshterak" />
-          <ScalarProperty Name="Sex" ColumnName="Sex" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -161,7 +143,6 @@
           <ScalarProperty Name="NumberServise" ColumnName="NumberServise" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="ValueAdded" ColumnName="ValueAdded" />
-          <ScalarProperty Name="Colleauge" ColumnName="Colleauge" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -184,7 +165,7 @@
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="IdService" ColumnName="IdService" />
           <ScalarProperty Name="OrderState" ColumnName="OrderState" />
-          <ScalarProperty Name="Colleauge" ColumnName="Colleauge" />
+          <ScalarProperty Name="TabelState" ColumnName="TabelState" />
           <ScalarProperty Name="PayeState" ColumnName="PayeState" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -229,8 +210,7 @@
         <MappingFragment StoreEntitySet="Store">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Tel" ColumnName="Tel" />
-          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Address" ColumnName="Address" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -255,7 +235,6 @@
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="PostiCode" ColumnName="PostiCode" />
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Sex" ColumnName="Sex" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

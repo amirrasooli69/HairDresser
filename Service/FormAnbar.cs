@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PapilooDate;
+using System.Threading;
 
 namespace Service
 {
@@ -18,26 +19,40 @@ namespace Service
             InitializeComponent();
         }
         StimulsoftEntities context = new StimulsoftEntities();
+        public void  Add_Parent_Prodoct()
+        {
+            try
+            {
+                AnbarParent parent = new AnbarParent();
+                parent.Case = comCase.SelectedIndex;
+                parent.Date = int.Parse(Date.Text.Replace("/", ""));
+                parent.Description = txtDetails.Text;
+                context.AnbarParent.Add(parent);
+                context.SaveChanges();
+                //------
+                groupProdoct.Enabled = true;
+                txtCodeProdoct.Focus();
+                txtCodeProdoct.ForeColor = Color.Black;
+                //-----
+                if (context.Anbar.Count() > 0)
+                {
+                    int endCodeRahgiri = int.Parse(context.Anbar.LastOrDefault().CodeRahgiri.ToString());
+                    endCodeRahgiri++;
+                    lblCodeRahgiri.Text = endCodeRahgiri.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
 
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void btnNew_Click(object sender, EventArgs e)
         {
-            AnbarParent parent = new AnbarParent();
-            parent.Case = comCase.SelectedIndex;
-            parent.Date = int.Parse(Date.Text.Replace("/", ""));
-            parent.Description = txtDetails.Text;
-            context.AnbarParent.Add(parent);
-            context.SaveChanges();
-            //------
-            groupProdoct.Enabled = true;
-            txtCodeProdoct.Focus();
-            txtCodeProdoct.ForeColor = Color.Black;
-            //-----
-            if (context.Anbar.Count() > 0)
-            {
-                int endCodeRahgiri = int.Parse(context.Anbar.LastOrDefault().CodeRahgiri.ToString());
-                endCodeRahgiri++;
-                lblCodeRahgiri.Text = endCodeRahgiri.ToString();
-            }
+            Thread t1 = new Thread(Add_Parent_Prodoct);
+            t1.Start();
+
+
 
         }
 
@@ -115,34 +130,34 @@ namespace Service
 
             if (context.AnbarProdoct.Count() > 0)
             {
-                if (dgAnbar.CurrentCell.Value.ToString() == "" || dgAnbar.CurrentCell.Value == null)
+                if (txtCodeProdoct.Text == "" || txtCodeProdoct == null)
                 {
                     FormLittelEnter frmlittel = new FormLittelEnter();
-                    frmlittel.panelProdoct.Visible = false;
+                    frmlittel.panelProdoct.Visible = true;
                     frmlittel.panelStore.Visible = false;
-                    frmlittel.dgSearch.Dock = DockStyle.Fill;
+                    frmlittel.panelProdoct.Dock = DockStyle.Fill;
                     frmlittel.dgSearch.DataSource = context.AnbarProdoct.ToList();
                     frmlittel.ShowDialog();
                 }
                 else
                 {
-                    if (char.IsDigit(dgAnbar.CurrentRow.Cells[0].Value.ToString(), 0))
+                    if (char.IsDigit(txtCodeProdoct.Text, 0))
                     {
-                        Int32 x = int.Parse(dgAnbar.CurrentRow.Cells[0].Value.ToString());
+                        Int32 x = int.Parse(txtCodeProdoct.Text);
                         var search = context.AnbarProdoct.Where(c => c.Code == x).FirstOrDefault();
                         if (search != null)
                         {
-                            dgAnbar.CurrentRow.Cells[1].Value = search.Name;
-                            dgAnbar.CurrentRow.Cells[2].ReadOnly = true;
+                            txtNameProdoct.Text = search.Name;
+                            txtStoreProdoct.Focus();
                         }
                         if (search == null)
                         {
                             FormLittelEnter frmlittel = new FormLittelEnter();
-                            frmlittel.panelProdoct.Visible = true;
+                            frmlittel.panelProdoct.Visible = false;
                             frmlittel.panelStore.Visible = false;
-                            frmlittel.dgSearch.Visible = false;
+                            frmlittel.dgSearch.Visible = true;
                             //frmlittel.dgSearch.BringToFront();
-                            frmlittel.panelProdoct.Dock = DockStyle.Fill;
+                            frmlittel.dgSearch.Dock = DockStyle.Fill;
                             frmlittel.ShowDialog();
                         }
                     }

@@ -45,6 +45,24 @@
     <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
+  <EntityType Name="Colleague">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DateEnter" Type="integer" />
+    <Property Name="DateBirthDay" Type="integer" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Email" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Eshterak" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
   <EntityType Name="Device">
     <Key>
       <PropertyRef Name="Id" />
@@ -219,6 +237,7 @@
     <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="PostiCode" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
   <EntityType Name="WhiteSms">
     <Key>
@@ -324,6 +343,7 @@
     <EntitySet Name="AnbarParent" EntityType="Self.AnbarParent" store:Type="Tables" />
     <EntitySet Name="AnbarProdoct" EntityType="Self.AnbarProdoct" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" store:Type="Tables" />
+    <EntitySet Name="Colleague" EntityType="Self.Colleague" store:Type="Tables" />
     <EntitySet Name="Device" EntityType="Self.Device" store:Type="Tables" />
     <EntitySet Name="ErsalNashode" EntityType="Self.ErsalNashode" store:Type="Tables" />
     <EntitySet Name="Manage" EntityType="Self.Manage" store:Type="Tables" />

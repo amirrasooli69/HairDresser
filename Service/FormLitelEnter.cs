@@ -78,11 +78,6 @@ namespace Service
             }
         }
 
-        private void panelStore_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void toolExit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -131,6 +126,39 @@ namespace Service
             majhool2= dgSearch.CurrentRow.Cells[2].Value.ToString();
             this.Close();
 
+        }
+
+        private void tooltxtSearch_Enter(object sender, EventArgs e)
+        {
+            if(tooltxtSearch.Text=="جستجو")
+            {
+                tooltxtSearch.Text = "";
+            }
+        }
+
+        private void tooltxtSearch_Leave(object sender, EventArgs e)
+        {
+            if(tooltxtSearch.Text=="")
+            {
+                tooltxtSearch.Text = "جستجو";
+            }
+        }
+
+        private void tooltxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(context.AnbarProdoct.Count()>0)
+                {
+                    var searchtProdoct = context.AnbarProdoct.Where(c => c.Name.StartsWith(tooltxtSearch.Text)).ToList();
+                    dgSearch.DataSource = searchtProdoct;
+                }
+            }
+            catch ( Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

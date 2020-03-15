@@ -57,6 +57,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tooltxtSearch = new System.Windows.Forms.ToolStripTextBox();
             this.dgSearch = new System.Windows.Forms.DataGridView();
             this.panelProdoct.SuspendLayout();
             this.panelStore.SuspendLayout();
@@ -247,7 +248,6 @@
             this.panelStore.Name = "panelStore";
             this.panelStore.Size = new System.Drawing.Size(292, 188);
             this.panelStore.TabIndex = 15;
-            this.panelStore.Paint += new System.Windows.Forms.PaintEventHandler(this.panelStore_Paint);
             // 
             // btnSaveStore
             // 
@@ -336,11 +336,12 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolExit});
+            this.toolExit,
+            this.tooltxtSearch});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(292, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(292, 27);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -349,8 +350,18 @@
             this.toolExit.Image = ((System.Drawing.Image)(resources.GetObject("toolExit.Image")));
             this.toolExit.Name = "toolExit";
             this.toolExit.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolExit.Size = new System.Drawing.Size(28, 20);
+            this.toolExit.Size = new System.Drawing.Size(28, 23);
             this.toolExit.Click += new System.EventHandler(this.toolExit_Click);
+            // 
+            // tooltxtSearch
+            // 
+            this.tooltxtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tooltxtSearch.Name = "tooltxtSearch";
+            this.tooltxtSearch.Size = new System.Drawing.Size(100, 23);
+            this.tooltxtSearch.Text = "جستجو";
+            this.tooltxtSearch.Enter += new System.EventHandler(this.tooltxtSearch_Enter);
+            this.tooltxtSearch.Leave += new System.EventHandler(this.tooltxtSearch_Leave);
+            this.tooltxtSearch.TextChanged += new System.EventHandler(this.tooltxtSearch_TextChanged);
             // 
             // dgSearch
             // 
@@ -420,5 +431,6 @@
         public System.Windows.Forms.Button btnDelUnit;
         public System.Windows.Forms.ComboBox comUnit;
         public System.Windows.Forms.DataGridView dgSearch;
+        private System.Windows.Forms.ToolStripTextBox tooltxtSearch;
     }
 }

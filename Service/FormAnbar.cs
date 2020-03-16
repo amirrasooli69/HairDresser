@@ -62,6 +62,26 @@ namespace Service
             //dateExpird.Text = Practical.Today_Date();
             dateExpird.ForeColor = Color.DarkGray;
             dateExpird.Text = "تاریخ انقضا";
+            if(context.AnbarProdoct.Count()>0)
+            {
+                dgProdoct.DataSource = context.AnbarProdoct.ToList();
+                dgProdoct.Columns[0].Visible = false;
+                dgProdoct.Columns[1].Visible = false;
+                dgProdoct.Columns[2].HeaderText = "نام کالا";
+                dgProdoct.Columns[3].HeaderText = "کد کالا";
+                dgProdoct.Columns[4].HeaderText = "توضیحات";
+                dgProdoct.Columns[5].HeaderText = "بارکد";
+                dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
+                
+            }
+            if(context.Store.Count()> 0 )
+            {
+                dgStore.DataSource = context.Store.ToList();
+                dgProdoct.Columns[0].Visible = false;
+                dgProdoct.Columns[1].HeaderText = "نام فروشگاه یا فرد";
+                dgProdoct.Columns[2].HeaderText = "تلفن";
+                dgProdoct.Columns[3].HeaderText = "آدرس";
+            }
         }
 
         private void dgAnbar_Enter(object sender, DataGridViewCellEventArgs e)

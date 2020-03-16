@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAnbar));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnNew = new System.Windows.Forms.Button();
             this.comCase = new System.Windows.Forms.ComboBox();
@@ -55,20 +55,17 @@
             this.groupProdoct = new System.Windows.Forms.GroupBox();
             this.lblCodeRahgiri = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgProdoct = new System.Windows.Forms.DataGridView();
+            this.txtCodeStore = new System.Windows.Forms.TextBox();
+            this.dgStore = new System.Windows.Forms.DataGridView();
             this.dateExpird = new PapilooDate.FDate();
             this.Date = new PapilooDate.FDate();
-            this.dgProdoct = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCodeStore = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEditSmallReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdoct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgStore)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -164,7 +161,7 @@
             this.Description,
             this.DateExpired,
             this.btnDelete});
-            this.dgAnbar.Location = new System.Drawing.Point(4, 289);
+            this.dgAnbar.Location = new System.Drawing.Point(7, 317);
             this.dgAnbar.Name = "dgAnbar";
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgAnbar.Size = new System.Drawing.Size(949, 324);
@@ -232,10 +229,10 @@
             // 
             this.txtCodeProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtCodeProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtCodeProdoct.Location = new System.Drawing.Point(865, 26);
+            this.txtCodeProdoct.Location = new System.Drawing.Point(855, 22);
             this.txtCodeProdoct.Name = "txtCodeProdoct";
             this.txtCodeProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCodeProdoct.Size = new System.Drawing.Size(76, 26);
+            this.txtCodeProdoct.Size = new System.Drawing.Size(84, 26);
             this.txtCodeProdoct.TabIndex = 34;
             this.txtCodeProdoct.Text = "کد کالا";
             this.txtCodeProdoct.Click += new System.EventHandler(this.txtCodeProdoct_Click);
@@ -249,10 +246,10 @@
             // 
             this.txtNameProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtNameProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtNameProdoct.Location = new System.Drawing.Point(694, 26);
+            this.txtNameProdoct.Location = new System.Drawing.Point(443, 22);
             this.txtNameProdoct.Name = "txtNameProdoct";
             this.txtNameProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtNameProdoct.Size = new System.Drawing.Size(169, 26);
+            this.txtNameProdoct.Size = new System.Drawing.Size(159, 26);
             this.txtNameProdoct.TabIndex = 35;
             this.txtNameProdoct.Text = "نام کالا";
             this.txtNameProdoct.Enter += new System.EventHandler(this.txtNameProdoct_Enter);
@@ -262,7 +259,7 @@
             // 
             this.txtNameStore.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtNameStore.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtNameStore.Location = new System.Drawing.Point(443, 26);
+            this.txtNameStore.Location = new System.Drawing.Point(694, 22);
             this.txtNameStore.Name = "txtNameStore";
             this.txtNameStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtNameStore.Size = new System.Drawing.Size(159, 26);
@@ -310,7 +307,8 @@
             // 
             // groupProdoct
             // 
-            this.groupProdoct.Controls.Add(this.dataGridView1);
+            this.groupProdoct.Controls.Add(this.btnEditSmallReport);
+            this.groupProdoct.Controls.Add(this.dgStore);
             this.groupProdoct.Controls.Add(this.txtCodeStore);
             this.groupProdoct.Controls.Add(this.dgProdoct);
             this.groupProdoct.Controls.Add(this.lblCodeRahgiri);
@@ -327,7 +325,7 @@
             this.groupProdoct.Location = new System.Drawing.Point(7, 73);
             this.groupProdoct.Name = "groupProdoct";
             this.groupProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupProdoct.Size = new System.Drawing.Size(946, 210);
+            this.groupProdoct.Size = new System.Drawing.Size(946, 238);
             this.groupProdoct.TabIndex = 42;
             this.groupProdoct.TabStop = false;
             this.groupProdoct.Text = "اضافه کردن کلا";
@@ -353,6 +351,35 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "کد رهگیری:";
             // 
+            // dgProdoct
+            // 
+            this.dgProdoct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProdoct.Location = new System.Drawing.Point(694, 54);
+            this.dgProdoct.Name = "dgProdoct";
+            this.dgProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgProdoct.Size = new System.Drawing.Size(245, 146);
+            this.dgProdoct.TabIndex = 44;
+            // 
+            // txtCodeStore
+            // 
+            this.txtCodeStore.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtCodeStore.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtCodeStore.Location = new System.Drawing.Point(604, 22);
+            this.txtCodeStore.Name = "txtCodeStore";
+            this.txtCodeStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtCodeStore.Size = new System.Drawing.Size(84, 26);
+            this.txtCodeStore.TabIndex = 45;
+            this.txtCodeStore.Text = "کد فروشگاه";
+            // 
+            // dgStore
+            // 
+            this.dgStore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgStore.Location = new System.Drawing.Point(443, 54);
+            this.dgStore.Name = "dgStore";
+            this.dgStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgStore.Size = new System.Drawing.Size(245, 146);
+            this.dgStore.TabIndex = 46;
+            // 
             // dateExpird
             // 
             this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -374,74 +401,22 @@
             this.Date.Size = new System.Drawing.Size(141, 31);
             this.Date.TabIndex = 1;
             // 
-            // dgProdoct
+            // btnEditSmallReport
             // 
-            this.dgProdoct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProdoct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgProdoct.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgProdoct.Location = new System.Drawing.Point(694, 58);
-            this.dgProdoct.Name = "dgProdoct";
-            this.dgProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgProdoct.Size = new System.Drawing.Size(245, 146);
-            this.dgProdoct.TabIndex = 44;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "کدکلا";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "نام کالا";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // txtCodeStore
-            // 
-            this.txtCodeStore.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtCodeStore.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtCodeStore.Location = new System.Drawing.Point(604, 26);
-            this.txtCodeStore.Name = "txtCodeStore";
-            this.txtCodeStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCodeStore.Size = new System.Drawing.Size(84, 26);
-            this.txtCodeStore.TabIndex = 45;
-            this.txtCodeStore.Text = "کد فروشگاه";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridView1.Location = new System.Drawing.Point(443, 58);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dataGridView1.Size = new System.Drawing.Size(245, 146);
-            this.dataGridView1.TabIndex = 46;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "کدکلا";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "نام کالا";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.btnEditSmallReport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditSmallReport.BackgroundImage")));
+            this.btnEditSmallReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditSmallReport.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditSmallReport.Location = new System.Drawing.Point(504, 205);
+            this.btnEditSmallReport.Name = "btnEditSmallReport";
+            this.btnEditSmallReport.Size = new System.Drawing.Size(54, 27);
+            this.btnEditSmallReport.TabIndex = 49;
+            this.btnEditSmallReport.UseVisualStyleBackColor = true;
             // 
             // FormAnbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 611);
+            this.ClientSize = new System.Drawing.Size(960, 640);
             this.Controls.Add(this.groupProdoct);
             this.Controls.Add(this.dgAnbar);
             this.Controls.Add(this.groupBox1);
@@ -454,7 +429,7 @@
             this.groupProdoct.ResumeLayout(false);
             this.groupProdoct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdoct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgStore)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -490,10 +465,7 @@
         public System.Windows.Forms.TextBox txtNameProdoct;
         public System.Windows.Forms.TextBox txtCodeStore;
         private System.Windows.Forms.DataGridView dgProdoct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridView dgStore;
+        public System.Windows.Forms.Button btnEditSmallReport;
     }
 }

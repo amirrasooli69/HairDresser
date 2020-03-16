@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PapilooDate;
 using System.Threading;
+using PopupControl;
 
 namespace Service
 {
@@ -18,6 +19,7 @@ namespace Service
         {
             InitializeComponent();
         }
+        Popup popup;
         StimulsoftEntities context = new StimulsoftEntities();
         //public string majhool1 = "",majhool2="";
         public void  Add_Parent_Prodoct()
@@ -351,6 +353,24 @@ namespace Service
             FormLittelEnter frmlittleEnter = new FormLittelEnter();
             frmlittleEnter.see = 2;
             frmlittleEnter.ShowDialog();
+        }
+
+        private void btnDelColleague_Click(object sender, EventArgs e)
+        {
+            PCalander frm = new PCalander();
+            
+            popup = new Popup(frm);
+            popup.Closed += popup_Closed;
+            popup.Show(this);
+        }
+        private void popup_Closed(object sender, ToolStripDropDownClosedEventArgs e)
+        {
+            //S_Date.Text = PCalander.Pc_Date;
+        }
+
+        private void userControl11_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -82,7 +82,7 @@
             this.panelProdoct.Controls.Add(this.label31);
             this.panelProdoct.Controls.Add(this.label32);
             this.panelProdoct.Controls.Add(this.txtBarcode);
-            this.panelProdoct.Location = new System.Drawing.Point(1, 126);
+            this.panelProdoct.Location = new System.Drawing.Point(0, 122);
             this.panelProdoct.Name = "panelProdoct";
             this.panelProdoct.Size = new System.Drawing.Size(292, 95);
             this.panelProdoct.TabIndex = 14;
@@ -244,9 +244,9 @@
             this.panelStore.Controls.Add(this.label26);
             this.panelStore.Controls.Add(this.label27);
             this.panelStore.Controls.Add(this.textBox5);
-            this.panelStore.Location = new System.Drawing.Point(1, 50);
+            this.panelStore.Location = new System.Drawing.Point(0, 43);
             this.panelStore.Name = "panelStore";
-            this.panelStore.Size = new System.Drawing.Size(292, 34);
+            this.panelStore.Size = new System.Drawing.Size(292, 61);
             this.panelStore.TabIndex = 15;
             // 
             // btnSaveStore
@@ -365,7 +365,7 @@
             // dgSearch
             // 
             this.dgSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSearch.Location = new System.Drawing.Point(33, 30);
+            this.dgSearch.Location = new System.Drawing.Point(51, 26);
             this.dgSearch.Name = "dgSearch";
             this.dgSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgSearch.Size = new System.Drawing.Size(77, 26);
@@ -379,8 +379,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 244);
             this.Controls.Add(this.dgSearch);
-            this.Controls.Add(this.panelProdoct);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panelProdoct);
             this.Controls.Add(this.panelStore);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;

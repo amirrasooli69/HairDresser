@@ -64,6 +64,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.userControl11 = new PapilooDate.UserControl1();
             this.dateExpird = new PapilooDate.FDate();
             this.Date = new PapilooDate.FDate();
             this.groupBox1.SuspendLayout();
@@ -312,6 +313,7 @@
             // 
             // groupProdoct
             // 
+            this.groupProdoct.Controls.Add(this.userControl11);
             this.groupProdoct.Controls.Add(this.button2);
             this.groupProdoct.Controls.Add(this.button3);
             this.groupProdoct.Controls.Add(this.button4);
@@ -423,6 +425,7 @@
             this.btnDelColleague.TabIndex = 92;
             this.btnDelColleague.Text = "-";
             this.btnDelColleague.UseVisualStyleBackColor = false;
+            this.btnDelColleague.Click += new System.EventHandler(this.btnDelColleague_Click);
             // 
             // button2
             // 
@@ -457,6 +460,15 @@
             this.button4.Size = new System.Drawing.Size(42, 23);
             this.button4.TabIndex = 93;
             this.button4.UseVisualStyleBackColor = true;
+            // 
+            // userControl11
+            // 
+            this.userControl11.Location = new System.Drawing.Point(262, 21);
+            this.userControl11.Margin = new System.Windows.Forms.Padding(4);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(105, 51);
+            this.userControl11.TabIndex = 96;
+            this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
             // 
             // dateExpird
             // 
@@ -539,5 +551,6 @@
         public System.Windows.Forms.Button button4;
         public System.Windows.Forms.Button btnAddColleague;
         public System.Windows.Forms.Button btnDelColleague;
+        private PapilooDate.UserControl1 userControl11;
     }
 }

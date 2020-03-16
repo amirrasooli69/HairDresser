@@ -72,6 +72,8 @@ namespace Service
                 dgProdoct.Columns[4].HeaderText = "توضیحات";
                 dgProdoct.Columns[5].HeaderText = "بارکد";
                 dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
+                dgProdoct.Columns[7].Visible = false;
+                dgProdoct.Columns[8].Visible = false;
                 
             }
             if(context.Store.Count()> 0 )
@@ -334,6 +336,21 @@ namespace Service
         private void txtCodeProdoct_KeyPress(object sender, KeyPressEventArgs e)
         {
             Practical.Enter_Number(sender, e);
+        }
+
+        private void btnAddColleague_Click(object sender, EventArgs e)
+        {
+            FormLittelEnter frmLitteleEnter = new FormLittelEnter();
+            frmLitteleEnter.see = 3;
+            frmLitteleEnter.ShowDialog();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormLittelEnter frmlittleEnter = new FormLittelEnter();
+            frmlittleEnter.see = 2;
+            frmlittleEnter.ShowDialog();
         }
     }
 }

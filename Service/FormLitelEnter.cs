@@ -33,6 +33,15 @@ namespace Service
                 Fill_ComUnit();
 
             }
+            if (see == 3) // namayeshe sabte store
+            {
+                panelStore.Visible = true;
+                dgSearch.Visible = false;
+                panelProdoct.Visible = false;
+                panelStore.Dock = DockStyle.Fill;
+                tooltxtSearch.Visible = false;
+            }
+
             if (see == 1)
             {
                 panelProdoct.Visible = false;

@@ -58,9 +58,14 @@
             this.dgProdoct = new System.Windows.Forms.DataGridView();
             this.txtCodeStore = new System.Windows.Forms.TextBox();
             this.dgStore = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddColleague = new System.Windows.Forms.Button();
+            this.btnDelColleague = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.dateExpird = new PapilooDate.FDate();
             this.Date = new PapilooDate.FDate();
-            this.btnEditSmallReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
@@ -307,7 +312,12 @@
             // 
             // groupProdoct
             // 
-            this.groupProdoct.Controls.Add(this.btnEditSmallReport);
+            this.groupProdoct.Controls.Add(this.button2);
+            this.groupProdoct.Controls.Add(this.button3);
+            this.groupProdoct.Controls.Add(this.button4);
+            this.groupProdoct.Controls.Add(this.btnAddColleague);
+            this.groupProdoct.Controls.Add(this.btnDelColleague);
+            this.groupProdoct.Controls.Add(this.button1);
             this.groupProdoct.Controls.Add(this.dgStore);
             this.groupProdoct.Controls.Add(this.txtCodeStore);
             this.groupProdoct.Controls.Add(this.dgProdoct);
@@ -380,6 +390,74 @@
             this.dgStore.Size = new System.Drawing.Size(245, 146);
             this.dgStore.TabIndex = 46;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(550, 205);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 23);
+            this.button1.TabIndex = 50;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnAddColleague
+            // 
+            this.btnAddColleague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddColleague.Location = new System.Drawing.Point(646, 205);
+            this.btnAddColleague.Name = "btnAddColleague";
+            this.btnAddColleague.Size = new System.Drawing.Size(42, 23);
+            this.btnAddColleague.TabIndex = 91;
+            this.btnAddColleague.Text = "+";
+            this.btnAddColleague.UseVisualStyleBackColor = false;
+            this.btnAddColleague.Click += new System.EventHandler(this.btnAddColleague_Click);
+            // 
+            // btnDelColleague
+            // 
+            this.btnDelColleague.BackColor = System.Drawing.Color.Red;
+            this.btnDelColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelColleague.Location = new System.Drawing.Point(598, 205);
+            this.btnDelColleague.Name = "btnDelColleague";
+            this.btnDelColleague.Size = new System.Drawing.Size(42, 23);
+            this.btnDelColleague.TabIndex = 92;
+            this.btnDelColleague.Text = "-";
+            this.btnDelColleague.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(897, 206);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(42, 23);
+            this.button2.TabIndex = 94;
+            this.button2.Text = "+";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(849, 206);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(42, 23);
+            this.button3.TabIndex = 95;
+            this.button3.Text = "-";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(801, 206);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(42, 23);
+            this.button4.TabIndex = 93;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // dateExpird
             // 
             this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -400,17 +478,6 @@
             this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Date.Size = new System.Drawing.Size(141, 31);
             this.Date.TabIndex = 1;
-            // 
-            // btnEditSmallReport
-            // 
-            this.btnEditSmallReport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditSmallReport.BackgroundImage")));
-            this.btnEditSmallReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditSmallReport.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditSmallReport.Location = new System.Drawing.Point(504, 205);
-            this.btnEditSmallReport.Name = "btnEditSmallReport";
-            this.btnEditSmallReport.Size = new System.Drawing.Size(54, 27);
-            this.btnEditSmallReport.TabIndex = 49;
-            this.btnEditSmallReport.UseVisualStyleBackColor = true;
             // 
             // FormAnbar
             // 
@@ -466,6 +533,11 @@
         public System.Windows.Forms.TextBox txtCodeStore;
         private System.Windows.Forms.DataGridView dgProdoct;
         private System.Windows.Forms.DataGridView dgStore;
-        public System.Windows.Forms.Button btnEditSmallReport;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Button btnAddColleague;
+        public System.Windows.Forms.Button btnDelColleague;
     }
 }

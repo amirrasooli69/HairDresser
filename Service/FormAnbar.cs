@@ -80,7 +80,7 @@ namespace Service
         }
         public string[] prodoct()
         {
-            string[] prodoct1 = {txtCodeProdoct.Text , txtNameProdoct.Text , txtStoreProdoct.Text ,
+            string[] prodoct1 = {txtCodeProdoct.Text , txtNameProdoct.Text , txtNameStore.Text ,
             txtSomeProdoct.Text , txtPriceProdoct.Text , txtDetailProdoct.Text , dateExpird.Text };
             return prodoct1;
         }
@@ -111,7 +111,7 @@ namespace Service
 
         private void txtCodeProdoct_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtCodeProdoct_Enter(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace Service
                         if (search != null)
                         {
                             txtNameProdoct.Text = search.Name;
-                            txtStoreProdoct.Focus();
+                            txtNameStore.Focus();
                         }
                         if (search == null)
                         {
@@ -171,7 +171,7 @@ namespace Service
                             txtNameProdoct.Text = frmlittel.majhool2;
                             txtCodeProdoct.ForeColor = Color.Black;
                             txtNameProdoct.ForeColor = Color.Black;
-                            txtStoreProdoct.Focus();
+                            txtNameStore.Focus();
                         }
                     }
                     else
@@ -217,19 +217,19 @@ namespace Service
 
         private void txtStoreProdoct_Leave(object sender, EventArgs e)
         {
-            if (txtStoreProdoct.Text == "")
+            if (txtNameStore.Text == "")
             {
-                txtStoreProdoct.ForeColor = Color.DarkGray;
-                txtStoreProdoct.Text = "نام فروشگاه یا فرد";
+                txtNameStore.ForeColor = Color.DarkGray;
+                txtNameStore.Text = "نام فروشگاه یا فرد";
             }
         }
 
         private void txtStoreProdoct_Enter(object sender, EventArgs e)
         {
-            if (txtStoreProdoct.Text == "نام فروشگاه یا فرد")
+            if (txtNameStore.Text == "نام فروشگاه یا فرد")
             {
-                txtStoreProdoct.ForeColor = Color.Black;
-                txtStoreProdoct.Text = "";
+                txtNameStore.ForeColor = Color.Black;
+                txtNameStore.Text = "";
             }
         }
 
@@ -309,6 +309,11 @@ namespace Service
         {
             txtCodeProdoct.Text = "";
             txtCodeProdoct.ForeColor = Color.Black;
+        }
+
+        private void txtCodeProdoct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Practical.Enter_Number(sender, e);
         }
     }
 }

@@ -244,7 +244,7 @@
             this.panelStore.Controls.Add(this.label26);
             this.panelStore.Controls.Add(this.label27);
             this.panelStore.Controls.Add(this.textBox5);
-            this.panelStore.Location = new System.Drawing.Point(190, 27);
+            this.panelStore.Location = new System.Drawing.Point(116, 30);
             this.panelStore.Name = "panelStore";
             this.panelStore.Size = new System.Drawing.Size(292, 188);
             this.panelStore.TabIndex = 15;
@@ -355,7 +355,6 @@
             // 
             // tooltxtSearch
             // 
-            this.tooltxtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tooltxtSearch.Name = "tooltxtSearch";
             this.tooltxtSearch.Size = new System.Drawing.Size(100, 23);
             this.tooltxtSearch.Text = "جستجو";

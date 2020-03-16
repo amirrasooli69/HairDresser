@@ -21,6 +21,39 @@ namespace Service
         public int see = 0; //baraye por kardan dgshow va por kardanesh
         public string majhool1 = "";
         public string majhool2 = "";
+        public void Select_Show()
+        {
+            if (see == 2) // namayeshe sabte mahsool
+            {
+                panelStore.Visible = false;
+                dgSearch.Visible = false;
+                panelProdoct.Visible = true;
+                panelProdoct.Dock = DockStyle.Fill;
+                tooltxtSearch.Visible = false;
+                Fill_ComUnit();
+
+            }
+            if (see == 1)
+            {
+                panelProdoct.Visible = false;
+                panelStore.Visible = false;
+                dgSearch.Visible = true;
+                dgSearch.Dock = DockStyle.Fill;
+                dgSearch.RightToLeft = RightToLeft.Yes;
+                dgSearch.DataSource = context.AnbarProdoct.ToList();
+                dgSearch.Columns[0].Visible = false;
+                dgSearch.Columns[1].Visible = false;
+                dgSearch.Columns[2].HeaderText = "نام محصول";
+                dgSearch.Columns[3].HeaderText = "کد کالا";
+                dgSearch.Columns[4].HeaderText = "توضیحات";
+                dgSearch.Columns[5].HeaderText = "بارکد";
+                dgSearch.Columns[6].HeaderText = "تگ شناسایی";
+                dgSearch.Columns[7].Visible = false;
+                dgSearch.Columns[8].Visible = false;
+                //------
+                tooltxtSearch.Visible = true;
+            }
+        }
         private void Add_Prodoct()
         {
             AnbarProdoct newprodoct = new AnbarProdoct();
@@ -47,35 +80,7 @@ namespace Service
         }
         private void FormLitelEnter_Load(object sender, EventArgs e)
         {
-            if (see == 2)
-            {
-                panelStore.Visible = false;
-                dgSearch.Visible = false;
-                panelProdoct.Visible = true;
-                panelProdoct.Dock = DockStyle.Fill;
-                Fill_ComUnit();
-
-
-            }
-            if(see==1)
-            {
-                panelProdoct.Visible = false;
-                panelStore.Visible = false;
-                dgSearch.Visible = true;
-                dgSearch.Dock = DockStyle.Fill;
-                dgSearch.RightToLeft = RightToLeft.Yes;
-                dgSearch.DataSource = context.AnbarProdoct.ToList();
-                dgSearch.Columns[0].Visible = false;
-                dgSearch.Columns[1].Visible = false;
-                dgSearch.Columns[2].HeaderText = "نام محصول";
-                dgSearch.Columns[3].HeaderText = "کد کالا";
-                dgSearch.Columns[4].HeaderText = "توضیحات";
-                dgSearch.Columns[5].HeaderText = "بارکد";
-                dgSearch.Columns[6].HeaderText = "تگ شناسایی";
-                dgSearch.Columns[7].Visible = false;
-                dgSearch.Columns[8].Visible = false;
-                
-            }
+            Select_Show();
         }
 
         private void toolExit_Click(object sender, EventArgs e)

@@ -291,3 +291,4 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.pdb
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\PapilooDate.AddProdoct.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\PapilooDate.UserControl1.resources
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.AddProdoctStore.resources

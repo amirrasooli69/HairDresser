@@ -357,20 +357,10 @@ namespace Service
 
         private void btnDelColleague_Click(object sender, EventArgs e)
         {
-            PCalander frm = new PCalander();
-            
-            popup = new Popup(frm);
-            popup.Closed += popup_Closed;
-            popup.Show(this);
         }
         private void popup_Closed(object sender, ToolStripDropDownClosedEventArgs e)
         {
             //S_Date.Text = PCalander.Pc_Date;
-        }
-
-        private void userControl11_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

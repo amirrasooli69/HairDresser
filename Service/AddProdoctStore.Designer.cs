@@ -48,12 +48,10 @@
             this.btnSaveStore = new System.Windows.Forms.Button();
             this.txtStoreName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPhoneStore = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtAddressStore = new System.Windows.Forms.TextBox();
             this.panelProdoct.SuspendLayout();
             this.panelStore.SuspendLayout();
             this.SuspendLayout();
@@ -75,9 +73,9 @@
             this.panelProdoct.Controls.Add(this.label31);
             this.panelProdoct.Controls.Add(this.label32);
             this.panelProdoct.Controls.Add(this.txtBarcode);
-            this.panelProdoct.Location = new System.Drawing.Point(0, 152);
+            this.panelProdoct.Location = new System.Drawing.Point(0, 212);
             this.panelProdoct.Name = "panelProdoct";
-            this.panelProdoct.Size = new System.Drawing.Size(292, 95);
+            this.panelProdoct.Size = new System.Drawing.Size(292, 35);
             this.panelProdoct.TabIndex = 15;
             // 
             // btnAddUnit
@@ -229,26 +227,25 @@
             this.panelStore.Controls.Add(this.btnSaveStore);
             this.panelStore.Controls.Add(this.txtStoreName);
             this.panelStore.Controls.Add(this.label16);
-            this.panelStore.Controls.Add(this.textBox2);
+            this.panelStore.Controls.Add(this.txtPhoneStore);
             this.panelStore.Controls.Add(this.label25);
-            this.panelStore.Controls.Add(this.textBox4);
             this.panelStore.Controls.Add(this.label26);
-            this.panelStore.Controls.Add(this.label27);
-            this.panelStore.Controls.Add(this.textBox5);
-            this.panelStore.Location = new System.Drawing.Point(0, 3);
+            this.panelStore.Controls.Add(this.txtAddressStore);
+            this.panelStore.Location = new System.Drawing.Point(0, 25);
             this.panelStore.Name = "panelStore";
-            this.panelStore.Size = new System.Drawing.Size(292, 128);
+            this.panelStore.Size = new System.Drawing.Size(292, 181);
             this.panelStore.TabIndex = 16;
             // 
             // btnSaveStore
             // 
             this.btnSaveStore.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveStore.Location = new System.Drawing.Point(9, 169);
+            this.btnSaveStore.Location = new System.Drawing.Point(9, 134);
             this.btnSaveStore.Name = "btnSaveStore";
             this.btnSaveStore.Size = new System.Drawing.Size(89, 28);
             this.btnSaveStore.TabIndex = 12;
             this.btnSaveStore.Text = "ثبت و ویرایش";
             this.btnSaveStore.UseVisualStyleBackColor = true;
+            this.btnSaveStore.Click += new System.EventHandler(this.btnSaveStore_Click);
             // 
             // txtStoreName
             // 
@@ -262,66 +259,48 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(208, 18);
+            this.label16.Location = new System.Drawing.Point(213, 18);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(68, 14);
             this.label16.TabIndex = 1;
             this.label16.Text = "نام فروشگاه";
             // 
-            // textBox2
+            // txtPhoneStore
             // 
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(8, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 22);
-            this.textBox2.TabIndex = 2;
+            this.txtPhoneStore.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneStore.Location = new System.Drawing.Point(8, 45);
+            this.txtPhoneStore.Name = "txtPhoneStore";
+            this.txtPhoneStore.Size = new System.Drawing.Size(199, 22);
+            this.txtPhoneStore.TabIndex = 2;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(247, 48);
+            this.label25.Location = new System.Drawing.Point(208, 48);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(29, 14);
+            this.label25.Size = new System.Drawing.Size(73, 14);
             this.label25.TabIndex = 3;
-            this.label25.Text = "تلفن";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(8, 76);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(199, 22);
-            this.textBox4.TabIndex = 4;
+            this.label25.Text = "شماره تماس";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(241, 111);
+            this.label26.Location = new System.Drawing.Point(246, 76);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(35, 14);
             this.label26.TabIndex = 7;
             this.label26.Text = "آدرس";
             // 
-            // label27
+            // txtAddressStore
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(239, 79);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(37, 14);
-            this.label27.TabIndex = 5;
-            this.label27.Text = "موبایل";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(9, 108);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(198, 55);
-            this.textBox5.TabIndex = 6;
+            this.txtAddressStore.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddressStore.Location = new System.Drawing.Point(8, 73);
+            this.txtAddressStore.Multiline = true;
+            this.txtAddressStore.Name = "txtAddressStore";
+            this.txtAddressStore.Size = new System.Drawing.Size(198, 55);
+            this.txtAddressStore.TabIndex = 6;
             // 
             // ucAddProdoctStore
             // 
@@ -362,11 +341,9 @@
         private System.Windows.Forms.Button btnSaveStore;
         private System.Windows.Forms.TextBox txtStoreName;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPhoneStore;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtAddressStore;
     }
 }

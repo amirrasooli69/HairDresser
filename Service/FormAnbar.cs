@@ -136,7 +136,28 @@ namespace Service
 
         private void txtCodeProdoct_TextChanged(object sender, EventArgs e)
         {
-            
+            if (context.AnbarProdoct.Count() > 0)
+            {
+                if (txtCodeProdoct.TextLength <= 0)
+                {
+                    dgProdoct.DataSource = context.AnbarProdoct.ToList();
+                }
+                else
+                {
+                    long x = long.Parse(txtCodeProdoct.Text);
+                    var selectProdoct = context.AnbarProdoct.Where(c => c.Code == x).ToList();
+                    dgProdoct.DataSource = selectProdoct;
+                }
+                dgProdoct.Columns[0].Visible = false;
+                dgProdoct.Columns[1].Visible = false;
+                dgProdoct.Columns[2].HeaderText = "نام کالا";
+                dgProdoct.Columns[3].HeaderText = "کد کالا";
+                dgProdoct.Columns[4].HeaderText = "توضیحات";
+                dgProdoct.Columns[5].HeaderText = "بارکد";
+                dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
+                dgProdoct.Columns[7].Visible = false;
+                dgProdoct.Columns[8].Visible = false;
+            }
         }
 
         private void txtCodeProdoct_Enter(object sender, EventArgs e)
@@ -144,6 +165,7 @@ namespace Service
             if (txtCodeProdoct.Text == "کد کالا")
             {
                 txtCodeProdoct.Text = "";
+                txtCodeProdoct.ForeColor = Color.Black;
             }
         }
 
@@ -154,72 +176,74 @@ namespace Service
 
         private void txtCodeProdoct_Leave(object sender, EventArgs e)
         {
-            if (context.AnbarProdoct.Count() > 0)
-            {
-                if (txtCodeProdoct.Text == "" || txtCodeProdoct == null)
-                {
-                    FormLittelEnter frmlittel = new FormLittelEnter();
-                    //frmlittel.panelProdoct.Visible = true;
-                    //frmlittel.panelStore.Visible = false;
-                    //frmlittel.panelProdoct.Dock = DockStyle.Fill;
-                    //frmlittel.dgSearch.DataSource = context.AnbarProdoct.ToList();
-                    //frmlittel.ShowDialog();
-                    frmlittel.see = 2;
-                    frmlittel.ShowDialog();
-                    //txtStoreProdoct.Focus();
-                    //txtCodeProdoct.Text = majhool1;
-                    //txtNameProdoct.Text = majhool2;
+            //if (context.AnbarProdoct.Count() > 0)
+            //{
+            //    if (txtCodeProdoct.Text == "" || txtCodeProdoct == null)
+            //    {
+            //        FormLittelEnter frmlittel = new FormLittelEnter();
+            //        //frmlittel.panelProdoct.Visible = true;
+            //        //frmlittel.panelStore.Visible = false;
+            //        //frmlittel.panelProdoct.Dock = DockStyle.Fill;
+            //        //frmlittel.dgSearch.DataSource = context.AnbarProdoct.ToList();
+            //        //frmlittel.ShowDialog();
+            //        frmlittel.see = 2;
+            //        frmlittel.ShowDialog();
+            //        //txtStoreProdoct.Focus();
+            //        //txtCodeProdoct.Text = majhool1;
+            //        //txtNameProdoct.Text = majhool2;
 
 
 
-                }
-                else
-                {
-                    if (char.IsDigit(txtCodeProdoct.Text, 0))
-                    {
-                        Int32 x = int.Parse(txtCodeProdoct.Text);
-                        var search = context.AnbarProdoct.Where(c => c.Code == x).FirstOrDefault();
-                        if (search != null)
-                        {
-                            txtNameProdoct.Text = search.Name;
-                            txtNameStore.Focus();
-                        }
-                        if (search == null)
-                        {
-                            FormLittelEnter frmlittel = new FormLittelEnter();
-                            frmlittel.panelProdoct.Visible = false;
-                            frmlittel.panelStore.Visible = false;
-                            frmlittel.dgSearch.Visible = true;
-                            frmlittel.see = 1;
-                            frmlittel.ShowDialog();
-                            txtCodeProdoct.Text = frmlittel.majhool1;
-                            txtNameProdoct.Text = frmlittel.majhool2;
-                            txtCodeProdoct.ForeColor = Color.Black;
-                            txtNameProdoct.ForeColor = Color.Black;
-                            txtNameStore.Focus();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("عدد وارد کنید", "ورودی", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
+            //    }
+            //    else
+            //    {
+            //        if (char.IsDigit(txtCodeProdoct.Text, 0))
+            //        {
+            //            Int32 x = int.Parse(txtCodeProdoct.Text);
+            //            var search = context.AnbarProdoct.Where(c => c.Code == x).FirstOrDefault();
+            //            if (search != null)
+            //            {
+            //                txtNameProdoct.Text = search.Name;
+            //                txtNameStore.Focus();
+            //            }
+            //            if (search == null)
+            //            {
+            //                FormLittelEnter frmlittel = new FormLittelEnter();
+            //                frmlittel.panelProdoct.Visible = false;
+            //                frmlittel.panelStore.Visible = false;
+            //                frmlittel.dgSearch.Visible = true;
+            //                frmlittel.see = 1;
+            //                frmlittel.ShowDialog();
+            //                txtCodeProdoct.Text = frmlittel.majhool1;
+            //                txtNameProdoct.Text = frmlittel.majhool2;
+            //                txtCodeProdoct.ForeColor = Color.Black;
+            //                txtNameProdoct.ForeColor = Color.Black;
+            //                txtNameStore.Focus();
+            //            }
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("عدد وارد کنید", "ورودی", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        }
+            //    }
 
-            }
-            else
-            {
-                FormLittelEnter frmlittel = new FormLittelEnter();
-                frmlittel.panelProdoct.Visible = true;
-                frmlittel.panelStore.Visible = false;
-                //frmlittel.dgSearch.BringToFront();
-                frmlittel.panelProdoct.Dock = DockStyle.Fill;
-                frmlittel.ShowDialog();
-            }
+            //}
+            //else
+            //{
+            //    FormLittelEnter frmlittel = new FormLittelEnter();
+            //    frmlittel.panelProdoct.Visible = true;
+            //    frmlittel.panelStore.Visible = false;
+            //    //frmlittel.dgSearch.BringToFront();
+            //    frmlittel.panelProdoct.Dock = DockStyle.Fill;
+            //    frmlittel.ShowDialog();
+            //}
             if (txtCodeProdoct.Text == "")
             {
-                txtCodeProdoct.ForeColor = Color.DarkGray;
-                txtCodeProdoct.Text = "کدکالا";
+                txtCodeProdoct.Text = "";
+                //txtCodeProdoct.ForeColor = Color.DarkGray;
+                //txtCodeProdoct.Text = "کدکالا";
             }
+
         }
 
         private void txtNameProdoct_Enter(object sender, EventArgs e)
@@ -235,8 +259,9 @@ namespace Service
         {
             if (txtNameProdoct.Text == "")
             {
-                txtNameProdoct.ForeColor = Color.DarkGray;
-                txtNameProdoct.Text = "نام کالا";
+                txtCodeProdoct.Text = "";
+                //txtNameProdoct.ForeColor = Color.DarkGray;
+                //txtNameProdoct.Text = "نام کالا";
             }
         }
 
@@ -383,6 +408,42 @@ namespace Service
             ucDelStore.btn.Text = "+";
             ucDelStore.btn.BackColor = Color.Green;
             ucDelStore.show = "prodoct";
+        }
+
+        private void txtNameStore_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNameProdoct_TextChanged(object sender, EventArgs e)
+        {
+            if (context.AnbarProdoct.Count() > 0)
+            {
+                if (txtNameProdoct.TextLength <= 0)
+                {
+                    dgProdoct.DataSource = context.AnbarProdoct.ToList();
+                }
+                else
+                {
+                    //long x = long.Parse(txtCodeProdoct.Text);
+                    var selectProdoct = context.AnbarProdoct.Where(c => c.Name==txtNameProdoct.Text).ToList();
+                    dgProdoct.DataSource = selectProdoct;
+                }
+                dgProdoct.Columns[0].Visible = false;
+                dgProdoct.Columns[1].Visible = false;
+                dgProdoct.Columns[2].HeaderText = "نام کالا";
+                dgProdoct.Columns[3].HeaderText = "کد کالا";
+                dgProdoct.Columns[4].HeaderText = "توضیحات";
+                dgProdoct.Columns[5].HeaderText = "بارکد";
+                dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
+                dgProdoct.Columns[7].Visible = false;
+                dgProdoct.Columns[8].Visible = false;
+            }
+        }
+
+        private void ucAddStore_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -17,18 +17,16 @@ namespace Papiloo
             InitializeComponent();
         }
         public string show = "";
+        public static string[] store;
         private void ucAddProdoctStore_Load(object sender, EventArgs e)
         {
-            switch (show)
-            {
-                case "sore":
-                    {
-                        panelStore.Visible = true;
-                        panelProdoct.Visible = false;
-                        panelProdoct.Dock = DockStyle.Fill;
-                        break;
-                    }
-            }
+        }
+
+        private void btnSaveStore_Click(object sender, EventArgs e)
+        {
+            store[0] = txtStoreName.Text;
+            store[1] = txtPhoneStore.Text;
+            store[2] = txtAddressStore.Text;            
         }
     }
 }

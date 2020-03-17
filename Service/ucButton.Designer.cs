@@ -39,7 +39,6 @@
             this.btn.TabIndex = 0;
             this.btn.Text = "button1";
             this.btn.UseVisualStyleBackColor = true;
-            this.btn.Click += new System.EventHandler(this.btn_Click);
             // 
             // ucButton
             // 

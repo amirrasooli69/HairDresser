@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PopupControl;
-namespace PapilooDate
+namespace Papiloo
 {
     public partial class PCalander : UserControl
     {

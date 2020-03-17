@@ -64,8 +64,8 @@
             this.dgProdoct = new System.Windows.Forms.DataGridView();
             this.lblCodeRahgiri = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateExpird = new PapilooDate.FDate();
-            this.Date = new PapilooDate.FDate();
+            this.dateExpird = new Papiloo.FDate();
+            this.Date = new Papiloo.FDate();
             this.ucAddStore = new Papiloo.ucButton();
             this.ucDelStore = new Papiloo.ucButton();
             this.groupBox1.SuspendLayout();
@@ -530,7 +530,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comCase;
         private System.Windows.Forms.Label label4;
-        private PapilooDate.FDate Date;
+        private Papiloo.FDate Date;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDetails;
         private System.Windows.Forms.Label label32;
@@ -544,7 +544,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateExpired;
         private System.Windows.Forms.DataGridViewTextBoxColumn btnDelete;
-        private PapilooDate.FDate dateExpird;
+        private Papiloo.FDate dateExpird;
         private System.Windows.Forms.TextBox txtDetailProdoct;
         private System.Windows.Forms.TextBox txtNameStore;
         private System.Windows.Forms.TextBox txtSomeProdoct;

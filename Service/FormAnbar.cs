@@ -373,6 +373,8 @@ namespace Service
         {
             ucAddStore.btn.Text = "+";
             ucAddStore.btn.BackColor = Color.Green;
+            ucAddStore.show = "store";
+            
             
         }
 
@@ -380,6 +382,7 @@ namespace Service
         {
             ucDelStore.btn.Text = "-";
             ucDelStore.btn.BackColor = Color.Red;
+            ucDelStore.show = "prodoct";
         }
     }
 }

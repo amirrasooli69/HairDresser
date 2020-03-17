@@ -1,4 +1,4 @@
-﻿namespace Service
+﻿namespace Papiloo
 {
     partial class ucAddProdoctStore
     {
@@ -331,6 +331,7 @@
             this.Controls.Add(this.panelProdoct);
             this.Name = "ucAddProdoctStore";
             this.Size = new System.Drawing.Size(294, 265);
+            this.Load += new System.EventHandler(this.ucAddProdoctStore_Load);
             this.panelProdoct.ResumeLayout(false);
             this.panelProdoct.PerformLayout();
             this.panelStore.ResumeLayout(false);

@@ -373,6 +373,12 @@
     <Compile Include="test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucButton.Designer.cs">
+      <DependentUpon>ucButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Unit.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -487,6 +493,9 @@
     </Compile>
     <EmbeddedResource Include="test.resx">
       <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucButton.resx">
+      <DependentUpon>ucButton.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <EntityDeploy Include="Model1.edmx">

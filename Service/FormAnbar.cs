@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PapilooDate;
 using System.Threading;
 using PopupControl;
+using Papiloo;
 
 namespace Service
 {
@@ -361,6 +362,24 @@ namespace Service
         private void popup_Closed(object sender, ToolStripDropDownClosedEventArgs e)
         {
             //S_Date.Text = PCalander.Pc_Date;
+        }
+
+        private void ucButton1_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void ucAddStore_Load(object sender, EventArgs e)
+        {
+            ucAddStore.btn.Text = "+";
+            ucAddStore.btn.BackColor = Color.Green;
+            
+        }
+
+        private void ucDelStore_Load(object sender, EventArgs e)
+        {
+            ucDelStore.btn.Text = "-";
+            ucDelStore.btn.BackColor = Color.Red;
         }
     }
 }

@@ -53,24 +53,26 @@
             this.txtPriceProdoct = new System.Windows.Forms.TextBox();
             this.btnSaveProdoct = new System.Windows.Forms.Button();
             this.groupProdoct = new System.Windows.Forms.GroupBox();
-            this.lblCodeRahgiri = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgProdoct = new System.Windows.Forms.DataGridView();
-            this.txtCodeStore = new System.Windows.Forms.TextBox();
-            this.dgStore = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnAddColleague = new System.Windows.Forms.Button();
-            this.btnDelColleague = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btnAddColleague = new System.Windows.Forms.Button();
+            this.btnDelColleague = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgStore = new System.Windows.Forms.DataGridView();
+            this.txtCodeStore = new System.Windows.Forms.TextBox();
+            this.dgProdoct = new System.Windows.Forms.DataGridView();
+            this.lblCodeRahgiri = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dateExpird = new PapilooDate.FDate();
             this.Date = new PapilooDate.FDate();
+            this.ucAddStore = new Papiloo.ucButton();
+            this.ucDelStore = new Papiloo.ucButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProdoct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgStore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProdoct)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -312,6 +314,8 @@
             // 
             // groupProdoct
             // 
+            this.groupProdoct.Controls.Add(this.ucDelStore);
+            this.groupProdoct.Controls.Add(this.ucAddStore);
             this.groupProdoct.Controls.Add(this.button2);
             this.groupProdoct.Controls.Add(this.button3);
             this.groupProdoct.Controls.Add(this.button4);
@@ -339,91 +343,6 @@
             this.groupProdoct.TabIndex = 42;
             this.groupProdoct.TabStop = false;
             this.groupProdoct.Text = "اضافه کردن کلا";
-            // 
-            // lblCodeRahgiri
-            // 
-            this.lblCodeRahgiri.AutoSize = true;
-            this.lblCodeRahgiri.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodeRahgiri.Location = new System.Drawing.Point(65, 64);
-            this.lblCodeRahgiri.Name = "lblCodeRahgiri";
-            this.lblCodeRahgiri.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCodeRahgiri.Size = new System.Drawing.Size(65, 18);
-            this.lblCodeRahgiri.TabIndex = 43;
-            this.lblCodeRahgiri.Text = "تاریخ ورود";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(136, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 18);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "کد رهگیری:";
-            // 
-            // dgProdoct
-            // 
-            this.dgProdoct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProdoct.Location = new System.Drawing.Point(694, 54);
-            this.dgProdoct.Name = "dgProdoct";
-            this.dgProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgProdoct.Size = new System.Drawing.Size(245, 146);
-            this.dgProdoct.TabIndex = 44;
-            // 
-            // txtCodeStore
-            // 
-            this.txtCodeStore.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtCodeStore.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtCodeStore.Location = new System.Drawing.Point(604, 22);
-            this.txtCodeStore.Name = "txtCodeStore";
-            this.txtCodeStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCodeStore.Size = new System.Drawing.Size(84, 26);
-            this.txtCodeStore.TabIndex = 45;
-            this.txtCodeStore.Text = "کد فروشگاه";
-            // 
-            // dgStore
-            // 
-            this.dgStore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgStore.Location = new System.Drawing.Point(443, 54);
-            this.dgStore.Name = "dgStore";
-            this.dgStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgStore.Size = new System.Drawing.Size(245, 146);
-            this.dgStore.TabIndex = 46;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(550, 205);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 23);
-            this.button1.TabIndex = 50;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnAddColleague
-            // 
-            this.btnAddColleague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddColleague.Location = new System.Drawing.Point(646, 205);
-            this.btnAddColleague.Name = "btnAddColleague";
-            this.btnAddColleague.Size = new System.Drawing.Size(42, 23);
-            this.btnAddColleague.TabIndex = 91;
-            this.btnAddColleague.Text = "+";
-            this.btnAddColleague.UseVisualStyleBackColor = false;
-            this.btnAddColleague.Click += new System.EventHandler(this.btnAddColleague_Click);
-            // 
-            // btnDelColleague
-            // 
-            this.btnDelColleague.BackColor = System.Drawing.Color.Red;
-            this.btnDelColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelColleague.Location = new System.Drawing.Point(598, 205);
-            this.btnDelColleague.Name = "btnDelColleague";
-            this.btnDelColleague.Size = new System.Drawing.Size(42, 23);
-            this.btnDelColleague.TabIndex = 92;
-            this.btnDelColleague.Text = "-";
-            this.btnDelColleague.UseVisualStyleBackColor = false;
-            this.btnDelColleague.Click += new System.EventHandler(this.btnDelColleague_Click);
             // 
             // button2
             // 
@@ -459,6 +378,91 @@
             this.button4.TabIndex = 93;
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // btnAddColleague
+            // 
+            this.btnAddColleague.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddColleague.Location = new System.Drawing.Point(142, 203);
+            this.btnAddColleague.Name = "btnAddColleague";
+            this.btnAddColleague.Size = new System.Drawing.Size(42, 23);
+            this.btnAddColleague.TabIndex = 91;
+            this.btnAddColleague.Text = "+";
+            this.btnAddColleague.UseVisualStyleBackColor = false;
+            this.btnAddColleague.Click += new System.EventHandler(this.btnAddColleague_Click);
+            // 
+            // btnDelColleague
+            // 
+            this.btnDelColleague.BackColor = System.Drawing.Color.Red;
+            this.btnDelColleague.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelColleague.Location = new System.Drawing.Point(94, 203);
+            this.btnDelColleague.Name = "btnDelColleague";
+            this.btnDelColleague.Size = new System.Drawing.Size(42, 23);
+            this.btnDelColleague.TabIndex = 92;
+            this.btnDelColleague.Text = "-";
+            this.btnDelColleague.UseVisualStyleBackColor = false;
+            this.btnDelColleague.Click += new System.EventHandler(this.btnDelColleague_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(46, 203);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 23);
+            this.button1.TabIndex = 50;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dgStore
+            // 
+            this.dgStore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgStore.Location = new System.Drawing.Point(443, 54);
+            this.dgStore.Name = "dgStore";
+            this.dgStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgStore.Size = new System.Drawing.Size(245, 146);
+            this.dgStore.TabIndex = 46;
+            // 
+            // txtCodeStore
+            // 
+            this.txtCodeStore.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtCodeStore.ForeColor = System.Drawing.Color.DarkGray;
+            this.txtCodeStore.Location = new System.Drawing.Point(604, 22);
+            this.txtCodeStore.Name = "txtCodeStore";
+            this.txtCodeStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtCodeStore.Size = new System.Drawing.Size(84, 26);
+            this.txtCodeStore.TabIndex = 45;
+            this.txtCodeStore.Text = "کد فروشگاه";
+            // 
+            // dgProdoct
+            // 
+            this.dgProdoct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProdoct.Location = new System.Drawing.Point(694, 54);
+            this.dgProdoct.Name = "dgProdoct";
+            this.dgProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgProdoct.Size = new System.Drawing.Size(245, 146);
+            this.dgProdoct.TabIndex = 44;
+            // 
+            // lblCodeRahgiri
+            // 
+            this.lblCodeRahgiri.AutoSize = true;
+            this.lblCodeRahgiri.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodeRahgiri.Location = new System.Drawing.Point(65, 64);
+            this.lblCodeRahgiri.Name = "lblCodeRahgiri";
+            this.lblCodeRahgiri.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCodeRahgiri.Size = new System.Drawing.Size(65, 18);
+            this.lblCodeRahgiri.TabIndex = 43;
+            this.lblCodeRahgiri.Text = "تاریخ ورود";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(136, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 18);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "کد رهگیری:";
+            // 
             // dateExpird
             // 
             this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -480,6 +484,26 @@
             this.Date.Size = new System.Drawing.Size(141, 31);
             this.Date.TabIndex = 1;
             // 
+            // ucAddStore
+            // 
+            this.ucAddStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ucAddStore.Location = new System.Drawing.Point(640, 203);
+            this.ucAddStore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucAddStore.Name = "ucAddStore";
+            this.ucAddStore.Size = new System.Drawing.Size(48, 26);
+            this.ucAddStore.TabIndex = 96;
+            this.ucAddStore.Load += new System.EventHandler(this.ucAddStore_Load);
+            // 
+            // ucDelStore
+            // 
+            this.ucDelStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ucDelStore.Location = new System.Drawing.Point(584, 203);
+            this.ucDelStore.Margin = new System.Windows.Forms.Padding(4);
+            this.ucDelStore.Name = "ucDelStore";
+            this.ucDelStore.Size = new System.Drawing.Size(48, 26);
+            this.ucDelStore.TabIndex = 97;
+            this.ucDelStore.Load += new System.EventHandler(this.ucDelStore_Load);
+            // 
             // FormAnbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,8 +520,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).EndInit();
             this.groupProdoct.ResumeLayout(false);
             this.groupProdoct.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProdoct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgStore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProdoct)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -540,5 +564,7 @@
         public System.Windows.Forms.Button button4;
         public System.Windows.Forms.Button btnAddColleague;
         public System.Windows.Forms.Button btnDelColleague;
+        private Papiloo.ucButton ucAddStore;
+        private Papiloo.ucButton ucDelStore;
     }
 }

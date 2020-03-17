@@ -33,6 +33,7 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.comCase = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.Date = new Papiloo.FDate();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDetails = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -53,7 +54,8 @@
             this.txtPriceProdoct = new System.Windows.Forms.TextBox();
             this.btnSaveProdoct = new System.Windows.Forms.Button();
             this.groupProdoct = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ucDelStore = new Papiloo.ucButton();
+            this.ucAddStore = new Papiloo.ucButton();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnAddColleague = new System.Windows.Forms.Button();
@@ -65,9 +67,7 @@
             this.lblCodeRahgiri = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateExpird = new Papiloo.FDate();
-            this.Date = new Papiloo.FDate();
-            this.ucAddStore = new Papiloo.ucButton();
-            this.ucDelStore = new Papiloo.ucButton();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
@@ -125,6 +125,16 @@
             this.label4.Size = new System.Drawing.Size(65, 18);
             this.label4.TabIndex = 31;
             this.label4.Text = "تاریخ ورود";
+            // 
+            // Date
+            // 
+            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Date.Location = new System.Drawing.Point(493, 20);
+            this.Date.Name = "Date";
+            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Date.Size = new System.Drawing.Size(141, 31);
+            this.Date.TabIndex = 1;
             // 
             // label2
             // 
@@ -314,9 +324,9 @@
             // 
             // groupProdoct
             // 
+            this.groupProdoct.Controls.Add(this.button2);
             this.groupProdoct.Controls.Add(this.ucDelStore);
             this.groupProdoct.Controls.Add(this.ucAddStore);
-            this.groupProdoct.Controls.Add(this.button2);
             this.groupProdoct.Controls.Add(this.button3);
             this.groupProdoct.Controls.Add(this.button4);
             this.groupProdoct.Controls.Add(this.btnAddColleague);
@@ -344,17 +354,25 @@
             this.groupProdoct.TabStop = false;
             this.groupProdoct.Text = "اضافه کردن کلا";
             // 
-            // button2
+            // ucDelStore
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(897, 206);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 23);
-            this.button2.TabIndex = 94;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.ucDelStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ucDelStore.Location = new System.Drawing.Point(890, 205);
+            this.ucDelStore.Margin = new System.Windows.Forms.Padding(4);
+            this.ucDelStore.Name = "ucDelStore";
+            this.ucDelStore.Size = new System.Drawing.Size(48, 26);
+            this.ucDelStore.TabIndex = 97;
+            this.ucDelStore.Load += new System.EventHandler(this.ucDelStore_Load);
+            // 
+            // ucAddStore
+            // 
+            this.ucAddStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ucAddStore.Location = new System.Drawing.Point(640, 203);
+            this.ucAddStore.Margin = new System.Windows.Forms.Padding(4);
+            this.ucAddStore.Name = "ucAddStore";
+            this.ucAddStore.Size = new System.Drawing.Size(48, 26);
+            this.ucAddStore.TabIndex = 96;
+            this.ucAddStore.Load += new System.EventHandler(this.ucAddStore_Load);
             // 
             // button3
             // 
@@ -407,7 +425,7 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(46, 203);
+            this.button1.Location = new System.Drawing.Point(544, 206);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(42, 23);
             this.button1.TabIndex = 50;
@@ -474,35 +492,16 @@
             this.dateExpird.Enter += new System.EventHandler(this.dateExpird_Enter);
             this.dateExpird.Leave += new System.EventHandler(this.dateExpird_Leave);
             // 
-            // Date
+            // button2
             // 
-            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Date.Location = new System.Drawing.Point(493, 20);
-            this.Date.Name = "Date";
-            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Date.Size = new System.Drawing.Size(141, 31);
-            this.Date.TabIndex = 1;
-            // 
-            // ucAddStore
-            // 
-            this.ucAddStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ucAddStore.Location = new System.Drawing.Point(640, 203);
-            this.ucAddStore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ucAddStore.Name = "ucAddStore";
-            this.ucAddStore.Size = new System.Drawing.Size(48, 26);
-            this.ucAddStore.TabIndex = 96;
-            this.ucAddStore.Load += new System.EventHandler(this.ucAddStore_Load);
-            // 
-            // ucDelStore
-            // 
-            this.ucDelStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ucDelStore.Location = new System.Drawing.Point(584, 203);
-            this.ucDelStore.Margin = new System.Windows.Forms.Padding(4);
-            this.ucDelStore.Name = "ucDelStore";
-            this.ucDelStore.Size = new System.Drawing.Size(48, 26);
-            this.ucDelStore.TabIndex = 97;
-            this.ucDelStore.Load += new System.EventHandler(this.ucDelStore_Load);
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(592, 206);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(42, 23);
+            this.button2.TabIndex = 98;
+            this.button2.Text = "-";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // FormAnbar
             // 
@@ -559,12 +558,12 @@
         private System.Windows.Forms.DataGridView dgProdoct;
         private System.Windows.Forms.DataGridView dgStore;
         public System.Windows.Forms.Button button1;
-        public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button3;
         public System.Windows.Forms.Button button4;
         public System.Windows.Forms.Button btnAddColleague;
         public System.Windows.Forms.Button btnDelColleague;
         private Papiloo.ucButton ucAddStore;
         private Papiloo.ucButton ucDelStore;
+        public System.Windows.Forms.Button button2;
     }
 }

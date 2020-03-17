@@ -35,7 +35,7 @@
             this.txtNameProdoct = new System.Windows.Forms.TextBox();
             this.txtCodeProdoct = new System.Windows.Forms.TextBox();
             this.txtDetailProdoct = new System.Windows.Forms.TextBox();
-            this.dateExpired = new PapilooDate.FDate();
+            this.dateExpired = new Papiloo.FDate();
             this.SuspendLayout();
             // 
             // btnSaveProdoct
@@ -158,6 +158,6 @@
         private System.Windows.Forms.TextBox txtNameProdoct;
         private System.Windows.Forms.TextBox txtCodeProdoct;
         private System.Windows.Forms.TextBox txtDetailProdoct;
-        private PapilooDate.FDate dateExpired;
+        private Papiloo.FDate dateExpired;
     }
 }

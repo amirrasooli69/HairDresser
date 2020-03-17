@@ -49,8 +49,8 @@
             this.groupSex = new System.Windows.Forms.GroupBox();
             this.radFemale = new System.Windows.Forms.RadioButton();
             this.radMale = new System.Windows.Forms.RadioButton();
-            this.DateEnter = new PapilooDate.FDate();
-            this.DateBirthDay = new PapilooDate.FDate();
+            this.DateEnter = new Papiloo.FDate();
+            this.DateBirthDay = new Papiloo.FDate();
             this.panel2.SuspendLayout();
             this.groupSex.SuspendLayout();
             this.SuspendLayout();
@@ -353,7 +353,7 @@
         private System.Windows.Forms.GroupBox groupSex;
         public System.Windows.Forms.RadioButton radFemale;
         public System.Windows.Forms.RadioButton radMale;
-        public PapilooDate.FDate DateBirthDay;
-        public PapilooDate.FDate DateEnter;
+        public Papiloo.FDate DateBirthDay;
+        public Papiloo.FDate DateEnter;
     }
 }

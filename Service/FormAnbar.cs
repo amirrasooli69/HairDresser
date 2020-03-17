@@ -380,8 +380,8 @@ namespace Service
 
         private void ucDelStore_Load(object sender, EventArgs e)
         {
-            ucDelStore.btn.Text = "-";
-            ucDelStore.btn.BackColor = Color.Red;
+            ucDelStore.btn.Text = "+";
+            ucDelStore.btn.BackColor = Color.Green;
             ucDelStore.show = "prodoct";
         }
     }

@@ -55,8 +55,8 @@
             this.radFemale = new System.Windows.Forms.RadioButton();
             this.radMale = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateBirthDay = new PapilooDate.FDate();
-            this.dateEnter = new PapilooDate.FDate();
+            this.dateBirthDay = new Papiloo.FDate();
+            this.dateEnter = new Papiloo.FDate();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -419,8 +419,8 @@
         private System.Windows.Forms.TextBox txtAccountNumber;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblError;
-        private PapilooDate.FDate dateEnter;
-        private PapilooDate.FDate dateBirthDay;
+        private Papiloo.FDate dateEnter;
+        private Papiloo.FDate dateBirthDay;
         private System.Windows.Forms.MaskedTextBox mtxtCardNumber;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radFemale;

@@ -50,12 +50,8 @@ namespace Service
 
                 MessageBox.Show(ex.Message);
             }
-        }
-        private void btnNew_Click(object sender, EventArgs e)
-        {
-            Add_Parent_Prodoct();
-        }
-        public void Refresh_dgProdoct()
+        } // ezafe kardane faktore jadid be jadvale AnbarParent
+        public void Refresh_dgProdoct() // update kardane maghadire dgProdoct
         {
             if (context.AnbarProdoct.Count() > 0)
             {
@@ -69,9 +65,9 @@ namespace Service
                 dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
                 dgProdoct.Columns[7].Visible = false;
                 dgProdoct.Columns[8].Visible = false;
-
+                
             }
-        }
+        } 
         public void Refresh_dgStore()
         {
             if (context.Store.Count() > 0)
@@ -83,10 +79,15 @@ namespace Service
                 dgStore.Columns[1].Width = 100;
                 dgStore.Columns[2].HeaderText = "تلفن";
                 dgStore.Columns[3].HeaderText = "آدرس";
+                dgStore.Columns[4].Visible = false;
                 //MessageBox.Show("anjam shod");
             }
 
 
+        }// update kardane maghadire dgStore
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            Add_Parent_Prodoct();
         }
 
         private void FormAnbar_Load(object sender, EventArgs e)
@@ -107,7 +108,6 @@ namespace Service
 
         private void dgAnbar_Enter(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void dgAnbar_KeyPress(object sender, KeyPressEventArgs e)
@@ -115,19 +115,11 @@ namespace Service
 
         }
 
-        private void dgAnbar_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        public string[] prodoct()
+        public string[] prodoct() // gereftane maghadir baraye ezafe kardane prodoct
         {
             string[] prodoct1 = {txtCodeProdoct.Text , txtNameProdoct.Text , txtNameStore.Text ,
             txtSomeProdoct.Text , txtPriceProdoct.Text , txtDetailProdoct.Text , dateExpird.Text };
             return prodoct1;
-        }
-        private void newProdoct1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSaveProdoct_Click(object sender, EventArgs e)
@@ -139,15 +131,12 @@ namespace Service
                 dgAnbar.Enabled = true;
                 //------
                 //Anbar newProdoct = new Anbar();
-
-
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
-
         }
 
         private void txtCodeProdoct_TextChanged(object sender, EventArgs e)
@@ -187,79 +176,16 @@ namespace Service
 
         private void txtCodeProdoct_TabIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void txtCodeProdoct_Leave(object sender, EventArgs e)
         {
-            //if (context.AnbarProdoct.Count() > 0)
-            //{
-            //    if (txtCodeProdoct.Text == "" || txtCodeProdoct == null)
-            //    {
-            //        FormLittelEnter frmlittel = new FormLittelEnter();
-            //        //frmlittel.panelProdoct.Visible = true;
-            //        //frmlittel.panelStore.Visible = false;
-            //        //frmlittel.panelProdoct.Dock = DockStyle.Fill;
-            //        //frmlittel.dgSearch.DataSource = context.AnbarProdoct.ToList();
-            //        //frmlittel.ShowDialog();
-            //        frmlittel.see = 2;
-            //        frmlittel.ShowDialog();
-            //        //txtStoreProdoct.Focus();
-            //        //txtCodeProdoct.Text = majhool1;
-            //        //txtNameProdoct.Text = majhool2;
-
-
-
-            //    }
-            //    else
-            //    {
-            //        if (char.IsDigit(txtCodeProdoct.Text, 0))
-            //        {
-            //            Int32 x = int.Parse(txtCodeProdoct.Text);
-            //            var search = context.AnbarProdoct.Where(c => c.Code == x).FirstOrDefault();
-            //            if (search != null)
-            //            {
-            //                txtNameProdoct.Text = search.Name;
-            //                txtNameStore.Focus();
-            //            }
-            //            if (search == null)
-            //            {
-            //                FormLittelEnter frmlittel = new FormLittelEnter();
-            //                frmlittel.panelProdoct.Visible = false;
-            //                frmlittel.panelStore.Visible = false;
-            //                frmlittel.dgSearch.Visible = true;
-            //                frmlittel.see = 1;
-            //                frmlittel.ShowDialog();
-            //                txtCodeProdoct.Text = frmlittel.majhool1;
-            //                txtNameProdoct.Text = frmlittel.majhool2;
-            //                txtCodeProdoct.ForeColor = Color.Black;
-            //                txtNameProdoct.ForeColor = Color.Black;
-            //                txtNameStore.Focus();
-            //            }
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("عدد وارد کنید", "ورودی", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //        }
-            //    }
-
-            //}
-            //else
-            //{
-            //    FormLittelEnter frmlittel = new FormLittelEnter();
-            //    frmlittel.panelProdoct.Visible = true;
-            //    frmlittel.panelStore.Visible = false;
-            //    //frmlittel.dgSearch.BringToFront();
-            //    frmlittel.panelProdoct.Dock = DockStyle.Fill;
-            //    frmlittel.ShowDialog();
-            //}
             if (txtCodeProdoct.Text == "")
             {
                 txtCodeProdoct.Text = "";
                 //txtCodeProdoct.ForeColor = Color.DarkGray;
                 //txtCodeProdoct.Text = "کدکالا";
             }
-
         }
 
         private void txtNameProdoct_Enter(object sender, EventArgs e)
@@ -387,7 +313,6 @@ namespace Service
             FormLittelEnter frmLitteleEnter = new FormLittelEnter();
             frmLitteleEnter.see = 3;
             frmLitteleEnter.ShowDialog();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -407,7 +332,6 @@ namespace Service
 
         private void ucButton1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void ucAddStore_Load(object sender, EventArgs e)
@@ -415,8 +339,6 @@ namespace Service
             ucAddStore.btn.Text = "+";
             ucAddStore.btn.BackColor = Color.Green;
             ucAddStore.show = "store";
-
-
         }
 
         private void ucDelStore_Load(object sender, EventArgs e)
@@ -428,7 +350,6 @@ namespace Service
 
         private void txtNameStore_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void txtNameProdoct_TextChanged(object sender, EventArgs e)
@@ -455,11 +376,6 @@ namespace Service
                 dgProdoct.Columns[7].Visible = false;
                 dgProdoct.Columns[8].Visible = false;
             }
-        }
-
-        private void ucAddStore_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnRefreshDgProdoct_Click(object sender, EventArgs e)

@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-namespace Service
+namespace Papiloo
 {
     public partial class ucAddUnit : UserControl
     {
@@ -16,10 +10,9 @@ namespace Service
         {
             InitializeComponent();
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
+        private void Add_Unit()
         {
-            using (var context = new StimulsoftEntities())
+            using (var context = new Service.StimulsoftEntities())
             {
                 if (context.Unit.Count() > 0)
                 {
@@ -30,11 +23,11 @@ namespace Service
                     }
                     else
                     {
-                        Unit newUnit = new Unit();
+                        Service.Unit newUnit = new Service.Unit();
                         newUnit.Name = txtUnitName.Text;
                         context.Unit.Add(newUnit);
                         context.SaveChanges();
-                        MessageBox.Show("واحد ثبت شد", "ثبت", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //MessageBox.Show("واحد ثبت شد", "ثبت", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtUnitName.Text = "";
                         txtUnitName.Focus();
 
@@ -43,16 +36,29 @@ namespace Service
                 }
                 else
                 {
-                    Unit newUnit = new Unit();
+                    Service.Unit newUnit = new Service.Unit();
                     newUnit.Name = txtUnitName.Text;
                     context.Unit.Add(newUnit);
                     context.SaveChanges();
-                    MessageBox.Show("واحد ثبت شد", "ثبت", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("واحد ثبت شد", "ثبت", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtUnitName.Text = "";
                     txtUnitName.Focus();
+
                 }
 
             }
+            ucAddProdoctStore ucadd = new ucAddProdoctStore();
+            ucadd.Refresh_comUnit();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Add_Unit();
+        }
+
+        private void btnSave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Add_Unit();
         }
     }
 }

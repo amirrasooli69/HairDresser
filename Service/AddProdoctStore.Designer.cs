@@ -73,9 +73,9 @@
             this.panelProdoct.Controls.Add(this.label31);
             this.panelProdoct.Controls.Add(this.label32);
             this.panelProdoct.Controls.Add(this.txtBarcode);
-            this.panelProdoct.Location = new System.Drawing.Point(0, 55);
+            this.panelProdoct.Location = new System.Drawing.Point(0, 213);
             this.panelProdoct.Name = "panelProdoct";
-            this.panelProdoct.Size = new System.Drawing.Size(292, 192);
+            this.panelProdoct.Size = new System.Drawing.Size(292, 34);
             this.panelProdoct.TabIndex = 15;
             // 
             // btnAddUnit
@@ -130,6 +130,7 @@
             this.btnSaveProdoct.Text = "ثبت و ویرایش";
             this.btnSaveProdoct.UseVisualStyleBackColor = true;
             this.btnSaveProdoct.Click += new System.EventHandler(this.btnSaveProdoct_Click);
+            this.btnSaveProdoct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnSaveProdoct_KeyPress);
             // 
             // txtNameProdoct
             // 
@@ -235,7 +236,7 @@
             this.panelStore.Controls.Add(this.txtAddressStore);
             this.panelStore.Location = new System.Drawing.Point(0, 3);
             this.panelStore.Name = "panelStore";
-            this.panelStore.Size = new System.Drawing.Size(292, 46);
+            this.panelStore.Size = new System.Drawing.Size(292, 178);
             this.panelStore.TabIndex = 16;
             // 
             // btnSaveStore

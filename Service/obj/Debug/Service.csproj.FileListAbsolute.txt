@@ -292,3 +292,4 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Papiloo.ucButton.
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Papiloo.ucAddProdoctStore.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Papiloo.FDate.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Papiloo.PCalander.resources
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Papiloo.ucAddUnit.resources

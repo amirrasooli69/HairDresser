@@ -1,4 +1,4 @@
-﻿namespace Service
+﻿namespace Papiloo
 {
     partial class ucAddUnit
     {
@@ -43,6 +43,7 @@
             this.btnSave.Text = "ثبت  ";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnSave_KeyPress);
             // 
             // txtUnitName
             // 

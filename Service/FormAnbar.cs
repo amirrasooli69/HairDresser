@@ -23,7 +23,7 @@ namespace Service
         Popup popup;
         StimulsoftEntities context = new StimulsoftEntities();
         //public string majhool1 = "",majhool2="";
-        public void  Add_Parent_Prodoct()
+        public void Add_Parent_Prodoct()
         {
             try
             {
@@ -55,17 +55,9 @@ namespace Service
         {
             Add_Parent_Prodoct();
         }
-
-        private void FormAnbar_Load(object sender, EventArgs e)
+        public void Refresh_dgProdoct()
         {
-            Date.Text = Practical.Today_Date();
-            comCase.SelectedIndex = 0;
-            dgAnbar.Enabled = false;
-            //groupProdoct.Enabled = false;
-            //dateExpird.Text = Practical.Today_Date();
-            dateExpird.ForeColor = Color.DarkGray;
-            dateExpird.Text = "تاریخ انقضا";
-            if(context.AnbarProdoct.Count()>0)
+            if (context.AnbarProdoct.Count() > 0)
             {
                 dgProdoct.DataSource = context.AnbarProdoct.ToList();
                 dgProdoct.Columns[0].Visible = false;
@@ -77,15 +69,39 @@ namespace Service
                 dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
                 dgProdoct.Columns[7].Visible = false;
                 dgProdoct.Columns[8].Visible = false;
-                
+
             }
-            if(context.Store.Count()> 0 )
+        }
+        public void Refresh_dgStore()
+        {
+            if (context.Store.Count() > 0)
             {
+
                 dgStore.DataSource = context.Store.ToList();
-                dgProdoct.Columns[0].Visible = false;
-                dgProdoct.Columns[1].HeaderText = "نام فروشگاه یا فرد";
-                dgProdoct.Columns[2].HeaderText = "تلفن";
-                dgProdoct.Columns[3].HeaderText = "آدرس";
+                dgStore.Columns[0].Visible = false;
+                dgStore.Columns[1].HeaderText = "فروشگاه یا فرد";
+                dgStore.Columns[1].Width = 100;
+                dgStore.Columns[2].HeaderText = "تلفن";
+                dgStore.Columns[3].HeaderText = "آدرس";
+                //MessageBox.Show("anjam shod");
+            }
+
+
+        }
+
+        private void FormAnbar_Load(object sender, EventArgs e)
+        {
+            Date.Text = Practical.Today_Date();
+            comCase.SelectedIndex = 0;
+            dgAnbar.Enabled = false;
+            //groupProdoct.Enabled = false;
+            //dateExpird.Text = Practical.Today_Date();
+            dateExpird.ForeColor = Color.DarkGray;
+            dateExpird.Text = "تاریخ انقضا";
+            Refresh_dgProdoct();
+            if (context.Store.Count() > 0)
+            {
+                Refresh_dgStore();
             }
         }
 
@@ -391,7 +407,7 @@ namespace Service
 
         private void ucButton1_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void ucAddStore_Load(object sender, EventArgs e)
@@ -399,8 +415,8 @@ namespace Service
             ucAddStore.btn.Text = "+";
             ucAddStore.btn.BackColor = Color.Green;
             ucAddStore.show = "store";
-            
-            
+
+
         }
 
         private void ucDelStore_Load(object sender, EventArgs e)
@@ -426,7 +442,7 @@ namespace Service
                 else
                 {
                     //long x = long.Parse(txtCodeProdoct.Text);
-                    var selectProdoct = context.AnbarProdoct.Where(c => c.Name==txtNameProdoct.Text).ToList();
+                    var selectProdoct = context.AnbarProdoct.Where(c => c.Name == txtNameProdoct.Text).ToList();
                     dgProdoct.DataSource = selectProdoct;
                 }
                 dgProdoct.Columns[0].Visible = false;
@@ -443,7 +459,12 @@ namespace Service
 
         private void ucAddStore_Click(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Refresh_dgStore();
         }
     }
 }

@@ -73,9 +73,9 @@
             this.panelProdoct.Controls.Add(this.label31);
             this.panelProdoct.Controls.Add(this.label32);
             this.panelProdoct.Controls.Add(this.txtBarcode);
-            this.panelProdoct.Location = new System.Drawing.Point(0, 212);
+            this.panelProdoct.Location = new System.Drawing.Point(0, 55);
             this.panelProdoct.Name = "panelProdoct";
-            this.panelProdoct.Size = new System.Drawing.Size(292, 35);
+            this.panelProdoct.Size = new System.Drawing.Size(292, 192);
             this.panelProdoct.TabIndex = 15;
             // 
             // btnAddUnit
@@ -128,6 +128,7 @@
             this.btnSaveProdoct.TabIndex = 9;
             this.btnSaveProdoct.Text = "ثبت و ویرایش";
             this.btnSaveProdoct.UseVisualStyleBackColor = true;
+            this.btnSaveProdoct.Click += new System.EventHandler(this.btnSaveProdoct_Click);
             // 
             // txtNameProdoct
             // 
@@ -231,9 +232,9 @@
             this.panelStore.Controls.Add(this.label25);
             this.panelStore.Controls.Add(this.label26);
             this.panelStore.Controls.Add(this.txtAddressStore);
-            this.panelStore.Location = new System.Drawing.Point(0, 25);
+            this.panelStore.Location = new System.Drawing.Point(0, 3);
             this.panelStore.Name = "panelStore";
-            this.panelStore.Size = new System.Drawing.Size(292, 181);
+            this.panelStore.Size = new System.Drawing.Size(292, 46);
             this.panelStore.TabIndex = 16;
             // 
             // btnSaveStore
@@ -246,6 +247,7 @@
             this.btnSaveStore.Text = "ثبت و ویرایش";
             this.btnSaveStore.UseVisualStyleBackColor = true;
             this.btnSaveStore.Click += new System.EventHandler(this.btnSaveStore_Click);
+            this.btnSaveStore.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnSaveStore_KeyDown);
             // 
             // txtStoreName
             // 

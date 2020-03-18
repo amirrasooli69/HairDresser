@@ -19,7 +19,8 @@ namespace Papiloo
         }
         public string show = "";
         Popup pop;
-        
+        Service.StimulsoftEntities context = new Service.StimulsoftEntities();
+
         private void btn_Click(object sender, EventArgs e)
         {
             if (show == "store")
@@ -33,7 +34,7 @@ namespace Papiloo
                 pop.Closed += popup_Closed;
                 pop.Show(this);
             }
-            if(show=="prodoct")
+            if (show == "prodoct")
             {
                 ucAddProdoctStore addProdoct = new ucAddProdoctStore();
                 addProdoct.panelProdoct.Visible = true;
@@ -44,32 +45,71 @@ namespace Papiloo
                 pop.Closed += popup_Closed;
                 pop.Show(this);
             }
-            
+
         }
-       public static string []getdNewDetail ;
+        public static string[] getdNewDetail;
 
         private void popup_Closed(object sender, ToolStripDropDownClosedEventArgs e)
         {
 
-            if(show=="prodoct")
+            if (show == "prodoct")
             {
+                if (ucAddProdoctStore.get != "")
+                {
+                    getdNewDetail = ucAddProdoctStore.get.Split(',');
+                    if(getdNewDetail[0] != "" && getdNewDetail[1] !="")
+                    {
+                        Service.AnbarProdoct prodoct = new Service.AnbarProdoct();
+                        prodoct.Name = getdNewDetail[0];
+                        prodoct.Code = int.Parse(getdNewDetail[1]);
+                        if (getdNewDetail[2] == "")
+                        {
+                            prodoct.Id = int.Parse(getdNewDetail[2]);
+                        }
+                        if (getdNewDetail[3] == "")
+                        {
+                            prodoct.Description = getdNewDetail[3];
+                        }
+                        if (getdNewDetail[4] == "")
+                        {
+                            prodoct.Barcode = getdNewDetail[4];
+                        }
+                        if (getdNewDetail[5] == "")
+                        {
+                            prodoct.RfID = getdNewDetail[5];
+                        }
+                            context.AnbarProdoct.Add(prodoct);                       
+                    }
+                    context.SaveChanges();
+                    Service.FormAnbar anbar = new Service.FormAnbar();
+                    anbar.Refresh_dgProdoct();
+
+                }
 
             }
             if (show == "store")
             {
-                getdNewDetail = ucAddProdoctStore.store;
-                if (getdNewDetail[0] !="")
+                if (ucAddProdoctStore.get != "")
                 {
-                    Service.StimulsoftEntities context = new Service.StimulsoftEntities();
-                    Service.Store newStore = new Service.Store();
-                    newStore.Name = getdNewDetail[0];
-                    if (getdNewDetail[1] !="")
-                        newStore.Phone = getdNewDetail[1];
-                    if (getdNewDetail[2] != "")
-                        newStore.Address = getdNewDetail[2];
-                    context.Store.Add(newStore);
+                    getdNewDetail = ucAddProdoctStore.get.Split(',');
+                    if (getdNewDetail[0] != "")
+                    {
+                        Service.Store newStore = new Service.Store();
+                        newStore.Name = getdNewDetail[0];
+                        if (getdNewDetail[1] != "")
+                        {
+                            newStore.Phone = getdNewDetail[1];
+                        }
+                        if (getdNewDetail[2] != "")
+                        {
+                            newStore.Address = getdNewDetail[2];
+                        }
+                        context.Store.Add(newStore);
+                    }
                     context.SaveChanges();
                 }
+                Service.FormAnbar frmAnbar = new Service.FormAnbar();
+                frmAnbar.Refresh_dgStore();
             }
         }
     }

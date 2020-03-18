@@ -17,16 +17,30 @@ namespace Papiloo
             InitializeComponent();
         }
         public string show = "";
-        public static string[] store;
+        public static string get;
+        
         private void ucAddProdoctStore_Load(object sender, EventArgs e)
         {
         }
 
         private void btnSaveStore_Click(object sender, EventArgs e)
         {
-            store[0] = txtStoreName.Text;
-            store[1] = txtPhoneStore.Text;
-            store[2] = txtAddressStore.Text;            
+            get = txtStoreName.Text + "," + txtPhoneStore.Text + "," + txtAddressStore.Text;
+            //store[0] = txtStoreName.Text;
+            //store[1] = txtPhoneStore.Text;
+            //store[2] = txtAddressStore.Text;            
+        }
+
+
+        private void btnSaveStore_KeyDown(object sender, KeyEventArgs e)
+        {
+            get = txtStoreName.Text + "," + txtPhoneStore.Text + "," + txtAddressStore.Text;
+        }
+
+        private void btnSaveProdoct_Click(object sender, EventArgs e)
+        {
+            get = txtNameProdoct.Text + "," + txtCodeProdoct.Text + "," + comUnit.SelectedIndex.ToString() + "," +
+                txtDetails.Text + "," + txtBarcode.Text + "," + txtRFID.Text;
         }
     }
 }

@@ -373,6 +373,12 @@
     <Compile Include="test.Designer.cs">
       <DependentUpon>test.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucAddUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAddUnit.Designer.cs">
+      <DependentUpon>ucAddUnit.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -493,6 +499,9 @@
     </Compile>
     <EmbeddedResource Include="test.resx">
       <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAddUnit.resx">
+      <DependentUpon>ucAddUnit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucButton.resx">
       <DependentUpon>ucButton.cs</DependentUpon>

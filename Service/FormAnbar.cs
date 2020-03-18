@@ -462,7 +462,12 @@ namespace Service
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRefreshDgProdoct_Click(object sender, EventArgs e)
+        {
+            Refresh_dgProdoct();
+        }
+
+        private void btnRefreshDgStore_Click(object sender, EventArgs e)
         {
             Refresh_dgStore();
         }

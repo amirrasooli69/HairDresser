@@ -33,6 +33,7 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.comCase = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.Date = new Papiloo.FDate();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDetails = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -53,21 +54,19 @@
             this.txtPriceProdoct = new System.Windows.Forms.TextBox();
             this.btnSaveProdoct = new System.Windows.Forms.Button();
             this.groupProdoct = new System.Windows.Forms.GroupBox();
+            this.btnRefreshDgProdoct = new System.Windows.Forms.Button();
+            this.btnRefreshDgStore = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.ucDelStore = new Papiloo.ucButton();
+            this.ucAddStore = new Papiloo.ucButton();
             this.button3 = new System.Windows.Forms.Button();
             this.btnEditProdoct = new System.Windows.Forms.Button();
             this.btnEditStore = new System.Windows.Forms.Button();
             this.dgStore = new System.Windows.Forms.DataGridView();
-            this.txtCodeStore = new System.Windows.Forms.TextBox();
             this.dgProdoct = new System.Windows.Forms.DataGridView();
             this.lblCodeRahgiri = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ucDelStore = new Papiloo.ucButton();
-            this.ucAddStore = new Papiloo.ucButton();
             this.dateExpird = new Papiloo.FDate();
-            this.Date = new Papiloo.FDate();
-            this.btnRefreshDgStore = new System.Windows.Forms.Button();
-            this.btnRefreshDgProdoct = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
@@ -125,6 +124,16 @@
             this.label4.Size = new System.Drawing.Size(65, 18);
             this.label4.TabIndex = 31;
             this.label4.Text = "تاریخ ورود";
+            // 
+            // Date
+            // 
+            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Date.Location = new System.Drawing.Point(493, 20);
+            this.Date.Name = "Date";
+            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Date.Size = new System.Drawing.Size(141, 31);
+            this.Date.TabIndex = 1;
             // 
             // label2
             // 
@@ -270,7 +279,7 @@
             this.txtNameStore.Location = new System.Drawing.Point(443, 22);
             this.txtNameStore.Name = "txtNameStore";
             this.txtNameStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtNameStore.Size = new System.Drawing.Size(159, 26);
+            this.txtNameStore.Size = new System.Drawing.Size(245, 26);
             this.txtNameStore.TabIndex = 36;
             this.txtNameStore.Text = "نام فروشگاه یا فرد";
             this.txtNameStore.TextChanged += new System.EventHandler(this.txtNameStore_TextChanged);
@@ -325,7 +334,6 @@
             this.groupProdoct.Controls.Add(this.btnEditProdoct);
             this.groupProdoct.Controls.Add(this.btnEditStore);
             this.groupProdoct.Controls.Add(this.dgStore);
-            this.groupProdoct.Controls.Add(this.txtCodeStore);
             this.groupProdoct.Controls.Add(this.dgProdoct);
             this.groupProdoct.Controls.Add(this.lblCodeRahgiri);
             this.groupProdoct.Controls.Add(this.label1);
@@ -346,6 +354,30 @@
             this.groupProdoct.TabStop = false;
             this.groupProdoct.Text = "اضافه کردن کلا";
             // 
+            // btnRefreshDgProdoct
+            // 
+            this.btnRefreshDgProdoct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshDgProdoct.BackgroundImage")));
+            this.btnRefreshDgProdoct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefreshDgProdoct.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshDgProdoct.Location = new System.Drawing.Point(694, 205);
+            this.btnRefreshDgProdoct.Name = "btnRefreshDgProdoct";
+            this.btnRefreshDgProdoct.Size = new System.Drawing.Size(42, 24);
+            this.btnRefreshDgProdoct.TabIndex = 100;
+            this.btnRefreshDgProdoct.UseVisualStyleBackColor = true;
+            this.btnRefreshDgProdoct.Click += new System.EventHandler(this.btnRefreshDgProdoct_Click);
+            // 
+            // btnRefreshDgStore
+            // 
+            this.btnRefreshDgStore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshDgStore.BackgroundImage")));
+            this.btnRefreshDgStore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefreshDgStore.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshDgStore.Location = new System.Drawing.Point(445, 206);
+            this.btnRefreshDgStore.Name = "btnRefreshDgStore";
+            this.btnRefreshDgStore.Size = new System.Drawing.Size(42, 24);
+            this.btnRefreshDgStore.TabIndex = 99;
+            this.btnRefreshDgStore.UseVisualStyleBackColor = true;
+            this.btnRefreshDgStore.Click += new System.EventHandler(this.btnRefreshDgStore_Click);
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
@@ -356,6 +388,27 @@
             this.button2.TabIndex = 98;
             this.button2.Text = "-";
             this.button2.UseVisualStyleBackColor = false;
+            // 
+            // ucDelStore
+            // 
+            this.ucDelStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ucDelStore.Location = new System.Drawing.Point(890, 206);
+            this.ucDelStore.Margin = new System.Windows.Forms.Padding(4);
+            this.ucDelStore.Name = "ucDelStore";
+            this.ucDelStore.Size = new System.Drawing.Size(42, 24);
+            this.ucDelStore.TabIndex = 97;
+            this.ucDelStore.Load += new System.EventHandler(this.ucDelStore_Load);
+            // 
+            // ucAddStore
+            // 
+            this.ucAddStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ucAddStore.Location = new System.Drawing.Point(641, 206);
+            this.ucAddStore.Margin = new System.Windows.Forms.Padding(4);
+            this.ucAddStore.Name = "ucAddStore";
+            this.ucAddStore.Size = new System.Drawing.Size(42, 24);
+            this.ucAddStore.TabIndex = 96;
+            this.ucAddStore.Load += new System.EventHandler(this.ucAddStore_Load);
+            this.ucAddStore.Click += new System.EventHandler(this.ucAddStore_Click);
             // 
             // button3
             // 
@@ -389,7 +442,6 @@
             this.btnEditStore.Size = new System.Drawing.Size(42, 24);
             this.btnEditStore.TabIndex = 50;
             this.btnEditStore.UseVisualStyleBackColor = true;
-            this.btnEditStore.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgStore
             // 
@@ -399,17 +451,6 @@
             this.dgStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgStore.Size = new System.Drawing.Size(245, 146);
             this.dgStore.TabIndex = 46;
-            // 
-            // txtCodeStore
-            // 
-            this.txtCodeStore.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.txtCodeStore.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtCodeStore.Location = new System.Drawing.Point(604, 22);
-            this.txtCodeStore.Name = "txtCodeStore";
-            this.txtCodeStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtCodeStore.Size = new System.Drawing.Size(84, 26);
-            this.txtCodeStore.TabIndex = 45;
-            this.txtCodeStore.Text = "کد فروشگاه";
             // 
             // dgProdoct
             // 
@@ -441,27 +482,6 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "کد رهگیری:";
             // 
-            // ucDelStore
-            // 
-            this.ucDelStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ucDelStore.Location = new System.Drawing.Point(890, 206);
-            this.ucDelStore.Margin = new System.Windows.Forms.Padding(4);
-            this.ucDelStore.Name = "ucDelStore";
-            this.ucDelStore.Size = new System.Drawing.Size(42, 24);
-            this.ucDelStore.TabIndex = 97;
-            this.ucDelStore.Load += new System.EventHandler(this.ucDelStore_Load);
-            // 
-            // ucAddStore
-            // 
-            this.ucAddStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ucAddStore.Location = new System.Drawing.Point(641, 206);
-            this.ucAddStore.Margin = new System.Windows.Forms.Padding(4);
-            this.ucAddStore.Name = "ucAddStore";
-            this.ucAddStore.Size = new System.Drawing.Size(42, 24);
-            this.ucAddStore.TabIndex = 96;
-            this.ucAddStore.Load += new System.EventHandler(this.ucAddStore_Load);
-            this.ucAddStore.Click += new System.EventHandler(this.ucAddStore_Click);
-            // 
             // dateExpird
             // 
             this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -472,38 +492,6 @@
             this.dateExpird.TabIndex = 40;
             this.dateExpird.Enter += new System.EventHandler(this.dateExpird_Enter);
             this.dateExpird.Leave += new System.EventHandler(this.dateExpird_Leave);
-            // 
-            // Date
-            // 
-            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Date.Location = new System.Drawing.Point(493, 20);
-            this.Date.Name = "Date";
-            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Date.Size = new System.Drawing.Size(141, 31);
-            this.Date.TabIndex = 1;
-            // 
-            // btnRefreshDgStore
-            // 
-            this.btnRefreshDgStore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshDgStore.BackgroundImage")));
-            this.btnRefreshDgStore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefreshDgStore.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshDgStore.Location = new System.Drawing.Point(445, 206);
-            this.btnRefreshDgStore.Name = "btnRefreshDgStore";
-            this.btnRefreshDgStore.Size = new System.Drawing.Size(42, 24);
-            this.btnRefreshDgStore.TabIndex = 99;
-            this.btnRefreshDgStore.UseVisualStyleBackColor = true;
-            // 
-            // btnRefreshDgProdoct
-            // 
-            this.btnRefreshDgProdoct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshDgProdoct.BackgroundImage")));
-            this.btnRefreshDgProdoct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefreshDgProdoct.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshDgProdoct.Location = new System.Drawing.Point(694, 205);
-            this.btnRefreshDgProdoct.Name = "btnRefreshDgProdoct";
-            this.btnRefreshDgProdoct.Size = new System.Drawing.Size(42, 24);
-            this.btnRefreshDgProdoct.TabIndex = 100;
-            this.btnRefreshDgProdoct.UseVisualStyleBackColor = true;
             // 
             // FormAnbar
             // 
@@ -556,7 +544,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtCodeProdoct;
         public System.Windows.Forms.TextBox txtNameProdoct;
-        public System.Windows.Forms.TextBox txtCodeStore;
         public System.Windows.Forms.Button btnEditStore;
         public System.Windows.Forms.Button button3;
         public System.Windows.Forms.Button btnEditProdoct;

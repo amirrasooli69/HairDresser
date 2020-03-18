@@ -20,41 +20,46 @@ namespace Papiloo
         public string show = "";
         Popup pop;
         Service.StimulsoftEntities context = new Service.StimulsoftEntities();
+        public static string[] getdNewDetail;
 
         private void btn_Click(object sender, EventArgs e)
         {
-            if (show == "store")
+            switch (show)
             {
-                ucAddProdoctStore addStore = new ucAddProdoctStore();
-                addStore.panelProdoct.Visible = false;
-                addStore.panelStore.Visible = true;
-                addStore.panelStore.Dock = DockStyle.Fill;
-                addStore.Size = new System.Drawing.Size(280, 200);
-                pop = new Popup(addStore);
-                pop.Closed += popup_Closed;
-                pop.Show(this);
-            }
-            if (show == "prodoct")
-            {
-                ucAddProdoctStore addProdoct = new ucAddProdoctStore();
-                addProdoct.panelProdoct.Visible = true;
-                addProdoct.panelStore.Visible = false;
-                addProdoct.panelProdoct.Dock = DockStyle.Fill;
-                addProdoct.Size = new System.Drawing.Size(280, 210);
-                pop = new Popup(addProdoct);
-                pop.Closed += popup_Closed;
-                pop.Show(this);
+                case "store":
+                    {
+                        ucAddProdoctStore addStore = new ucAddProdoctStore();
+                        addStore.panelProdoct.Visible = false;
+                        addStore.panelStore.Visible = true;
+                        addStore.panelStore.Dock = DockStyle.Fill;
+                        addStore.Size = new System.Drawing.Size(280, 200);
+                        pop = new Popup(addStore);
+                        pop.Closed += popup_Closed;
+                        pop.Show(this);
+                        break;
+                    }
+                case "prodoct":
+                    {
+                        ucAddProdoctStore addProdoct = new ucAddProdoctStore();
+                        addProdoct.panelProdoct.Visible = true;
+                        addProdoct.panelStore.Visible = false;
+                        addProdoct.panelProdoct.Dock = DockStyle.Fill;
+                        addProdoct.Size = new System.Drawing.Size(280, 210);
+                        pop = new Popup(addProdoct);
+                        pop.Closed += popup_Closed;
+                        pop.Show(this);
+                        break;
+                    }
             }
 
         }
-        public static string[] getdNewDetail;
 
         private void popup_Closed(object sender, ToolStripDropDownClosedEventArgs e)
         {
 
             if (show == "prodoct")
             {
-                if (ucAddProdoctStore.get != "")
+                if (ucAddProdoctStore.get.Length>0)
                 {
                     getdNewDetail = ucAddProdoctStore.get.Split(',');
                     if(getdNewDetail[0] != "" && getdNewDetail[1] !="")
@@ -89,7 +94,7 @@ namespace Papiloo
             }
             if (show == "store")
             {
-                if (ucAddProdoctStore.get != "")
+                if (ucAddProdoctStore.get.Length>0)
                 {
                     getdNewDetail = ucAddProdoctStore.get.Split(',');
                     if (getdNewDetail[0] != "")

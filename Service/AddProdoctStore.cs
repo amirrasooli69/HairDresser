@@ -21,6 +21,12 @@ namespace Papiloo
         
         private void ucAddProdoctStore_Load(object sender, EventArgs e)
         {
+            Service.StimulsoftEntities context = new Service.StimulsoftEntities();
+            if(context.Unit.Count()>0)
+            {
+                comUnit.DataSource = context.Unit.ToList();
+                comUnit.DisplayMember = "Name";
+            }
         }
 
         private void btnSaveStore_Click(object sender, EventArgs e)
@@ -41,6 +47,11 @@ namespace Papiloo
         {
             get = txtNameProdoct.Text + "," + txtCodeProdoct.Text + "," + comUnit.SelectedIndex.ToString() + "," +
                 txtDetails.Text + "," + txtBarcode.Text + "," + txtRFID.Text;
+        }
+
+        private void btnAddUnit_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

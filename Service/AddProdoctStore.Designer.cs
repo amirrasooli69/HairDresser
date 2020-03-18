@@ -88,6 +88,7 @@
             this.btnAddUnit.TabIndex = 4;
             this.btnAddUnit.Text = "+";
             this.btnAddUnit.UseVisualStyleBackColor = false;
+            this.btnAddUnit.Click += new System.EventHandler(this.btnAddUnit_Click);
             // 
             // btnDelUnit
             // 

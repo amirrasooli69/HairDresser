@@ -118,6 +118,7 @@ namespace Papiloo
         }
         private void popup_Closed(object sender, ToolStripDropDownClosedEventArgs e)
         {
+
         }
 
         private void btnSaveProdoct_KeyPress(object sender, KeyPressEventArgs e)

@@ -157,7 +157,7 @@ namespace Service
                 else
                 {
                     long x = long.Parse(txtCodeProdoct.Text);
-                    var selectProdoct = context.AnbarProdoct.Where(c => c.Code == x).ToList();
+                    var selectProdoct = context.AnbarProdoct.Where(c => c.Code == x ).ToList();
                     dgProdoct.DataSource = selectProdoct;
                 }
                 dgProdoct.Columns[0].Visible = false;
@@ -360,7 +360,7 @@ namespace Service
             StimulsoftEntities context = new StimulsoftEntities();
             if (txtNameStore.Text != "")
             {
-                var selectStore = context.Store.Where(c => c.Name == txtNameStore.Text).ToList();
+                var selectStore = context.Store.Where(c => c.Name.Contains(txtNameStore.Text)).ToList();
                 dgStore.DataSource = selectStore;
             }
             else
@@ -373,14 +373,14 @@ namespace Service
         {
             if (context.AnbarProdoct.Count() > 0)
             {
-                if (txtNameProdoct.TextLength <= 0)
+                if (txtNameProdoct.Text == "")
                 {
                     dgProdoct.DataSource = context.AnbarProdoct.ToList();
                 }
                 else
                 {
                     //long x = long.Parse(txtCodeProdoct.Text);
-                    var selectProdoct = context.AnbarProdoct.Where(c => c.Name == txtNameProdoct.Text).ToList();
+                    var selectProdoct = context.AnbarProdoct.Where(c => c.Name.Contains(txtNameProdoct.Text)).ToList();
                     dgProdoct.DataSource = selectProdoct;
                 }
                 dgProdoct.Columns[0].Visible = false;
@@ -403,6 +403,42 @@ namespace Service
         private void btnRefreshDgStore_Click(object sender, EventArgs e)
         {
             Refresh_dgStore();
+        }
+
+        private void btnDelProdoct_Click(object sender, EventArgs e)
+        {
+            if(dgProdoct.Rows.Count>0)
+            {
+                if (dgProdoct.CurrentRow != null)
+                {
+                    int id = int.Parse(dgProdoct.CurrentRow.Cells[0].Value.ToString());
+                    DialogResult result = MessageBox.Show("آیا از حذف محصول مطئن هستید؟", "حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        var selectProdoct = context.AnbarProdoct.Where(c => c.Id == id).FirstOrDefault();
+                        context.AnbarProdoct.Remove(selectProdoct);
+                        context.SaveChanges();
+                        Refresh_dgProdoct();
+                    }
+                }
+            }
+        }
+
+        private void btnDelStore_Click(object sender, EventArgs e)
+        {
+            if (dgStore.Rows.Count > 0 && dgStore.CurrentRow != null)
+            {
+
+                int id = int.Parse(dgStore.CurrentRow.Cells[0].Value.ToString());
+                DialogResult result = MessageBox.Show("آیا از حذف فروشگاه مطئن هستید؟", "حذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    var selectStore = context.Store.Where(c => c.Id == id).FirstOrDefault();
+                    context.Store.Remove(selectStore);
+                    context.SaveChanges();
+                    Refresh_dgStore();
+                }
+            }
         }
     }
 }

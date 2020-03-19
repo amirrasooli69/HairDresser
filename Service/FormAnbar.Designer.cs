@@ -55,8 +55,8 @@
             this.groupProdoct = new System.Windows.Forms.GroupBox();
             this.btnRefreshDgProdoct = new System.Windows.Forms.Button();
             this.btnRefreshDgStore = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDelStore = new System.Windows.Forms.Button();
+            this.btnDelProdoct = new System.Windows.Forms.Button();
             this.btnEditProdoct = new System.Windows.Forms.Button();
             this.btnEditStore = new System.Windows.Forms.Button();
             this.dgStore = new System.Windows.Forms.DataGridView();
@@ -316,10 +316,10 @@
             // 
             this.groupProdoct.Controls.Add(this.btnRefreshDgProdoct);
             this.groupProdoct.Controls.Add(this.btnRefreshDgStore);
-            this.groupProdoct.Controls.Add(this.button2);
+            this.groupProdoct.Controls.Add(this.btnDelStore);
             this.groupProdoct.Controls.Add(this.ucDelStore);
             this.groupProdoct.Controls.Add(this.ucAddStore);
-            this.groupProdoct.Controls.Add(this.button3);
+            this.groupProdoct.Controls.Add(this.btnDelProdoct);
             this.groupProdoct.Controls.Add(this.btnEditProdoct);
             this.groupProdoct.Controls.Add(this.btnEditStore);
             this.groupProdoct.Controls.Add(this.dgStore);
@@ -367,27 +367,29 @@
             this.btnRefreshDgStore.UseVisualStyleBackColor = true;
             this.btnRefreshDgStore.Click += new System.EventHandler(this.btnRefreshDgStore_Click);
             // 
-            // button2
+            // btnDelStore
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(592, 250);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 24);
-            this.button2.TabIndex = 98;
-            this.button2.Text = "-";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDelStore.BackColor = System.Drawing.Color.Red;
+            this.btnDelStore.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelStore.Location = new System.Drawing.Point(592, 250);
+            this.btnDelStore.Name = "btnDelStore";
+            this.btnDelStore.Size = new System.Drawing.Size(42, 24);
+            this.btnDelStore.TabIndex = 98;
+            this.btnDelStore.Text = "-";
+            this.btnDelStore.UseVisualStyleBackColor = false;
+            this.btnDelStore.Click += new System.EventHandler(this.btnDelStore_Click);
             // 
-            // button3
+            // btnDelProdoct
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(841, 250);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(42, 24);
-            this.button3.TabIndex = 95;
-            this.button3.Text = "-";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDelProdoct.BackColor = System.Drawing.Color.Red;
+            this.btnDelProdoct.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelProdoct.Location = new System.Drawing.Point(841, 250);
+            this.btnDelProdoct.Name = "btnDelProdoct";
+            this.btnDelProdoct.Size = new System.Drawing.Size(42, 24);
+            this.btnDelProdoct.TabIndex = 95;
+            this.btnDelProdoct.Text = "-";
+            this.btnDelProdoct.UseVisualStyleBackColor = false;
+            this.btnDelProdoct.Click += new System.EventHandler(this.btnDelProdoct_Click);
             // 
             // btnEditProdoct
             // 
@@ -544,11 +546,11 @@
         public System.Windows.Forms.TextBox txtCodeProdoct;
         public System.Windows.Forms.TextBox txtNameProdoct;
         public System.Windows.Forms.Button btnEditStore;
-        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button btnDelProdoct;
         public System.Windows.Forms.Button btnEditProdoct;
         private Papiloo.ucButton ucAddStore;
         private Papiloo.ucButton ucDelStore;
-        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button btnDelStore;
         public System.Windows.Forms.DataGridView dgStore;
         public System.Windows.Forms.Button btnRefreshDgProdoct;
         public System.Windows.Forms.Button btnRefreshDgStore;

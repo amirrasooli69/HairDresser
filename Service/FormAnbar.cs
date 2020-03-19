@@ -67,7 +67,11 @@ namespace Service
                 dgProdoct.Columns[8].Visible = false;
                 
             }
-        } 
+            dgProdoct.DefaultCellStyle.Font = new Font("Tahoma", 8);
+            dgProdoct.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 8);
+            
+
+        }
         public void Refresh_dgStore()
         {
             if (context.Store.Count() > 0)
@@ -82,6 +86,8 @@ namespace Service
                 dgStore.Columns[4].Visible = false;
                 //MessageBox.Show("anjam shod");
             }
+            dgStore.DefaultCellStyle.Font = new Font("Tahoma", 8);
+            dgStore.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 8);
 
 
         }// update kardane maghadire dgStore
@@ -103,6 +109,7 @@ namespace Service
             if (context.Store.Count() > 0)
             {
                 Refresh_dgStore();
+               
             }
         }
 
@@ -350,6 +357,16 @@ namespace Service
 
         private void txtNameStore_TextChanged(object sender, EventArgs e)
         {
+            StimulsoftEntities context = new StimulsoftEntities();
+            if (txtNameStore.Text != "")
+            {
+                var selectStore = context.Store.Where(c => c.Name == txtNameStore.Text).ToList();
+                dgStore.DataSource = selectStore;
+            }
+            else
+            {
+                dgStore.DataSource = context.Store.ToList();
+            }
         }
 
         private void txtNameProdoct_TextChanged(object sender, EventArgs e)

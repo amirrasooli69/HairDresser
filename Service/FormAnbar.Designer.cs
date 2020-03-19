@@ -167,10 +167,10 @@
             this.Description,
             this.DateExpired,
             this.btnDelete});
-            this.dgAnbar.Location = new System.Drawing.Point(7, 317);
+            this.dgAnbar.Location = new System.Drawing.Point(7, 361);
             this.dgAnbar.Name = "dgAnbar";
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgAnbar.Size = new System.Drawing.Size(949, 324);
+            this.dgAnbar.Size = new System.Drawing.Size(949, 280);
             this.dgAnbar.TabIndex = 9;
             this.dgAnbar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgAnbar_KeyPress);
             // 
@@ -221,7 +221,7 @@
             // 
             this.txtDetailProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtDetailProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtDetailProdoct.Location = new System.Drawing.Point(136, 133);
+            this.txtDetailProdoct.Location = new System.Drawing.Point(175, 118);
             this.txtDetailProdoct.Name = "txtDetailProdoct";
             this.txtDetailProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtDetailProdoct.Size = new System.Drawing.Size(262, 26);
@@ -279,7 +279,7 @@
             // 
             this.txtSomeProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtSomeProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtSomeProdoct.Location = new System.Drawing.Point(349, 69);
+            this.txtSomeProdoct.Location = new System.Drawing.Point(388, 54);
             this.txtSomeProdoct.Name = "txtSomeProdoct";
             this.txtSomeProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtSomeProdoct.Size = new System.Drawing.Size(49, 26);
@@ -292,7 +292,7 @@
             // 
             this.txtPriceProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtPriceProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtPriceProdoct.Location = new System.Drawing.Point(297, 101);
+            this.txtPriceProdoct.Location = new System.Drawing.Point(336, 86);
             this.txtPriceProdoct.Name = "txtPriceProdoct";
             this.txtPriceProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtPriceProdoct.Size = new System.Drawing.Size(101, 26);
@@ -338,7 +338,7 @@
             this.groupProdoct.Location = new System.Drawing.Point(7, 73);
             this.groupProdoct.Name = "groupProdoct";
             this.groupProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupProdoct.Size = new System.Drawing.Size(946, 238);
+            this.groupProdoct.Size = new System.Drawing.Size(946, 282);
             this.groupProdoct.TabIndex = 42;
             this.groupProdoct.TabStop = false;
             this.groupProdoct.Text = "اضافه کردن کلا";
@@ -348,7 +348,7 @@
             this.btnRefreshDgProdoct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshDgProdoct.BackgroundImage")));
             this.btnRefreshDgProdoct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRefreshDgProdoct.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshDgProdoct.Location = new System.Drawing.Point(694, 205);
+            this.btnRefreshDgProdoct.Location = new System.Drawing.Point(694, 249);
             this.btnRefreshDgProdoct.Name = "btnRefreshDgProdoct";
             this.btnRefreshDgProdoct.Size = new System.Drawing.Size(42, 24);
             this.btnRefreshDgProdoct.TabIndex = 100;
@@ -360,7 +360,7 @@
             this.btnRefreshDgStore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshDgStore.BackgroundImage")));
             this.btnRefreshDgStore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRefreshDgStore.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshDgStore.Location = new System.Drawing.Point(445, 206);
+            this.btnRefreshDgStore.Location = new System.Drawing.Point(445, 250);
             this.btnRefreshDgStore.Name = "btnRefreshDgStore";
             this.btnRefreshDgStore.Size = new System.Drawing.Size(42, 24);
             this.btnRefreshDgStore.TabIndex = 99;
@@ -371,7 +371,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(592, 206);
+            this.button2.Location = new System.Drawing.Point(592, 250);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(42, 24);
             this.button2.TabIndex = 98;
@@ -382,7 +382,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.Red;
             this.button3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(841, 206);
+            this.button3.Location = new System.Drawing.Point(841, 250);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(42, 24);
             this.button3.TabIndex = 95;
@@ -394,7 +394,7 @@
             this.btnEditProdoct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditProdoct.BackgroundImage")));
             this.btnEditProdoct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEditProdoct.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProdoct.Location = new System.Drawing.Point(793, 205);
+            this.btnEditProdoct.Location = new System.Drawing.Point(793, 249);
             this.btnEditProdoct.Name = "btnEditProdoct";
             this.btnEditProdoct.Size = new System.Drawing.Size(42, 24);
             this.btnEditProdoct.TabIndex = 93;
@@ -405,7 +405,7 @@
             this.btnEditStore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditStore.BackgroundImage")));
             this.btnEditStore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEditStore.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditStore.Location = new System.Drawing.Point(544, 206);
+            this.btnEditStore.Location = new System.Drawing.Point(544, 250);
             this.btnEditStore.Name = "btnEditStore";
             this.btnEditStore.Size = new System.Drawing.Size(42, 24);
             this.btnEditStore.TabIndex = 50;
@@ -418,7 +418,7 @@
             this.dgStore.Name = "dgStore";
             this.dgStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgStore.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgStore.Size = new System.Drawing.Size(245, 146);
+            this.dgStore.Size = new System.Drawing.Size(245, 190);
             this.dgStore.TabIndex = 46;
             // 
             // dgProdoct
@@ -428,7 +428,7 @@
             this.dgProdoct.Name = "dgProdoct";
             this.dgProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgProdoct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgProdoct.Size = new System.Drawing.Size(245, 146);
+            this.dgProdoct.Size = new System.Drawing.Size(245, 190);
             this.dgProdoct.TabIndex = 44;
             // 
             // lblCodeRahgiri
@@ -455,7 +455,7 @@
             // ucDelStore
             // 
             this.ucDelStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ucDelStore.Location = new System.Drawing.Point(890, 206);
+            this.ucDelStore.Location = new System.Drawing.Point(890, 250);
             this.ucDelStore.Margin = new System.Windows.Forms.Padding(4);
             this.ucDelStore.Name = "ucDelStore";
             this.ucDelStore.Size = new System.Drawing.Size(42, 24);
@@ -465,7 +465,7 @@
             // ucAddStore
             // 
             this.ucAddStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ucAddStore.Location = new System.Drawing.Point(641, 206);
+            this.ucAddStore.Location = new System.Drawing.Point(641, 250);
             this.ucAddStore.Margin = new System.Windows.Forms.Padding(4);
             this.ucAddStore.Name = "ucAddStore";
             this.ucAddStore.Size = new System.Drawing.Size(42, 24);
@@ -535,7 +535,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn btnDelete;
         private Papiloo.FDate dateExpird;
         private System.Windows.Forms.TextBox txtDetailProdoct;
-        private System.Windows.Forms.TextBox txtNameStore;
         private System.Windows.Forms.TextBox txtSomeProdoct;
         private System.Windows.Forms.TextBox txtPriceProdoct;
         private System.Windows.Forms.Button btnSaveProdoct;
@@ -554,5 +553,6 @@
         public System.Windows.Forms.Button btnRefreshDgProdoct;
         public System.Windows.Forms.Button btnRefreshDgStore;
         public System.Windows.Forms.DataGridView dgProdoct;
+        public System.Windows.Forms.TextBox txtNameStore;
     }
 }

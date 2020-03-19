@@ -161,7 +161,7 @@ namespace Service
                                     var ser = context.Reg.FirstOrDefault();
                                     string application = "خشکشویی",
                                         managename = txtManageName.Text,
-                                        serial = IDGenerator.GetCPUId(),
+                                        serial = HDDSerialL.SerialNumber(),
                                         cammersialname = txtName.Text,
                                         state = "true",
                                         trans = "",
@@ -214,7 +214,7 @@ namespace Service
                                     StreamReader reader;
                                     WebRequest request;
                                     WebResponse response;
-                                    strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + IDGenerator.GetCPUId();
+                                    strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + HDDSerialL.SerialNumber();
                                     request = WebRequest.Create(strReq);
                                     response = request.GetResponse();
                                     dataStream = response.GetResponseStream();
@@ -259,7 +259,7 @@ namespace Service
                                     var ser = context.Reg.FirstOrDefault();
                                     string application = "خشکشویی",
                                         managename = txtManageName.Text,
-                                        serial = IDGenerator.GetCPUId(),
+                                        serial = HDDSerialL.SerialNumber(),
                                         cammersialname = txtName.Text,
                                         state = "false",
                                         trans = "",

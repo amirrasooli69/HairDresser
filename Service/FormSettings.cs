@@ -252,7 +252,7 @@ namespace Service
                     StreamReader reader;
                     WebRequest request;
                     WebResponse response;
-                    strReq = "http://www.papiloo.ir/Papiloo/Register/Update_Pay.php?Serial=" + IDGenerator.GetCPUId();
+                    strReq = "http://www.papiloo.ir/Papiloo/Register/Update_Pay.php?Serial=" + HDDSerialL.SerialNumber();
                     request = WebRequest.Create(strReq);
                     response = request.GetResponse();
                     dataStream = response.GetResponseStream();
@@ -263,7 +263,7 @@ namespace Service
                     response.Close();
                     //MessageBox.Show(strData);
                     //-------
-                    selectReg.Serial1 = IDGenerator.GetOpenLock(IDGenerator.GetCPUId());
+                    selectReg.Serial1 = IDGenerator.GetOpenLock(HDDSerialL.SerialNumber());
                     context.SaveChanges();
                     MessageBox.Show("نرم افزار کامل فعال شد.سپاس از انتخاب شما", "فعال سازی", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtRegister.Text = "نرم افزار فعال است";
@@ -391,7 +391,7 @@ namespace Service
                 return;
             //----------
             //var register = context.Reg.FirstOrDefault();
-            //if (register.Serial1 == IDGenerator.GetOpenLock(IDGenerator.GetCPUId()))
+            //if (register.Serial1 == IDGenerator.GetOpenLock(HDDSerialL.SerialNumber()))
             //{
             //    txtRegister.Text = "نرم افزار فعال است";
             //    txtSerial.Enabled = false;
@@ -483,11 +483,11 @@ namespace Service
                     var ser = context.Reg.FirstOrDefault();
                     if (ser == null)
                         return;
-                    txtSerial.Text = IDGenerator.GetCPUId() + "/" + ser.CountOpen + ser.Date;
+                    txtSerial.Text = HDDSerialL.SerialNumber() + "/" + ser.CountOpen + ser.Date;
                     txtRegister.Text = ser.IdPaye;
                     txtRegister.ForeColor = Color.Red;
                     //----------
-                    if (ser.Serial1 == IDGenerator.GetOpenLock(IDGenerator.GetCPUId()))
+                    if (ser.Serial1 == IDGenerator.GetOpenLock(HDDSerialL.SerialNumber()))
                     {
                         txtRegister.Text = "نرم افزار فعال است";
                         txtSerial.Enabled = false;

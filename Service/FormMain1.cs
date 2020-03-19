@@ -386,7 +386,7 @@ namespace Service
                     string date = DateTime.Now.ToShortDateString().Replace("/", "");
                     //string hard = Get_Serial_Hard();
                     Reg reg = new Reg();
-                    reg.State = IDGenerator.GetCPUId();
+                    reg.State = HDDSerialL.SerialNumber();
                     reg.Date = int.Parse(date);
                     //string version = "1";
                     //string s = hard + version + date;
@@ -799,7 +799,7 @@ namespace Service
             //StreamReader reader;
             //WebRequest request;
             //WebResponse response;
-            //strReq = "http://www.papiloo.ir/Papiloo/Register/Update_Pay.php?Serial=" + IDGenerator.GetCPUId();
+            //strReq = "http://www.papiloo.ir/Papiloo/Register/Update_Pay.php?Serial=" + HDDSerialL.SerialNumber();
             //request = WebRequest.Create(strReq);
             //response = request.GetResponse();
             //dataStream = response.GetResponseStream();
@@ -836,7 +836,7 @@ namespace Service
             //StreamReader reader;
             //WebRequest request;
             //WebResponse response;
-            //strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + IDGenerator.GetCPUId();
+            //strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + HDDSerialL.SerialNumber();
             //request = WebRequest.Create(strReq);
             //response = request.GetResponse();
             //dataStream = response.GetResponseStream();
@@ -1003,7 +1003,7 @@ namespace Service
                             StreamReader reader;
                             WebRequest request;
                             WebResponse response;
-                            strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + IDGenerator.GetCPUId();
+                            strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + HDDSerialL.SerialNumber();
                             request = WebRequest.Create(strReq);
                             response = request.GetResponse();
                             dataStream = response.GetResponseStream();
@@ -1020,14 +1020,14 @@ namespace Service
                                     Reg reg = new Reg();
                                     reg.IdPaye = a[0];
                                     string date = DateTime.Now.ToShortDateString().Replace("/", "");
-                                    reg.State = IDGenerator.GetCPUId();
+                                    reg.State = HDDSerialL.SerialNumber();
                                     reg.Date = int.Parse(date);
                                     reg.CountOpen = 1;
                                     if (a[4] == "1")// pardakht karde 
                                     {
                                         MessageBox.Show("شما قبلا پرداخت کرده اید،نسخه کامل در دسترس شماست", " ثبت نام", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         strlblVersion.Text = "نسخه کامل";
-                                        reg.Serial1 = IDGenerator.GetOpenLock(IDGenerator.GetCPUId());
+                                        reg.Serial1 = IDGenerator.GetOpenLock(HDDSerialL.SerialNumber());
                                     }
                                     else //pardakht naharde
                                     {
@@ -1094,7 +1094,7 @@ namespace Service
                                 //            Reg reg2 = new Reg();
                                 //            reg2.IdPaye = a[0];
                                 //            string date = DateTime.Now.ToShortDateString().Replace("/", "");
-                                //            reg2.State = IDGenerator.GetCPUId();
+                                //            reg2.State = HDDSerialL.SerialNumber();
                                 //            reg2.Date = int.Parse(date);
                                 //            reg2.CountOpen = 1;
                                 //            context.Reg.Add(reg2);
@@ -1126,7 +1126,7 @@ namespace Service
                                 //    }
 
                                 //    var reg = context.Reg.FirstOrDefault();
-                                //    reg.Serial1 = IDGenerator.GetOpenLock(IDGenerator.GetCPUId());
+                                //    reg.Serial1 = IDGenerator.GetOpenLock(HDDSerialL.SerialNumber());
                                 //    context.SaveChanges();
                                 //    //this.Close();
                                 //    //return;
@@ -1206,7 +1206,7 @@ namespace Service
 
                     if (calCount(check.CountOpen.ToString()) != checkOpen.D11)
                     {
-                        string reg = IDGenerator.GetOpenLock(IDGenerator.GetCPUId());
+                        string reg = IDGenerator.GetOpenLock(HDDSerialL.SerialNumber());
                         if (reg == check.Serial1)
                             goto Act;
                         MessageBox.Show("اختلال در نرم افزار.نرم افزار را فعال کنید", "نرم افزار", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1229,7 +1229,7 @@ namespace Service
 
                     if (File.Exists(stPath + "\\RptUsers.mrt"))
                     {
-                        string reg = IDGenerator.GetOpenLock(IDGenerator.GetCPUId());
+                        string reg = IDGenerator.GetOpenLock(HDDSerialL.SerialNumber());
                         if (reg == check.Serial1)
                             goto Act;
                         MessageBox.Show("اختلال در نرم افزار.نرم افزار را فعال کنید", "نرم افزار", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1257,9 +1257,9 @@ namespace Service
                         frmFirst.ShowDialog();
                         return;
                     }
-                    if (check.State == IDGenerator.GetCPUId())
+                    if (check.State == HDDSerialL.SerialNumber())
                     {
-                        string reg = IDGenerator.GetOpenLock(IDGenerator.GetCPUId());
+                        string reg = IDGenerator.GetOpenLock(HDDSerialL.SerialNumber());
                         reg = reg + "8a1e98m";
                         string code = check.Serial1 + white.R11;
                         if (code == reg)

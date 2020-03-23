@@ -21,17 +21,28 @@ namespace Service
         public int see = 0; //baraye por kardan dgshow va por kardanesh
         public string majhool1 = "";
         public string majhool2 = "";
+        public string[] majhool;
         public void Select_Show()
         {
-            if (see == 2) // namayeshe sabte mahsool
+            if (majhool[0] == "2")
             {
+                //if (see == 2) // namayeshe sabte mahsool
+                //{
                 panelStore.Visible = false;
                 dgSearch.Visible = false;
                 panelProdoct.Visible = true;
                 panelProdoct.Dock = DockStyle.Fill;
                 tooltxtSearch.Visible = false;
                 Fill_ComUnit();
+                comUnit.SelectedIndex = int.Parse(majhool[2]);
+                //----
+                txtNameProdoct.Text = majhool[3];
+                txtCodeProdoct.Text = majhool[4];
+                txtDetails.Text = majhool[5];
+                txtCodeProdoct.Text = majhool[6];
+                txtRFID.Text = majhool[7];
 
+                //}
             }
             if (see == 3) // namayeshe sabte store
             {
@@ -137,22 +148,22 @@ namespace Service
         {
             FormAnbar frmAnbar = new FormAnbar();
             majhool1 = dgSearch.CurrentRow.Cells[3].Value.ToString();
-            majhool2= dgSearch.CurrentRow.Cells[2].Value.ToString();
+            majhool2 = dgSearch.CurrentRow.Cells[2].Value.ToString();
             this.Close();
 
         }
 
         private void tooltxtSearch_Enter(object sender, EventArgs e)
         {
-            if(tooltxtSearch.Text=="جستجو")
+            if (tooltxtSearch.Text == "جستجو")
             {
                 tooltxtSearch.Text = "";
             }
         }
 
         private void tooltxtSearch_Leave(object sender, EventArgs e)
-        { 
-            if(tooltxtSearch.Text=="")
+        {
+            if (tooltxtSearch.Text == "")
             {
                 tooltxtSearch.Text = "جستجو";
             }
@@ -162,13 +173,13 @@ namespace Service
         {
             try
             {
-                if(context.AnbarProdoct.Count()>0)
+                if (context.AnbarProdoct.Count() > 0)
                 {
                     var searchtProdoct = context.AnbarProdoct.Where(c => c.Name.StartsWith(tooltxtSearch.Text)).ToList();
                     dgSearch.DataSource = searchtProdoct;
                 }
             }
-            catch ( Exception ex)
+            catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);

@@ -469,24 +469,47 @@ namespace Service
         private void btnEditProdoct_Click(object sender, EventArgs e)
         {
             FormLittelEnter frmLittelEnter = new FormLittelEnter();
+
+
             if (dgProdoct.SelectedRows.Count == 1)
             {
-                if (dgProdoct.CurrentRow.Cells[2].Value != null)
-                {
-                    frmLittelEnter.txtNameProdoct.Text = dgProdoct.CurrentRow.Cells[2].Value.ToString();
-                }
-                if (dgProdoct.CurrentRow.Cells[3].Value != null)
-                {
-                    frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[3].Value.ToString();
-                }
-                if (dgProdoct.CurrentRow.Cells[4].Value != null)
-                {
-                    frmLittelEnter.txtDetails.Text = dgProdoct.CurrentRow.Cells[4].Value.ToString();
-                }
-                if (dgProdoct.CurrentRow.Cells[5].Value != null)
-                {
-                    frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[5].Value.ToString();
-                }
+                frmLittelEnter.majhool = new string[]{
+                    "2",  //frmLittelEnter.prodoct[0] = "2";
+                    dgProdoct.CurrentRow.Cells[0].Value.ToString(), // dadane id meghdare entekhab shode
+                    dgProdoct.CurrentRow.Cells[1].Value.ToString(), // dadane meghdare unit entekhab shode
+                    dgProdoct.CurrentRow.Cells[2].Value.ToString(),
+                    dgProdoct.CurrentRow.Cells[3].Value.ToString(),
+                    dgProdoct.CurrentRow.Cells[4].Value.ToString(),
+                    dgProdoct.CurrentRow.Cells[5].Value.ToString(),
+                    dgProdoct.CurrentRow.Cells[6].Value.ToString(),
+                };
+                
+                //frmLittelEnter.majhool[1]= dgProdoct.CurrentRow.Cells[0].Value.ToString(); 
+                //frmLittelEnter.majhool[2] = dgProdoct.CurrentRow.Cells[1].Value.ToString(); 
+                //frmLittelEnter.majhool[3] = dgProdoct.CurrentRow.Cells[2].Value.ToString();
+                //frmLittelEnter.majhool[4] = dgProdoct.CurrentRow.Cells[3].Value.ToString();
+                //frmLittelEnter.majhool[5] = dgProdoct.CurrentRow.Cells[4].Value.ToString();
+                //frmLittelEnter.majhool[6] = dgProdoct.CurrentRow.Cells[5].Value.ToString();
+
+                //frmLittelEnter.see = 2; // baz kardane form baraye virayesh mahsool
+                //frmLittelEnter.majhool1 = dgProdoct.CurrentRow.Cells[0].Value.ToString(); // dadane id meghdare entekhab shode
+                //frmLittelEnter.majhool2 = dgProdoct.CurrentRow.Cells[1].Value.ToString(); // dadane meghdare unit entekhab shode
+                //if (dgProdoct.CurrentRow.Cells[2].Value != null)
+                //{
+                //    frmLittelEnter.txtNameProdoct.Text = dgProdoct.CurrentRow.Cells[2].Value.ToString();
+                //}
+                //if (dgProdoct.CurrentRow.Cells[3].Value != null)
+                //{
+                //    frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[3].Value.ToString();
+                //}
+                //if (dgProdoct.CurrentRow.Cells[4].Value != null)
+                //{
+                //    frmLittelEnter.txtDetails.Text = dgProdoct.CurrentRow.Cells[4].Value.ToString();
+                //}
+                //if (dgProdoct.CurrentRow.Cells[5].Value != null)
+                //{
+                //    frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[5].Value.ToString();
+                //}
                 frmLittelEnter.ShowDialog();
             }
         }

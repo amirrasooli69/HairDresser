@@ -18,7 +18,7 @@ namespace Papiloo
             InitializeComponent();
         }
         public string show = "";
-        public string name, id, unit, barcode, rfid;
+        public string name, code,detail, unit, barcode, rfid;
         Popup pop;
         Service.StimulsoftEntities context = new Service.StimulsoftEntities();
         public static string[] getdNewDetail;
@@ -53,21 +53,20 @@ namespace Papiloo
                     }
                 case "editProdoct":
                     {
-                        ucAddProdoctStore editProdoct = new ucAddProdoctStore();
-                        editProdoct.panelProdoct.Visible = true;
-                        editProdoct.panelStore.Visible = false;
-                        editProdoct.panelProdoct.Dock = DockStyle.Fill;
-                        editProdoct.Size = new System.Drawing.Size(280, 210);
-                        editProdoct.txtNameProdoct.Text = unit;
-
-                        pop = new Popup(editProdoct);
+                        ucAddProdoctStore EditPtodoct = new ucAddProdoctStore();
+                        EditPtodoct.panelProdoct.Visible = true;
+                        EditPtodoct.panelStore.Visible = false;
+                        EditPtodoct.panelProdoct.Dock = DockStyle.Fill;
+                        EditPtodoct.Size = new System.Drawing.Size(280, 210);
+                        //EditPtodoct.name = name;
+                        //EditPtodoct.code = code;
+                        //EditPtodoct.unit =  unit;
+                        //EditPtodoct.detail = detail;
+                        //EditPtodoct.barcode = barcode;
+                        //EditPtodoct.rfid = rfid;
+                        pop = new Popup(EditPtodoct);
                         pop.Closed += popup_Closed;
                         pop.Show(this);
-                        break;
-                        
-                    }
-                case "editStore":
-                    {
                         break;
                     }
             }

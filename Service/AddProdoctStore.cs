@@ -17,7 +17,7 @@ namespace Papiloo
         {
             InitializeComponent();
         }
-        public string show = "";
+        public string show, name, code, unit, barcode, rfid,detail;
         public static string get;
         Popup pop;
         public void Refresh_comUnit() // update kardane combo box unit
@@ -90,6 +90,17 @@ namespace Papiloo
         private void ucAddProdoctStore_Load(object sender, EventArgs e)
         {
             Refresh_comUnit();
+            //if (show == "editProdoct")
+            //{
+               // ucButton btn = new ucButton();
+                txtNameProdoct.Text = name;
+                txtCodeProdoct.Text = code;
+                txtBarcode.Text = barcode;
+                txtDetails.Text = detail;
+                txtRFID.Text = rfid;
+                comUnit.Text = unit;
+            
+            //}
         }
 
         private void btnSaveStore_Click(object sender, EventArgs e)

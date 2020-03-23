@@ -111,6 +111,7 @@ namespace Service
                 Refresh_dgStore();
                
             }
+            dgProdoct.ClearSelection();
         }
 
         private void dgAnbar_Enter(object sender, DataGridViewCellEventArgs e)
@@ -119,7 +120,6 @@ namespace Service
 
         private void dgAnbar_KeyPress(object sender, KeyPressEventArgs e)
         {
-
         }
 
         public string[] prodoct() // gereftane maghadir baraye ezafe kardane prodoct
@@ -443,21 +443,43 @@ namespace Service
 
         private void ucEditButton_Load(object sender, EventArgs e)
         {
-            ucEditPtodoct.btn.Text = "Edit";
+            //ucEditPtodoct.btn.Text = "Edit";
             //ucEditPtodoct.btn.Image=;
-            ucEditPtodoct.show = "editProdoct";
+            //ucEditPtodoct.show = "editProdoct";
+            //ucButton prodoct = new ucButton();
+            
+            //prodoct.name = "1";
+            //prodoct.code = "2";
+            //prodoct.unit = "3";
+            //prodoct.detail = "4";
+            //prodoct.barcode = "5";
+            //prodoct.rfid = "6";
 
-            ucEditPtodoct.name = "1"; //dgProdoct.CurrentRow.Cells[0].Value.ToString();
-            ucEditPtodoct.id = "2"; //dgProdoct.CurrentRow.Cells[1].Value.ToString();
-            ucEditPtodoct.unit = "3";//dgProdoct.CurrentRow.Cells[2].Value.ToString();
-            ucEditPtodoct.barcode = "4";//dgProdoct.CurrentRow.Cells[3].Value.ToString();
-            ucEditPtodoct.rfid = "5";//dgProdoct.CurrentRow.Cells[4].Value.ToString();
 
         }
 
         private void ucEditPtodoct_Click(object sender, EventArgs e)
         {
+            //ucAddProdoctStore prodoctStore = new ucAddProdoctStore();
+            ucAddProdoctStore prodoct = new ucAddProdoctStore();
 
+
+        }
+
+        private void btnEditProdoct_Click(object sender, EventArgs e)
+        {
+            FormLittelEnter frmLittelEnter = new FormLittelEnter();
+            if (dgProdoct.SelectedRows.Count == 1)
+            {
+                
+                frmLittelEnter.txtNameProdoct.Text = dgProdoct.CurrentRow.Cells[2].Value.ToString();
+                frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[3].Value.ToString();
+                //frmLittelEnter.comUnit.Text = dgProdoct.CurrentRow.Cells[4].Value.ToString();
+                frmLittelEnter.txtDetails.Text = dgProdoct.CurrentRow.Cells[4].Value.ToString();
+                frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[5].Value.ToString();
+                frmLittelEnter.txtRFID.Text = dgProdoct.CurrentRow.Cells[6].Value.ToString();
+                frmLittelEnter.ShowDialog();
+            }
         }
     }
 }

@@ -82,9 +82,9 @@
             this.panelProdoct.Controls.Add(this.label31);
             this.panelProdoct.Controls.Add(this.label32);
             this.panelProdoct.Controls.Add(this.txtBarcode);
-            this.panelProdoct.Location = new System.Drawing.Point(0, 122);
+            this.panelProdoct.Location = new System.Drawing.Point(0, 43);
             this.panelProdoct.Name = "panelProdoct";
-            this.panelProdoct.Size = new System.Drawing.Size(292, 95);
+            this.panelProdoct.Size = new System.Drawing.Size(292, 189);
             this.panelProdoct.TabIndex = 14;
             // 
             // btnAddUnit
@@ -402,16 +402,11 @@
 
         #endregion
         private System.Windows.Forms.Button btnSaveProdoct;
-        private System.Windows.Forms.TextBox txtNameProdoct;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox txtCodeProdoct;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox txtRFID;
-        private System.Windows.Forms.TextBox txtDetails;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox txtBarcode;
         public System.Windows.Forms.Panel panelStore;
         private System.Windows.Forms.Button btnSaveStore;
         private System.Windows.Forms.TextBox txtStoreName;
@@ -431,5 +426,10 @@
         public System.Windows.Forms.ComboBox comUnit;
         public System.Windows.Forms.DataGridView dgSearch;
         private System.Windows.Forms.ToolStripTextBox tooltxtSearch;
+        public System.Windows.Forms.TextBox txtNameProdoct;
+        public System.Windows.Forms.TextBox txtCodeProdoct;
+        public System.Windows.Forms.TextBox txtRFID;
+        public System.Windows.Forms.TextBox txtDetails;
+        public System.Windows.Forms.TextBox txtBarcode;
     }
 }

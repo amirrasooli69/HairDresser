@@ -39,9 +39,9 @@ namespace Papiloo
                     Service.AnbarProdoct prodoct = new Service.AnbarProdoct();
                     prodoct.Name = txtNameProdoct.Text;
                     prodoct.Code = int.Parse(txtCodeProdoct.Text);
-                    if (comUnit.SelectedIndex.ToString() == "")
+                    if (comUnit.SelectedIndex != null)
                     {
-                        prodoct.Id = comUnit.SelectedIndex;
+                        prodoct.IdUnit = comUnit.SelectedIndex;
                     }
                     if (txtDetails.Text != "")
                     {

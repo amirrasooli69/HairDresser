@@ -479,10 +479,6 @@ namespace Service
                 {
                     frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[3].Value.ToString();
                 }
-                //if (dgProdoct.CurrentRow.Cells[4].Value != null)
-                //{
-                //    frmLittelEnter.txtDetails.Text = dgProdoct.CurrentRow.Cells[4].Value.ToString();
-                //}
                 if (dgProdoct.CurrentRow.Cells[4].Value != null)
                 {
                     frmLittelEnter.txtDetails.Text = dgProdoct.CurrentRow.Cells[4].Value.ToString();
@@ -491,10 +487,6 @@ namespace Service
                 {
                     frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[5].Value.ToString();
                 }
-                //if (dgProdoct.CurrentRow.Cells[7].Value != null)
-                //{
-                //    frmLittelEnter.txtRFID.Text = dgProdoct.CurrentRow.Cells[7].Value.ToString();
-                //}
                 frmLittelEnter.ShowDialog();
             }
         }

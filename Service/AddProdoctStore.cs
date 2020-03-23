@@ -43,23 +43,23 @@ namespace Papiloo
                     {
                         prodoct.Id = comUnit.SelectedIndex;
                     }
-                    if (txtDetails.Text == "")
+                    if (txtDetails.Text != "")
                     {
                         prodoct.Description = txtDetails.Text;
                     }
-                    if (txtBarcode.Text == "")
+                    if (txtBarcode.Text != "")
                     {
                         prodoct.Barcode = txtBarcode.Text;
                     }
-                    if (txtRFID.Text == "")
+                    if (txtRFID.Text != "")
                     {
                         prodoct.RfID = txtRFID.Text;
                     }
                     context.AnbarProdoct.Add(prodoct);
                     context.SaveChanges();
                 }
-                Service.FormAnbar anbar = new Service.FormAnbar();
-                anbar.Refresh_dgProdoct();
+                //Service.FormAnbar anbar = new Service.FormAnbar();
+               // anbar.Refresh_dgProdoct();
 
             }
         } // ezafe kardane mahsoole jadid be jadval prodoct(mahsoolat)

@@ -471,13 +471,30 @@ namespace Service
             FormLittelEnter frmLittelEnter = new FormLittelEnter();
             if (dgProdoct.SelectedRows.Count == 1)
             {
-                
-                frmLittelEnter.txtNameProdoct.Text = dgProdoct.CurrentRow.Cells[2].Value.ToString();
-                frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[3].Value.ToString();
-                //frmLittelEnter.comUnit.Text = dgProdoct.CurrentRow.Cells[4].Value.ToString();
-                frmLittelEnter.txtDetails.Text = dgProdoct.CurrentRow.Cells[4].Value.ToString();
-                frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[5].Value.ToString();
-                frmLittelEnter.txtRFID.Text = dgProdoct.CurrentRow.Cells[6].Value.ToString();
+                if (dgProdoct.CurrentRow.Cells[2].Value != null)
+                {
+                    frmLittelEnter.txtNameProdoct.Text = dgProdoct.CurrentRow.Cells[2].Value.ToString();
+                }
+                if (dgProdoct.CurrentRow.Cells[3].Value != null)
+                {
+                    frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[3].Value.ToString();
+                }
+                //if (dgProdoct.CurrentRow.Cells[4].Value != null)
+                //{
+                //    frmLittelEnter.txtDetails.Text = dgProdoct.CurrentRow.Cells[4].Value.ToString();
+                //}
+                if (dgProdoct.CurrentRow.Cells[4].Value != null)
+                {
+                    frmLittelEnter.txtDetails.Text = dgProdoct.CurrentRow.Cells[4].Value.ToString();
+                }
+                if (dgProdoct.CurrentRow.Cells[5].Value != null)
+                {
+                    frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[5].Value.ToString();
+                }
+                //if (dgProdoct.CurrentRow.Cells[7].Value != null)
+                //{
+                //    frmLittelEnter.txtRFID.Text = dgProdoct.CurrentRow.Cells[7].Value.ToString();
+                //}
                 frmLittelEnter.ShowDialog();
             }
         }

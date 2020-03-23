@@ -151,7 +151,7 @@ namespace Service
         }
 
         private void tooltxtSearch_Leave(object sender, EventArgs e)
-        {
+        { 
             if(tooltxtSearch.Text=="")
             {
                 tooltxtSearch.Text = "جستجو";

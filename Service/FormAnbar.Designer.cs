@@ -63,6 +63,7 @@
             this.dgProdoct = new System.Windows.Forms.DataGridView();
             this.lblCodeRahgiri = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ucEditPtodoct = new Papiloo.ucButton();
             this.ucDelStore = new Papiloo.ucButton();
             this.ucAddStore = new Papiloo.ucButton();
             this.dateExpird = new Papiloo.FDate();
@@ -314,6 +315,7 @@
             // 
             // groupProdoct
             // 
+            this.groupProdoct.Controls.Add(this.ucEditPtodoct);
             this.groupProdoct.Controls.Add(this.btnRefreshDgProdoct);
             this.groupProdoct.Controls.Add(this.btnRefreshDgStore);
             this.groupProdoct.Controls.Add(this.btnDelStore);
@@ -454,6 +456,17 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "کد رهگیری:";
             // 
+            // ucEditPtodoct
+            // 
+            this.ucEditPtodoct.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ucEditPtodoct.Location = new System.Drawing.Point(744, 249);
+            this.ucEditPtodoct.Margin = new System.Windows.Forms.Padding(4);
+            this.ucEditPtodoct.Name = "ucEditPtodoct";
+            this.ucEditPtodoct.Size = new System.Drawing.Size(42, 24);
+            this.ucEditPtodoct.TabIndex = 101;
+            this.ucEditPtodoct.Load += new System.EventHandler(this.ucEditButton_Load);
+            this.ucEditPtodoct.Click += new System.EventHandler(this.ucEditPtodoct_Click);
+            // 
             // ucDelStore
             // 
             this.ucDelStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -556,5 +569,6 @@
         public System.Windows.Forms.Button btnRefreshDgStore;
         public System.Windows.Forms.DataGridView dgProdoct;
         public System.Windows.Forms.TextBox txtNameStore;
+        private Papiloo.ucButton ucEditPtodoct;
     }
 }

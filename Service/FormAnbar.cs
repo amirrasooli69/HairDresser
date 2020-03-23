@@ -440,6 +440,25 @@ namespace Service
                 }
             }
         }
+
+        private void ucEditButton_Load(object sender, EventArgs e)
+        {
+            ucEditPtodoct.btn.Text = "Edit";
+            //ucEditPtodoct.btn.Image=;
+            ucEditPtodoct.show = "editProdoct";
+
+            ucEditPtodoct.name = "1"; //dgProdoct.CurrentRow.Cells[0].Value.ToString();
+            ucEditPtodoct.id = "2"; //dgProdoct.CurrentRow.Cells[1].Value.ToString();
+            ucEditPtodoct.unit = "3";//dgProdoct.CurrentRow.Cells[2].Value.ToString();
+            ucEditPtodoct.barcode = "4";//dgProdoct.CurrentRow.Cells[3].Value.ToString();
+            ucEditPtodoct.rfid = "5";//dgProdoct.CurrentRow.Cells[4].Value.ToString();
+
+        }
+
+        private void ucEditPtodoct_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

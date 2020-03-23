@@ -73,9 +73,9 @@
             this.panelProdoct.Controls.Add(this.label31);
             this.panelProdoct.Controls.Add(this.label32);
             this.panelProdoct.Controls.Add(this.txtBarcode);
-            this.panelProdoct.Location = new System.Drawing.Point(0, 213);
+            this.panelProdoct.Location = new System.Drawing.Point(0, 96);
             this.panelProdoct.Name = "panelProdoct";
-            this.panelProdoct.Size = new System.Drawing.Size(292, 34);
+            this.panelProdoct.Size = new System.Drawing.Size(292, 151);
             this.panelProdoct.TabIndex = 15;
             // 
             // btnAddUnit
@@ -236,7 +236,7 @@
             this.panelStore.Controls.Add(this.txtAddressStore);
             this.panelStore.Location = new System.Drawing.Point(0, 3);
             this.panelStore.Name = "panelStore";
-            this.panelStore.Size = new System.Drawing.Size(292, 178);
+            this.panelStore.Size = new System.Drawing.Size(292, 75);
             this.panelStore.TabIndex = 16;
             // 
             // btnSaveStore
@@ -331,16 +331,11 @@
         public System.Windows.Forms.ComboBox comUnit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSaveProdoct;
-        private System.Windows.Forms.TextBox txtNameProdoct;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox txtCodeProdoct;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox txtRFID;
-        private System.Windows.Forms.TextBox txtDetails;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox txtBarcode;
         public System.Windows.Forms.Panel panelStore;
         private System.Windows.Forms.Button btnSaveStore;
         private System.Windows.Forms.TextBox txtStoreName;
@@ -349,5 +344,10 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtAddressStore;
+        public System.Windows.Forms.TextBox txtNameProdoct;
+        public System.Windows.Forms.TextBox txtCodeProdoct;
+        public System.Windows.Forms.TextBox txtRFID;
+        public System.Windows.Forms.TextBox txtDetails;
+        public System.Windows.Forms.TextBox txtBarcode;
     }
 }

@@ -18,6 +18,7 @@ namespace Papiloo
             InitializeComponent();
         }
         public string show = "";
+        public string name, id, unit, barcode, rfid;
         Popup pop;
         Service.StimulsoftEntities context = new Service.StimulsoftEntities();
         public static string[] getdNewDetail;
@@ -48,6 +49,25 @@ namespace Papiloo
                         pop = new Popup(addProdoct);
                         pop.Closed += popup_Closed;
                         pop.Show(this);
+                        break;
+                    }
+                case "editProdoct":
+                    {
+                        ucAddProdoctStore editProdoct = new ucAddProdoctStore();
+                        editProdoct.panelProdoct.Visible = true;
+                        editProdoct.panelStore.Visible = false;
+                        editProdoct.panelProdoct.Dock = DockStyle.Fill;
+                        editProdoct.Size = new System.Drawing.Size(280, 210);
+                        editProdoct.txtNameProdoct.Text = unit;
+
+                        pop = new Popup(editProdoct);
+                        pop.Closed += popup_Closed;
+                        pop.Show(this);
+                        break;
+                        
+                    }
+                case "editStore":
+                    {
                         break;
                     }
             }

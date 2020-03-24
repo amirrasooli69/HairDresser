@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tooltxtSearch = new System.Windows.Forms.ToolStripTextBox();
             this.panelProdoct = new System.Windows.Forms.Panel();
             this.btnAddUnit = new System.Windows.Forms.Button();
             this.btnDelUnit = new System.Windows.Forms.Button();
@@ -57,33 +55,13 @@
             this.label27 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.dgSearch = new System.Windows.Forms.DataGridView();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tooltxtSearch = new System.Windows.Forms.ToolStripTextBox();
             this.panelProdoct.SuspendLayout();
             this.panelStore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tooltxtSearch});
-            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(292, 27);
-            this.menuStrip1.TabIndex = 15;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // tooltxtSearch
-            // 
-            this.tooltxtSearch.Name = "tooltxtSearch";
-            this.tooltxtSearch.Size = new System.Drawing.Size(100, 23);
-            this.tooltxtSearch.Text = "جستجو";
-            this.tooltxtSearch.Enter += new System.EventHandler(this.tooltxtSearch_Enter);
-            this.tooltxtSearch.Leave += new System.EventHandler(this.tooltxtSearch_Leave);
-            this.tooltxtSearch.TextChanged += new System.EventHandler(this.tooltxtSearch_TextChanged);
             // 
             // panelProdoct
             // 
@@ -364,36 +342,53 @@
             this.dgSearch.Visible = false;
             this.dgSearch.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSearch_CellDoubleClick);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tooltxtSearch});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuStrip1.Size = new System.Drawing.Size(292, 27);
+            this.menuStrip1.TabIndex = 18;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // tooltxtSearch
+            // 
+            this.tooltxtSearch.Name = "tooltxtSearch";
+            this.tooltxtSearch.Size = new System.Drawing.Size(100, 23);
+            this.tooltxtSearch.Text = "جستجو";
+            this.tooltxtSearch.Enter += new System.EventHandler(this.tooltxtSearch_Enter);
+            this.tooltxtSearch.Leave += new System.EventHandler(this.tooltxtSearch_Leave);
+            this.tooltxtSearch.TextChanged += new System.EventHandler(this.tooltxtSearch_TextChanged);
+            // 
             // FormLittelEnter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 244);
             this.Controls.Add(this.dgSearch);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panelProdoct);
             this.Controls.Add(this.panelStore);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormLittelEnter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLitelEnter";
             this.Load += new System.EventHandler(this.FormLitelEnter_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.panelProdoct.ResumeLayout(false);
             this.panelProdoct.PerformLayout();
             this.panelStore.ResumeLayout(false);
             this.panelStore.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripTextBox tooltxtSearch;
         public System.Windows.Forms.Panel panelProdoct;
         public System.Windows.Forms.Button btnAddUnit;
         public System.Windows.Forms.Button btnDelUnit;
@@ -421,5 +416,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox textBox5;
         public System.Windows.Forms.DataGridView dgSearch;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripTextBox tooltxtSearch;
     }
 }

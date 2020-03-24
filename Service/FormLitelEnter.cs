@@ -26,8 +26,6 @@ namespace Service
         {
             if (majhool[0] == "2")
             {
-                //if (see == 2) // namayeshe sabte mahsool
-                //{
                 panelStore.Visible = false;
                 dgSearch.Visible = false;
                 panelProdoct.Visible = true;
@@ -39,10 +37,8 @@ namespace Service
                 txtNameProdoct.Text = majhool[3];
                 txtCodeProdoct.Text = majhool[4];
                 txtDetails.Text = majhool[5];
-                txtCodeProdoct.Text = majhool[6];
+                txtBarcode.Text = majhool[6];
                 txtRFID.Text = majhool[7];
-
-                //}
             }
             if (see == 3) // namayeshe sabte store
             {

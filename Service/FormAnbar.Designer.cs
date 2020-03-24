@@ -63,7 +63,6 @@
             this.dgProdoct = new System.Windows.Forms.DataGridView();
             this.lblCodeRahgiri = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ucEditProdoct = new Papiloo.ucButton();
             this.ucDelStore = new Papiloo.ucButton();
             this.ucAddStore = new Papiloo.ucButton();
             this.dateExpird = new Papiloo.FDate();
@@ -315,7 +314,6 @@
             // 
             // groupProdoct
             // 
-            this.groupProdoct.Controls.Add(this.ucEditProdoct);
             this.groupProdoct.Controls.Add(this.btnRefreshDgProdoct);
             this.groupProdoct.Controls.Add(this.btnRefreshDgStore);
             this.groupProdoct.Controls.Add(this.btnDelStore);
@@ -435,7 +433,6 @@
             this.dgProdoct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgProdoct.Size = new System.Drawing.Size(245, 190);
             this.dgProdoct.TabIndex = 44;
-            this.dgProdoct.DoubleClick += new System.EventHandler(this.dgProdoct_DoubleClick);
             this.dgProdoct.Enter += new System.EventHandler(this.dgProdoct_Enter);
             // 
             // lblCodeRahgiri
@@ -458,16 +455,6 @@
             this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 42;
             this.label1.Text = "کد رهگیری:";
-            // 
-            // ucEditProdoct
-            // 
-            this.ucEditProdoct.Location = new System.Drawing.Point(738, 249);
-            this.ucEditProdoct.Margin = new System.Windows.Forms.Padding(4);
-            this.ucEditProdoct.Name = "ucEditProdoct";
-            this.ucEditProdoct.Size = new System.Drawing.Size(48, 26);
-            this.ucEditProdoct.TabIndex = 101;
-            this.ucEditProdoct.Load += new System.EventHandler(this.ucEditButton_Load);
-            this.ucEditProdoct.Click += new System.EventHandler(this.ucEditProdoct_Click);
             // 
             // ucDelStore
             // 
@@ -571,6 +558,5 @@
         public System.Windows.Forms.Button btnRefreshDgStore;
         public System.Windows.Forms.DataGridView dgProdoct;
         public System.Windows.Forms.TextBox txtNameStore;
-        private Papiloo.ucButton ucEditProdoct;
     }
 }

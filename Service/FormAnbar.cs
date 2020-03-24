@@ -458,6 +458,7 @@ namespace Service
         private void btnEditProdoct_Click(object sender, EventArgs e)
         {
             FormLittelEnter frmLittelEnter = new FormLittelEnter();
+            frmLittelEnter.Text="ویرایش محصول";
             if (dgProdoct.SelectedRows.Count == 1)
             {
                 frmLittelEnter.majhool = new string[]{
@@ -500,30 +501,30 @@ namespace Service
                 frmLittelEnter.ShowDialog();
             }
         }
-        public string id, name, code, unit, description, barcod, rfid;
+        //public string id, name, code, unit, description, barcod, rfid;
 
-        private void dgProdoct_DoubleClick(object sender, EventArgs e)
-        {
-            id = dgProdoct.CurrentRow.Cells[0].Value.ToString();
-            unit = dgProdoct.CurrentRow.Cells[1].Value.ToString();
-            name = dgProdoct.CurrentRow.Cells[2].Value.ToString();
-            code = dgProdoct.CurrentRow.Cells[3].Value.ToString();
-            description = dgProdoct.CurrentRow.Cells[4].Value.ToString();
-            barcod = dgProdoct.CurrentRow.Cells[5].Value.ToString();
-            rfid = dgProdoct.CurrentRow.Cells[6].Value.ToString();
-        }
+        //private void dgProdoct_DoubleClick(object sender, EventArgs e)
+        //{
+        //    id = dgProdoct.CurrentRow.Cells[0].Value.ToString();
+        //    unit = dgProdoct.CurrentRow.Cells[1].Value.ToString();
+        //    name = dgProdoct.CurrentRow.Cells[2].Value.ToString();
+        //    code = dgProdoct.CurrentRow.Cells[3].Value.ToString();
+        //    description = dgProdoct.CurrentRow.Cells[4].Value.ToString();
+        //    barcod = dgProdoct.CurrentRow.Cells[5].Value.ToString();
+        //    rfid = dgProdoct.CurrentRow.Cells[6].Value.ToString();
+        //}
 
-        private void ucEditProdoct_Click(object sender, EventArgs e)
-        {
-            ucEditProdoct.id = id;
-            ucEditProdoct.unit = unit;
-            ucEditProdoct.name = name;
-            ucEditProdoct.code = code;
-            ucEditProdoct.detail = description;
-            ucEditProdoct.barcode = barcod;
-            ucEditProdoct.rfid = rfid;
-            ucEditProdoct.show = "editProdoct";
-        }
+        //private void ucEditProdoct_Click(object sender, EventArgs e)
+        //{
+        //    ucEditProdoct.id = id;
+        //    ucEditProdoct.unit = unit;
+        //    ucEditProdoct.name = name;
+        //    ucEditProdoct.code = code;
+        //    ucEditProdoct.detail = description;
+        //    ucEditProdoct.barcode = barcod;
+        //    ucEditProdoct.rfid = rfid;
+        //    ucEditProdoct.show = "editProdoct";
+        //}
 
         private void dgProdoct_Enter(object sender, EventArgs e)
         {

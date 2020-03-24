@@ -24,7 +24,7 @@ namespace Service
         public string[] majhool;
         public void Select_Show()
         {
-            if (majhool[0] == "2")
+            if (majhool[0] == "edit")
             {
                 panelStore.Visible = false;
                 dgSearch.Visible = false;
@@ -32,8 +32,8 @@ namespace Service
                 panelProdoct.Dock = DockStyle.Fill;
                 tooltxtSearch.Visible = false;
                 Fill_ComUnit();
-                comUnit.SelectedIndex = int.Parse(majhool[2]);
                 //----
+                comUnit.SelectedIndex = int.Parse(majhool[2]);
                 txtNameProdoct.Text = majhool[3];
                 txtCodeProdoct.Text = majhool[4];
                 txtDetails.Text = majhool[5];
@@ -106,28 +106,32 @@ namespace Service
 
         private void btnSaveProdoct_Click(object sender, EventArgs e)
         {
-            using (var context = new StimulsoftEntities())
+            if (majhool[0] == "edit") // baraye edit kardane mahsool 
             {
-                if (context.AnbarProdoct.Count() > 0)
+                using (var context = new StimulsoftEntities())
                 {
-                    bool existProdoct = context.AnbarProdoct.Where(c => c.Name == txtNameProdoct.Text).Any();
-                    if (existProdoct)
+                    Int32 id = Int32.Parse(majhool[1]);
+                    var selectProdoct = context.AnbarProdoct.Where(c => c.Id == id).FirstOrDefault();
+                    if (selectProdoct == null)
                     {
                         MessageBox.Show("این نام محصول تکراری است", "ثبت", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
+                        selectProdoct.Name = txtNameProdoct.Text;
+                        selectProdoct.Code = int.Parse(txtCodeProdoct.Text);
+                        selectProdoct.IdUnit = comUnit.SelectedIndex;
+                        selectProdoct.Description = txtDetails.Text;
+                        selectProdoct.Barcode = txtBarcode.Text;
+                        selectProdoct.RfID = txtRFID.Text;
+                        context.SaveChanges();
+                        MessageBox.Show("ویرایش انجام شد", "ویرایش", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        Add_Prodoct();
-
-
+                        this.Close();
+                        FormAnbar frmAnbar = new FormAnbar();
+                        frmAnbar.Refresh_dgProdoct();
                     }
                 }
-                else
-                {
-                    Add_Prodoct();
-                }
-
             }
         }
 

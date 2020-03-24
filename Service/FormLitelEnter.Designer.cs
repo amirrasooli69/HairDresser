@@ -80,9 +80,9 @@
             this.panelProdoct.Controls.Add(this.label31);
             this.panelProdoct.Controls.Add(this.label32);
             this.panelProdoct.Controls.Add(this.txtBarcode);
-            this.panelProdoct.Location = new System.Drawing.Point(0, 122);
+            this.panelProdoct.Location = new System.Drawing.Point(0, 30);
             this.panelProdoct.Name = "panelProdoct";
-            this.panelProdoct.Size = new System.Drawing.Size(292, 95);
+            this.panelProdoct.Size = new System.Drawing.Size(292, 210);
             this.panelProdoct.TabIndex = 14;
             // 
             // btnAddUnit
@@ -242,7 +242,7 @@
             this.panelStore.Controls.Add(this.label26);
             this.panelStore.Controls.Add(this.label27);
             this.panelStore.Controls.Add(this.textBox5);
-            this.panelStore.Location = new System.Drawing.Point(0, 43);
+            this.panelStore.Location = new System.Drawing.Point(3, 12);
             this.panelStore.Name = "panelStore";
             this.panelStore.Size = new System.Drawing.Size(292, 61);
             this.panelStore.TabIndex = 15;

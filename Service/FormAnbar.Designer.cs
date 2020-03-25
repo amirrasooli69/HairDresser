@@ -231,10 +231,11 @@
             // 
             this.txtDetailProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtDetailProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtDetailProdoct.Location = new System.Drawing.Point(175, 118);
+            this.txtDetailProdoct.Location = new System.Drawing.Point(6, 185);
+            this.txtDetailProdoct.Multiline = true;
             this.txtDetailProdoct.Name = "txtDetailProdoct";
             this.txtDetailProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtDetailProdoct.Size = new System.Drawing.Size(262, 26);
+            this.txtDetailProdoct.Size = new System.Drawing.Size(431, 53);
             this.txtDetailProdoct.TabIndex = 39;
             this.txtDetailProdoct.Text = "توضیحات";
             this.txtDetailProdoct.Enter += new System.EventHandler(this.txtDetailProdoct_Enter);
@@ -289,10 +290,10 @@
             // 
             this.txtSomeProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtSomeProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtSomeProdoct.Location = new System.Drawing.Point(388, 54);
+            this.txtSomeProdoct.Location = new System.Drawing.Point(296, 108);
             this.txtSomeProdoct.Name = "txtSomeProdoct";
             this.txtSomeProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtSomeProdoct.Size = new System.Drawing.Size(49, 26);
+            this.txtSomeProdoct.Size = new System.Drawing.Size(141, 26);
             this.txtSomeProdoct.TabIndex = 37;
             this.txtSomeProdoct.Text = "مقدار";
             this.txtSomeProdoct.Enter += new System.EventHandler(this.txtSomeProdoct_Enter);
@@ -302,10 +303,10 @@
             // 
             this.txtPriceProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtPriceProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtPriceProdoct.Location = new System.Drawing.Point(336, 86);
+            this.txtPriceProdoct.Location = new System.Drawing.Point(136, 108);
             this.txtPriceProdoct.Name = "txtPriceProdoct";
             this.txtPriceProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPriceProdoct.Size = new System.Drawing.Size(101, 26);
+            this.txtPriceProdoct.Size = new System.Drawing.Size(141, 26);
             this.txtPriceProdoct.TabIndex = 38;
             this.txtPriceProdoct.Text = "قیمت";
             this.txtPriceProdoct.Enter += new System.EventHandler(this.txtPriceProdoct_Enter);
@@ -470,7 +471,7 @@
             // 
             this.lblCodeRahgiri.AutoSize = true;
             this.lblCodeRahgiri.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodeRahgiri.Location = new System.Drawing.Point(65, 64);
+            this.lblCodeRahgiri.Location = new System.Drawing.Point(289, 54);
             this.lblCodeRahgiri.Name = "lblCodeRahgiri";
             this.lblCodeRahgiri.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCodeRahgiri.Size = new System.Drawing.Size(65, 18);
@@ -481,7 +482,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(136, 64);
+            this.label1.Location = new System.Drawing.Point(360, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 42;

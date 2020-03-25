@@ -122,7 +122,8 @@ namespace Service
 
         public string[] prodoct() // gereftane maghadir baraye ezafe kardane prodoct
         {
-            string[] prodoct1 = {txtCodeProdoct.Text , txtNameProdoct.Text , txtNameStore.Text ,
+            string[] prodoct1 = {dgProdoct.CurrentRow.Cells[3].Value.ToString() ,dgProdoct.CurrentRow.Cells[3].Value.ToString()  ,
+                dgStore.CurrentRow.Cells[1].Value.ToString() ,
             txtSomeProdoct.Text , txtPriceProdoct.Text , txtDetailProdoct.Text , dateExpird.Text };
             return prodoct1;
         }
@@ -369,25 +370,23 @@ namespace Service
 
         private void txtNameProdoct_TextChanged(object sender, EventArgs e)
         {
-            StimulsoftEntities context = new StimulsoftEntities();
-            if (txtNameProdoct.Text != "")
-            {
-                var selectProdoct = context.AnbarProdoct.Where(c => c.Name.Contains(txtNameProdoct.Text)).ToList();
-                dgProdoct.DataSource = selectProdoct;
+            if (context.AnbarProdoct.Count() > 0)
+            {              
+               if(txtNameProdoct.TextLength>0)
+                {      
+                    var selectProdoct = context.AnbarProdoct.Where(c => c.Name.Contains(txtNameProdoct.Text)).ToList();
+                    dgProdoct.DataSource = selectProdoct;
+                }
+                dgProdoct.Columns[0].Visible = false;
+                dgProdoct.Columns[1].Visible = false;
+                dgProdoct.Columns[2].HeaderText = "نام کالا";
+                dgProdoct.Columns[3].HeaderText = "کد کالا";
+                dgProdoct.Columns[4].HeaderText = "توضیحات";
+                dgProdoct.Columns[5].HeaderText = "بارکد";
+                dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
+                dgProdoct.Columns[7].Visible = false;
+                dgProdoct.Columns[8].Visible = false;
             }
-            else
-            {
-                dgProdoct.DataSource = context.AnbarProdoct.ToList();
-            }
-            dgProdoct.Columns[0].Visible = false;
-            dgProdoct.Columns[1].Visible = false;
-            dgProdoct.Columns[2].HeaderText = "نام کالا";
-            dgProdoct.Columns[3].HeaderText = "کد کالا";
-            dgProdoct.Columns[4].HeaderText = "توضیحات";
-            dgProdoct.Columns[5].HeaderText = "بارکد";
-            dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
-            dgProdoct.Columns[7].Visible = false;
-            dgProdoct.Columns[8].Visible = false;
         }
     
         

@@ -455,12 +455,14 @@ namespace Service
 
         private void btnEditProdoct_Click(object sender, EventArgs e)
         {
-            FormLittelEnter frmLittelEnter = new FormLittelEnter();
-            frmLittelEnter.Text="ویرایش محصول";
             if (dgProdoct.SelectedRows.Count == 1)
             {
-                frmLittelEnter.majhool = new string[]{
-                    "edit",  //frmLittelEnter.prodoct[0] = "2";
+                FormLittelEnter frmLittelEnter = new FormLittelEnter();
+                frmLittelEnter.Text = "ویرایش محصول";
+                if (dgProdoct.SelectedRows.Count == 1)
+                {
+                    frmLittelEnter.majhool = new string[]{
+                    "editProdoct",  //frmLittelEnter.prodoct[0] = "2";
                     dgProdoct.CurrentRow.Cells[0].Value.ToString(), // dadane id meghdare entekhab shode
                     dgProdoct.CurrentRow.Cells[1].Value.ToString(), // dadane meghdare unit entekhab shode
                     dgProdoct.CurrentRow.Cells[2].Value.ToString(),
@@ -469,7 +471,12 @@ namespace Service
                     dgProdoct.CurrentRow.Cells[5].Value.ToString(),
                     dgProdoct.CurrentRow.Cells[6].Value.ToString(),
                 };
-                frmLittelEnter.ShowDialog();
+                    frmLittelEnter.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("یک مورد را انتخاب کنید", "ویرایش", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             //frmLittelEnter.majhool[1]= dgProdoct.CurrentRow.Cells[0].Value.ToString(); 
@@ -529,6 +536,28 @@ namespace Service
         private void dgProdoct_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEditStore_Click(object sender, EventArgs e)
+        {
+            if(dgStore.SelectedRows.Count ==1)
+            {
+                FormLittelEnter frmLittelEnter = new FormLittelEnter();
+                frmLittelEnter.Text = "ویرایش فروشگاه یا فرد";
+                frmLittelEnter.majhool = new string[]{
+                "editStore",
+                dgStore.CurrentRow.Cells[0].Value.ToString(),
+                dgStore.CurrentRow.Cells[1].Value.ToString(),
+                dgStore.CurrentRow.Cells[2].Value.ToString(),
+                dgStore.CurrentRow.Cells[3].Value.ToString()
+                    };
+                frmLittelEnter.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("یک مورد را انتخاب کنید", "ویرایش", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
     }
 }

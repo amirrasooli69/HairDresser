@@ -24,7 +24,7 @@ namespace Service
         public string[] majhool;
         public void Select_Show()
         {
-            if (majhool[0] == "edit")
+            if (majhool[0] == "editProdoct")
             {
                 panelStore.Visible = false;
                 dgSearch.Visible = false;
@@ -40,13 +40,18 @@ namespace Service
                 txtBarcode.Text = majhool[6];
                 txtRFID.Text = majhool[7];
             }
-            if (see == 3) // namayeshe sabte store
+            if (majhool[0]=="editStore") // namayeshe edit store
             {
                 panelStore.Visible = true;
                 dgSearch.Visible = false;
                 panelProdoct.Visible = false;
                 panelStore.Dock = DockStyle.Fill;
                 tooltxtSearch.Visible = false;
+                //-----
+                txtStoreName.Text = majhool[2];
+                txtTelStore.Text = majhool[3];
+                txtAddressStore.Text = majhool[4];
+                
             }
 
             if (see == 1)
@@ -106,7 +111,7 @@ namespace Service
 
         private void btnSaveProdoct_Click(object sender, EventArgs e)
         {
-            if (majhool[0] == "edit") // baraye edit kardane mahsool 
+            if (majhool[0] == "editProdoct") // baraye edit kardane mahsool 
             {
                 using (var context = new StimulsoftEntities())
                 {
@@ -183,6 +188,24 @@ namespace Service
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSaveStore_Click(object sender, EventArgs e)
+        {
+            if(majhool[0]=="editStore")
+            {
+                Int32 id = Int32.Parse(majhool[1]);
+
+                var selectStore = context.Store.Where(c => c.Id == id).FirstOrDefault();
+                selectStore.Name = txtStoreName.Text;
+                selectStore.Phone = txtTelStore.Text;
+                selectStore.Address = txtAddressStore.Text;
+                context.SaveChanges();
+                MessageBox.Show("ویرایش انجام شد", "ویرایش", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+                FormAnbar frmAnbar = new FormAnbar();
+                frmAnbar.Refresh_dgStore();
             }
         }
     }

@@ -106,8 +106,8 @@ namespace Service
             dateExpird.ForeColor = Color.DarkGray;
             dateExpird.Text = "تاریخ انقضا";
             Refresh_dgProdoct();
-            Refresh_dgStore();              
-          
+            Refresh_dgStore();
+
             dgProdoct.ClearSelection();
             dgStore.ClearSelection();
         }
@@ -155,7 +155,7 @@ namespace Service
                 else
                 {
                     long x = long.Parse(txtCodeProdoct.Text);
-                    var selectProdoct = context.AnbarProdoct.Where(c => c.Code == x ).ToList();
+                    var selectProdoct = context.AnbarProdoct.Where(c => c.Code == x).ToList();
                     dgProdoct.DataSource = selectProdoct;
                 }
                 dgProdoct.Columns[0].Visible = false;
@@ -369,29 +369,28 @@ namespace Service
 
         private void txtNameProdoct_TextChanged(object sender, EventArgs e)
         {
-            if (context.AnbarProdoct.Count() > 0)
+            StimulsoftEntities context = new StimulsoftEntities();
+            if (txtNameProdoct.Text != "")
             {
-                if (txtNameProdoct.Text == "")
-                {
-                    dgProdoct.DataSource = context.AnbarProdoct.ToList();
-                }
-                else
-                {
-                    //long x = long.Parse(txtCodeProdoct.Text);
-                    var selectProdoct = context.AnbarProdoct.Where(c => c.Name.Contains(txtNameProdoct.Text)).ToList();
-                    dgProdoct.DataSource = selectProdoct;
-                }
-                dgProdoct.Columns[0].Visible = false;
-                dgProdoct.Columns[1].Visible = false;
-                dgProdoct.Columns[2].HeaderText = "نام کالا";
-                dgProdoct.Columns[3].HeaderText = "کد کالا";
-                dgProdoct.Columns[4].HeaderText = "توضیحات";
-                dgProdoct.Columns[5].HeaderText = "بارکد";
-                dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
-                dgProdoct.Columns[7].Visible = false;
-                dgProdoct.Columns[8].Visible = false;
+                var selectProdoct = context.AnbarProdoct.Where(c => c.Name.Contains(txtNameProdoct.Text)).ToList();
+                dgProdoct.DataSource = selectProdoct;
             }
+            else
+            {
+                dgProdoct.DataSource = context.AnbarProdoct.ToList();
+            }
+            dgProdoct.Columns[0].Visible = false;
+            dgProdoct.Columns[1].Visible = false;
+            dgProdoct.Columns[2].HeaderText = "نام کالا";
+            dgProdoct.Columns[3].HeaderText = "کد کالا";
+            dgProdoct.Columns[4].HeaderText = "توضیحات";
+            dgProdoct.Columns[5].HeaderText = "بارکد";
+            dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
+            dgProdoct.Columns[7].Visible = false;
+            dgProdoct.Columns[8].Visible = false;
         }
+    
+        
 
         private void btnRefreshDgProdoct_Click(object sender, EventArgs e)
         {

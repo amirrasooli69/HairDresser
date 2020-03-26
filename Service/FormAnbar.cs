@@ -123,35 +123,40 @@ namespace Service
         public string[] prodoct() // gereftane maghadir baraye ezafe kardane prodoct
         {
             string[] prodoct1;
-            if (dgProdoct.SelectedRows.Count>0)
+            if (dgProdoct.SelectedRows.Count < 1)
             {
                 MessageBox.Show("محصول را انتخاب کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 prodoct1 = new string[] { "-1" };
                 return prodoct1;
             }
-                if (dgStore.SelectedRows.Count>0)
-            { 
+            if (dgStore.SelectedRows.Count < 1)
+            {
                 MessageBox.Show("فروشگاه یا فرد را انتخاب کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 prodoct1 = new string[] { "-1" };
                 return prodoct1;
             }
-            if (txtSomeProdoct.Text=="" || txtSomeProdoct.Text=="مقدار")
-            { 
+            if (txtSomeProdoct.Text == "" || txtSomeProdoct.Text == "مقدار")
+            {
                 MessageBox.Show("مقدار را وارد کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 prodoct1 = new string[] { "-1" };
                 return prodoct1;
             }
-            if (txtPriceProdoct.Text == "" || txtPriceProdoct.Text== "قیمت")
-            { 
+            if (txtPriceProdoct.Text == "" || txtPriceProdoct.Text == "قیمت")
+            {
                 MessageBox.Show("قیمت را وارد کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 prodoct1 = new string[] { "-1" };
                 return prodoct1;
             }
-            if (dateExpird.Text=="" || dateExpird.Text== "تاریخ انقضا")
-            { 
+            if (dateExpird.Text == "" || dateExpird.Text == "تاریخ انقضا")
+            {
                 MessageBox.Show("تاریخ را انتخاب کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 prodoct1 = new string[] { "-1" };
                 return prodoct1;
+            }
+            if (txtDetailProdoct.Text == "توضیحات")
+            {
+                txtDetailProdoct.BackColor = Color.Black;
+                txtDetailProdoct.Text = "";
             }
             prodoct1 = new string[] {dgProdoct.CurrentRow.Cells[3].Value.ToString() ,dgProdoct.CurrentRow.Cells[3].Value.ToString()  ,
                 dgStore.CurrentRow.Cells[1].Value.ToString() ,

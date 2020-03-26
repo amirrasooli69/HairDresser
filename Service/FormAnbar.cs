@@ -122,7 +122,38 @@ namespace Service
 
         public string[] prodoct() // gereftane maghadir baraye ezafe kardane prodoct
         {
-            string[] prodoct1 = {dgProdoct.CurrentRow.Cells[3].Value.ToString() ,dgProdoct.CurrentRow.Cells[3].Value.ToString()  ,
+            string[] prodoct1;
+            if (dgProdoct.SelectedRows.Count>0)
+            {
+                MessageBox.Show("محصول را انتخاب کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                prodoct1 = new string[] { "-1" };
+                return prodoct1;
+            }
+                if (dgStore.SelectedRows.Count>0)
+            { 
+                MessageBox.Show("فروشگاه یا فرد را انتخاب کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                prodoct1 = new string[] { "-1" };
+                return prodoct1;
+            }
+            if (txtSomeProdoct.Text=="" || txtSomeProdoct.Text=="مقدار")
+            { 
+                MessageBox.Show("مقدار را وارد کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                prodoct1 = new string[] { "-1" };
+                return prodoct1;
+            }
+            if (txtPriceProdoct.Text == "" || txtPriceProdoct.Text== "قیمت")
+            { 
+                MessageBox.Show("قیمت را وارد کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                prodoct1 = new string[] { "-1" };
+                return prodoct1;
+            }
+            if (dateExpird.Text=="" || dateExpird.Text== "تاریخ انقضا")
+            { 
+                MessageBox.Show("تاریخ را انتخاب کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                prodoct1 = new string[] { "-1" };
+                return prodoct1;
+            }
+            prodoct1 = new string[] {dgProdoct.CurrentRow.Cells[3].Value.ToString() ,dgProdoct.CurrentRow.Cells[3].Value.ToString()  ,
                 dgStore.CurrentRow.Cells[1].Value.ToString() ,
             txtSomeProdoct.Text , txtPriceProdoct.Text , txtDetailProdoct.Text , dateExpird.Text };
             return prodoct1;
@@ -132,9 +163,13 @@ namespace Service
         {
             try
             {
+                
                 string[] pro = prodoct();
-                dgAnbar.Rows.Add(pro[0], pro[1], pro[2], pro[3], pro[4], pro[5], pro[6]);
-                dgAnbar.Enabled = true;
+                if (pro[0] != "-1")
+                {
+                    dgAnbar.Rows.Add(pro[0], pro[1], pro[2], pro[3], pro[4], pro[5], pro[6]);
+                    dgAnbar.Enabled = true;
+                }
                 //------
                 //Anbar newProdoct = new Anbar();
             }

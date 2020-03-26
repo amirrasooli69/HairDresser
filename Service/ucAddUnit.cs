@@ -19,7 +19,7 @@ namespace Papiloo
                     bool existUnit = context.Unit.Where(c => c.Name == txtUnitName.Text).Any();
                     if (existUnit)
                     {
-                        MessageBox.Show("این واحد وجود دارد", "واحد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("واحدی با این نام وجود دارد", "واحد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -32,7 +32,6 @@ namespace Papiloo
                         txtUnitName.Focus();
 
                     }
-
                 }
                 else
                 {
@@ -43,9 +42,7 @@ namespace Papiloo
                     //MessageBox.Show("واحد ثبت شد", "ثبت", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtUnitName.Text = "";
                     txtUnitName.Focus();
-
                 }
-
             }
             ucAddProdoctStore ucadd = new ucAddProdoctStore();
             ucadd.Refresh_comUnit();

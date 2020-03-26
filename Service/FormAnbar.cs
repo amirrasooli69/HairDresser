@@ -19,6 +19,7 @@ namespace Service
         Popup popup;
         StimulsoftEntities context = new StimulsoftEntities();
         //public string majhool1 = "",majhool2="";
+        long idParent;
         public void Add_Parent_Prodoct()
         {
             try
@@ -31,7 +32,7 @@ namespace Service
                 context.SaveChanges();
                 //------
                 groupProdoct.Enabled = true;
-                txtCodeProdoct.Focus();
+                dgProdoct.Focus();
                 txtCodeProdoct.ForeColor = Color.Black;
                 //-----
                 if (context.Anbar.Count() > 0)
@@ -40,6 +41,12 @@ namespace Service
                     endCodeRahgiri++;
                     lblCodeRahgiri.Text = endCodeRahgiri.ToString();
                 }
+                else if (context.Anbar.Count() == 0)
+                {
+                    lblCodeRahgiri.Text = "1";
+                }
+                idParent = context.AnbarParent.LastOrDefault().Id;
+
             }
             catch (Exception ex)
             {
@@ -161,7 +168,7 @@ namespace Service
         {
             try
             {
-                
+
                 string[] pro = prodoct();
                 if (pro[0] != "-1")
                 {
@@ -397,9 +404,9 @@ namespace Service
         private void txtNameProdoct_TextChanged(object sender, EventArgs e)
         {
             if (context.AnbarProdoct.Count() > 0)
-            {              
-               if(txtNameProdoct.TextLength>0)
-                {      
+            {
+                if (txtNameProdoct.TextLength > 0)
+                {
                     var selectProdoct = context.AnbarProdoct.Where(c => c.Name.Contains(txtNameProdoct.Text)).ToList();
                     dgProdoct.DataSource = selectProdoct;
                 }
@@ -414,8 +421,8 @@ namespace Service
                 dgProdoct.Columns[8].Visible = false;
             }
         }
-    
-        
+
+
 
         private void btnRefreshDgProdoct_Click(object sender, EventArgs e)
         {
@@ -429,7 +436,7 @@ namespace Service
 
         private void btnDelProdoct_Click(object sender, EventArgs e)
         {
-            if(dgProdoct.Rows.Count>0)
+            if (dgProdoct.Rows.Count > 0)
             {
                 if (dgProdoct.CurrentRow != null)
                 {
@@ -522,7 +529,7 @@ namespace Service
             //    frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[5].Value.ToString();
             //}
             //frmLittelEnter.ShowDialog();
-        
+
         }
         //public string id, name, code, unit, description, barcod, rfid;
 
@@ -551,7 +558,7 @@ namespace Service
 
         private void btnEditStore_Click(object sender, EventArgs e)
         {
-            if(dgStore.SelectedRows.Count ==1)
+            if (dgStore.SelectedRows.Count == 1)
             {
                 FormLittelEnter frmLittelEnter = new FormLittelEnter();
                 frmLittelEnter.Text = "ویرایش فروشگاه یا فرد";
@@ -574,7 +581,7 @@ namespace Service
 
         private void dgAnbar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex==7)
+            if (e.ColumnIndex == 7)
             {
                 dgAnbar.Rows.Remove(dgAnbar.CurrentRow);
             }
@@ -593,6 +600,21 @@ namespace Service
         private void txtPriceProdoct_KeyPress(object sender, KeyPressEventArgs e)
         {
             Practical.Enter_Number(sender, e);
+        }
+
+        private void btnSaveAllProdoct_Click(object sender, EventArgs e)
+        {
+            if(dgAnbar.RowCount>0)
+            {
+                StimulsoftEntities context = new StimulsoftEntities();
+                Anbar newAnbar = new Anbar();
+                foreach(DataGridView dr in dgAnbar.Rows)
+                {
+                    newAnbar.IdProdoct = Int32.Parse(dr.CurrentRow.Cells[0].Value.ToString());
+                    newAnbar.Name = dr.CurrentRow.Cells[1].Value.ToString();
+                    newAnbar.IdParent = idParent;
+                }
+            }
         }
     }
 }

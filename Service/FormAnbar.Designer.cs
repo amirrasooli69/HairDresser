@@ -67,7 +67,7 @@
             this.lblCodeRahgiri = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateExpird = new Papiloo.FDate();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSaveAllProdoct = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
@@ -485,9 +485,8 @@
             this.lblCodeRahgiri.Location = new System.Drawing.Point(182, 61);
             this.lblCodeRahgiri.Name = "lblCodeRahgiri";
             this.lblCodeRahgiri.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCodeRahgiri.Size = new System.Drawing.Size(65, 18);
+            this.lblCodeRahgiri.Size = new System.Drawing.Size(0, 18);
             this.lblCodeRahgiri.TabIndex = 43;
-            this.lblCodeRahgiri.Text = "تاریخ ورود";
             // 
             // label1
             // 
@@ -510,22 +509,23 @@
             this.dateExpird.Enter += new System.EventHandler(this.dateExpird_Enter);
             this.dateExpird.Leave += new System.EventHandler(this.dateExpird_Leave);
             // 
-            // button1
+            // btnSaveAllProdoct
             // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.Location = new System.Drawing.Point(12, 644);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 36);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "ثبت نهایی";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSaveAllProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnSaveAllProdoct.Location = new System.Drawing.Point(13, 648);
+            this.btnSaveAllProdoct.Name = "btnSaveAllProdoct";
+            this.btnSaveAllProdoct.Size = new System.Drawing.Size(83, 31);
+            this.btnSaveAllProdoct.TabIndex = 101;
+            this.btnSaveAllProdoct.Text = "ثبت نهایی";
+            this.btnSaveAllProdoct.UseVisualStyleBackColor = true;
+            this.btnSaveAllProdoct.Click += new System.EventHandler(this.btnSaveAllProdoct_Click);
             // 
             // FormAnbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 683);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSaveAllProdoct);
             this.Controls.Add(this.groupProdoct);
             this.Controls.Add(this.dgAnbar);
             this.Controls.Add(this.groupBox1);
@@ -574,7 +574,6 @@
         public System.Windows.Forms.Button btnRefreshDgStore;
         public System.Windows.Forms.DataGridView dgProdoct;
         public System.Windows.Forms.TextBox txtNameStore;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProdoctCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProdoctName;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameStore;
@@ -583,5 +582,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateExpired;
         private System.Windows.Forms.DataGridViewButtonColumn btnDelete;
+        private System.Windows.Forms.Button btnSaveAllProdoct;
     }
 }

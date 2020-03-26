@@ -112,13 +112,6 @@ namespace Service
             dgStore.ClearSelection();
         }
 
-        private void dgAnbar_Enter(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void dgAnbar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        }
 
         public string[] prodoct() // gereftane maghadir baraye ezafe kardane prodoct
         {
@@ -218,10 +211,6 @@ namespace Service
                 txtCodeProdoct.Text = "";
                 txtCodeProdoct.ForeColor = Color.Black;
             }
-        }
-
-        private void txtCodeProdoct_TabIndexChanged(object sender, EventArgs e)
-        {
         }
 
         private void txtCodeProdoct_Leave(object sender, EventArgs e)
@@ -368,9 +357,6 @@ namespace Service
             frmlittleEnter.ShowDialog();
         }
 
-        private void btnDelColleague_Click(object sender, EventArgs e)
-        {
-        }
         private void popup_Closed(object sender, ToolStripDropDownClosedEventArgs e)
         {
             //S_Date.Text = PCalander.Pc_Date;
@@ -483,14 +469,6 @@ namespace Service
 
         }
 
-        private void ucEditPtodoct_Click(object sender, EventArgs e)
-        {
-            //ucAddProdoctStore prodoctStore = new ucAddProdoctStore();
-            ucAddProdoctStore prodoct = new ucAddProdoctStore();
-
-
-        }
-
         private void btnEditProdoct_Click(object sender, EventArgs e)
         {
             if (dgProdoct.SelectedRows.Count == 1)
@@ -571,11 +549,6 @@ namespace Service
         //    ucEditProdoct.show = "editProdoct";
         //}
 
-        private void dgProdoct_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnEditStore_Click(object sender, EventArgs e)
         {
             if(dgStore.SelectedRows.Count ==1)
@@ -596,6 +569,30 @@ namespace Service
                 MessageBox.Show("یک مورد را انتخاب کنید", "ویرایش", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
+        }
+
+
+        private void dgAnbar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex==7)
+            {
+                dgAnbar.Rows.Remove(dgAnbar.CurrentRow);
+            }
+        }
+
+        private void txtCodeProdoct_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            Practical.Enter_Number(sender, e);
+        }
+
+        private void txtSomeProdoct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Practical.Enter_Number(sender, e);
+        }
+
+        private void txtPriceProdoct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Practical.Enter_Number(sender, e);
         }
     }
 }

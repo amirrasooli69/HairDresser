@@ -45,7 +45,7 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDelete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtDetailProdoct = new System.Windows.Forms.TextBox();
             this.txtCodeProdoct = new System.Windows.Forms.TextBox();
             this.txtNameProdoct = new System.Windows.Forms.TextBox();
@@ -67,6 +67,7 @@
             this.lblCodeRahgiri = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateExpird = new Papiloo.FDate();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
@@ -182,39 +183,44 @@
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgAnbar.Size = new System.Drawing.Size(949, 280);
             this.dgAnbar.TabIndex = 9;
-            this.dgAnbar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgAnbar_KeyPress);
+            this.dgAnbar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAnbar_CellClick);
             // 
             // ProdoctCode
             // 
             this.ProdoctCode.HeaderText = "کدکلا";
             this.ProdoctCode.Name = "ProdoctCode";
+            this.ProdoctCode.Width = 60;
             // 
             // ProdoctName
             // 
             this.ProdoctName.HeaderText = "نام کالا";
             this.ProdoctName.Name = "ProdoctName";
+            this.ProdoctName.Width = 130;
             // 
             // NameStore
             // 
             this.NameStore.HeaderText = "نام فروشگاه یا فرد";
             this.NameStore.Name = "NameStore";
-            this.NameStore.Width = 120;
+            this.NameStore.Width = 150;
             // 
             // Count
             // 
             this.Count.HeaderText = "تعداد";
             this.Count.Name = "Count";
+            this.Count.Width = 50;
             // 
             // Price
             // 
             this.Price.HeaderText = "قیمت";
             this.Price.Name = "Price";
+            this.Price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Price.Width = 120;
             // 
             // Description
             // 
             this.Description.HeaderText = "توضیحات";
             this.Description.Name = "Description";
-            this.Description.Width = 200;
+            this.Description.Width = 220;
             // 
             // DateExpired
             // 
@@ -226,12 +232,17 @@
             this.btnDelete.FillWeight = 50F;
             this.btnDelete.HeaderText = "";
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnDelete.Text = "حذف";
+            this.btnDelete.UseColumnTextForButtonValue = true;
+            this.btnDelete.Width = 70;
             // 
             // txtDetailProdoct
             // 
             this.txtDetailProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtDetailProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtDetailProdoct.Location = new System.Drawing.Point(6, 185);
+            this.txtDetailProdoct.Location = new System.Drawing.Point(6, 129);
             this.txtDetailProdoct.Multiline = true;
             this.txtDetailProdoct.Name = "txtDetailProdoct";
             this.txtDetailProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -252,10 +263,9 @@
             this.txtCodeProdoct.TabIndex = 34;
             this.txtCodeProdoct.Text = "کد کالا";
             this.txtCodeProdoct.Click += new System.EventHandler(this.txtCodeProdoct_Click);
-            this.txtCodeProdoct.TabIndexChanged += new System.EventHandler(this.txtCodeProdoct_TabIndexChanged);
             this.txtCodeProdoct.TextChanged += new System.EventHandler(this.txtCodeProdoct_TextChanged);
             this.txtCodeProdoct.Enter += new System.EventHandler(this.txtCodeProdoct_Enter);
-            this.txtCodeProdoct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodeProdoct_KeyPress);
+            this.txtCodeProdoct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodeProdoct_KeyPress_1);
             this.txtCodeProdoct.Leave += new System.EventHandler(this.txtCodeProdoct_Leave);
             // 
             // txtNameProdoct
@@ -290,34 +300,36 @@
             // 
             this.txtSomeProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtSomeProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtSomeProdoct.Location = new System.Drawing.Point(296, 108);
+            this.txtSomeProdoct.Location = new System.Drawing.Point(315, 97);
             this.txtSomeProdoct.Name = "txtSomeProdoct";
             this.txtSomeProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtSomeProdoct.Size = new System.Drawing.Size(141, 26);
+            this.txtSomeProdoct.Size = new System.Drawing.Size(122, 26);
             this.txtSomeProdoct.TabIndex = 37;
             this.txtSomeProdoct.Text = "مقدار";
             this.txtSomeProdoct.Enter += new System.EventHandler(this.txtSomeProdoct_Enter);
+            this.txtSomeProdoct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSomeProdoct_KeyPress);
             this.txtSomeProdoct.Leave += new System.EventHandler(this.txtSomeProdoct_Leave);
             // 
             // txtPriceProdoct
             // 
             this.txtPriceProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtPriceProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtPriceProdoct.Location = new System.Drawing.Point(136, 108);
+            this.txtPriceProdoct.Location = new System.Drawing.Point(151, 97);
             this.txtPriceProdoct.Name = "txtPriceProdoct";
             this.txtPriceProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPriceProdoct.Size = new System.Drawing.Size(141, 26);
+            this.txtPriceProdoct.Size = new System.Drawing.Size(157, 26);
             this.txtPriceProdoct.TabIndex = 38;
             this.txtPriceProdoct.Text = "قیمت";
             this.txtPriceProdoct.Enter += new System.EventHandler(this.txtPriceProdoct_Enter);
+            this.txtPriceProdoct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceProdoct_KeyPress);
             this.txtPriceProdoct.Leave += new System.EventHandler(this.txtPriceProdoct_Leave);
             // 
             // btnSaveProdoct
             // 
             this.btnSaveProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnSaveProdoct.Location = new System.Drawing.Point(5, 23);
+            this.btnSaveProdoct.Location = new System.Drawing.Point(360, 56);
             this.btnSaveProdoct.Name = "btnSaveProdoct";
-            this.btnSaveProdoct.Size = new System.Drawing.Size(54, 29);
+            this.btnSaveProdoct.Size = new System.Drawing.Size(77, 29);
             this.btnSaveProdoct.TabIndex = 41;
             this.btnSaveProdoct.Text = "ثبت";
             this.btnSaveProdoct.UseVisualStyleBackColor = true;
@@ -465,13 +477,12 @@
             this.dgProdoct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgProdoct.Size = new System.Drawing.Size(245, 190);
             this.dgProdoct.TabIndex = 44;
-            this.dgProdoct.Enter += new System.EventHandler(this.dgProdoct_Enter);
             // 
             // lblCodeRahgiri
             // 
             this.lblCodeRahgiri.AutoSize = true;
             this.lblCodeRahgiri.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodeRahgiri.Location = new System.Drawing.Point(289, 54);
+            this.lblCodeRahgiri.Location = new System.Drawing.Point(182, 61);
             this.lblCodeRahgiri.Name = "lblCodeRahgiri";
             this.lblCodeRahgiri.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCodeRahgiri.Size = new System.Drawing.Size(65, 18);
@@ -482,7 +493,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(360, 54);
+            this.label1.Location = new System.Drawing.Point(253, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 42;
@@ -491,7 +502,7 @@
             // dateExpird
             // 
             this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dateExpird.Location = new System.Drawing.Point(64, 23);
+            this.dateExpird.Location = new System.Drawing.Point(5, 94);
             this.dateExpird.Name = "dateExpird";
             this.dateExpird.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateExpird.Size = new System.Drawing.Size(141, 29);
@@ -499,11 +510,22 @@
             this.dateExpird.Enter += new System.EventHandler(this.dateExpird_Enter);
             this.dateExpird.Leave += new System.EventHandler(this.dateExpird_Leave);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button1.Location = new System.Drawing.Point(12, 644);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 36);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "ثبت نهایی";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormAnbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 640);
+            this.ClientSize = new System.Drawing.Size(960, 683);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupProdoct);
             this.Controls.Add(this.dgAnbar);
             this.Controls.Add(this.groupBox1);
@@ -531,14 +553,6 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.DataGridView dgAnbar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProdoctCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProdoctName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameStore;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Count;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn btnDelete;
         private Papiloo.FDate dateExpird;
         private System.Windows.Forms.TextBox txtDetailProdoct;
         private System.Windows.Forms.TextBox txtSomeProdoct;
@@ -560,5 +574,14 @@
         public System.Windows.Forms.Button btnRefreshDgStore;
         public System.Windows.Forms.DataGridView dgProdoct;
         public System.Windows.Forms.TextBox txtNameStore;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProdoctCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProdoctName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameStore;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Count;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateExpired;
+        private System.Windows.Forms.DataGridViewButtonColumn btnDelete;
     }
 }

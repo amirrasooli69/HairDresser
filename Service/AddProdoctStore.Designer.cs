@@ -100,6 +100,7 @@
             this.btnDelUnit.TabIndex = 5;
             this.btnDelUnit.Text = "-";
             this.btnDelUnit.UseVisualStyleBackColor = false;
+            this.btnDelUnit.Click += new System.EventHandler(this.btnDelUnit_Click);
             // 
             // comUnit
             // 

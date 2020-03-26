@@ -17,7 +17,7 @@ namespace Papiloo
         {
             InitializeComponent();
         }
-        public string show,id, name, code, unit, barcode, rfid,detail;
+        public string show, id, name, code, unit, barcode, rfid, detail;
         public static string get;
         Popup pop;
         public void Refresh_comUnit() // update kardane combo box unit
@@ -28,7 +28,7 @@ namespace Papiloo
                 comUnit.DataSource = context.Unit.ToList();
                 comUnit.DisplayMember = "Name";
             }
-        } 
+        }
         private void Add_Prodoct()
         {
             if (txtNameProdoct.TextLength > 0)
@@ -59,7 +59,7 @@ namespace Papiloo
                     context.SaveChanges();
                 }
                 //Service.FormAnbar anbar = new Service.FormAnbar();
-               // anbar.Refresh_dgProdoct();
+                // anbar.Refresh_dgProdoct();
 
             }
         } // ezafe kardane mahsoole jadid be jadval prodoct(mahsoolat)
@@ -67,45 +67,58 @@ namespace Papiloo
         {
             Service.StimulsoftEntities context = new Service.StimulsoftEntities();
 
-                    if (txtStoreName.Text != "")
-                    {
-                        Service.Store newStore = new Service.Store();
-                        newStore.Name = txtStoreName.Text;
-                        if (txtPhoneStore.Text != "")
-                        {
-                            newStore.Phone = txtPhoneStore.Text;
-                        }
-                        if (txtAddressStore.Text != "")
-                        {
-                            newStore.Address = txtAddressStore.Text;
-                        }
-                        context.Store.Add(newStore);
-                    }
-                    context.SaveChanges();
-                
-                Service.FormAnbar frmAnbar = new Service.FormAnbar();
-                frmAnbar.Refresh_dgStore();
+            if (txtStoreName.Text != "")
+            {
+                Service.Store newStore = new Service.Store();
+                newStore.Name = txtStoreName.Text;
+                if (txtPhoneStore.Text != "")
+                {
+                    newStore.Phone = txtPhoneStore.Text;
+                }
+                if (txtAddressStore.Text != "")
+                {
+                    newStore.Address = txtAddressStore.Text;
+                }
+                context.Store.Add(newStore);
             }
-        
+            context.SaveChanges();
+
+            Service.FormAnbar frmAnbar = new Service.FormAnbar();
+            frmAnbar.Refresh_dgStore();
+        }
+
+        private void btnDelUnit_Click(object sender, EventArgs e)
+        {
+            Service.StimulsoftEntities context = new Service.StimulsoftEntities();
+            if(context.Unit.Count()>0)
+            {
+                var selectUnit = context.Unit.Where(c => c.Name == comUnit.Text).FirstOrDefault();
+                context.Unit.Remove(selectUnit);
+                context.SaveChanges();
+                Refresh_comUnit();
+                
+            }
+        }
+
         private void ucAddProdoctStore_Load(object sender, EventArgs e)
         {
             Refresh_comUnit();
             if (show == "editProdoct")
             {
-               // ucButton btn = new ucButton();
+                // ucButton btn = new ucButton();
                 txtNameProdoct.Text = name;
                 txtCodeProdoct.Text = code;
                 txtBarcode.Text = barcode;
                 txtDetails.Text = detail;
                 txtRFID.Text = rfid;
                 comUnit.Text = unit;
-            
+
             }
         }
 
         private void btnSaveStore_Click(object sender, EventArgs e)
-        {        
-            Add_Store(); 
+        {
+            Add_Store();
         }
 
 

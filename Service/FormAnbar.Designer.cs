@@ -168,6 +168,8 @@
             // 
             // dgAnbar
             // 
+            this.dgAnbar.AllowUserToAddRows = false;
+            this.dgAnbar.AllowUserToDeleteRows = false;
             this.dgAnbar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgAnbar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProdoctCode,
@@ -180,6 +182,7 @@
             this.btnDelete});
             this.dgAnbar.Location = new System.Drawing.Point(7, 361);
             this.dgAnbar.Name = "dgAnbar";
+            this.dgAnbar.ReadOnly = true;
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgAnbar.Size = new System.Drawing.Size(949, 280);
             this.dgAnbar.TabIndex = 9;
@@ -189,30 +192,35 @@
             // 
             this.ProdoctCode.HeaderText = "کدکلا";
             this.ProdoctCode.Name = "ProdoctCode";
+            this.ProdoctCode.ReadOnly = true;
             this.ProdoctCode.Width = 60;
             // 
             // ProdoctName
             // 
             this.ProdoctName.HeaderText = "نام کالا";
             this.ProdoctName.Name = "ProdoctName";
+            this.ProdoctName.ReadOnly = true;
             this.ProdoctName.Width = 130;
             // 
             // NameStore
             // 
             this.NameStore.HeaderText = "نام فروشگاه یا فرد";
             this.NameStore.Name = "NameStore";
+            this.NameStore.ReadOnly = true;
             this.NameStore.Width = 150;
             // 
             // Count
             // 
             this.Count.HeaderText = "تعداد";
             this.Count.Name = "Count";
+            this.Count.ReadOnly = true;
             this.Count.Width = 50;
             // 
             // Price
             // 
             this.Price.HeaderText = "قیمت";
             this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             this.Price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.Price.Width = 120;
             // 
@@ -220,18 +228,21 @@
             // 
             this.Description.HeaderText = "توضیحات";
             this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             this.Description.Width = 220;
             // 
             // DateExpired
             // 
             this.DateExpired.HeaderText = "تاریخ انقصا";
             this.DateExpired.Name = "DateExpired";
+            this.DateExpired.ReadOnly = true;
             // 
             // btnDelete
             // 
             this.btnDelete.FillWeight = 50F;
             this.btnDelete.HeaderText = "";
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ReadOnly = true;
             this.btnDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.btnDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.btnDelete.Text = "حذف";

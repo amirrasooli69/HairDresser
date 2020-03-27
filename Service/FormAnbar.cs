@@ -37,7 +37,8 @@ namespace Service
                 //-----
                 if (context.Anbar.Count() > 0)
                 {
-                    int endCodeRahgiri = int.Parse(context.Anbar.LastOrDefault().CodeRahgiri.ToString());
+                    var listCodeRahgiri = context.Anbar.ToList();
+                    long endCodeRahgiri = Int32.Parse(listCodeRahgiri.LastOrDefault().CodeRahgiri.ToString());
                     endCodeRahgiri++;
                     lblCodeRahgiri.Text = endCodeRahgiri.ToString();
                 }
@@ -52,8 +53,8 @@ namespace Service
                     if (context1.AnbarParent.Count() > 0)
                     {
                         var selectIdParent = context1.AnbarParent.ToList();
-                        
-                       idParent= selectIdParent.LastOrDefault().Id;
+
+                        idParent = selectIdParent.LastOrDefault().Id;
                     }
                 }
                 //idParent = selectIdParent;
@@ -169,7 +170,7 @@ namespace Service
                 txtDetailProdoct.BackColor = Color.Black;
                 txtDetailProdoct.Text = "";
             }
-            prodoct1 = new string[] {dgProdoct.CurrentRow.Cells[3].Value.ToString() ,dgProdoct.CurrentRow.Cells[3].Value.ToString()  ,
+            prodoct1 = new string[] {dgProdoct.CurrentRow.Cells[3].Value.ToString() ,dgProdoct.CurrentRow.Cells[2].Value.ToString()  ,
                 dgStore.CurrentRow.Cells[1].Value.ToString() ,
             txtSomeProdoct.Text , txtPriceProdoct.Text , txtDetailProdoct.Text , dateExpird.Text };
             return prodoct1;
@@ -623,22 +624,24 @@ namespace Service
             {
                 //if (dgAnbar.RowCount > 0)
                 //{
-                    StimulsoftEntities context = new StimulsoftEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
+                for (int i = 0; i < dgAnbar.RowCount; i++)
+                {
                     Anbar newAnbar = new Anbar();
-                for(int i= 0;i<dgAnbar.RowCount-1;i++)
-                    {
-                        newAnbar.IdProdoct = Int32.Parse(dgAnbar.Rows[i].Cells[0].Value.ToString());
-                        newAnbar.Name = dgAnbar.Rows[i].Cells[1].Value.ToString();
-                        newAnbar.IdParent = idParent;
-                        newAnbar.Some = Int32.Parse(dgAnbar.Rows[i].Cells[3].Value.ToString());
-                        // newAnbar.Count   // baraye jame maghadir in kala
-                        newAnbar.Price = int.Parse(txtPriceProdoct.Text.Replace(",", ""));
-                        newAnbar.Description = dgAnbar.Rows[i].Cells[5].Value.ToString();
-                        newAnbar.DateExpierd = int.Parse(dgAnbar.Rows[i].Cells[6].Value.ToString().Replace("/", ""));
-                        newAnbar.CodeRahgiri = int.Parse(lblCodeRahgiri.Text);
-                        newAnbar.IdStore = idStore;
-                    }
-                context.Anbar.Add(newAnbar);
+
+                    newAnbar.IdProdoct = Int32.Parse(dgAnbar.Rows[i].Cells[0].Value.ToString());
+                    newAnbar.Name = dgAnbar.Rows[i].Cells[1].Value.ToString();
+                    newAnbar.IdParent = idParent;
+                    newAnbar.Some = Int32.Parse(dgAnbar.Rows[i].Cells[3].Value.ToString());
+                    // newAnbar.Count   // baraye jame maghadir in kala
+                    newAnbar.Price = int.Parse(txtPriceProdoct.Text.Replace(",", ""));
+                    newAnbar.Description = dgAnbar.Rows[i].Cells[5].Value.ToString();
+                    newAnbar.DateExpierd = int.Parse(dgAnbar.Rows[i].Cells[6].Value.ToString().Replace("/", ""));
+                    newAnbar.CodeRahgiri = int.Parse(lblCodeRahgiri.Text);
+                    newAnbar.IdStore = idStore;
+                    context.Anbar.Add(newAnbar);
+                }
+
                 context.SaveChanges();
                 //}
             }
@@ -652,9 +655,9 @@ namespace Service
         int idStore;
         private void dgStore_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgStore.RowCount>0)
+            if (dgStore.RowCount > 0)
             {
-                idStore=int.Parse(dgStore.CurrentRow.Cells[0].Value.ToString());
+                idStore = int.Parse(dgStore.CurrentRow.Cells[0].Value.ToString());
             }
         }
     }

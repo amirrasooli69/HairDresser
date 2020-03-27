@@ -17,13 +17,13 @@ namespace Service
             InitializeComponent();
         }
         Popup popup;
-        StimulsoftEntities context = new StimulsoftEntities();
         //public string majhool1 = "",majhool2="";
         long idParent;
         public void Add_Parent_Prodoct()
         {
             try
             {
+                StimulsoftEntities context = new StimulsoftEntities();
                 AnbarParent parent = new AnbarParent();
                 parent.Case = comCase.SelectedIndex;
                 parent.Date = int.Parse(Date.Text.Replace("/", ""));
@@ -45,7 +45,18 @@ namespace Service
                 {
                     lblCodeRahgiri.Text = "1";
                 }
-                idParent = context.AnbarParent.LastOrDefault().Id;
+                context.Dispose();
+                {
+                    StimulsoftEntities context1 = new StimulsoftEntities();
+
+                    if (context1.AnbarParent.Count() > 0)
+                    {
+                        var selectIdParent = context1.AnbarParent.ToList();
+                        
+                       idParent= selectIdParent.LastOrDefault().Id;
+                    }
+                }
+                //idParent = selectIdParent;
 
             }
             catch (Exception ex)
@@ -187,6 +198,7 @@ namespace Service
 
         private void txtCodeProdoct_TextChanged(object sender, EventArgs e)
         {
+            StimulsoftEntities context = new StimulsoftEntities();
             if (context.AnbarProdoct.Count() > 0)
             {
                 if (txtCodeProdoct.TextLength <= 0)
@@ -403,6 +415,7 @@ namespace Service
 
         private void txtNameProdoct_TextChanged(object sender, EventArgs e)
         {
+            StimulsoftEntities context = new StimulsoftEntities();
             if (context.AnbarProdoct.Count() > 0)
             {
                 if (txtNameProdoct.TextLength > 0)
@@ -436,6 +449,7 @@ namespace Service
 
         private void btnDelProdoct_Click(object sender, EventArgs e)
         {
+            StimulsoftEntities context = new StimulsoftEntities();
             if (dgProdoct.Rows.Count > 0)
             {
                 if (dgProdoct.CurrentRow != null)
@@ -455,6 +469,7 @@ namespace Service
 
         private void btnDelStore_Click(object sender, EventArgs e)
         {
+            StimulsoftEntities context = new StimulsoftEntities();
             if (dgStore.Rows.Count > 0 && dgStore.CurrentRow != null)
             {
 
@@ -604,16 +619,42 @@ namespace Service
 
         private void btnSaveAllProdoct_Click(object sender, EventArgs e)
         {
-            if(dgAnbar.RowCount>0)
+            try
             {
-                StimulsoftEntities context = new StimulsoftEntities();
-                Anbar newAnbar = new Anbar();
-                foreach(DataGridView dr in dgAnbar.Rows)
-                {
-                    newAnbar.IdProdoct = Int32.Parse(dr.CurrentRow.Cells[0].Value.ToString());
-                    newAnbar.Name = dr.CurrentRow.Cells[1].Value.ToString();
-                    newAnbar.IdParent = idParent;
-                }
+                //if (dgAnbar.RowCount > 0)
+                //{
+                    StimulsoftEntities context = new StimulsoftEntities();
+                    Anbar newAnbar = new Anbar();
+                for(int i= 0;i<dgAnbar.RowCount-1;i++)
+                    {
+                        newAnbar.IdProdoct = Int32.Parse(dgAnbar.Rows[i].Cells[0].Value.ToString());
+                        newAnbar.Name = dgAnbar.Rows[i].Cells[1].Value.ToString();
+                        newAnbar.IdParent = idParent;
+                        newAnbar.Some = Int32.Parse(dgAnbar.Rows[i].Cells[3].Value.ToString());
+                        // newAnbar.Count   // baraye jame maghadir in kala
+                        newAnbar.Price = int.Parse(txtPriceProdoct.Text.Replace(",", ""));
+                        newAnbar.Description = dgAnbar.Rows[i].Cells[5].Value.ToString();
+                        newAnbar.DateExpierd = int.Parse(dgAnbar.Rows[i].Cells[6].Value.ToString().Replace("/", ""));
+                        newAnbar.CodeRahgiri = int.Parse(lblCodeRahgiri.Text);
+                        newAnbar.IdStore = idStore;
+                    }
+                context.Anbar.Add(newAnbar);
+                context.SaveChanges();
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                //throw;
+            }
+
+        }
+        int idStore;
+        private void dgStore_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgStore.RowCount>0)
+            {
+                idStore=int.Parse(dgStore.CurrentRow.Cells[0].Value.ToString());
             }
         }
     }

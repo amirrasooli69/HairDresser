@@ -467,6 +467,7 @@
             this.dgStore.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgStore.Size = new System.Drawing.Size(245, 190);
             this.dgStore.TabIndex = 46;
+            this.dgStore.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgStore_CellClick);
             // 
             // dgProdoct
             // 

@@ -118,12 +118,13 @@ namespace Service
         private void FormAnbar_Load(object sender, EventArgs e)
         {
             Date.Text = Practical.Today_Date();
+            dateExpird.Text = Practical.Today_Date();
             comCase.SelectedIndex = 0;
-            dgAnbar.Enabled = false;
+            //dgAnbar.Enabled = false;
             //groupProdoct.Enabled = false;
             //dateExpird.Text = Practical.Today_Date();
             dateExpird.ForeColor = Color.DarkGray;
-            dateExpird.Text = "تاریخ انقضا";
+            //dateExpird.Text = "تاریخ انقضا";
             Refresh_dgProdoct();
             Refresh_dgStore();
 
@@ -175,17 +176,38 @@ namespace Service
             txtSomeProdoct.Text , txtPriceProdoct.Text , txtDetailProdoct.Text , dateExpird.Text };
             return prodoct1;
         }
+        private void limited_Enter(Object sender, KeyPressEventArgs e) // baraye kontorole maghadire voroodi
+        {
 
+            if (!char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
         private void btnSaveProdoct_Click(object sender, EventArgs e)
         {
             try
             {
-
+                string codeProdoct = dgProdoct.CurrentRow.Cells[3].Value.ToString();
                 string[] pro = prodoct();
                 if (pro[0] != "-1")
                 {
+                    // *** baraye jologiri az sabte mahsoole tekrari
+                    if (dgAnbar.RowCount > 0) 
+                    {
+                        int i = 0;
+                        while (i < dgAnbar.RowCount) 
+                        {
+                            if(dgAnbar.Rows[i].Cells[0].Value.ToString()== codeProdoct)
+                            {
+                                MessageBox.Show("همچین کالایی در لیست وجود دارد", "محصول", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                            i++;
+                        } 
+                    }
                     dgAnbar.Rows.Add(pro[0], pro[1], pro[2], pro[3], pro[4], pro[5], pro[6]);
-                    dgAnbar.Enabled = true;
+                    //dgAnbar.Enabled = true;
                 }
                 //------
                 //Anbar newProdoct = new Anbar();
@@ -345,11 +367,11 @@ namespace Service
 
         private void dateExpird_Leave(object sender, EventArgs e)
         {
-            if (dateExpird.Text == "")
-            {
-                dateExpird.ForeColor = Color.DarkGray;
-                dateExpird.Text = "تاریخ انقضا";
-            }
+            //if (dateExpird.Text == "")
+            //{
+            //    dateExpird.ForeColor = Color.DarkGray;
+            //    dateExpird.Text = "تاریخ انقضا";
+            //}
         }
 
         private void txtCodeProdoct_Click(object sender, EventArgs e)
@@ -658,6 +680,46 @@ namespace Service
             if (dgStore.RowCount > 0)
             {
                 idStore = int.Parse(dgStore.CurrentRow.Cells[0].Value.ToString());
+            }
+        }
+
+        private void dateExpird_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void dgAnbar_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            switch (dgAnbar.CurrentCell.ColumnIndex) // mahdoodiyat rooye khanehaye Data gride
+            {
+                case 3:
+                    {
+                        e.Control.KeyPress -= limited_Enter;
+                        e.Control.KeyPress -= limited_Enter;
+                        e.Control.KeyPress += limited_Enter;
+                        break;
+                    }
+                case 4:
+                    {
+                        e.Control.KeyPress -= limited_Enter;
+                        e.Control.KeyPress -= limited_Enter;
+                        e.Control.KeyPress += limited_Enter;
+                        break;
+                    }
+                //case 6:
+                //    {
+                //        e.Control.KeyPress -= limited_Enter;
+                //        e.Control.KeyPress -= limited_Enter;
+                //        e.Control.KeyPress += limited_Enter;
+                //        break;
+                //    }
+                default:
+                    {
+                        e.Control.KeyPress -= limited_Enter;
+                        e.Control.KeyPress -= limited_Enter;
+                        break;
+                    }
             }
         }
     }

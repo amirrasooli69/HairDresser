@@ -40,17 +40,6 @@ namespace Service
             }
             return input;
         }
-        public static string Delete_Char(string input)
-        {
-            string lastChar = "";
-            if (input.Length > 4)
-                lastChar = input.Substring(input.Length - 1, 1);
-            if (lastChar == "-")
-            {
-                input = input.Substring(0, input.Length - 1);
-            }
-            return input;
-        } 
         public static string Build_Eshterak_Number(string Number) // dorost kardane shomare eshterak 5 raghami
         {
             string eshterak = "";

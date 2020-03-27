@@ -722,6 +722,13 @@ namespace Service
                     }
             }
         }
+
+        private void txtPriceProdoct_TextChanged(object sender, EventArgs e)
+        {
+            txtPriceProdoct.Text=Practical.split_3Number(txtPriceProdoct.Text);
+            txtPriceProdoct.Select(txtPriceProdoct.TextLength, 0);
+
+        }
     }
 }
 

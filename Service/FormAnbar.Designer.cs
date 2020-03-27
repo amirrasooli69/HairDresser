@@ -260,6 +260,7 @@
             this.txtPriceProdoct.Size = new System.Drawing.Size(157, 26);
             this.txtPriceProdoct.TabIndex = 38;
             this.txtPriceProdoct.Text = "قیمت";
+            this.txtPriceProdoct.TextChanged += new System.EventHandler(this.txtPriceProdoct_TextChanged);
             this.txtPriceProdoct.Enter += new System.EventHandler(this.txtPriceProdoct_Enter);
             this.txtPriceProdoct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceProdoct_KeyPress);
             this.txtPriceProdoct.Leave += new System.EventHandler(this.txtPriceProdoct_Leave);

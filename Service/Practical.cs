@@ -81,5 +81,13 @@ namespace Service
             return year + "/" + month + "/" + day;
 
         }
+        private void limited_Enter(Object sender, KeyPressEventArgs e) // baraye kontorole maghadire voroodi
+        { // rooye Data Gride test shode
+
+            if (!char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

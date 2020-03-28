@@ -21,7 +21,7 @@ namespace Service
         }
         public static string split_4Number(string input)//joda kardane 3ragham 3ragham
         {
-            
+
             switch (input.Length)
             {
                 // baraye ezafe kardane -
@@ -32,7 +32,7 @@ namespace Service
                     }
                 case 9:
                     {
-                        input+= "-";
+                        input += "-";
                         break;
                     }
                 case 14:
@@ -47,10 +47,10 @@ namespace Service
         public static string Build_Eshterak_Number(string Number) // dorost kardane shomare eshterak 5 raghami
         {
             string eshterak = "";
-            if(Number.Length==11)
+            if (Number.Length == 11)
             {
-                eshterak = Number.Substring(Number.Length - 5,5);
-                
+                eshterak = Number.Substring(Number.Length - 5, 5);
+
             }
             return eshterak;
 
@@ -69,7 +69,15 @@ namespace Service
             string month;
             string year;
             day = pc.GetDayOfMonth(System.DateTime.Now).ToString();
+            if (day.Length == 1)
+            {
+                day = "0" + day;
+            }
             month = pc.GetMonth(System.DateTime.Now).ToString();
+            if (month.Length == 1)
+            {
+                month = "0" + month;
+            }
             year = pc.GetYear(System.DateTime.Now).ToString();
             return year + "/" + month + "/" + day;
 

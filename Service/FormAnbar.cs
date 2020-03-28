@@ -173,6 +173,7 @@ namespace Service
             }
             if (lblCodeRahgiri.Text == "")
             {
+                MessageBox.Show("کد رهگیری ندارد", "کد رهگیری", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 prodoct1 = new string[] { "-1" };
                 return prodoct1;
             }

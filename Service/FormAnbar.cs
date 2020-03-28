@@ -663,6 +663,16 @@ namespace Service
             Practical.Enter_Number(sender, e);
         }
 
+        private Int32 Count_Prodoct(string codeProdoct , int count) // bargardandane tedad mojoodi anbar
+        {
+            StimulsoftEntities context = new StimulsoftEntities();
+            var selectProdoct = context.Anbar.Where(c => c.IdProdoct.ToString() == codeProdoct).FirstOrDefault();
+            if(selectProdoct !=null)
+            {
+                selectProdoct.Count = selectProdoct.Count + count;
+            }
+            return Int32.Parse(selectProdoct.Count.ToString());
+        }
         private void btnSaveAllProdoct_Click(object sender, EventArgs e)
         {
             try
@@ -684,6 +694,9 @@ namespace Service
                     newAnbar.DateExpierd = int.Parse(dgAnbar.Rows[i].Cells[6].Value.ToString().Replace("/", ""));
                     newAnbar.CodeRahgiri = int.Parse(lblCodeRahgiri.Text);
                     newAnbar.IdStore = idStore;
+                    //------ mohasebe tedad mojodi dar anbar
+                    newAnbar.Count = Count_Prodoct(dgAnbar.Rows[i].Cells[0].Value.ToString(), int.Parse(dgAnbar.Rows[i].Cells[3].Value.ToString()));
+                    //------
                     context.Anbar.Add(newAnbar);
                 }
 

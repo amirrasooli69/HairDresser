@@ -8,10 +8,14 @@ namespace Service
     {
         public static string split_3Number(string input)//joda kardane 3ragham 3ragham
         {
-            if (input != string.Empty)
+            if (input != "")
             {
                 input = Convert.ToInt64(input.Replace(",", "")).ToString("#,0");
 
+            }
+            else
+            {
+                input = "0";
             }
             return input;
         }

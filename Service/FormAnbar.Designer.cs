@@ -37,6 +37,14 @@
             this.txtDetails = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.dgAnbar = new System.Windows.Forms.DataGridView();
+            this.ProdoctCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProdoctName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameStore = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtDetailProdoct = new System.Windows.Forms.TextBox();
             this.txtCodeProdoct = new System.Windows.Forms.TextBox();
             this.txtNameProdoct = new System.Windows.Forms.TextBox();
@@ -60,14 +68,6 @@
             this.ucDelStore = new Papiloo.ucButton();
             this.ucAddStore = new Papiloo.ucButton();
             this.Date = new Papiloo.FDate();
-            this.ProdoctCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProdoctName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameStore = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
@@ -178,11 +178,70 @@
             this.dgAnbar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAnbar_CellClick);
             this.dgAnbar.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgAnbar_EditingControlShowing);
             // 
+            // ProdoctCode
+            // 
+            this.ProdoctCode.HeaderText = "کدکلا";
+            this.ProdoctCode.Name = "ProdoctCode";
+            this.ProdoctCode.ReadOnly = true;
+            this.ProdoctCode.Width = 60;
+            // 
+            // ProdoctName
+            // 
+            this.ProdoctName.HeaderText = "نام کالا";
+            this.ProdoctName.Name = "ProdoctName";
+            this.ProdoctName.ReadOnly = true;
+            this.ProdoctName.Width = 130;
+            // 
+            // NameStore
+            // 
+            this.NameStore.HeaderText = "نام فروشگاه یا فرد";
+            this.NameStore.Name = "NameStore";
+            this.NameStore.ReadOnly = true;
+            this.NameStore.Width = 150;
+            // 
+            // Count
+            // 
+            this.Count.HeaderText = "تعداد";
+            this.Count.Name = "Count";
+            this.Count.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Count.Width = 50;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "قیمت";
+            this.Price.Name = "Price";
+            this.Price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Price.Width = 120;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "توضیحات";
+            this.Description.Name = "Description";
+            this.Description.Width = 220;
+            // 
+            // DateExpired
+            // 
+            this.DateExpired.HeaderText = "تاریخ انقصا";
+            this.DateExpired.Name = "DateExpired";
+            this.DateExpired.ReadOnly = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.FillWeight = 50F;
+            this.btnDelete.HeaderText = "";
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ReadOnly = true;
+            this.btnDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnDelete.Text = "حذف";
+            this.btnDelete.UseColumnTextForButtonValue = true;
+            this.btnDelete.Width = 70;
+            // 
             // txtDetailProdoct
             // 
             this.txtDetailProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtDetailProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtDetailProdoct.Location = new System.Drawing.Point(6, 129);
+            this.txtDetailProdoct.Location = new System.Drawing.Point(6, 86);
             this.txtDetailProdoct.Multiline = true;
             this.txtDetailProdoct.Name = "txtDetailProdoct";
             this.txtDetailProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -240,7 +299,7 @@
             // 
             this.txtSomeProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtSomeProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtSomeProdoct.Location = new System.Drawing.Point(315, 97);
+            this.txtSomeProdoct.Location = new System.Drawing.Point(315, 54);
             this.txtSomeProdoct.Name = "txtSomeProdoct";
             this.txtSomeProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtSomeProdoct.Size = new System.Drawing.Size(122, 26);
@@ -254,7 +313,7 @@
             // 
             this.txtPriceProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtPriceProdoct.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtPriceProdoct.Location = new System.Drawing.Point(151, 97);
+            this.txtPriceProdoct.Location = new System.Drawing.Point(151, 54);
             this.txtPriceProdoct.Name = "txtPriceProdoct";
             this.txtPriceProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtPriceProdoct.Size = new System.Drawing.Size(157, 26);
@@ -268,7 +327,7 @@
             // btnSaveProdoct
             // 
             this.btnSaveProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnSaveProdoct.Location = new System.Drawing.Point(360, 56);
+            this.btnSaveProdoct.Location = new System.Drawing.Point(359, 149);
             this.btnSaveProdoct.Name = "btnSaveProdoct";
             this.btnSaveProdoct.Size = new System.Drawing.Size(77, 29);
             this.btnSaveProdoct.TabIndex = 41;
@@ -404,7 +463,7 @@
             // 
             this.lblCodeRahgiri.AutoSize = true;
             this.lblCodeRahgiri.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodeRahgiri.Location = new System.Drawing.Point(182, 61);
+            this.lblCodeRahgiri.Location = new System.Drawing.Point(182, 154);
             this.lblCodeRahgiri.Name = "lblCodeRahgiri";
             this.lblCodeRahgiri.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCodeRahgiri.Size = new System.Drawing.Size(0, 18);
@@ -414,7 +473,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(253, 61);
+            this.label1.Location = new System.Drawing.Point(252, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 42;
@@ -434,7 +493,7 @@
             // dateExpird
             // 
             this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dateExpird.Location = new System.Drawing.Point(5, 94);
+            this.dateExpird.Location = new System.Drawing.Point(5, 51);
             this.dateExpird.Name = "dateExpird";
             this.dateExpird.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateExpird.Size = new System.Drawing.Size(141, 31);
@@ -471,65 +530,6 @@
             this.Date.Size = new System.Drawing.Size(141, 31);
             this.Date.TabIndex = 1;
             // 
-            // ProdoctCode
-            // 
-            this.ProdoctCode.HeaderText = "کدکلا";
-            this.ProdoctCode.Name = "ProdoctCode";
-            this.ProdoctCode.ReadOnly = true;
-            this.ProdoctCode.Width = 60;
-            // 
-            // ProdoctName
-            // 
-            this.ProdoctName.HeaderText = "نام کالا";
-            this.ProdoctName.Name = "ProdoctName";
-            this.ProdoctName.ReadOnly = true;
-            this.ProdoctName.Width = 130;
-            // 
-            // NameStore
-            // 
-            this.NameStore.HeaderText = "نام فروشگاه یا فرد";
-            this.NameStore.Name = "NameStore";
-            this.NameStore.ReadOnly = true;
-            this.NameStore.Width = 150;
-            // 
-            // Count
-            // 
-            this.Count.HeaderText = "تعداد";
-            this.Count.Name = "Count";
-            this.Count.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Count.Width = 50;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "قیمت";
-            this.Price.Name = "Price";
-            this.Price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Price.Width = 120;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "توضیحات";
-            this.Description.Name = "Description";
-            this.Description.Width = 220;
-            // 
-            // DateExpired
-            // 
-            this.DateExpired.HeaderText = "تاریخ انقصا";
-            this.DateExpired.Name = "DateExpired";
-            this.DateExpired.ReadOnly = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.FillWeight = 50F;
-            this.btnDelete.HeaderText = "";
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ReadOnly = true;
-            this.btnDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnDelete.Text = "حذف";
-            this.btnDelete.UseColumnTextForButtonValue = true;
-            this.btnDelete.Width = 70;
-            // 
             // FormAnbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,6 +540,7 @@
             this.Controls.Add(this.dgAnbar);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormAnbar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "انبار";
             this.Load += new System.EventHandler(this.FormAnbar_Load);
             this.groupBox1.ResumeLayout(false);

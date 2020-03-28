@@ -168,12 +168,20 @@ namespace Service
             }
             if (txtDetailProdoct.Text == "توضیحات")
             {
-                txtDetailProdoct.BackColor = Color.Black;
+                txtDetailProdoct.ForeColor = Color.Black;
                 txtDetailProdoct.Text = "";
             }
+            if (lblCodeRahgiri.Text == "")
+            {
+                prodoct1 = new string[] { "-1" };
+                return prodoct1;
+            }
+            long price = long.Parse(txtPriceProdoct.Text.Replace(",", ""));
+            long some = long.Parse(txtSomeProdoct.Text);
+            price *= some;
             prodoct1 = new string[] {dgProdoct.CurrentRow.Cells[3].Value.ToString() ,dgProdoct.CurrentRow.Cells[2].Value.ToString()  ,
                 dgStore.CurrentRow.Cells[1].Value.ToString() ,
-            txtSomeProdoct.Text , txtPriceProdoct.Text , txtDetailProdoct.Text , dateExpird.Text };
+            txtSomeProdoct.Text ,Practical.split_3Number( price.ToString()) , txtDetailProdoct.Text , dateExpird.Text };
             return prodoct1;
         }
         private void limited_Enter(Object sender, KeyPressEventArgs e) // baraye kontorole maghadire voroodi
@@ -188,23 +196,45 @@ namespace Service
         {
             try
             {
-                string codeProdoct = dgProdoct.CurrentRow.Cells[3].Value.ToString();
+                //    string codeProdoct="";
+                //    if (dgProdoct.Rows.Count < 1)
+                //    {
+                //        return;
+                //    }
+                //    else
+                //    {
+                //        int x = dgProdoct.SelectedRows.Count;
+                //        switch (x)
+                //        {
+                //            case 0:
+                //                {
+                //                    return;
+                //                }
+                //            case 1:
+                //                {
+                //                    codeProdoct = dgProdoct.CurrentRow.Cells[3].Value.ToString();
+                //                    break;
+                //                }
+                //        }
+                //    }
+
+                //codeProdoct = dgProdoct.CurrentRow.Cells[3].Value.ToString();
                 string[] pro = prodoct();
                 if (pro[0] != "-1")
                 {
                     // *** baraye jologiri az sabte mahsoole tekrari
-                    if (dgAnbar.RowCount > 0) 
+                    if (dgAnbar.RowCount > 0)
                     {
                         int i = 0;
-                        while (i < dgAnbar.RowCount) 
+                        while (i < dgAnbar.RowCount)
                         {
-                            if(dgAnbar.Rows[i].Cells[0].Value.ToString()== codeProdoct)
+                            if (dgAnbar.Rows[i].Cells[0].Value.ToString() == pro[0])
                             {
                                 MessageBox.Show("همچین کالایی در لیست وجود دارد", "محصول", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
                             i++;
-                        } 
+                        }
                     }
                     dgAnbar.Rows.Add(pro[0], pro[1], pro[2], pro[3], pro[4], pro[5], pro[6]);
                     //dgAnbar.Enabled = true;
@@ -725,7 +755,7 @@ namespace Service
 
         private void txtPriceProdoct_TextChanged(object sender, EventArgs e)
         {
-            txtPriceProdoct.Text=Practical.split_3Number(txtPriceProdoct.Text);
+            txtPriceProdoct.Text = Practical.split_3Number(txtPriceProdoct.Text);
             txtPriceProdoct.Select(txtPriceProdoct.TextLength, 0);
 
         }

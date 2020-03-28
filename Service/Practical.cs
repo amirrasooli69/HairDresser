@@ -82,13 +82,27 @@ namespace Service
             return year + "/" + month + "/" + day;
 
         }
-        private void limited_Enter(Object sender, KeyPressEventArgs e) // baraye kontorole maghadire voroodi
+        public static void limited_Enter(Object sender, KeyPressEventArgs e) // baraye kontorole maghadire voroodi
         { // rooye Data Gride test shode
 
             if (!char.IsNumber(e.KeyChar))
             {
                 e.Handled = true;
             }
+        }
+        public static string Sum_price_DataGrideView(DataGridView dg,int column)
+        {
+            long sum = 0;
+            long value = 0;
+            if(dg.RowCount>0)
+            {
+                for(int i=0;i<dg.RowCount;i++)
+                {
+                    value=long.Parse(dg.Rows[i].Cells[column].Value.ToString().Replace(",",""));
+                    sum = sum + value;
+                }
+            }
+            return split_3Number(sum.ToString());
         }
     }
 }

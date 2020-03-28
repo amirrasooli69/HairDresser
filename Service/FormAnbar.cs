@@ -185,14 +185,6 @@ namespace Service
             txtSomeProdoct.Text ,Practical.split_3Number( price.ToString()) , txtDetailProdoct.Text , dateExpird.Text };
             return prodoct1;
         }
-        private void limited_Enter(Object sender, KeyPressEventArgs e) // baraye kontorole maghadire voroodi
-        {
-
-            if (!char.IsNumber(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
         private void btnSaveProdoct_Click(object sender, EventArgs e)
         {
             try
@@ -726,29 +718,22 @@ namespace Service
             {
                 case 3:
                     {
-                        e.Control.KeyPress -= limited_Enter;
-                        e.Control.KeyPress -= limited_Enter;
-                        e.Control.KeyPress += limited_Enter;
+                        e.Control.KeyPress -= Practical.limited_Enter;
+                        e.Control.KeyPress -= Practical.limited_Enter;
+                        e.Control.KeyPress += Practical.limited_Enter;
                         break;
                     }
                 case 4:
                     {
-                        e.Control.KeyPress -= limited_Enter;
-                        e.Control.KeyPress -= limited_Enter;
-                        e.Control.KeyPress += limited_Enter;
+                        e.Control.KeyPress -= Practical.limited_Enter;
+                        e.Control.KeyPress -= Practical.limited_Enter;
+                        e.Control.KeyPress += Practical.limited_Enter;
                         break;
                     }
-                //case 6:
-                //    {
-                //        e.Control.KeyPress -= limited_Enter;
-                //        e.Control.KeyPress -= limited_Enter;
-                //        e.Control.KeyPress += limited_Enter;
-                //        break;
-                //    }
                 default:
                     {
-                        e.Control.KeyPress -= limited_Enter;
-                        e.Control.KeyPress -= limited_Enter;
+                        e.Control.KeyPress -= Practical.limited_Enter;
+                        e.Control.KeyPress -= Practical.limited_Enter;
                         break;
                     }
             }
@@ -759,6 +744,11 @@ namespace Service
             txtPriceProdoct.Text = Practical.split_3Number(txtPriceProdoct.Text);
             txtPriceProdoct.Select(txtPriceProdoct.TextLength, 0);
 
+        }
+
+        private void dgAnbar_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+           lblTotalPrice.Text= Practical.Sum_price_DataGrideView(dgAnbar, 4);
         }
     }
 }

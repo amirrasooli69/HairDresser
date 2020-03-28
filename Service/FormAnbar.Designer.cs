@@ -64,6 +64,8 @@
             this.lblCodeRahgiri = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSaveAllProdoct = new System.Windows.Forms.Button();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.dateExpird = new Papiloo.FDate();
             this.ucDelStore = new Papiloo.ucButton();
             this.ucAddStore = new Papiloo.ucButton();
@@ -177,6 +179,7 @@
             this.dgAnbar.TabIndex = 9;
             this.dgAnbar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAnbar_CellClick);
             this.dgAnbar.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgAnbar_EditingControlShowing);
+            this.dgAnbar.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgAnbar_RowsAdded);
             // 
             // ProdoctCode
             // 
@@ -490,6 +493,27 @@
             this.btnSaveAllProdoct.UseVisualStyleBackColor = true;
             this.btnSaveAllProdoct.Click += new System.EventHandler(this.btnSaveAllProdoct_Click);
             // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Location = new System.Drawing.Point(693, 654);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblTotalPrice.Size = new System.Drawing.Size(0, 18);
+            this.lblTotalPrice.TabIndex = 103;
+            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(859, 654);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 18);
+            this.label5.TabIndex = 102;
+            this.label5.Text = ":جمع قیمت";
+            // 
             // dateExpird
             // 
             this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -535,6 +559,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 683);
+            this.Controls.Add(this.lblTotalPrice);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSaveAllProdoct);
             this.Controls.Add(this.groupProdoct);
             this.Controls.Add(this.dgAnbar);
@@ -551,6 +577,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgStore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdoct)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -594,5 +621,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateExpired;
         private System.Windows.Forms.DataGridViewButtonColumn btnDelete;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label label5;
     }
 }

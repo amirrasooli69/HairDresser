@@ -750,6 +750,12 @@ namespace Service
         {
            lblTotalPrice.Text= Practical.Sum_price_DataGrideView(dgAnbar, 4);
         }
+
+        private void dgAnbar_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            lblTotalPrice.Text = Practical.Sum_price_DataGrideView(dgAnbar, 4);
+
+        }
     }
 }
 

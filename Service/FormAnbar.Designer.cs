@@ -180,6 +180,7 @@
             this.dgAnbar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAnbar_CellClick);
             this.dgAnbar.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgAnbar_EditingControlShowing);
             this.dgAnbar.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgAnbar_RowsAdded);
+            this.dgAnbar.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgAnbar_RowsRemoved);
             // 
             // ProdoctCode
             // 

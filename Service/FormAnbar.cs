@@ -769,7 +769,7 @@ namespace Service
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            Formtest frmtest = new Formtest();
+            FormTest frmtest = new FormTest();
             frmtest.Show();
         }
     }

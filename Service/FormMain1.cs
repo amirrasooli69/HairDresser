@@ -775,7 +775,7 @@ namespace Service
 
         private void delToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            test frmTest = new test();
+            FormTest frmTest = new FormTest();
             frmTest.Show();
             //FormNewUser frmNewUser = new FormNewUser();
             //frmNewUser.Show();

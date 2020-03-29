@@ -282,7 +282,6 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.Formtest.
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.log.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.OnlinForm.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.Properties.Resources.resources
-C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.test.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csproj.GenerateResource.cache
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.exe
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.pdb

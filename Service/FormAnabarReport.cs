@@ -17,6 +17,31 @@ namespace Service
             InitializeComponent();
         }
         int count=0; // baraye dafate avaz shodane comProdoct
+        public void Refresh_dgSearch()
+        {
+            if (count > 1)
+            {
+                dgSearch.Columns[0].HeaderText = "نام";
+                dgSearch.Columns[1].HeaderText = " کد محصول";
+                dgSearch.Columns[2].HeaderText = "شماره سند";
+                dgSearch.Columns[3].HeaderText = "تعداد";
+                dgSearch.Columns[4].HeaderText = "مقدار";
+                dgSearch.Columns[5].HeaderText = "قیمت";
+                dgSearch.Columns[6].HeaderText = "توضیحات";
+                dgSearch.Columns[7].HeaderText = "تاریخ تولید";
+                dgSearch.Columns[7].Visible = false;
+                dgSearch.Columns[8].HeaderText = "تاریخ انقضا";
+                dgSearch.Columns[8].DefaultCellStyle.Format = "0000/00/00";
+                dgSearch.Columns[9].HeaderText = "کد رهگیری";
+                dgSearch.Columns[10].HeaderText = "شماره مغازه یا فرد";
+                dgSearch.Columns[11].HeaderText = "شماره";
+                dgSearch.Columns[12].Visible = false;
+                dgSearch.Columns[13].Visible = false;
+                dgSearch.Columns[14].Visible = false;
+
+
+            }
+        }
         public void Select_Prodoct() // entekhab mahsool 
         {
             if (count > 1)
@@ -42,13 +67,14 @@ namespace Service
         {
             count++;
             Select_Prodoct();
-
+            Refresh_dgSearch();
         }
 
         private void comProdoct_SelectedIndexChanged(object sender, EventArgs e)
         {
             count++;
             Select_Prodoct();
+            Refresh_dgSearch();
         }
     }
 }

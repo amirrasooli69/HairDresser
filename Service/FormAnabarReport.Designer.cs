@@ -53,8 +53,9 @@
             this.dgSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgSearch.Location = new System.Drawing.Point(12, 125);
             this.dgSearch.Name = "dgSearch";
+            this.dgSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgSearch.Size = new System.Drawing.Size(835, 360);
-            this.dgSearch.TabIndex = 1;
+            this.dgSearch.TabIndex = 3;
             // 
             // panel2
             // 
@@ -111,7 +112,7 @@
             this.panelProdoct.Location = new System.Drawing.Point(12, 12);
             this.panelProdoct.Name = "panelProdoct";
             this.panelProdoct.Size = new System.Drawing.Size(835, 47);
-            this.panelProdoct.TabIndex = 32;
+            this.panelProdoct.TabIndex = 1;
             // 
             // dateEnd
             // 
@@ -170,6 +171,7 @@
             this.comProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comProdoct.Size = new System.Drawing.Size(131, 24);
             this.comProdoct.TabIndex = 55;
+            this.comProdoct.SelectedIndexChanged += new System.EventHandler(this.comProdoct_SelectedIndexChanged);
             // 
             // label8
             // 

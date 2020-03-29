@@ -1,6 +1,6 @@
 ﻿namespace Service
 {
-    partial class AnabarReport
+    partial class FormAnabarReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgSearch = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelProdoct = new System.Windows.Forms.Panel();
+            this.dateEnd = new Papiloo.FDate();
+            this.dateSatart = new Papiloo.FDate();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.comStore = new System.Windows.Forms.ComboBox();
             this.comProdoct = new System.Windows.Forms.ComboBox();
-            this.comCategory = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnReportProdoct = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.fDate1 = new Papiloo.FDate();
-            this.fDate2 = new Papiloo.FDate();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelProdoct.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgSearch
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 125);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(835, 360);
-            this.dataGridView1.TabIndex = 1;
+            this.dgSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSearch.Location = new System.Drawing.Point(12, 125);
+            this.dgSearch.Name = "dgSearch";
+            this.dgSearch.Size = new System.Drawing.Size(835, 360);
+            this.dgSearch.TabIndex = 1;
             // 
             // panel2
             // 
@@ -99,12 +99,12 @@
             // panelProdoct
             // 
             this.panelProdoct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelProdoct.Controls.Add(this.fDate2);
-            this.panelProdoct.Controls.Add(this.fDate1);
+            this.panelProdoct.Controls.Add(this.dateEnd);
+            this.panelProdoct.Controls.Add(this.dateSatart);
             this.panelProdoct.Controls.Add(this.label11);
             this.panelProdoct.Controls.Add(this.label12);
+            this.panelProdoct.Controls.Add(this.comStore);
             this.panelProdoct.Controls.Add(this.comProdoct);
-            this.panelProdoct.Controls.Add(this.comCategory);
             this.panelProdoct.Controls.Add(this.label8);
             this.panelProdoct.Controls.Add(this.btnReportProdoct);
             this.panelProdoct.Controls.Add(this.label10);
@@ -112,6 +112,24 @@
             this.panelProdoct.Name = "panelProdoct";
             this.panelProdoct.Size = new System.Drawing.Size(835, 47);
             this.panelProdoct.TabIndex = 32;
+            // 
+            // dateEnd
+            // 
+            this.dateEnd.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dateEnd.Location = new System.Drawing.Point(439, 7);
+            this.dateEnd.Name = "dateEnd";
+            this.dateEnd.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dateEnd.Size = new System.Drawing.Size(141, 31);
+            this.dateEnd.TabIndex = 62;
+            // 
+            // dateSatart
+            // 
+            this.dateSatart.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dateSatart.Location = new System.Drawing.Point(634, 7);
+            this.dateSatart.Name = "dateSatart";
+            this.dateSatart.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dateSatart.Size = new System.Drawing.Size(141, 31);
+            this.dateSatart.TabIndex = 61;
             // 
             // label11
             // 
@@ -133,25 +151,25 @@
             this.label12.TabIndex = 58;
             this.label12.Text = "از تاریخ";
             // 
+            // comStore
+            // 
+            this.comStore.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.comStore.FormattingEnabled = true;
+            this.comStore.Location = new System.Drawing.Point(86, 12);
+            this.comStore.Name = "comStore";
+            this.comStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comStore.Size = new System.Drawing.Size(117, 24);
+            this.comStore.TabIndex = 56;
+            // 
             // comProdoct
             // 
             this.comProdoct.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.comProdoct.FormattingEnabled = true;
-            this.comProdoct.Location = new System.Drawing.Point(86, 12);
+            this.comProdoct.Location = new System.Drawing.Point(263, 13);
             this.comProdoct.Name = "comProdoct";
             this.comProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comProdoct.Size = new System.Drawing.Size(117, 24);
-            this.comProdoct.TabIndex = 56;
-            // 
-            // comCategory
-            // 
-            this.comCategory.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.comCategory.FormattingEnabled = true;
-            this.comCategory.Location = new System.Drawing.Point(263, 13);
-            this.comCategory.Name = "comCategory";
-            this.comCategory.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comCategory.Size = new System.Drawing.Size(131, 24);
-            this.comCategory.TabIndex = 55;
+            this.comProdoct.Size = new System.Drawing.Size(131, 24);
+            this.comProdoct.TabIndex = 55;
             // 
             // label8
             // 
@@ -172,6 +190,7 @@
             this.btnReportProdoct.TabIndex = 5;
             this.btnReportProdoct.Text = "گزارش";
             this.btnReportProdoct.UseVisualStyleBackColor = true;
+            this.btnReportProdoct.Click += new System.EventHandler(this.btnReportProdoct_Click);
             // 
             // label10
             // 
@@ -183,37 +202,20 @@
             this.label10.TabIndex = 53;
             this.label10.Text = "دسته";
             // 
-            // fDate1
-            // 
-            this.fDate1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.fDate1.Location = new System.Drawing.Point(634, 7);
-            this.fDate1.Name = "fDate1";
-            this.fDate1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fDate1.Size = new System.Drawing.Size(141, 31);
-            this.fDate1.TabIndex = 61;
-            // 
-            // fDate2
-            // 
-            this.fDate2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.fDate2.Location = new System.Drawing.Point(439, 7);
-            this.fDate2.Name = "fDate2";
-            this.fDate2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.fDate2.Size = new System.Drawing.Size(141, 31);
-            this.fDate2.TabIndex = 62;
-            // 
-            // AnabarReport
+            // FormAnabarReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 497);
             this.Controls.Add(this.panelProdoct);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgSearch);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "AnabarReport";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "FormAnabarReport";
             this.Text = "گزازش انبار";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.AnabarReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelProdoct.ResumeLayout(false);
@@ -223,18 +225,18 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgSearch;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTotalPrice;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Panel panelProdoct;
-        private Papiloo.FDate fDate2;
-        private Papiloo.FDate fDate1;
+        private Papiloo.FDate dateEnd;
+        private Papiloo.FDate dateSatart;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.ComboBox comStore;
         public System.Windows.Forms.ComboBox comProdoct;
-        public System.Windows.Forms.ComboBox comCategory;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnReportProdoct;
         private System.Windows.Forms.Label label10;

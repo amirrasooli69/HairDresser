@@ -116,11 +116,11 @@
     <Compile Include="AddProdoctStore.Designer.cs">
       <DependentUpon>AddProdoctStore.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnabarReport.cs">
+    <Compile Include="FormAnabarReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnabarReport.Designer.cs">
-      <DependentUpon>AnabarReport.cs</DependentUpon>
+    <Compile Include="FormAnabarReport.Designer.cs">
+      <DependentUpon>FormAnabarReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Anbar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -400,8 +400,8 @@
     <EmbeddedResource Include="AddProdoctStore.resx">
       <DependentUpon>AddProdoctStore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AnabarReport.resx">
-      <DependentUpon>AnabarReport.cs</DependentUpon>
+    <EmbeddedResource Include="FormAnabarReport.resx">
+      <DependentUpon>FormAnabarReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FDate.resx">
       <DependentUpon>FDate.cs</DependentUpon>

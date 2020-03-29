@@ -70,6 +70,7 @@
             this.ucDelStore = new Papiloo.ucButton();
             this.ucAddStore = new Papiloo.ucButton();
             this.Date = new Papiloo.FDate();
+            this.btnTest = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
@@ -341,6 +342,7 @@
             // 
             // groupProdoct
             // 
+            this.groupProdoct.Controls.Add(this.btnTest);
             this.groupProdoct.Controls.Add(this.dateExpird);
             this.groupProdoct.Controls.Add(this.btnRefreshDgProdoct);
             this.groupProdoct.Controls.Add(this.btnRefreshDgStore);
@@ -555,6 +557,18 @@
             this.Date.Size = new System.Drawing.Size(141, 31);
             this.Date.TabIndex = 1;
             // 
+            // btnTest
+            // 
+            this.btnTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTest.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTest.Location = new System.Drawing.Point(128, 220);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(42, 24);
+            this.btnTest.TabIndex = 102;
+            this.btnTest.Text = "test";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
             // FormAnbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -624,5 +638,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn btnDelete;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Button btnTest;
     }
 }

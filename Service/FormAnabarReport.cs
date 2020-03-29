@@ -42,6 +42,27 @@ namespace Service
 
             }
         }
+        public string Calculate_DataGrideView()
+        {
+            if (count < 1)
+                return "0";
+            long existing = 0;
+            StimulsoftEntities context = new StimulsoftEntities();
+
+            if(dgSearch.RowCount>0)
+            {
+                for(int i=0;i<dgSearch.RowCount;i++)
+                {
+                    long selectCase = Int32.Parse(dgSearch.Rows[i].Cells[2].Value.ToString());
+                    var findParentCase = context.AnbarParent.Where(c => c.Id == selectCase).FirstOrDefault();
+                    if(findParentCase.Case==0) //reside khard (bayad ezafe shavad)
+                    {
+                        existing=existing + Int32.Parse(dgSearch.Rows[i].Cells[4].Value.ToString());
+                    }
+                }
+            }
+            return existing.ToString();
+        }
         public void Select_Prodoct() // entekhab mahsool 
         {
             if (count > 1)
@@ -68,6 +89,7 @@ namespace Service
             count++;
             Select_Prodoct();
             Refresh_dgSearch();
+            lblTotalExisting.Text=Calculate_DataGrideView();
         }
 
         private void comProdoct_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,6 +97,7 @@ namespace Service
             count++;
             Select_Prodoct();
             Refresh_dgSearch();
+            lblTotalExisting.Text=Calculate_DataGrideView();
         }
     }
 }

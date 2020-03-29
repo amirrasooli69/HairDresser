@@ -31,7 +31,7 @@
             this.dgSearch = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.lblTotalExisting = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelProdoct = new System.Windows.Forms.Panel();
             this.dateEnd = new Papiloo.FDate();
@@ -61,7 +61,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.lblTotalPrice);
+            this.panel2.Controls.Add(this.lblTotalExisting);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(12, 63);
             this.panel2.Name = "panel2";
@@ -78,14 +78,14 @@
             this.label4.TabIndex = 57;
             this.label4.Text = "موجودی:";
             // 
-            // lblTotalPrice
+            // lblTotalExisting
             // 
-            this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Location = new System.Drawing.Point(640, 17);
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(16, 18);
-            this.lblTotalPrice.TabIndex = 56;
-            this.lblTotalPrice.Text = "0";
+            this.lblTotalExisting.AutoSize = true;
+            this.lblTotalExisting.Location = new System.Drawing.Point(640, 17);
+            this.lblTotalExisting.Name = "lblTotalExisting";
+            this.lblTotalExisting.Size = new System.Drawing.Size(16, 18);
+            this.lblTotalExisting.TabIndex = 56;
+            this.lblTotalExisting.Text = "0";
             // 
             // label3
             // 
@@ -230,7 +230,7 @@
         private System.Windows.Forms.DataGridView dgSearch;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label lblTotalExisting;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Panel panelProdoct;
         private Papiloo.FDate dateEnd;

@@ -435,6 +435,7 @@ namespace Service
                     chxBirthDaySms.Checked = true;
                 if (setting.BirthDaySms == "false")
                     chxBirthDaySms.Checked = false;
+                
             }
             else
             {

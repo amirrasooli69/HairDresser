@@ -696,6 +696,7 @@ namespace Service
                         case 7: // bargasht kala amani (mojoodi ezafe shavad)
                             {
                                 newAnbar.Positiv = Int32.Parse(dgAnbar.Rows[i].Cells[3].Value.ToString());
+                                newAnbar.Negativ = 0;
                                 break;
                             }
                         case 1: // havale foroosh (mojoodi kam shavad)
@@ -703,6 +704,7 @@ namespace Service
                         case 5: // bargashte kala masraf (mojoodi kam shavad)
                         case 6: // havale anbar amani (mojoodi kam shavad)
                             {
+                                newAnbar.Positiv = 0;
                                 newAnbar.Negativ = Int32.Parse(dgAnbar.Rows[i].Cells[3].Value.ToString());
                                 break;
                             }

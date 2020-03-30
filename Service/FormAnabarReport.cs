@@ -25,10 +25,9 @@ namespace Service
                 dgSearch.Columns[0].HeaderText = "نام";
                 dgSearch.Columns[1].HeaderText = " کد محصول";
                 dgSearch.Columns[2].HeaderText = "شماره سند";
-                dgSearch.Columns[3].HeaderText = "تعداد";
-                dgSearch.Columns[4].HeaderText = "مقدار";
-                dgSearch.Columns[4].Visible = false;
-
+                dgSearch.Columns[3].HeaderText = "ورودی";
+                dgSearch.Columns[4].HeaderText = "خروجی";
+                //dgSearch.Columns[4].Visible = false;
                 dgSearch.Columns[5].HeaderText = "قیمت";
                 dgSearch.Columns[6].HeaderText = "توضیحات";
                 dgSearch.Columns[7].HeaderText = "تاریخ تولید";
@@ -38,9 +37,10 @@ namespace Service
                 dgSearch.Columns[9].HeaderText = "کد رهگیری";
                 dgSearch.Columns[10].HeaderText = "شماره مغازه یا فرد";
                 dgSearch.Columns[11].HeaderText = "شماره";
-                dgSearch.Columns[12].Visible = false;
-                dgSearch.Columns[13].Visible = false;
-                dgSearch.Columns[14].Visible = false;
+                //dgSearch.Columns[12].Visible = false;
+                //dgSearch.Columns[13].Visible = false;
+                //dgSearch.Columns[14].Visible = false;
+                //-------
                 //DataGridViewTextBoxColumn positivcColumn = new DataGridViewTextBoxColumn();
                 //positivcColumn.HeaderText = "ورودی";
                 //positivcColumn.DisplayIndex = 5;
@@ -60,50 +60,28 @@ namespace Service
             {
                 for (int i = 0; i < dgSearch.RowCount; i++)
                 {
-                    long selectCase = Int32.Parse(dgSearch.Rows[i].Cells[3].Value.ToString());
+                    long selectCase = Int32.Parse(dgSearch.Rows[i].Cells[2].Value.ToString());
                     var findParentCase = context.AnbarParent.Where(c => c.Id == selectCase).FirstOrDefault();
                     if (findParentCase != null)
                     {
                         switch (findParentCase.Case)
                         {
                             case 0: // reside khard (mojoodi ezafe shavad)
-                                {
-                                    existing = existing + Int32.Parse(dgSearch.Rows[i].Cells[4].Value.ToString());
-                                    break;
-                                }
-                            case 1: // havale foroosh (mojoodi kam shavad)
-                                {
-                                    existing = existing - Int32.Parse(dgSearch.Rows[i].Cells[4].Value.ToString());
-                                    break;
-                                }
-                            case 2: // havale masraf (mojoodi kam shavad)
-                                {
-                                    existing = existing - Int32.Parse(dgSearch.Rows[i].Cells[4].Value.ToString());
-                                    break;
-                                }
                             case 3: // resid tolid (mojoodi ezafe shavad)
-                                {
-                                    existing = existing + Int32.Parse(dgSearch.Rows[i].Cells[4].Value.ToString());
-                                    break;
-                                }
                             case 4: // bargasgt kala foroosh (mojoodi ezafe shavad)
+                            case 7: // bargasht kala amani (mojoodi ezafe shavad)
                                 {
-                                    existing = existing + Int32.Parse(dgSearch.Rows[i].Cells[4].Value.ToString());
+                                    existing = existing + Int32.Parse(dgSearch.Rows[i].Cells[3].Value.ToString());
                                     break;
                                 }
+
+
+                            case 1: // havale foroosh (mojoodi kam shavad)
+                            case 2: // havale masraf (mojoodi kam shavad)
                             case 5: // bargashte kala masraf (mojoodi kam shavad)
-                                {
-                                    existing = existing - Int32.Parse(dgSearch.Rows[i].Cells[4].Value.ToString());
-                                    break;
-                                }
                             case 6: // havale anbar amani (mojoodi kam shavad)
                                 {
                                     existing = existing - Int32.Parse(dgSearch.Rows[i].Cells[4].Value.ToString());
-                                    break;
-                                }
-                            case 7: // bargasht kala amani (mojoodi ezafe shavad)
-                                {
-                                    existing = existing + Int32.Parse(dgSearch.Rows[i].Cells[4].Value.ToString());
                                     break;
                                 }
                         }

@@ -243,6 +243,7 @@
           <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="PostiCode" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="WhiteSms">
           <Key>
@@ -559,6 +560,7 @@
           <Property Name="Address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="PostiCode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sex" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="WhiteSms">
           <Key>
@@ -892,6 +894,7 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="PostiCode" ColumnName="PostiCode" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

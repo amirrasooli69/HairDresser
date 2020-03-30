@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="289bcde1e80545a687adb13f72faa4d1" Name="Diagram1">
+      <Diagram DiagramId="d11f50fff4284380b9c9d32cb56b3a0c" Name="Diagram1">
         <EntityTypeShape EntityType="StimulsoftModel.Anbar" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StimulsoftModel.AnbarParent" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StimulsoftModel.AnbarProdoct" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />

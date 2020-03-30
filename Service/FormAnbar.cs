@@ -80,8 +80,8 @@ namespace Service
                     dgProdoct.Columns[4].HeaderText = "توضیحات";
                     dgProdoct.Columns[5].HeaderText = "بارکد";
                     dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
-                    dgProdoct.Columns[7].Visible = false;
-                    dgProdoct.Columns[8].Visible = false;
+                    //dgProdoct.Columns[7].Visible = false;
+                    //dgProdoct.Columns[8].Visible = false;
 
                 }
                 dgProdoct.DefaultCellStyle.Font = new Font("Tahoma", 8);
@@ -102,7 +102,7 @@ namespace Service
                     dgStore.Columns[1].Width = 100;
                     dgStore.Columns[2].HeaderText = "تلفن";
                     dgStore.Columns[3].HeaderText = "آدرس";
-                    dgStore.Columns[4].Visible = false;
+                    //dgStore.Columns[4].Visible = false;
                     //MessageBox.Show("anjam shod");
                 }
                 dgStore.DefaultCellStyle.Font = new Font("Tahoma", 8);

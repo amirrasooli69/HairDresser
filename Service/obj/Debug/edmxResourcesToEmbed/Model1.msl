@@ -255,6 +255,7 @@
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="PostiCode" ColumnName="PostiCode" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

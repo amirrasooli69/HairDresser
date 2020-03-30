@@ -238,6 +238,7 @@
     <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="PostiCode" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
   <EntityType Name="WhiteSms">
     <Key>

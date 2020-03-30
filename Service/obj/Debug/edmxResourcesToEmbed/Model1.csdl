@@ -238,6 +238,7 @@
     <Property Name="Address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="PostiCode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sex" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="WhiteSms">
     <Key>

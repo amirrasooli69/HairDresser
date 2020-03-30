@@ -43,9 +43,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnReportProdoct = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelProdoct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgSearch
@@ -54,7 +57,7 @@
             this.dgSearch.Location = new System.Drawing.Point(12, 125);
             this.dgSearch.Name = "dgSearch";
             this.dgSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgSearch.Size = new System.Drawing.Size(835, 360);
+            this.dgSearch.Size = new System.Drawing.Size(835, 186);
             this.dgSearch.TabIndex = 3;
             // 
             // panel2
@@ -204,24 +207,41 @@
             this.label10.TabIndex = 53;
             this.label10.Text = "دسته";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 335);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(835, 150);
+            this.dataGridView1.TabIndex = 27;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "نام";
+            this.name.Name = "name";
+            // 
             // FormAnabarReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 497);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panelProdoct);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dgSearch);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAnabarReport";
-            this.Text = "گزازش انبار";
+            this.Text = "گزارش انبار";
             this.Load += new System.EventHandler(this.AnabarReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelProdoct.ResumeLayout(false);
             this.panelProdoct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -242,5 +262,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnReportProdoct;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
     }
 }

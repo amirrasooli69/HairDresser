@@ -16,6 +16,7 @@ namespace Service
         {
             InitializeComponent();
         }
+
         int count=0; // baraye dafate avaz shodane comProdoct
         public void Refresh_dgSearch()
         {
@@ -35,15 +36,16 @@ namespace Service
                 dgSearch.Columns[8].HeaderText = "تاریخ انقضا";
                 dgSearch.Columns[8].DefaultCellStyle.Format = "0000/00/00";
                 dgSearch.Columns[9].HeaderText = "کد رهگیری";
-                dgSearch.Columns[10].HeaderText = "شماره مغازه یا فرد";
+                dgSearch.Columns[10].HeaderText = "طرف حساب";
                 dgSearch.Columns[11].HeaderText = "شماره";
                 //dgSearch.Columns[12].Visible = false;
                 //dgSearch.Columns[13].Visible = false;
                 //dgSearch.Columns[14].Visible = false;
                 //-------
                 //DataGridViewTextBoxColumn positivcColumn = new DataGridViewTextBoxColumn();
-                //positivcColumn.HeaderText = "ورودی";
-                //positivcColumn.DisplayIndex = 5;
+                //positivcColumn.HeaderText = "مانده";
+                //positivcColumn.Name = "sumUntilNow";
+                //positivcColumn.DisplayIndex = 0;
                 //this.dgSearch.Columns.Add(positivcColumn);
 
 
@@ -85,6 +87,8 @@ namespace Service
                                     break;
                                 }
                         }
+                        //dgSearch.Rows[i].Cells[].Value = existing;
+
                     }
                     else
                     {
@@ -102,6 +106,7 @@ namespace Service
                 var getId = context.AnbarProdoct.Where(c => c.Name == comProdoct.Text).FirstOrDefault();
                 var getProdocts = context.Anbar.Where(c => c.IdProdoct == getId.Code).ToList();
                 dgSearch.DataSource = getProdocts;
+                dataGridView1.DataSource = getProdocts;
             }
         }
         private void AnabarReport_Load(object sender, EventArgs e)
@@ -113,6 +118,7 @@ namespace Service
                 comProdoct.DataSource = prodocts;
                 comProdoct.DisplayMember = "Name";
             }
+            //Select_Prodoct();
         }
 
         private void btnReportProdoct_Click(object sender, EventArgs e)
@@ -125,10 +131,16 @@ namespace Service
 
         private void comProdoct_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (dgSearch.Rows.Count > 0)
+            {
+                dgSearch.DataSource = null;
+            }
             count++;
             Select_Prodoct();
             Refresh_dgSearch();
+
             lblTotalExisting.Text=Calculate_DataGrideView();
         }
+
     }
 }

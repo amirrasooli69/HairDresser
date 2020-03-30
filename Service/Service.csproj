@@ -140,7 +140,7 @@
     <Compile Include="FormAnabarReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAnabarReport.Designer.cs">
+    <Compile Include="FormAnabarReport1.Designer.cs">
       <DependentUpon>FormAnabarReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Calculate.cs" />
@@ -400,7 +400,7 @@
     <EmbeddedResource Include="AddProdoctStore.resx">
       <DependentUpon>AddProdoctStore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAnabarReport.resx">
+    <EmbeddedResource Include="FormAnabarReport1.resx">
       <DependentUpon>FormAnabarReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FDate.resx">

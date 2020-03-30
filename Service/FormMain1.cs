@@ -399,6 +399,8 @@ namespace Service
                     Setting avlie = new Setting();
                     avlie.EndCreateCodeRahgiri = 0;
                     avlie.ValueAddedPercent = 1;
+                    avlie.CalculateAnbar = "آخرین خرید";
+
                     context.Setting.Add(avlie);
 
                     //-----

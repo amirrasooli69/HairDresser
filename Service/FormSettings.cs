@@ -435,7 +435,8 @@ namespace Service
                     chxBirthDaySms.Checked = true;
                 if (setting.BirthDaySms == "false")
                     chxBirthDaySms.Checked = false;
-                
+                if (setting.CalculateAnbar != "")
+                    comCalculateAnbar.Text = setting.CalculateAnbar;
             }
             else
             {
@@ -459,6 +460,8 @@ namespace Service
 
                 set.BirthDaySms = "true";
                 chxBirthDaySms.Checked = true;
+
+                comCalculateAnbar.Text = "آخرین خرید";
 
                 context.Setting.Add(set);
                 context.SaveChanges();

@@ -681,7 +681,6 @@ namespace Service
                     newAnbar.IdProdoct = Int32.Parse(dgAnbar.Rows[i].Cells[0].Value.ToString());
                     newAnbar.Name = dgAnbar.Rows[i].Cells[1].Value.ToString();
                     newAnbar.IdParent = idParent;
-                    newAnbar.Some = Int32.Parse(dgAnbar.Rows[i].Cells[3].Value.ToString());
                     // newAnbar.Count   // baraye jame maghadir in kala
                     newAnbar.Price = int.Parse(txtPriceProdoct.Text.Replace(",", ""));
                     newAnbar.Description = dgAnbar.Rows[i].Cells[5].Value.ToString();
@@ -689,8 +688,25 @@ namespace Service
                     newAnbar.CodeRahgiri = int.Parse(lblCodeRahgiri.Text);
                     newAnbar.IdStore = idStore;
                     //long countGrid = 
-                    newAnbar.Count = Int32.Parse(dgAnbar.Rows[i].Cells[3].Value.ToString());
-
+                    switch (comCase.SelectedIndex)
+                    {
+                        case 0: // reside khard (mojoodi ezafe shavad)
+                        case 3: // resid tolid (mojoodi ezafe shavad)
+                        case 4: // bargasgt kala foroosh (mojoodi ezafe shavad)
+                        case 7: // bargasht kala amani (mojoodi ezafe shavad)
+                            {
+                                newAnbar.Positiv = Int32.Parse(dgAnbar.Rows[i].Cells[3].Value.ToString());
+                                break;
+                            }
+                        case 1: // havale foroosh (mojoodi kam shavad)
+                        case 2: // havale masraf (mojoodi kam shavad)
+                        case 5: // bargashte kala masraf (mojoodi kam shavad)
+                        case 6: // havale anbar amani (mojoodi kam shavad)
+                            {
+                                newAnbar.Negativ = Int32.Parse(dgAnbar.Rows[i].Cells[3].Value.ToString());
+                                break;
+                            }
+                    }
                     //------
                     context.Anbar.Add(newAnbar);
                 }

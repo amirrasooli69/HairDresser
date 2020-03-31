@@ -10,14 +10,30 @@ using System.Windows.Forms;
 
 namespace Service
 {
-    public partial class FormAnabarReport : Form
+    public partial class FormReportAnbar : Form
     {
-        public FormAnabarReport()
+        public FormReportAnbar()
         {
             InitializeComponent();
         }
+        int count = 0; // baraye dafate avaz shodane comProdoct
+        private void Refresh_DataGrid()
+        {
+            dataGridView1.Columns["Name"].HeaderText = "نام";
+            dataGridView1.Columns["IdProdoct"].HeaderText = "نام";
+            dataGridView1.Columns["IdParent"].HeaderText = "نام";
+            dataGridView1.Columns["Positiv"].HeaderText = "نام";
+            dataGridView1.Columns["Negativ"].HeaderText = "نام";
+            dataGridView1.Columns["Price"].HeaderText = "نام";
+            dataGridView1.Columns["Description"].HeaderText = "نام";
+            dataGridView1.Columns["DateBuild"].HeaderText = "نام";
+            dataGridView1.Columns["DateExpierd"].HeaderText = "نام";
+            dataGridView1.Columns["CodeRahgiri"].HeaderText = "نام";
+            dataGridView1.Columns["IdStore"].HeaderText = "نام";
+            dataGridView1.Columns["Id"].HeaderText = "نام";
 
-        int count=0; // baraye dafate avaz shodane comProdoct
+        }
+
         public void Refresh_dgSearch()
         {
             if (count > 1)
@@ -42,11 +58,11 @@ namespace Service
                 //dgSearch.Columns[13].Visible = false;
                 //dgSearch.Columns[14].Visible = false;
                 //-------
-                //DataGridViewTextBoxColumn positivcColumn = new DataGridViewTextBoxColumn();
-                //positivcColumn.HeaderText = "مانده";
-                //positivcColumn.Name = "sumUntilNow";
-                //positivcColumn.DisplayIndex = 0;
-                //this.dgSearch.Columns.Add(positivcColumn);
+                DataGridViewTextBoxColumn positivcColumn = new DataGridViewTextBoxColumn();
+                positivcColumn.HeaderText = "مانده";
+                positivcColumn.Name = "sumUntilNow";
+                positivcColumn.DisplayIndex = 0;
+                this.dataGridView1.Columns.Add(positivcColumn);
 
 
             }
@@ -58,7 +74,7 @@ namespace Service
             long existing = 0;
             StimulsoftEntities context = new StimulsoftEntities();
 
-            if(dgSearch.RowCount>0)
+            if (dgSearch.RowCount > 0)
             {
                 for (int i = 0; i < dgSearch.RowCount; i++)
                 {
@@ -107,9 +123,10 @@ namespace Service
                 var getProdocts = context.Anbar.Where(c => c.IdProdoct == getId.Code).ToList();
                 dgSearch.DataSource = getProdocts;
                 dataGridView1.DataSource = getProdocts;
+
             }
         }
-        private void AnabarReport_Load(object sender, EventArgs e)
+        private void FormReportAnbar_Load(object sender, EventArgs e)
         {
             StimulsoftEntities context = new StimulsoftEntities();
             if (context.AnbarProdoct.Count() > 0)
@@ -121,12 +138,12 @@ namespace Service
             //Select_Prodoct();
         }
 
-        private void btnReportProdoct_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             count++;
             Select_Prodoct();
             Refresh_dgSearch();
-            lblTotalExisting.Text=Calculate_DataGrideView();
+            lblTotalExisting.Text = Calculate_DataGrideView();
         }
 
         private void comProdoct_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,8 +156,7 @@ namespace Service
             Select_Prodoct();
             Refresh_dgSearch();
 
-            lblTotalExisting.Text=Calculate_DataGrideView();
+            lblTotalExisting.Text = Calculate_DataGrideView();
         }
-
     }
 }

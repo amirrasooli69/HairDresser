@@ -787,7 +787,7 @@ namespace Service
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            FormAnabarReport frmAnbarReport = new FormAnabarReport();
+            FormReportAnbar frmAnbarReport = new FormReportAnbar();
             frmAnbarReport.Show();
         }
     }

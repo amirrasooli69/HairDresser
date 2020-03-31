@@ -137,12 +137,6 @@
     <Compile Include="ErsalNashode.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="FormAnabarReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAnabarReport1.Designer.cs">
-      <DependentUpon>FormAnabarReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="Calculate.cs" />
     <Compile Include="Data_Importer.cs" />
     <Compile Include="FDate.cs">
@@ -246,6 +240,12 @@
     </Compile>
     <Compile Include="FormNotification.Designer.cs">
       <DependentUpon>FormNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportAnbar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportAnbar.Designer.cs">
+      <DependentUpon>FormReportAnbar.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReports.cs">
       <SubType>Form</SubType>
@@ -400,9 +400,6 @@
     <EmbeddedResource Include="AddProdoctStore.resx">
       <DependentUpon>AddProdoctStore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAnabarReport1.resx">
-      <DependentUpon>FormAnabarReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FDate.resx">
       <DependentUpon>FDate.cs</DependentUpon>
     </EmbeddedResource>
@@ -453,6 +450,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNotification.resx">
       <DependentUpon>FormNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportAnbar.resx">
+      <DependentUpon>FormReportAnbar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReports.resx">
       <DependentUpon>FormReports.cs</DependentUpon>

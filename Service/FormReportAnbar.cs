@@ -17,43 +17,26 @@ namespace Service
             InitializeComponent();
         }
         int count = 0; // baraye dafate avaz shodane comProdoct
-        private void Refresh_DataGrid()
-        {
-            dataGridView1.Columns["Name"].HeaderText = "نام";
-            dataGridView1.Columns["IdProdoct"].HeaderText = "نام";
-            dataGridView1.Columns["IdParent"].HeaderText = "نام";
-            dataGridView1.Columns["Positiv"].HeaderText = "نام";
-            dataGridView1.Columns["Negativ"].HeaderText = "نام";
-            dataGridView1.Columns["Price"].HeaderText = "نام";
-            dataGridView1.Columns["Description"].HeaderText = "نام";
-            dataGridView1.Columns["DateBuild"].HeaderText = "نام";
-            dataGridView1.Columns["DateExpierd"].HeaderText = "نام";
-            dataGridView1.Columns["CodeRahgiri"].HeaderText = "نام";
-            dataGridView1.Columns["IdStore"].HeaderText = "نام";
-            dataGridView1.Columns["Id"].HeaderText = "نام";
-
-        }
-
+        string SelectProdoct = "";
         public void Refresh_dgSearch()
         {
-            if (count > 1)
+            if (count == 0)
             {
-
-                dgSearch.Columns[0].HeaderText = "نام";
-                dgSearch.Columns[1].HeaderText = " کد محصول";
-                dgSearch.Columns[2].HeaderText = "شماره سند";
-                dgSearch.Columns[3].HeaderText = "ورودی";
-                dgSearch.Columns[4].HeaderText = "خروجی";
+                dgSearch.Columns["Name"].HeaderText = "نام";
+                dgSearch.Columns["IdProdoct"].HeaderText = "شماره محصول";
+                dgSearch.Columns["IdParent"].HeaderText = "شماره سند";
                 //dgSearch.Columns[4].Visible = false;
-                dgSearch.Columns[5].HeaderText = "قیمت";
-                dgSearch.Columns[6].HeaderText = "توضیحات";
-                dgSearch.Columns[7].HeaderText = "تاریخ تولید";
-                dgSearch.Columns[7].Visible = false;
-                dgSearch.Columns[8].HeaderText = "تاریخ انقضا";
-                dgSearch.Columns[8].DefaultCellStyle.Format = "0000/00/00";
-                dgSearch.Columns[9].HeaderText = "کد رهگیری";
-                dgSearch.Columns[10].HeaderText = "طرف حساب";
-                dgSearch.Columns[11].HeaderText = "شماره";
+                dgSearch.Columns["Positiv"].HeaderText = "ورودی";
+                dgSearch.Columns["Negativ"].HeaderText = "خروجی";
+                dgSearch.Columns["Price"].HeaderText = "قیمت";
+                dgSearch.Columns["Description"].HeaderText = "توضیحات";
+                dgSearch.Columns["DateBuild"].HeaderText = "تاریخ تولید";
+                dgSearch.Columns["DateBuild"].Visible = false;
+                dgSearch.Columns["DateExpierd"].HeaderText = "تاریخ انقضا";
+                dgSearch.Columns["DateExpierd"].DefaultCellStyle.Format = "0000/00/00";
+                dgSearch.Columns["CodeRahgiri"].HeaderText = "کد رهگیری";
+                dgSearch.Columns["IdStore"].HeaderText = "طرف حساب";
+                dgSearch.Columns["Id"].HeaderText = "شماره";
                 //dgSearch.Columns[12].Visible = false;
                 //dgSearch.Columns[13].Visible = false;
                 //dgSearch.Columns[14].Visible = false;
@@ -62,15 +45,13 @@ namespace Service
                 positivcColumn.HeaderText = "مانده";
                 positivcColumn.Name = "sumUntilNow";
                 positivcColumn.DisplayIndex = 0;
-                this.dataGridView1.Columns.Add(positivcColumn);
-
-
+                this.dgSearch.Columns.Add(positivcColumn);
             }
         }
         public string Calculate_DataGrideView()
         {
-            if (count < 1)
-                return "0";
+            //if (count < 1)
+            //    return "0";
             long existing = 0;
             StimulsoftEntities context = new StimulsoftEntities();
 
@@ -78,7 +59,7 @@ namespace Service
             {
                 for (int i = 0; i < dgSearch.RowCount; i++)
                 {
-                    long selectCase = Int32.Parse(dgSearch.Rows[i].Cells[2].Value.ToString());
+                    long selectCase = Int32.Parse(dgSearch.Rows[i].Cells["IdParent"].Value.ToString());
                     var findParentCase = context.AnbarParent.Where(c => c.Id == selectCase).FirstOrDefault();
                     if (findParentCase != null)
                     {
@@ -89,7 +70,7 @@ namespace Service
                             case 4: // bargasgt kala foroosh (mojoodi ezafe shavad)
                             case 7: // bargasht kala amani (mojoodi ezafe shavad)
                                 {
-                                    existing = existing + Int32.Parse(dgSearch.Rows[i].Cells[3].Value.ToString());
+                                    existing = existing + Int32.Parse(dgSearch.Rows[i].Cells["Positiv"].Value.ToString());
                                     break;
                                 }
 
@@ -99,11 +80,11 @@ namespace Service
                             case 5: // bargashte kala masraf (mojoodi kam shavad)
                             case 6: // havale anbar amani (mojoodi kam shavad)
                                 {
-                                    existing = existing - Int32.Parse(dgSearch.Rows[i].Cells[4].Value.ToString());
+                                    existing = existing - Int32.Parse(dgSearch.Rows[i].Cells["Negativ"].Value.ToString());
                                     break;
                                 }
                         }
-                        //dgSearch.Rows[i].Cells[].Value = existing;
+                        dgSearch.Rows[i].Cells["sumUntilNow"].Value = existing;
 
                     }
                     else
@@ -114,17 +95,18 @@ namespace Service
             }
             return existing.ToString();
         }
-        public void Select_Prodoct() // entekhab mahsool 
+        public void Select_Prodoct( ) // entekhab mahsool 
         {
-            if (count > 1)
+            //if (count > 1)
+            //{
+            StimulsoftEntities context = new StimulsoftEntities();
+            var getId = context.AnbarProdoct.Where(c => c.Name == comProdoct.Text).FirstOrDefault();
+            if (getId != null)
             {
-                StimulsoftEntities context = new StimulsoftEntities();
-                var getId = context.AnbarProdoct.Where(c => c.Name == comProdoct.Text).FirstOrDefault();
                 var getProdocts = context.Anbar.Where(c => c.IdProdoct == getId.Code).ToList();
                 dgSearch.DataSource = getProdocts;
-                dataGridView1.DataSource = getProdocts;
-
             }
+            //}
         }
         private void FormReportAnbar_Load(object sender, EventArgs e)
         {
@@ -132,10 +114,15 @@ namespace Service
             if (context.AnbarProdoct.Count() > 0)
             {
                 var prodocts = context.AnbarProdoct.ToList();
+
                 comProdoct.DataSource = prodocts;
                 comProdoct.DisplayMember = "Name";
             }
-            //Select_Prodoct();
+            Refresh_dgSearch();
+            lblTotalExisting.Text = Calculate_DataGrideView();
+
+
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -148,15 +135,21 @@ namespace Service
 
         private void comProdoct_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dgSearch.Rows.Count > 0)
-            {
-                dgSearch.DataSource = null;
-            }
-            count++;
             Select_Prodoct();
-            Refresh_dgSearch();
-
             lblTotalExisting.Text = Calculate_DataGrideView();
+
+            //Refresh_dgSearch();
+        }
+
+        private void comProdoct_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comProdoct_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+
         }
     }
 }

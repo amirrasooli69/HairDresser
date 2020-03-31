@@ -28,66 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalExisting = new System.Windows.Forms.Label();
             this.dgSearch = new System.Windows.Forms.DataGridView();
             this.comProdoct = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(14, 249);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(858, 150);
-            this.dataGridView1.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(813, 418);
+            this.label1.Location = new System.Drawing.Point(1084, 579);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(65, 18);
             this.label1.TabIndex = 10;
             this.label1.Text = ":موجودی";
             // 
             // lblTotalExisting
             // 
             this.lblTotalExisting.AutoSize = true;
-            this.lblTotalExisting.Location = new System.Drawing.Point(704, 418);
+            this.lblTotalExisting.Location = new System.Drawing.Point(939, 579);
+            this.lblTotalExisting.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalExisting.Name = "lblTotalExisting";
-            this.lblTotalExisting.Size = new System.Drawing.Size(35, 13);
+            this.lblTotalExisting.Size = new System.Drawing.Size(44, 18);
             this.lblTotalExisting.TabIndex = 9;
             this.lblTotalExisting.Text = "label1";
             // 
             // dgSearch
             // 
             this.dgSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSearch.Location = new System.Drawing.Point(14, 54);
+            this.dgSearch.Location = new System.Drawing.Point(19, 75);
+            this.dgSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgSearch.Name = "dgSearch";
             this.dgSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgSearch.Size = new System.Drawing.Size(858, 179);
+            this.dgSearch.Size = new System.Drawing.Size(1144, 483);
             this.dgSearch.TabIndex = 8;
             // 
             // comProdoct
             // 
             this.comProdoct.FormattingEnabled = true;
-            this.comProdoct.Location = new System.Drawing.Point(365, 6);
+            this.comProdoct.Location = new System.Drawing.Point(265, 17);
+            this.comProdoct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comProdoct.Name = "comProdoct";
             this.comProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comProdoct.Size = new System.Drawing.Size(156, 21);
+            this.comProdoct.Size = new System.Drawing.Size(207, 26);
             this.comProdoct.TabIndex = 7;
             this.comProdoct.SelectedIndexChanged += new System.EventHandler(this.comProdoct_SelectedIndexChanged);
+            this.comProdoct.SelectionChangeCommitted += new System.EventHandler(this.comProdoct_SelectionChangeCommitted);
+            this.comProdoct.SelectedValueChanged += new System.EventHandler(this.comProdoct_SelectedValueChanged);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(208, 6);
+            this.btnSearch.Location = new System.Drawing.Point(83, 17);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(108, 23);
+            this.btnSearch.Size = new System.Drawing.Size(144, 32);
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "جستجو";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -95,19 +92,19 @@
             // 
             // FormReportAnbar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 442);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1183, 612);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTotalExisting);
             this.Controls.Add(this.dgSearch);
             this.Controls.Add(this.comProdoct);
             this.Controls.Add(this.btnSearch);
+            this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormReportAnbar";
             this.Text = "FormReportAnbar";
             this.Load += new System.EventHandler(this.FormReportAnbar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -115,8 +112,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTotalExisting;
         private System.Windows.Forms.DataGridView dgSearch;

@@ -228,7 +228,6 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser 98-12-10\Service\bin\Debug\Stimulso
 C:\Users\Amir\Desktop\Develop\C#\HairDresser 98-12-10\Service\bin\Debug\System.Data.SQLite.xml
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\PapilooDate.AddProdoct.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Papiloo.ucAddProdoctStore.resources
-C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormAnabarReport.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Papiloo.FDate.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormAddUnit.resources
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormAnbar.resources
@@ -292,3 +291,5 @@ C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\Stimulsoft.Report
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\System.Data.SQLite.xml
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.exe
 C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.pdb
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\obj\Debug\Service.FormReportAnbar.resources

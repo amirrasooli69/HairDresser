@@ -119,7 +119,6 @@ namespace Service
                 comProdoct.DisplayMember = "Name";
             }
             Refresh_dgSearch();
-            lblTotalExisting.Text = Calculate_DataGrideView();
 
 
 
@@ -136,7 +135,7 @@ namespace Service
         private void comProdoct_SelectedIndexChanged(object sender, EventArgs e)
         {
             Select_Prodoct();
-            lblTotalExisting.Text = Calculate_DataGrideView();
+            //lblTotalExisting.Text = Calculate_DataGrideView();
 
             //Refresh_dgSearch();
         }

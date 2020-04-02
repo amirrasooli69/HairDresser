@@ -44,9 +44,12 @@ namespace Service
                 DataGridViewTextBoxColumn positivcColumn = new DataGridViewTextBoxColumn();
                 positivcColumn.HeaderText = "مانده";
                 positivcColumn.Name = "sumUntilNow";
-                positivcColumn.DisplayIndex = 0;
+                positivcColumn.DisplayIndex = 5;
                 this.dgSearch.Columns.Add(positivcColumn);
+                //-------
+                count++;
             }
+            
         }
         public string Calculate_DataGrideView()
         {
@@ -114,7 +117,6 @@ namespace Service
             if (context.AnbarProdoct.Count() > 0)
             {
                 var prodocts = context.AnbarProdoct.ToList();
-
                 comProdoct.DataSource = prodocts;
                 comProdoct.DisplayMember = "Name";
             }
@@ -126,7 +128,6 @@ namespace Service
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            count++;
             Select_Prodoct();
             Refresh_dgSearch();
             lblTotalExisting.Text = Calculate_DataGrideView();
@@ -135,9 +136,14 @@ namespace Service
         private void comProdoct_SelectedIndexChanged(object sender, EventArgs e)
         {
             Select_Prodoct();
-            //lblTotalExisting.Text = Calculate_DataGrideView();
-
-            //Refresh_dgSearch();
+            if (dgSearch.RowCount > 0)
+            {
+                //if (count == 0)
+                //{
+                    Refresh_dgSearch();
+                //}
+                lblTotalExisting.Text = Calculate_DataGrideView();
+            }
         }
 
         private void comProdoct_SelectedValueChanged(object sender, EventArgs e)

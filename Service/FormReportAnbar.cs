@@ -71,6 +71,7 @@ namespace Service
                             case 0: // reside khard (mojoodi ezafe shavad)
                             case 3: // resid tolid (mojoodi ezafe shavad)
                             case 4: // bargasgt kala foroosh (mojoodi ezafe shavad)
+                            case 5: // bargashte kala masraf (mojoodi kam shavad) **
                             case 7: // bargasht kala amani (mojoodi ezafe shavad)
                                 {
                                     existing = existing + Int32.Parse(dgSearch.Rows[i].Cells["Positiv"].Value.ToString());
@@ -80,7 +81,6 @@ namespace Service
 
                             case 1: // havale foroosh (mojoodi kam shavad)
                             case 2: // havale masraf (mojoodi kam shavad)
-                            case 5: // bargashte kala masraf (mojoodi kam shavad)
                             case 6: // havale anbar amani (mojoodi kam shavad)
                                 {
                                     existing = existing - Int32.Parse(dgSearch.Rows[i].Cells["Negativ"].Value.ToString());

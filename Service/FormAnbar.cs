@@ -158,6 +158,7 @@ namespace Service
                                 case 0: // reside khard (mojoodi ezafe shavad)
                                 case 3: // resid tolid (mojoodi ezafe shavad)
                                 case 4: // bargasgt kala foroosh (mojoodi ezafe shavad)
+                                case 5: // bargashte kala masraf (mojoodi kam shavad) **
                                 case 7: // bargasht kala amani (mojoodi ezafe shavad)
                                     {
                                         existing = existing + Int32.Parse(getProdocts[i].Positiv.ToString());
@@ -167,7 +168,6 @@ namespace Service
 
                                 case 1: // havale foroosh (mojoodi kam shavad)
                                 case 2: // havale masraf (mojoodi kam shavad)
-                                case 5: // bargashte kala masraf (mojoodi kam shavad)
                                 case 6: // havale anbar amani (mojoodi kam shavad)
                                     {
                                         existing = existing - Int32.Parse(getProdocts[i].Negativ.ToString());
@@ -200,8 +200,8 @@ namespace Service
             //dateExpird.Text = "تاریخ انقضا";
             Refresh_dgProdoct();
             Refresh_dgStore();
-            //dgProdoct.ClearSelection();
-            //dgStore.ClearSelection();
+            dgProdoct.ClearSelection();
+            dgStore.ClearSelection();
         }
 
 
@@ -228,6 +228,16 @@ namespace Service
                 prodoct1 = new string[] { "-1" };
                 txtSomeProdoct.Focus();
                 return prodoct1;
+            }
+            if (comCase.SelectedIndex == 1 || comCase.SelectedIndex == 2 || comCase.SelectedIndex == 6)
+            {
+                if (int.Parse(lblExistingProdoct.Text) < int.Parse(txtSomeProdoct.Text))
+                {
+                    MessageBox.Show("موجودی انبار کافی نیست", "انبار", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    prodoct1 = new string[] { "-1" };
+                    txtSomeProdoct.Focus();
+                    return prodoct1;
+                }
             }
             if (txtPriceProdoct.Text == "" || txtPriceProdoct.Text == "قیمت")
             {
@@ -257,9 +267,16 @@ namespace Service
             long price = long.Parse(txtPriceProdoct.Text.Replace(",", ""));
             long some = long.Parse(txtSomeProdoct.Text);
             price *= some;
-            prodoct1 = new string[] {dgProdoct.CurrentRow.Cells[3].Value.ToString() ,dgProdoct.CurrentRow.Cells[2].Value.ToString()  ,
-                dgStore.CurrentRow.Cells[1].Value.ToString() ,
-            txtSomeProdoct.Text ,Practical.split_3Number( price.ToString()) , txtDetailProdoct.Text , dateExpird.Text };
+            prodoct1 = new string[] 
+            {
+                dgProdoct.CurrentRow.Cells[3].Value.ToString() ,
+                dgProdoct.CurrentRow.Cells[2].Value.ToString(),
+                dgStore.CurrentRow.Cells[1].Value.ToString(),
+                txtSomeProdoct.Text ,
+                Practical.split_3Number( price.ToString()) ,
+                txtDetailProdoct.Text ,
+                dateExpird.Text
+            };
             return prodoct1;
         }
         private void btnSaveProdoct_Click(object sender, EventArgs e)

@@ -110,21 +110,21 @@ namespace Service
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
         private string Sugettion_Price(string NameProdoct) // pishnahad dadane mahsool bar asase akharin gheimat
         {
             StimulsoftEntities context = new StimulsoftEntities();
             string price = "";
-            if(context.Anbar.Count()>0)
+            if (context.Anbar.Count() > 0)
             {
                 var selectAll = context.Anbar.Where(c => c.Name == NameProdoct).ToList();
                 var selectEnd = selectAll.LastOrDefault();
                 if (selectEnd == null)
                 {
-                     return price = "خرید و فروش نشده";
-                    
+                    return price = "خرید و فروش نشده";
+
                 }
-                int countProdoct =Convert.ToInt16(selectEnd.Positiv + selectEnd.Negativ);
+                int countProdoct = Convert.ToInt16(selectEnd.Positiv + selectEnd.Negativ);
                 price = (selectEnd.Price / countProdoct).ToString();
                 price = Practical.split_3Number(price);
             }
@@ -134,6 +134,55 @@ namespace Service
             }
             return price;
         }
+        public string Count_Prodct_Anbar(string NameProdoct) // tedad mojoodi anbar 
+        {
+            StimulsoftEntities context = new StimulsoftEntities();
+            var getId = context.AnbarProdoct.Where(c => c.Name == NameProdoct).FirstOrDefault();
+            if (getId != null)
+            {
+                var getProdocts = context.Anbar.Where(c => c.IdProdoct == getId.Code).ToList();
+                //dgSearch.DataSource = getProdocts;
+                //************
+                //************
+                long existing = 0;
+                if (getProdocts.Count > 0)
+                {
+                    for (int i = 0; i < getProdocts.Count; i++)
+                    {
+                        long selectCase = Int32.Parse(getProdocts[i].IdParent.ToString());
+                        var findParentCase = context.AnbarParent.Where(c => c.Id == selectCase).FirstOrDefault();
+                        if (findParentCase != null)
+                        {
+                            switch (findParentCase.Case)
+                            {
+                                case 0: // reside khard (mojoodi ezafe shavad)
+                                case 3: // resid tolid (mojoodi ezafe shavad)
+                                case 4: // bargasgt kala foroosh (mojoodi ezafe shavad)
+                                case 7: // bargasht kala amani (mojoodi ezafe shavad)
+                                    {
+                                        existing = existing + Int32.Parse(getProdocts[i].Positiv.ToString());
+                                        break;
+                                    }
+
+
+                                case 1: // havale foroosh (mojoodi kam shavad)
+                                case 2: // havale masraf (mojoodi kam shavad)
+                                case 5: // bargashte kala masraf (mojoodi kam shavad)
+                                case 6: // havale anbar amani (mojoodi kam shavad)
+                                    {
+                                        existing = existing - Int32.Parse(getProdocts[i].Negativ.ToString());
+                                        break;
+                                    }
+                            }
+                        }
+                    }
+                }
+                return existing.ToString();
+            }
+
+            return "0";
+        }
+
         private void btnNew_Click(object sender, EventArgs e)
         {
             Add_Parent_Prodoct();
@@ -151,9 +200,8 @@ namespace Service
             //dateExpird.Text = "تاریخ انقضا";
             Refresh_dgProdoct();
             Refresh_dgStore();
-
-            dgProdoct.ClearSelection();
-            dgStore.ClearSelection();
+            //dgProdoct.ClearSelection();
+            //dgStore.ClearSelection();
         }
 
 
@@ -164,30 +212,35 @@ namespace Service
             {
                 MessageBox.Show("محصول را انتخاب کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 prodoct1 = new string[] { "-1" };
+                dgProdoct.Focus();
                 return prodoct1;
             }
             if (dgStore.SelectedRows.Count < 1)
             {
                 MessageBox.Show("فروشگاه یا فرد را انتخاب کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 prodoct1 = new string[] { "-1" };
+                dgStore.Focus();
                 return prodoct1;
             }
             if (txtSomeProdoct.Text == "" || txtSomeProdoct.Text == "مقدار")
             {
                 MessageBox.Show("مقدار را وارد کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 prodoct1 = new string[] { "-1" };
+                txtSomeProdoct.Focus();
                 return prodoct1;
             }
             if (txtPriceProdoct.Text == "" || txtPriceProdoct.Text == "قیمت")
             {
                 MessageBox.Show("قیمت را وارد کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 prodoct1 = new string[] { "-1" };
+                txtPriceProdoct.Focus();
                 return prodoct1;
             }
             if (dateExpird.Text == "" || dateExpird.Text == "تاریخ انقضا")
             {
                 MessageBox.Show("تاریخ را انتخاب کنید", "انتخاب", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 prodoct1 = new string[] { "-1" };
+                dateExpird.Focus();
                 return prodoct1;
             }
             if (txtDetailProdoct.Text == "توضیحات")
@@ -712,7 +765,7 @@ namespace Service
         private void dgAnbar_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             lblTotalPrice.Text = Practical.Sum_price_DataGrideView(dgAnbar, 4);
-            if(dgAnbar.RowCount==0)
+            if (dgAnbar.RowCount == 0)
             {
                 btnSaveAllProdoct.Enabled = false;
             }
@@ -725,11 +778,19 @@ namespace Service
             frmAnbarReport.Show();
         }
 
-        private void dgProdoct_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void toolBtnAnbarReport_Click(object sender, EventArgs e)
+        {
+            FormReportAnbar frmAnbarReport = new FormReportAnbar();
+            frmAnbarReport.Show();
+        }
+
+        private void dgProdoct_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             lblSugettion.Text = Sugettion_Price(dgProdoct.CurrentRow.Cells[2].Value.ToString());
-            
+
+            lblExistingProdoct.Text = Count_Prodct_Anbar(dgProdoct.CurrentRow.Cells[2].Value.ToString());
         }
+
     }
 }
 

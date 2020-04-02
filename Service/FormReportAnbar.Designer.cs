@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReportAnbar));
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalExisting = new System.Windows.Forms.Label();
             this.dgSearch = new System.Windows.Forms.DataGridView();
@@ -59,18 +60,18 @@
             // dgSearch
             // 
             this.dgSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSearch.Location = new System.Drawing.Point(19, 75);
-            this.dgSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgSearch.Location = new System.Drawing.Point(19, 61);
+            this.dgSearch.Margin = new System.Windows.Forms.Padding(4);
             this.dgSearch.Name = "dgSearch";
             this.dgSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgSearch.Size = new System.Drawing.Size(1144, 483);
+            this.dgSearch.Size = new System.Drawing.Size(1151, 497);
             this.dgSearch.TabIndex = 8;
             // 
             // comProdoct
             // 
             this.comProdoct.FormattingEnabled = true;
-            this.comProdoct.Location = new System.Drawing.Point(265, 17);
-            this.comProdoct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comProdoct.Location = new System.Drawing.Point(659, 17);
+            this.comProdoct.Margin = new System.Windows.Forms.Padding(4);
             this.comProdoct.Name = "comProdoct";
             this.comProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comProdoct.Size = new System.Drawing.Size(207, 26);
@@ -81,8 +82,8 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(83, 17);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Location = new System.Drawing.Point(19, 13);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(144, 32);
             this.btnSearch.TabIndex = 6;
@@ -101,9 +102,10 @@
             this.Controls.Add(this.comProdoct);
             this.Controls.Add(this.btnSearch);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormReportAnbar";
-            this.Text = "FormReportAnbar";
+            this.Text = "گزارش انبار";
             this.Load += new System.EventHandler(this.FormReportAnbar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).EndInit();
             this.ResumeLayout(false);

@@ -97,7 +97,7 @@ namespace Service
                 }
             }
             return existing.ToString();
-        }
+        } // mohasebe mahsool mande dar anbar hamrah ba darj dar datagridview
         public void Select_Prodoct( ) // entekhab mahsool 
         {
             //if (count > 1)

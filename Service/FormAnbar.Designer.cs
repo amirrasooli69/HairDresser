@@ -33,6 +33,7 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.comCase = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.Date = new Papiloo.FDate();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDetails = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -53,10 +54,15 @@
             this.txtPriceProdoct = new System.Windows.Forms.TextBox();
             this.btnSaveProdoct = new System.Windows.Forms.Button();
             this.groupProdoct = new System.Windows.Forms.GroupBox();
+            this.lblSugettion = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnTest = new System.Windows.Forms.Button();
+            this.dateExpird = new Papiloo.FDate();
             this.btnRefreshDgProdoct = new System.Windows.Forms.Button();
             this.btnRefreshDgStore = new System.Windows.Forms.Button();
             this.btnDelStore = new System.Windows.Forms.Button();
+            this.ucDelStore = new Papiloo.ucButton();
+            this.ucAddStore = new Papiloo.ucButton();
             this.btnDelProdoct = new System.Windows.Forms.Button();
             this.btnEditProdoct = new System.Windows.Forms.Button();
             this.btnEditStore = new System.Windows.Forms.Button();
@@ -67,17 +73,16 @@
             this.btnSaveAllProdoct = new System.Windows.Forms.Button();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblSugettion = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateExpird = new Papiloo.FDate();
-            this.ucDelStore = new Papiloo.ucButton();
-            this.ucAddStore = new Papiloo.ucButton();
-            this.Date = new Papiloo.FDate();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolBtnAnbarReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblExistingProdoct = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdoct)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -89,7 +94,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtDetails);
             this.groupBox1.Controls.Add(this.label32);
-            this.groupBox1.Location = new System.Drawing.Point(7, 3);
+            this.groupBox1.Location = new System.Drawing.Point(7, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(946, 66);
             this.groupBox1.TabIndex = 8;
@@ -135,6 +140,16 @@
             this.label4.TabIndex = 31;
             this.label4.Text = "تاریخ ورود";
             // 
+            // Date
+            // 
+            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Date.Location = new System.Drawing.Point(493, 20);
+            this.Date.Name = "Date";
+            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Date.Size = new System.Drawing.Size(141, 31);
+            this.Date.TabIndex = 1;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -179,10 +194,10 @@
             this.DateExpired,
             this.btnDelete});
             this.dgAnbar.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgAnbar.Location = new System.Drawing.Point(7, 361);
+            this.dgAnbar.Location = new System.Drawing.Point(7, 388);
             this.dgAnbar.Name = "dgAnbar";
             this.dgAnbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgAnbar.Size = new System.Drawing.Size(949, 280);
+            this.dgAnbar.Size = new System.Drawing.Size(946, 253);
             this.dgAnbar.TabIndex = 9;
             this.dgAnbar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAnbar_CellClick);
             this.dgAnbar.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgAnbar_EditingControlShowing);
@@ -348,6 +363,8 @@
             // 
             // groupProdoct
             // 
+            this.groupProdoct.Controls.Add(this.lblExistingProdoct);
+            this.groupProdoct.Controls.Add(this.label7);
             this.groupProdoct.Controls.Add(this.lblSugettion);
             this.groupProdoct.Controls.Add(this.label6);
             this.groupProdoct.Controls.Add(this.btnTest);
@@ -372,13 +389,33 @@
             this.groupProdoct.Controls.Add(this.txtSomeProdoct);
             this.groupProdoct.Controls.Add(this.txtNameStore);
             this.groupProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.groupProdoct.Location = new System.Drawing.Point(7, 73);
+            this.groupProdoct.Location = new System.Drawing.Point(7, 99);
             this.groupProdoct.Name = "groupProdoct";
             this.groupProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupProdoct.Size = new System.Drawing.Size(946, 282);
             this.groupProdoct.TabIndex = 42;
             this.groupProdoct.TabStop = false;
             this.groupProdoct.Text = "اضافه کردن کلا";
+            // 
+            // lblSugettion
+            // 
+            this.lblSugettion.AutoSize = true;
+            this.lblSugettion.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSugettion.Location = new System.Drawing.Point(156, 25);
+            this.lblSugettion.Name = "lblSugettion";
+            this.lblSugettion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSugettion.Size = new System.Drawing.Size(0, 18);
+            this.lblSugettion.TabIndex = 104;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(350, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 18);
+            this.label6.TabIndex = 103;
+            this.label6.Text = "آخرین قیمت:";
             // 
             // btnTest
             // 
@@ -391,6 +428,16 @@
             this.btnTest.Text = "گزارش انبار";
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
+            // dateExpird
+            // 
+            this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dateExpird.Location = new System.Drawing.Point(5, 51);
+            this.dateExpird.Name = "dateExpird";
+            this.dateExpird.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dateExpird.Size = new System.Drawing.Size(141, 31);
+            this.dateExpird.TabIndex = 101;
+            this.dateExpird.Load += new System.EventHandler(this.dateExpird_Load);
             // 
             // btnRefreshDgProdoct
             // 
@@ -427,6 +474,26 @@
             this.btnDelStore.Text = "-";
             this.btnDelStore.UseVisualStyleBackColor = false;
             this.btnDelStore.Click += new System.EventHandler(this.btnDelStore_Click);
+            // 
+            // ucDelStore
+            // 
+            this.ucDelStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ucDelStore.Location = new System.Drawing.Point(890, 250);
+            this.ucDelStore.Margin = new System.Windows.Forms.Padding(4);
+            this.ucDelStore.Name = "ucDelStore";
+            this.ucDelStore.Size = new System.Drawing.Size(42, 24);
+            this.ucDelStore.TabIndex = 97;
+            this.ucDelStore.Load += new System.EventHandler(this.ucDelStore_Load);
+            // 
+            // ucAddStore
+            // 
+            this.ucAddStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ucAddStore.Location = new System.Drawing.Point(641, 250);
+            this.ucAddStore.Margin = new System.Windows.Forms.Padding(4);
+            this.ucAddStore.Name = "ucAddStore";
+            this.ucAddStore.Size = new System.Drawing.Size(42, 24);
+            this.ucAddStore.TabIndex = 96;
+            this.ucAddStore.Load += new System.EventHandler(this.ucAddStore_Load);
             // 
             // btnDelProdoct
             // 
@@ -484,7 +551,7 @@
             this.dgProdoct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgProdoct.Size = new System.Drawing.Size(245, 190);
             this.dgProdoct.TabIndex = 44;
-            this.dgProdoct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProdoct_CellClick);
+            this.dgProdoct.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProdoct_CellEnter);
             // 
             // lblCodeRahgiri
             // 
@@ -508,7 +575,6 @@
             // 
             // btnSaveAllProdoct
             // 
-            this.btnSaveAllProdoct.Enabled = false;
             this.btnSaveAllProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnSaveAllProdoct.Location = new System.Drawing.Point(7, 648);
             this.btnSaveAllProdoct.Name = "btnSaveAllProdoct";
@@ -533,71 +599,51 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(859, 654);
+            this.label5.Location = new System.Drawing.Point(873, 654);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 18);
             this.label5.TabIndex = 102;
             this.label5.Text = ":جمع قیمت";
             // 
-            // lblSugettion
+            // menuStrip1
             // 
-            this.lblSugettion.AutoSize = true;
-            this.lblSugettion.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSugettion.Location = new System.Drawing.Point(252, 25);
-            this.lblSugettion.Name = "lblSugettion";
-            this.lblSugettion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSugettion.Size = new System.Drawing.Size(0, 18);
-            this.lblSugettion.TabIndex = 104;
+            this.menuStrip1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolBtnAnbarReport});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuStrip1.Size = new System.Drawing.Size(960, 24);
+            this.menuStrip1.TabIndex = 104;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // label6
+            // toolBtnAnbarReport
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(350, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 18);
-            this.label6.TabIndex = 103;
-            this.label6.Text = "آخرین قیمت:";
+            this.toolBtnAnbarReport.Image = ((System.Drawing.Image)(resources.GetObject("toolBtnAnbarReport.Image")));
+            this.toolBtnAnbarReport.Name = "toolBtnAnbarReport";
+            this.toolBtnAnbarReport.Size = new System.Drawing.Size(96, 20);
+            this.toolBtnAnbarReport.Text = "گزارش انبار";
+            this.toolBtnAnbarReport.Click += new System.EventHandler(this.toolBtnAnbarReport_Click);
             // 
-            // dateExpird
+            // lblExistingProdoct
             // 
-            this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dateExpird.Location = new System.Drawing.Point(5, 51);
-            this.dateExpird.Name = "dateExpird";
-            this.dateExpird.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dateExpird.Size = new System.Drawing.Size(141, 31);
-            this.dateExpird.TabIndex = 101;
-            this.dateExpird.Load += new System.EventHandler(this.dateExpird_Load);
+            this.lblExistingProdoct.AutoSize = true;
+            this.lblExistingProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExistingProdoct.Location = new System.Drawing.Point(296, 196);
+            this.lblExistingProdoct.Name = "lblExistingProdoct";
+            this.lblExistingProdoct.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblExistingProdoct.Size = new System.Drawing.Size(0, 18);
+            this.lblExistingProdoct.TabIndex = 106;
             // 
-            // ucDelStore
+            // label7
             // 
-            this.ucDelStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ucDelStore.Location = new System.Drawing.Point(890, 250);
-            this.ucDelStore.Margin = new System.Windows.Forms.Padding(4);
-            this.ucDelStore.Name = "ucDelStore";
-            this.ucDelStore.Size = new System.Drawing.Size(42, 24);
-            this.ucDelStore.TabIndex = 97;
-            this.ucDelStore.Load += new System.EventHandler(this.ucDelStore_Load);
-            // 
-            // ucAddStore
-            // 
-            this.ucAddStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ucAddStore.Location = new System.Drawing.Point(641, 250);
-            this.ucAddStore.Margin = new System.Windows.Forms.Padding(4);
-            this.ucAddStore.Name = "ucAddStore";
-            this.ucAddStore.Size = new System.Drawing.Size(42, 24);
-            this.ucAddStore.TabIndex = 96;
-            this.ucAddStore.Load += new System.EventHandler(this.ucAddStore_Load);
-            // 
-            // Date
-            // 
-            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Date.Location = new System.Drawing.Point(493, 20);
-            this.Date.Name = "Date";
-            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Date.Size = new System.Drawing.Size(141, 31);
-            this.Date.TabIndex = 1;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(372, 196);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 18);
+            this.label7.TabIndex = 105;
+            this.label7.Text = "موجودی:";
             // 
             // FormAnbar
             // 
@@ -610,6 +656,9 @@
             this.Controls.Add(this.groupProdoct);
             this.Controls.Add(this.dgAnbar);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormAnbar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "انبار";
@@ -621,6 +670,8 @@
             this.groupProdoct.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdoct)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -671,5 +722,9 @@
         public System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Label lblSugettion;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolBtnAnbarReport;
+        private System.Windows.Forms.Label lblExistingProdoct;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -67,6 +67,8 @@
             this.btnSaveAllProdoct = new System.Windows.Forms.Button();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblSugettion = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.dateExpird = new Papiloo.FDate();
             this.ucDelStore = new Papiloo.ucButton();
             this.ucAddStore = new Papiloo.ucButton();
@@ -346,6 +348,8 @@
             // 
             // groupProdoct
             // 
+            this.groupProdoct.Controls.Add(this.lblSugettion);
+            this.groupProdoct.Controls.Add(this.label6);
             this.groupProdoct.Controls.Add(this.btnTest);
             this.groupProdoct.Controls.Add(this.dateExpird);
             this.groupProdoct.Controls.Add(this.btnRefreshDgProdoct);
@@ -380,9 +384,9 @@
             // 
             this.btnTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTest.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTest.Location = new System.Drawing.Point(5, 239);
+            this.btnTest.Location = new System.Drawing.Point(6, 14);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(84, 34);
+            this.btnTest.Size = new System.Drawing.Size(138, 34);
             this.btnTest.TabIndex = 102;
             this.btnTest.Text = "گزارش انبار";
             this.btnTest.UseVisualStyleBackColor = true;
@@ -480,12 +484,13 @@
             this.dgProdoct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgProdoct.Size = new System.Drawing.Size(245, 190);
             this.dgProdoct.TabIndex = 44;
+            this.dgProdoct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProdoct_CellClick);
             // 
             // lblCodeRahgiri
             // 
             this.lblCodeRahgiri.AutoSize = true;
             this.lblCodeRahgiri.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodeRahgiri.Location = new System.Drawing.Point(273, 25);
+            this.lblCodeRahgiri.Location = new System.Drawing.Point(171, 154);
             this.lblCodeRahgiri.Name = "lblCodeRahgiri";
             this.lblCodeRahgiri.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCodeRahgiri.Size = new System.Drawing.Size(0, 18);
@@ -495,7 +500,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(342, 25);
+            this.label1.Location = new System.Drawing.Point(240, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 42;
@@ -503,8 +508,9 @@
             // 
             // btnSaveAllProdoct
             // 
+            this.btnSaveAllProdoct.Enabled = false;
             this.btnSaveAllProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnSaveAllProdoct.Location = new System.Drawing.Point(13, 648);
+            this.btnSaveAllProdoct.Location = new System.Drawing.Point(7, 648);
             this.btnSaveAllProdoct.Name = "btnSaveAllProdoct";
             this.btnSaveAllProdoct.Size = new System.Drawing.Size(83, 31);
             this.btnSaveAllProdoct.TabIndex = 101;
@@ -532,6 +538,26 @@
             this.label5.Size = new System.Drawing.Size(80, 18);
             this.label5.TabIndex = 102;
             this.label5.Text = ":جمع قیمت";
+            // 
+            // lblSugettion
+            // 
+            this.lblSugettion.AutoSize = true;
+            this.lblSugettion.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSugettion.Location = new System.Drawing.Point(252, 25);
+            this.lblSugettion.Name = "lblSugettion";
+            this.lblSugettion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSugettion.Size = new System.Drawing.Size(0, 18);
+            this.lblSugettion.TabIndex = 104;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(350, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 18);
+            this.label6.TabIndex = 103;
+            this.label6.Text = "آخرین قیمت:";
             // 
             // dateExpird
             // 
@@ -643,5 +669,7 @@
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Label lblSugettion;
+        private System.Windows.Forms.Label label6;
     }
 }

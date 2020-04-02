@@ -117,18 +117,20 @@ namespace Service
             string price = "";
             if(context.Anbar.Count()>0)
             {
-                var selectProdoct = context.Anbar.Where(c => c.Name == NameProdoct).LastOrDefault();
-                if(selectProdoct == null)
+                var selectAll = context.Anbar.Where(c => c.Name == NameProdoct).ToList();
+                var selectEnd = selectAll.LastOrDefault();
+                if (selectEnd == null)
                 {
                      return price = "خرید و فروش نشده";
                     
                 }
-                int countProdoct =Convert.ToInt16( selectProdoct.Positiv + selectProdoct.Negativ);
-                price = (selectProdoct.Price / countProdoct).ToString();
+                int countProdoct =Convert.ToInt16(selectEnd.Positiv + selectEnd.Negativ);
+                price = (selectEnd.Price / countProdoct).ToString();
+                price = Practical.split_3Number(price);
             }
             else
             {
-                price = "محصولی در انبار ثبت نشده";
+                price = "محصولی ثبت نشده";
             }
             return price;
         }
@@ -595,8 +597,10 @@ namespace Service
         {
             try
             {
-                //if (dgAnbar.RowCount > 0)
-                //{
+                if (dgAnbar.RowCount == 0)
+                {
+                    return;
+                }
                 StimulsoftEntities context = new StimulsoftEntities();
                 for (int i = 0; i < dgAnbar.RowCount; i++)
                 {
@@ -640,6 +644,7 @@ namespace Service
                 context.SaveChanges();
                 MessageBox.Show("محصولات ثبت شد", "ثبت", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgAnbar.Rows.Clear();
+                btnSaveAllProdoct.Enabled = false;
                 //}
             }
             catch (Exception ex)
@@ -701,11 +706,16 @@ namespace Service
         private void dgAnbar_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             lblTotalPrice.Text = Practical.Sum_price_DataGrideView(dgAnbar, 4);
+            btnSaveAllProdoct.Enabled = true;
         }
 
         private void dgAnbar_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             lblTotalPrice.Text = Practical.Sum_price_DataGrideView(dgAnbar, 4);
+            if(dgAnbar.RowCount==0)
+            {
+                btnSaveAllProdoct.Enabled = false;
+            }
 
         }
 
@@ -713,6 +723,12 @@ namespace Service
         {
             FormReportAnbar frmAnbarReport = new FormReportAnbar();
             frmAnbarReport.Show();
+        }
+
+        private void dgProdoct_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblSugettion.Text = Sugettion_Price(dgProdoct.CurrentRow.Cells[2].Value.ToString());
+            
         }
     }
 }

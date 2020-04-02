@@ -17,7 +17,7 @@ namespace Service
             InitializeComponent();
         }
         int count = 0; // baraye dafate avaz shodane comProdoct
-        string SelectProdoct = "";
+        //string SelectProdoct = "";
         public void Refresh_dgSearch()
         {
             if (count == 0)

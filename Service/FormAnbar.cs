@@ -19,7 +19,51 @@ namespace Service
         Popup popup;
         //public string majhool1 = "",majhool2="";
         long idParent;
-        public void Add_Parent_Prodoct()
+        public void Refresh_dgProdoct() // update kardane maghadire dgProdoct
+        {
+            using (var context1 = new StimulsoftEntities())
+            {
+                if (context1.AnbarProdoct.Count() > 0)
+                {
+                    dgProdoct.DataSource = context1.AnbarProdoct.ToList();
+                    dgProdoct.Columns[0].Visible = false;
+                    dgProdoct.Columns[1].Visible = false;
+                    dgProdoct.Columns[2].HeaderText = "نام کالا";
+                    dgProdoct.Columns[3].HeaderText = "کد کالا";
+                    dgProdoct.Columns[4].HeaderText = "توضیحات";
+                    dgProdoct.Columns[5].HeaderText = "بارکد";
+                    dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
+                    //dgProdoct.Columns[7].Visible = false;
+                    //dgProdoct.Columns[8].Visible = false;
+
+                }
+                dgProdoct.DefaultCellStyle.Font = new Font("Tahoma", 8);
+                dgProdoct.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 8);
+
+            }
+        }
+        public void Refresh_dgStore()
+        {
+            using (var context1 = new StimulsoftEntities())
+            {
+                if (context1.Store.Count() > 0)
+                {
+
+                    dgStore.DataSource = context1.Store.ToList();
+                    dgStore.Columns[0].Visible = false;
+                    dgStore.Columns[1].HeaderText = "فروشگاه یا فرد";
+                    dgStore.Columns[1].Width = 100;
+                    dgStore.Columns[2].HeaderText = "تلفن";
+                    dgStore.Columns[3].HeaderText = "آدرس";
+                    //dgStore.Columns[4].Visible = false;
+                    //MessageBox.Show("anjam shod");
+                }
+                dgStore.DefaultCellStyle.Font = new Font("Tahoma", 8);
+                dgStore.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 8);
+            }
+
+        }// update kardane maghadire dgStore
+        public void Add_Parent_Prodoct() // ezafe kardane faktore jadid be jadvale AnbarParent va tolide code rahgirie jadid
         {
             try
             {
@@ -65,51 +109,29 @@ namespace Service
 
                 MessageBox.Show(ex.Message);
             }
-        } // ezafe kardane faktore jadid be jadvale AnbarParent
-        public void Refresh_dgProdoct() // update kardane maghadire dgProdoct
-        {
-            using (var context1 = new StimulsoftEntities())
-            {
-                if (context1.AnbarProdoct.Count() > 0)
-                {
-                    dgProdoct.DataSource = context1.AnbarProdoct.ToList();
-                    dgProdoct.Columns[0].Visible = false;
-                    dgProdoct.Columns[1].Visible = false;
-                    dgProdoct.Columns[2].HeaderText = "نام کالا";
-                    dgProdoct.Columns[3].HeaderText = "کد کالا";
-                    dgProdoct.Columns[4].HeaderText = "توضیحات";
-                    dgProdoct.Columns[5].HeaderText = "بارکد";
-                    dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
-                    //dgProdoct.Columns[7].Visible = false;
-                    //dgProdoct.Columns[8].Visible = false;
-
-                }
-                dgProdoct.DefaultCellStyle.Font = new Font("Tahoma", 8);
-                dgProdoct.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 8);
-
-            }
         }
-        public void Refresh_dgStore()
+        
+        private string Sugettion_Price(string NameProdoct) // pishnahad dadane mahsool bar asase akharin gheimat
         {
-            using (var context1 = new StimulsoftEntities())
+            StimulsoftEntities context = new StimulsoftEntities();
+            string price = "";
+            if(context.Anbar.Count()>0)
             {
-                if (context1.Store.Count() > 0)
+                var selectProdoct = context.Anbar.Where(c => c.Name == NameProdoct).LastOrDefault();
+                if(selectProdoct == null)
                 {
-
-                    dgStore.DataSource = context1.Store.ToList();
-                    dgStore.Columns[0].Visible = false;
-                    dgStore.Columns[1].HeaderText = "فروشگاه یا فرد";
-                    dgStore.Columns[1].Width = 100;
-                    dgStore.Columns[2].HeaderText = "تلفن";
-                    dgStore.Columns[3].HeaderText = "آدرس";
-                    //dgStore.Columns[4].Visible = false;
-                    //MessageBox.Show("anjam shod");
+                     return price = "خرید و فروش نشده";
+                    
                 }
-                dgStore.DefaultCellStyle.Font = new Font("Tahoma", 8);
-                dgStore.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 8);
+                int countProdoct =Convert.ToInt16( selectProdoct.Positiv + selectProdoct.Negativ);
+                price = (selectProdoct.Price / countProdoct).ToString();
             }
-
-        }// update kardane maghadire dgStore
+            else
+            {
+                price = "محصولی در انبار ثبت نشده";
+            }
+            return price;
+        }
         private void btnNew_Click(object sender, EventArgs e)
         {
             Add_Parent_Prodoct();
@@ -133,7 +155,7 @@ namespace Service
         }
 
 
-        public string[] prodoct() // gereftane maghadir baraye ezafe kardane prodoct
+        public string[] prodoct() // gereftane maghadir va baraye ezafe kardane prodoct
         {
             string[] prodoct1;
             if (dgProdoct.SelectedRows.Count < 1)
@@ -189,29 +211,6 @@ namespace Service
         {
             try
             {
-                //    string codeProdoct="";
-                //    if (dgProdoct.Rows.Count < 1)
-                //    {
-                //        return;
-                //    }
-                //    else
-                //    {
-                //        int x = dgProdoct.SelectedRows.Count;
-                //        switch (x)
-                //        {
-                //            case 0:
-                //                {
-                //                    return;
-                //                }
-                //            case 1:
-                //                {
-                //                    codeProdoct = dgProdoct.CurrentRow.Cells[3].Value.ToString();
-                //                    break;
-                //                }
-                //        }
-                //    }
-
-                //codeProdoct = dgProdoct.CurrentRow.Cells[3].Value.ToString();
                 string[] pro = prodoct();
                 if (pro[0] != "-1")
                 {
@@ -387,16 +386,6 @@ namespace Service
                 dateExpird.Text = "";
             }
         }
-
-        private void dateExpird_Leave(object sender, EventArgs e)
-        {
-            //if (dateExpird.Text == "")
-            //{
-            //    dateExpird.ForeColor = Color.DarkGray;
-            //    dateExpird.Text = "تاریخ انقضا";
-            //}
-        }
-
         private void txtCodeProdoct_Click(object sender, EventArgs e)
         {
             txtCodeProdoct.Text = "";
@@ -425,10 +414,6 @@ namespace Service
         private void popup_Closed(object sender, ToolStripDropDownClosedEventArgs e)
         {
             //S_Date.Text = PCalander.Pc_Date;
-        }
-
-        private void ucButton1_Load(object sender, EventArgs e)
-        {
         }
 
         private void ucAddStore_Load(object sender, EventArgs e)
@@ -481,8 +466,6 @@ namespace Service
             }
         }
 
-
-
         private void btnRefreshDgProdoct_Click(object sender, EventArgs e)
         {
             Refresh_dgProdoct();
@@ -531,12 +514,6 @@ namespace Service
             }
         }
 
-        private void ucEditButton_Load(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void btnEditProdoct_Click(object sender, EventArgs e)
         {
             if (dgProdoct.SelectedRows.Count == 1)
@@ -562,60 +539,7 @@ namespace Service
             {
                 MessageBox.Show("یک مورد را انتخاب کنید", "ویرایش", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            //frmLittelEnter.majhool[1]= dgProdoct.CurrentRow.Cells[0].Value.ToString(); 
-            //frmLittelEnter.majhool[2] = dgProdoct.CurrentRow.Cells[1].Value.ToString(); 
-            //frmLittelEnter.majhool[3] = dgProdoct.CurrentRow.Cells[2].Value.ToString();
-            //frmLittelEnter.majhool[4] = dgProdoct.CurrentRow.Cells[3].Value.ToString();
-            //frmLittelEnter.majhool[5] = dgProdoct.CurrentRow.Cells[4].Value.ToString();
-            //frmLittelEnter.majhool[6] = dgProdoct.CurrentRow.Cells[5].Value.ToString();
-
-            //frmLittelEnter.see = 2; // baz kardane form baraye virayesh mahsool
-            //frmLittelEnter.majhool1 = dgProdoct.CurrentRow.Cells[0].Value.ToString(); // dadane id meghdare entekhab shode
-            //frmLittelEnter.majhool2 = dgProdoct.CurrentRow.Cells[1].Value.ToString(); // dadane meghdare unit entekhab shode
-            //if (dgProdoct.CurrentRow.Cells[2].Value != null)
-            //{
-            //    frmLittelEnter.txtNameProdoct.Text = dgProdoct.CurrentRow.Cells[2].Value.ToString();
-            //}
-            //if (dgProdoct.CurrentRow.Cells[3].Value != null)
-            //{
-            //    frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[3].Value.ToString();
-            //}
-            //if (dgProdoct.CurrentRow.Cells[4].Value != null)
-            //{
-            //    frmLittelEnter.txtDetails.Text = dgProdoct.CurrentRow.Cells[4].Value.ToString();
-            //}
-            //if (dgProdoct.CurrentRow.Cells[5].Value != null)
-            //{
-            //    frmLittelEnter.txtCodeProdoct.Text = dgProdoct.CurrentRow.Cells[5].Value.ToString();
-            //}
-            //frmLittelEnter.ShowDialog();
-
         }
-        //public string id, name, code, unit, description, barcod, rfid;
-
-        //private void dgProdoct_DoubleClick(object sender, EventArgs e)
-        //{
-        //    id = dgProdoct.CurrentRow.Cells[0].Value.ToString();
-        //    unit = dgProdoct.CurrentRow.Cells[1].Value.ToString();
-        //    name = dgProdoct.CurrentRow.Cells[2].Value.ToString();
-        //    code = dgProdoct.CurrentRow.Cells[3].Value.ToString();
-        //    description = dgProdoct.CurrentRow.Cells[4].Value.ToString();
-        //    barcod = dgProdoct.CurrentRow.Cells[5].Value.ToString();
-        //    rfid = dgProdoct.CurrentRow.Cells[6].Value.ToString();
-        //}
-
-        //private void ucEditProdoct_Click(object sender, EventArgs e)
-        //{
-        //    ucEditProdoct.id = id;
-        //    ucEditProdoct.unit = unit;
-        //    ucEditProdoct.name = name;
-        //    ucEditProdoct.code = code;
-        //    ucEditProdoct.detail = description;
-        //    ucEditProdoct.barcode = barcod;
-        //    ucEditProdoct.rfid = rfid;
-        //    ucEditProdoct.show = "editProdoct";
-        //}
 
         private void btnEditStore_Click(object sender, EventArgs e)
         {

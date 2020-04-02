@@ -53,6 +53,7 @@
             this.txtPriceProdoct = new System.Windows.Forms.TextBox();
             this.btnSaveProdoct = new System.Windows.Forms.Button();
             this.groupProdoct = new System.Windows.Forms.GroupBox();
+            this.btnTest = new System.Windows.Forms.Button();
             this.btnRefreshDgProdoct = new System.Windows.Forms.Button();
             this.btnRefreshDgStore = new System.Windows.Forms.Button();
             this.btnDelStore = new System.Windows.Forms.Button();
@@ -70,7 +71,6 @@
             this.ucDelStore = new Papiloo.ucButton();
             this.ucAddStore = new Papiloo.ucButton();
             this.Date = new Papiloo.FDate();
-            this.btnTest = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
@@ -109,10 +109,14 @@
             this.comCase.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.comCase.FormattingEnabled = true;
             this.comCase.Items.AddRange(new object[] {
-            "رسید(خرید)",
-            "حواله(فروش)",
-            "حواله(مصرف)",
-            "رسید(تولید)"});
+            "رسید (خرید)",
+            "حواله (فروش)",
+            "حواله (مصرف)",
+            "رسید (تولید)",
+            "برگشت کالا (فروش)",
+            "برگشت کالا (مصرف)",
+            "حواله انبار (امانی)",
+            "برگشت کالا (امانی)"});
             this.comCase.Location = new System.Drawing.Point(729, 22);
             this.comCase.Name = "comCase";
             this.comCase.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -372,6 +376,18 @@
             this.groupProdoct.TabStop = false;
             this.groupProdoct.Text = "اضافه کردن کلا";
             // 
+            // btnTest
+            // 
+            this.btnTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTest.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTest.Location = new System.Drawing.Point(5, 239);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(84, 34);
+            this.btnTest.TabIndex = 102;
+            this.btnTest.Text = "گزارش انبار";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
+            // 
             // btnRefreshDgProdoct
             // 
             this.btnRefreshDgProdoct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshDgProdoct.BackgroundImage")));
@@ -469,7 +485,7 @@
             // 
             this.lblCodeRahgiri.AutoSize = true;
             this.lblCodeRahgiri.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodeRahgiri.Location = new System.Drawing.Point(182, 154);
+            this.lblCodeRahgiri.Location = new System.Drawing.Point(273, 25);
             this.lblCodeRahgiri.Name = "lblCodeRahgiri";
             this.lblCodeRahgiri.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCodeRahgiri.Size = new System.Drawing.Size(0, 18);
@@ -479,7 +495,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(252, 154);
+            this.label1.Location = new System.Drawing.Point(342, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 42;
@@ -556,18 +572,6 @@
             this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Date.Size = new System.Drawing.Size(141, 31);
             this.Date.TabIndex = 1;
-            // 
-            // btnTest
-            // 
-            this.btnTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTest.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTest.Location = new System.Drawing.Point(128, 220);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(42, 24);
-            this.btnTest.TabIndex = 102;
-            this.btnTest.Text = "test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // FormAnbar
             // 

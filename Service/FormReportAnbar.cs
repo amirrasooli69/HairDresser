@@ -25,18 +25,24 @@ namespace Service
                 dgSearch.Columns["Name"].HeaderText = "نام";
                 dgSearch.Columns["IdProdoct"].HeaderText = "شماره محصول";
                 dgSearch.Columns["IdParent"].HeaderText = "شماره سند";
+                dgSearch.Columns["IdParent"].SortMode = DataGridViewColumnSortMode.Programmatic;
                 //dgSearch.Columns[4].Visible = false;
                 dgSearch.Columns["Positiv"].HeaderText = "ورودی";
                 dgSearch.Columns["Negativ"].HeaderText = "خروجی";
                 dgSearch.Columns["Price"].HeaderText = "قیمت";
+                dgSearch.Columns["Price"].SortMode = DataGridViewColumnSortMode.Programmatic;
                 dgSearch.Columns["Description"].HeaderText = "توضیحات";
                 dgSearch.Columns["DateBuild"].HeaderText = "تاریخ تولید";
                 dgSearch.Columns["DateBuild"].Visible = false;
                 dgSearch.Columns["DateExpierd"].HeaderText = "تاریخ انقضا";
+                dgSearch.Columns["DateExpierd"].SortMode = DataGridViewColumnSortMode.Automatic;
                 dgSearch.Columns["DateExpierd"].DefaultCellStyle.Format = "0000/00/00";
                 dgSearch.Columns["CodeRahgiri"].HeaderText = "کد رهگیری";
+                dgSearch.Columns["CodeRahgiri"].SortMode = DataGridViewColumnSortMode.Programmatic;
                 dgSearch.Columns["IdStore"].HeaderText = "طرف حساب";
                 dgSearch.Columns["Id"].HeaderText = "شماره";
+                dgSearch.Columns["Id"].Visible = false;
+
                 //dgSearch.Columns[12].Visible = false;
                 //dgSearch.Columns[13].Visible = false;
                 //dgSearch.Columns[14].Visible = false;
@@ -98,7 +104,7 @@ namespace Service
             }
             return existing.ToString();
         } // mohasebe mahsool mande dar anbar hamrah ba darj dar datagridview
-        public void Select_Prodoct( ) // entekhab mahsool 
+        public void Select_Prodoct_Name() // entekhab mahsool 
         {
             //if (count > 1)
             //{
@@ -107,12 +113,28 @@ namespace Service
             if (getId != null)
             {
                 var getProdocts = context.Anbar.Where(c => c.IdProdoct == getId.Code).ToList();
-                dgSearch.DataSource = getProdocts;
+                //dgSearch.DataSource = getProdocts;
+                int dateFirst = int.Parse(DateFirst.Text.Replace("/", ""));
+                int dateEnd = int.Parse(DateEnd.Text.Replace("/", ""));
+                //for (int i = 0; i < getProdocts.Count; i++)
+                //{
+                var prodoct = getProdocts.Where(c => c.DateExpierd >= dateFirst && c.DateExpierd <= dateEnd).ToList();
+                dgSearch.DataSource = prodoct;
+                //}
             }
+            
+
+
             //}
+        }
+        public void Select_Prodoct_Date() // entekhab mahsool
+        {
+
         }
         private void FormReportAnbar_Load(object sender, EventArgs e)
         {
+            DateFirst.Text = Practical.Today_Date();
+            DateEnd.Text = Practical.Today_Date();
             StimulsoftEntities context = new StimulsoftEntities();
             if (context.AnbarProdoct.Count() > 0)
             {
@@ -128,14 +150,14 @@ namespace Service
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            Select_Prodoct();
+            Select_Prodoct_Name();
             Refresh_dgSearch();
             lblTotalExisting.Text = Calculate_DataGrideView();
         }
 
         private void comProdoct_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Select_Prodoct();
+            Select_Prodoct_Name();
             if (dgSearch.RowCount > 0)
             {
                 //if (count == 0)

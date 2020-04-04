@@ -34,7 +34,13 @@
             this.dgSearch = new System.Windows.Forms.DataGridView();
             this.comProdoct = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.DateFirst = new Papiloo.FDate();
+            this.DateEnd = new Papiloo.FDate();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -50,27 +56,26 @@
             // lblTotalExisting
             // 
             this.lblTotalExisting.AutoSize = true;
-            this.lblTotalExisting.Location = new System.Drawing.Point(939, 579);
+            this.lblTotalExisting.Location = new System.Drawing.Point(986, 579);
             this.lblTotalExisting.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalExisting.Name = "lblTotalExisting";
-            this.lblTotalExisting.Size = new System.Drawing.Size(44, 18);
+            this.lblTotalExisting.Size = new System.Drawing.Size(0, 18);
             this.lblTotalExisting.TabIndex = 9;
-            this.lblTotalExisting.Text = "label1";
             // 
             // dgSearch
             // 
             this.dgSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgSearch.Location = new System.Drawing.Point(19, 61);
+            this.dgSearch.Location = new System.Drawing.Point(7, 51);
             this.dgSearch.Margin = new System.Windows.Forms.Padding(4);
             this.dgSearch.Name = "dgSearch";
             this.dgSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgSearch.Size = new System.Drawing.Size(1151, 497);
+            this.dgSearch.Size = new System.Drawing.Size(1151, 504);
             this.dgSearch.TabIndex = 8;
             // 
             // comProdoct
             // 
             this.comProdoct.FormattingEnabled = true;
-            this.comProdoct.Location = new System.Drawing.Point(659, 17);
+            this.comProdoct.Location = new System.Drawing.Point(691, 6);
             this.comProdoct.Margin = new System.Windows.Forms.Padding(4);
             this.comProdoct.Name = "comProdoct";
             this.comProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -82,7 +87,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(19, 13);
+            this.btnSearch.Location = new System.Drawing.Point(10, 3);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(144, 32);
@@ -91,24 +96,79 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // DateFirst
+            // 
+            this.DateFirst.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.DateFirst.Location = new System.Drawing.Point(462, 4);
+            this.DateFirst.Name = "DateFirst";
+            this.DateFirst.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DateFirst.Size = new System.Drawing.Size(141, 31);
+            this.DateFirst.TabIndex = 11;
+            // 
+            // DateEnd
+            // 
+            this.DateEnd.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.DateEnd.Location = new System.Drawing.Point(228, 4);
+            this.DateEnd.Name = "DateEnd";
+            this.DateEnd.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.DateEnd.Size = new System.Drawing.Size(141, 31);
+            this.DateEnd.TabIndex = 12;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.DateFirst);
+            this.panel1.Controls.Add(this.DateEnd);
+            this.panel1.Controls.Add(this.comProdoct);
+            this.panel1.Location = new System.Drawing.Point(252, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(906, 41);
+            this.panel1.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(376, 9);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 18);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "تا تاریخ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(610, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 18);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "از تاریخ";
+            // 
             // FormReportAnbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1183, 612);
+            this.ClientSize = new System.Drawing.Size(1165, 612);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTotalExisting);
             this.Controls.Add(this.dgSearch);
-            this.Controls.Add(this.comProdoct);
-            this.Controls.Add(this.btnSearch);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1181, 651);
+            this.MinimumSize = new System.Drawing.Size(1181, 651);
             this.Name = "FormReportAnbar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "گزارش انبار";
             this.Load += new System.EventHandler(this.FormReportAnbar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,5 +180,10 @@
         private System.Windows.Forms.DataGridView dgSearch;
         private System.Windows.Forms.ComboBox comProdoct;
         private System.Windows.Forms.Button btnSearch;
+        private Papiloo.FDate DateFirst;
+        private Papiloo.FDate DateEnd;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

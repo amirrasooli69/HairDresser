@@ -25,7 +25,7 @@ namespace Service
                 dgSearch.Columns["Name"].HeaderText = "نام";
                 dgSearch.Columns["IdProdoct"].HeaderText = "شماره محصول";
                 dgSearch.Columns["IdParent"].HeaderText = "شماره سند";
-                dgSearch.Columns["IdParent"].SortMode = DataGridViewColumnSortMode.Programmatic;
+                dgSearch.Columns["IdParent"].SortMode = DataGridViewColumnSortMode.NotSortable;
                 //dgSearch.Columns[4].Visible = false;
                 dgSearch.Columns["Positiv"].HeaderText = "ورودی";
                 dgSearch.Columns["Negativ"].HeaderText = "خروجی";
@@ -150,6 +150,13 @@ namespace Service
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            int df= int.Parse(DateFirst.Text.Replace("/",""));
+            int de = int.Parse(DateEnd.Text.Replace("/", ""));
+            if(df>de)
+            {
+                MessageBox.Show("تاریخ های بازه زمانی را درست کنید", "تاریخ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             Select_Prodoct_Name();
             Refresh_dgSearch();
             lblTotalExisting.Text = Calculate_DataGrideView();

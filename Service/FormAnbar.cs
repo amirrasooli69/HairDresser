@@ -382,14 +382,15 @@ namespace Service
         {
             if (txtNameStore.Text == "")
             {
-                txtNameStore.ForeColor = Color.DarkGray;
-                txtNameStore.Text = "نام فروشگاه یا فرد";
+
+                //txtNameStore.ForeColor = Color.DarkGray;
+                //txtNameStore.Text = "طرف حساب";
             }
         }
 
         private void txtStoreProdoct_Enter(object sender, EventArgs e)
         {
-            if (txtNameStore.Text == "نام فروشگاه یا فرد")
+            if (txtNameStore.Text == "طرف حساب")
             {
                 txtNameStore.ForeColor = Color.Black;
                 txtNameStore.Text = "";
@@ -510,7 +511,7 @@ namespace Service
                 var selectStore = context.Store.Where(c => c.Name.Contains(txtNameStore.Text)).ToList();
                 dgStore.DataSource = selectStore;
             }
-            else
+            else if (txtNameStore.Text == "طرف حساب" || txtNameStore.Text == "")
             {
                 dgStore.DataSource = context.Store.ToList();
             }

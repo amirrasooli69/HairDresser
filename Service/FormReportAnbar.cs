@@ -152,7 +152,7 @@ namespace Service
         {
             int df= int.Parse(DateFirst.Text.Replace("/",""));
             int de = int.Parse(DateEnd.Text.Replace("/", ""));
-            if(df>de)
+            if(df>de) // tarikhe shoroo az payan bishtar nashavad
             {
                 MessageBox.Show("تاریخ های بازه زمانی را درست کنید", "تاریخ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

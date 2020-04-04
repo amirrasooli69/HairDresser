@@ -54,6 +54,8 @@
             this.txtPriceProdoct = new System.Windows.Forms.TextBox();
             this.btnSaveProdoct = new System.Windows.Forms.Button();
             this.groupProdoct = new System.Windows.Forms.GroupBox();
+            this.lblExistingProdoct = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.lblSugettion = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnTest = new System.Windows.Forms.Button();
@@ -75,8 +77,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolBtnAnbarReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblExistingProdoct = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
@@ -316,7 +316,7 @@
             this.txtNameStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtNameStore.Size = new System.Drawing.Size(245, 26);
             this.txtNameStore.TabIndex = 36;
-            this.txtNameStore.Text = "نام فروشگاه یا فرد";
+            this.txtNameStore.Text = "طرف حساب";
             this.txtNameStore.TextChanged += new System.EventHandler(this.txtNameStore_TextChanged);
             this.txtNameStore.Enter += new System.EventHandler(this.txtStoreProdoct_Enter);
             this.txtNameStore.Leave += new System.EventHandler(this.txtStoreProdoct_Leave);
@@ -396,6 +396,26 @@
             this.groupProdoct.TabIndex = 42;
             this.groupProdoct.TabStop = false;
             this.groupProdoct.Text = "اضافه کردن کلا";
+            // 
+            // lblExistingProdoct
+            // 
+            this.lblExistingProdoct.AutoSize = true;
+            this.lblExistingProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExistingProdoct.Location = new System.Drawing.Point(296, 196);
+            this.lblExistingProdoct.Name = "lblExistingProdoct";
+            this.lblExistingProdoct.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblExistingProdoct.Size = new System.Drawing.Size(0, 18);
+            this.lblExistingProdoct.TabIndex = 106;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(372, 196);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 18);
+            this.label7.TabIndex = 105;
+            this.label7.Text = "موجودی:";
             // 
             // lblSugettion
             // 
@@ -624,26 +644,6 @@
             this.toolBtnAnbarReport.Size = new System.Drawing.Size(96, 20);
             this.toolBtnAnbarReport.Text = "گزارش انبار";
             this.toolBtnAnbarReport.Click += new System.EventHandler(this.toolBtnAnbarReport_Click);
-            // 
-            // lblExistingProdoct
-            // 
-            this.lblExistingProdoct.AutoSize = true;
-            this.lblExistingProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExistingProdoct.Location = new System.Drawing.Point(296, 196);
-            this.lblExistingProdoct.Name = "lblExistingProdoct";
-            this.lblExistingProdoct.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblExistingProdoct.Size = new System.Drawing.Size(0, 18);
-            this.lblExistingProdoct.TabIndex = 106;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(372, 196);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 18);
-            this.label7.TabIndex = 105;
-            this.label7.Text = "موجودی:";
             // 
             // FormAnbar
             // 

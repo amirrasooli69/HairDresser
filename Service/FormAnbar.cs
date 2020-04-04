@@ -194,7 +194,7 @@ namespace Service
             dateExpird.Text = Practical.Today_Date();
             comCase.SelectedIndex = 0;
             //dgAnbar.Enabled = false;
-            //groupProdoct.Enabled = false;
+            groupProdoct.Enabled = false;
             //dateExpird.Text = Practical.Today_Date();
             dateExpird.ForeColor = Color.DarkGray;
             //dateExpird.Text = "تاریخ انقضا";
@@ -715,6 +715,7 @@ namespace Service
                 MessageBox.Show("محصولات ثبت شد", "ثبت", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dgAnbar.Rows.Clear();
                 btnSaveAllProdoct.Enabled = false;
+                groupProdoct.Enabled = false;
                 //}
             }
             catch (Exception ex)

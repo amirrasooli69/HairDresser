@@ -53,12 +53,9 @@
             this.label26 = new System.Windows.Forms.Label();
             this.txtAddressStore = new System.Windows.Forms.TextBox();
             this.dgSearch = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tooltxtSearch = new System.Windows.Forms.ToolStripTextBox();
             this.panelProdoct.SuspendLayout();
             this.panelStore.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelProdoct
@@ -78,9 +75,9 @@
             this.panelProdoct.Controls.Add(this.label31);
             this.panelProdoct.Controls.Add(this.label32);
             this.panelProdoct.Controls.Add(this.txtBarcode);
-            this.panelProdoct.Location = new System.Drawing.Point(0, 219);
+            this.panelProdoct.Location = new System.Drawing.Point(0, 129);
             this.panelProdoct.Name = "panelProdoct";
-            this.panelProdoct.Size = new System.Drawing.Size(292, 21);
+            this.panelProdoct.Size = new System.Drawing.Size(292, 103);
             this.panelProdoct.TabIndex = 14;
             // 
             // btnAddUnit
@@ -105,6 +102,7 @@
             this.btnDelUnit.TabIndex = 5;
             this.btnDelUnit.Text = "-";
             this.btnDelUnit.UseVisualStyleBackColor = false;
+            this.btnDelUnit.Click += new System.EventHandler(this.btnDelUnit_Click);
             // 
             // comUnit
             // 
@@ -238,9 +236,9 @@
             this.panelStore.Controls.Add(this.label25);
             this.panelStore.Controls.Add(this.label26);
             this.panelStore.Controls.Add(this.txtAddressStore);
-            this.panelStore.Location = new System.Drawing.Point(3, 26);
+            this.panelStore.Location = new System.Drawing.Point(0, 12);
             this.panelStore.Name = "panelStore";
-            this.panelStore.Size = new System.Drawing.Size(292, 187);
+            this.panelStore.Size = new System.Drawing.Size(292, 111);
             this.panelStore.TabIndex = 15;
             // 
             // btnSaveStore
@@ -320,26 +318,6 @@
             this.dgSearch.Visible = false;
             this.dgSearch.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSearch_CellDoubleClick);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tooltxtSearch});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(292, 27);
-            this.menuStrip1.TabIndex = 18;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // tooltxtSearch
-            // 
-            this.tooltxtSearch.Name = "tooltxtSearch";
-            this.tooltxtSearch.Size = new System.Drawing.Size(100, 23);
-            this.tooltxtSearch.Text = "جستجو";
-            this.tooltxtSearch.Enter += new System.EventHandler(this.tooltxtSearch_Enter);
-            this.tooltxtSearch.Leave += new System.EventHandler(this.tooltxtSearch_Leave);
-            this.tooltxtSearch.TextChanged += new System.EventHandler(this.tooltxtSearch_TextChanged);
-            // 
             // FormLittelEnter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,7 +326,6 @@
             this.Controls.Add(this.dgSearch);
             this.Controls.Add(this.panelProdoct);
             this.Controls.Add(this.panelStore);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormLittelEnter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -359,10 +336,7 @@
             this.panelStore.ResumeLayout(false);
             this.panelStore.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -392,7 +366,5 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtAddressStore;
         public System.Windows.Forms.DataGridView dgSearch;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripTextBox tooltxtSearch;
     }
 }

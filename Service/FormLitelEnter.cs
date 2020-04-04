@@ -30,7 +30,7 @@ namespace Service
                 dgSearch.Visible = false;
                 panelProdoct.Visible = true;
                 panelProdoct.Dock = DockStyle.Fill;
-                tooltxtSearch.Visible = false;
+                //tooltxtSearch.Visible = false;
                 Fill_ComUnit();
                 //----
                 comUnit.SelectedIndex = int.Parse(majhool[2]);
@@ -46,7 +46,7 @@ namespace Service
                 dgSearch.Visible = false;
                 panelProdoct.Visible = false;
                 panelStore.Dock = DockStyle.Fill;
-                tooltxtSearch.Visible = false;
+                //tooltxtSearch.Visible = false;
                 //-----
                 txtStoreName.Text = majhool[2];
                 txtTelStore.Text = majhool[3];
@@ -72,7 +72,7 @@ namespace Service
                 dgSearch.Columns[7].Visible = false;
                 dgSearch.Columns[8].Visible = false;
                 //------
-                tooltxtSearch.Visible = true;
+                //tooltxtSearch.Visible = true;
             }
         }
         private void Add_Prodoct()
@@ -158,39 +158,6 @@ namespace Service
 
         }
 
-        private void tooltxtSearch_Enter(object sender, EventArgs e)
-        {
-            if (tooltxtSearch.Text == "جستجو")
-            {
-                tooltxtSearch.Text = "";
-            }
-        }
-
-        private void tooltxtSearch_Leave(object sender, EventArgs e)
-        {
-            if (tooltxtSearch.Text == "")
-            {
-                tooltxtSearch.Text = "جستجو";
-            }
-        }
-
-        private void tooltxtSearch_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (context.AnbarProdoct.Count() > 0)
-                {
-                    var searchtProdoct = context.AnbarProdoct.Where(c => c.Name.StartsWith(tooltxtSearch.Text)).ToList();
-                    dgSearch.DataSource = searchtProdoct;
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void btnSaveStore_Click(object sender, EventArgs e)
         {
             if(majhool[0]=="editStore")
@@ -207,6 +174,17 @@ namespace Service
                 FormAnbar frmAnbar = new FormAnbar();
                 frmAnbar.Refresh_dgStore();
             }
+        }
+
+        private void btnDelUnit_Click(object sender, EventArgs e)
+        {
+            if(comUnit.Items.Count>0)
+            {
+                var selectUnit = context.Unit.Where(c => c.Name == comUnit.Text).FirstOrDefault();
+                context.Unit.Remove(selectUnit);
+                context.SaveChanges();
+            }
+            Fill_ComUnit();
         }
     }
 }

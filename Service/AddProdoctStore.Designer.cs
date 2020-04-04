@@ -73,7 +73,7 @@
             this.panelProdoct.Controls.Add(this.label31);
             this.panelProdoct.Controls.Add(this.label32);
             this.panelProdoct.Controls.Add(this.txtBarcode);
-            this.panelProdoct.Location = new System.Drawing.Point(0, 46);
+            this.panelProdoct.Location = new System.Drawing.Point(3, 103);
             this.panelProdoct.Name = "panelProdoct";
             this.panelProdoct.Size = new System.Drawing.Size(292, 201);
             this.panelProdoct.TabIndex = 15;
@@ -235,7 +235,7 @@
             this.panelStore.Controls.Add(this.label25);
             this.panelStore.Controls.Add(this.label26);
             this.panelStore.Controls.Add(this.txtAddressStore);
-            this.panelStore.Location = new System.Drawing.Point(0, 3);
+            this.panelStore.Location = new System.Drawing.Point(0, 22);
             this.panelStore.Name = "panelStore";
             this.panelStore.Size = new System.Drawing.Size(292, 75);
             this.panelStore.TabIndex = 16;

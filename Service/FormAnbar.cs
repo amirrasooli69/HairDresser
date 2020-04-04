@@ -158,7 +158,7 @@ namespace Service
                                 case 0: // reside khard (mojoodi ezafe shavad)
                                 case 3: // resid tolid (mojoodi ezafe shavad)
                                 case 4: // bargasgt kala foroosh (mojoodi ezafe shavad)
-                                case 5: // bargashte kala masraf (mojoodi kam shavad) **
+                                case 5: // bargashte kala masraf (mojoodi ezafe shavad)
                                 case 7: // bargasht kala amani (mojoodi ezafe shavad)
                                     {
                                         existing = existing + Int32.Parse(getProdocts[i].Positiv.ToString());
@@ -335,8 +335,8 @@ namespace Service
                 dgProdoct.Columns[4].HeaderText = "توضیحات";
                 dgProdoct.Columns[5].HeaderText = "بارکد";
                 dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
-                dgProdoct.Columns[7].Visible = false;
-                dgProdoct.Columns[8].Visible = false;
+                //dgProdoct.Columns[7].Visible = false;
+                //dgProdoct.Columns[8].Visible = false;
             }
         }
 
@@ -533,8 +533,8 @@ namespace Service
                 dgProdoct.Columns[4].HeaderText = "توضیحات";
                 dgProdoct.Columns[5].HeaderText = "بارکد";
                 dgProdoct.Columns[6].HeaderText = "تگ شناسایی";
-                dgProdoct.Columns[7].Visible = false;
-                dgProdoct.Columns[8].Visible = false;
+                //dgProdoct.Columns[7].Visible = false;
+                //dgProdoct.Columns[8].Visible = false;
             }
         }
 

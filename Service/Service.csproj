@@ -301,6 +301,12 @@
     <Compile Include="FormTest.Designer.cs">
       <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTurn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTurn.Designer.cs">
+      <DependentUpon>FormTurn.cs</DependentUpon>
+    </Compile>
     <Compile Include="IDGenerator.cs" />
     <Compile Include="log.cs">
       <SubType>Form</SubType>
@@ -481,6 +487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTurn.resx">
+      <DependentUpon>FormTurn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="log.resx">
       <DependentUpon>log.cs</DependentUpon>

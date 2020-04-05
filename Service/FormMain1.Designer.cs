@@ -43,6 +43,7 @@
             this.toolDate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolReportUser = new System.Windows.Forms.ToolStripMenuItem();
             this.toolReportProdoct = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolAnbar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBackupRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.toolRestore = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +54,6 @@
             this.toolAbuot = new System.Windows.Forms.ToolStripMenuItem();
             this.tooExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolAnbar = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.selectDate = new BPersianCalender.BPersianCalenderTextBox();
             this.lblCountSmsNoti = new System.Windows.Forms.Label();
@@ -65,6 +65,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.strlblVersion = new System.Windows.Forms.Label();
             this.timSms = new System.Windows.Forms.Timer(this.components);
+            this.toolTurn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -88,7 +89,8 @@
             this.toolManageToolStripMenuItem,
             this.toolAbuot,
             this.tooExitToolStripMenuItem,
-            this.delToolStripMenuItem});
+            this.delToolStripMenuItem,
+            this.toolTurn});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -172,23 +174,31 @@
             // toolDate
             // 
             this.toolDate.Name = "toolDate";
-            this.toolDate.Size = new System.Drawing.Size(152, 24);
+            this.toolDate.Size = new System.Drawing.Size(145, 24);
             this.toolDate.Text = "بازه زمانی";
             this.toolDate.Click += new System.EventHandler(this.toolDate_Click);
             // 
             // toolReportUser
             // 
             this.toolReportUser.Name = "toolReportUser";
-            this.toolReportUser.Size = new System.Drawing.Size(152, 24);
+            this.toolReportUser.Size = new System.Drawing.Size(145, 24);
             this.toolReportUser.Text = "مشتری";
             this.toolReportUser.Click += new System.EventHandler(this.toolReportUser_Click);
             // 
             // toolReportProdoct
             // 
             this.toolReportProdoct.Name = "toolReportProdoct";
-            this.toolReportProdoct.Size = new System.Drawing.Size(152, 24);
+            this.toolReportProdoct.Size = new System.Drawing.Size(145, 24);
             this.toolReportProdoct.Text = "محصول";
             this.toolReportProdoct.Click += new System.EventHandler(this.toolReportProdoct_Click);
+            // 
+            // toolAnbar
+            // 
+            this.toolAnbar.Image = ((System.Drawing.Image)(resources.GetObject("toolAnbar.Image")));
+            this.toolAnbar.Name = "toolAnbar";
+            this.toolAnbar.Size = new System.Drawing.Size(62, 23);
+            this.toolAnbar.Text = "انبار";
+            this.toolAnbar.Click += new System.EventHandler(this.toolAnbar_Click);
             // 
             // toolBackupRestore
             // 
@@ -269,14 +279,6 @@
             this.delToolStripMenuItem.Size = new System.Drawing.Size(42, 23);
             this.delToolStripMenuItem.Text = "del";
             this.delToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
-            // 
-            // toolAnbar
-            // 
-            this.toolAnbar.Image = ((System.Drawing.Image)(resources.GetObject("toolAnbar.Image")));
-            this.toolAnbar.Name = "toolAnbar";
-            this.toolAnbar.Size = new System.Drawing.Size(62, 23);
-            this.toolAnbar.Text = "انبار";
-            this.toolAnbar.Click += new System.EventHandler(this.toolAnbar_Click);
             // 
             // splitContainer1
             // 
@@ -420,6 +422,13 @@
             this.timSms.Interval = 60000;
             this.timSms.Tick += new System.EventHandler(this.timSms_Tick);
             // 
+            // toolTurn
+            // 
+            this.toolTurn.Name = "toolTurn";
+            this.toolTurn.Size = new System.Drawing.Size(90, 23);
+            this.toolTurn.Text = "نوبت دهی";
+            this.toolTurn.Click += new System.EventHandler(this.toolTurn_Click);
+            // 
             // FormMain1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,6 +498,7 @@
         private System.Windows.Forms.PictureBox picSmsNoti;
         private System.Windows.Forms.Timer timSms;
         private System.Windows.Forms.ToolStripMenuItem toolAnbar;
+        private System.Windows.Forms.ToolStripMenuItem toolTurn;
     }
 }
 

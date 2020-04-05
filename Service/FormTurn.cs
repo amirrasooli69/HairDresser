@@ -24,8 +24,8 @@ namespace Service
             listView1.FullRowSelect = true;
 
             //Add column header
-            listView1.Columns.Add("ProductName", 100);
-            listView1.Columns["Price"].Text = "قیمت";
+            listView1.Columns.Add("Time", 100);
+            //listView1.Columns["Price"].Text = "gheomat";
             listView1.Columns.Add("Price", 70);
             listView1.Columns.Add("Quantity", 70);
 
@@ -59,6 +59,39 @@ namespace Service
             quantity = listView1.SelectedItems[0].SubItems[2].Text;
 
             MessageBox.Show(productName + " , " + price + " , " + quantity);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            StimulsoftEntities context = new StimulsoftEntities();
+            ListViewItem item;
+            var category = context.ServicesPrice.ToList();
+            string[] a = new string[3];
+            for (int i= 0 ;i < category.Count; i++)
+            {
+                a[0] = category[i].ServiseName;
+                a[1] = category[i].ServiceKala;
+                a[2] = category[i].ServisKind;
+                //a[3] = category[i].ServicePrice.ToString();
+                item = new ListViewItem(a);
+                listView1.Items.Add(item);
+            }
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show(click.ToString());
+            listView1.Items.RemoveAt(click);
+            var list2 = listView1;
+
+           }
+        int click;
+        private void listView1_Click(object sender, EventArgs e)
+        {
+           click = listView1.SelectedItems[0].Index;
+
         }
     }
 }

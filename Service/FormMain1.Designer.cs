@@ -53,6 +53,7 @@
             this.toolAbuot = new System.Windows.Forms.ToolStripMenuItem();
             this.tooExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolAnbar = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.selectDate = new BPersianCalender.BPersianCalenderTextBox();
             this.lblCountSmsNoti = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.strlblVersion = new System.Windows.Forms.Label();
             this.timSms = new System.Windows.Forms.Timer(this.components);
-            this.toolAnbar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -83,12 +83,12 @@
             this.toolSearchToolStripMenuItem,
             this.toolSmsToolStripMenuItem,
             this.toolReports,
+            this.toolAnbar,
             this.toolBackupRestore,
             this.toolManageToolStripMenuItem,
             this.toolAbuot,
             this.tooExitToolStripMenuItem,
-            this.delToolStripMenuItem,
-            this.toolAnbar});
+            this.delToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -135,6 +135,7 @@
             // 
             // toolBirthDay
             // 
+            this.toolBirthDay.Image = ((System.Drawing.Image)(resources.GetObject("toolBirthDay.Image")));
             this.toolBirthDay.Name = "toolBirthDay";
             this.toolBirthDay.Size = new System.Drawing.Size(171, 24);
             this.toolBirthDay.Text = "تولد";
@@ -171,21 +172,21 @@
             // toolDate
             // 
             this.toolDate.Name = "toolDate";
-            this.toolDate.Size = new System.Drawing.Size(145, 24);
+            this.toolDate.Size = new System.Drawing.Size(152, 24);
             this.toolDate.Text = "بازه زمانی";
             this.toolDate.Click += new System.EventHandler(this.toolDate_Click);
             // 
             // toolReportUser
             // 
             this.toolReportUser.Name = "toolReportUser";
-            this.toolReportUser.Size = new System.Drawing.Size(145, 24);
+            this.toolReportUser.Size = new System.Drawing.Size(152, 24);
             this.toolReportUser.Text = "مشتری";
             this.toolReportUser.Click += new System.EventHandler(this.toolReportUser_Click);
             // 
             // toolReportProdoct
             // 
             this.toolReportProdoct.Name = "toolReportProdoct";
-            this.toolReportProdoct.Size = new System.Drawing.Size(145, 24);
+            this.toolReportProdoct.Size = new System.Drawing.Size(152, 24);
             this.toolReportProdoct.Text = "محصول";
             this.toolReportProdoct.Click += new System.EventHandler(this.toolReportProdoct_Click);
             // 
@@ -268,6 +269,14 @@
             this.delToolStripMenuItem.Size = new System.Drawing.Size(42, 23);
             this.delToolStripMenuItem.Text = "del";
             this.delToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
+            // 
+            // toolAnbar
+            // 
+            this.toolAnbar.Image = ((System.Drawing.Image)(resources.GetObject("toolAnbar.Image")));
+            this.toolAnbar.Name = "toolAnbar";
+            this.toolAnbar.Size = new System.Drawing.Size(62, 23);
+            this.toolAnbar.Text = "انبار";
+            this.toolAnbar.Click += new System.EventHandler(this.toolAnbar_Click);
             // 
             // splitContainer1
             // 
@@ -410,13 +419,6 @@
             this.timSms.Enabled = true;
             this.timSms.Interval = 60000;
             this.timSms.Tick += new System.EventHandler(this.timSms_Tick);
-            // 
-            // toolAnbar
-            // 
-            this.toolAnbar.Name = "toolAnbar";
-            this.toolAnbar.Size = new System.Drawing.Size(46, 23);
-            this.toolAnbar.Text = "انبار";
-            this.toolAnbar.Click += new System.EventHandler(this.toolAnbar_Click);
             // 
             // FormMain1
             // 

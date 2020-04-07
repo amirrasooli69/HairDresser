@@ -785,6 +785,7 @@ namespace Service
                         categorySelect = dgCategory.CurrentCell.Value.ToString();
                         Change_Category(categorySelect); // estefade az metode Change_Category baraye dorost kardane list mahsolat
                         //foodSelect = dgFood.CurrentCell.Value.ToString();
+
                         dgFood2.ClearSelection();
                         //dgColleauge.ClearSelection();
                         lblCategory.Text = dgCategory.CurrentCell.Value.ToString();
@@ -2614,10 +2615,16 @@ namespace Service
         }
         private void dgCategory_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            categorySelect = dgCategory.CurrentCell.Value.ToString();
-            Change_Category(categorySelect);
+            if (categorySelect.Count() > 0)
+            {
+                categorySelect = dgCategory.CurrentCell.Value.ToString();
+                Change_Category(categorySelect);
+            }
             //dgFood.ClearSelection();
-            prodoctSelect = dgFood.CurrentCell.Value.ToString();
+            if (prodoctSelect.Count() > 0)
+            {
+                prodoctSelect = dgFood.CurrentCell.Value.ToString();
+            }
             dgFood2.ClearSelection();
             //dgColleauge.ClearSelection();
             select_price();

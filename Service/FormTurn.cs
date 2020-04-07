@@ -17,81 +17,36 @@ namespace Service
             InitializeComponent();
         }
 
-        private void FormTurn_Load(object sender, EventArgs e)
+        public void Setting_DgShow()
         {
-            listView1.View = View.Details;
-            listView1.GridLines = true;
-            listView1.FullRowSelect = true;
+            
+            dgShow1.Columns.Add("Name", "نام");
+            dgShow1.Columns["Name"].Width = 150;
+            dgShow1.Columns.Add("Hour", "ساعت");
+            dgShow1.Columns.Add("Date", "تاریخ");
+            dgShow1.Rows.Add(23);
 
-            //Add column header
-            listView1.Columns.Add("Time", 100);
-            //listView1.Columns["Price"].Text = "gheomat";
-            listView1.Columns.Add("Price", 70);
-            listView1.Columns.Add("Quantity", 70);
-
-            //Add items in the listview
-            string[] arr = new string[4];
-            ListViewItem itm;
-
-            //Add first item
-            arr[0] = "product_1";
-            arr[1] = "100";
-            arr[2] = "10";
-            itm = new ListViewItem(arr);
-            listView1.Items.Add(itm);
-
-            //Add second item
-            arr[0] = "product_2";
-            arr[1] = "200";
-            arr[2] = "20";
-            itm = new ListViewItem(arr);
-            listView1.Items.Add(itm);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string productName = null;
-            string price = null;
-            string quantity = null;
-
-            productName = listView1.SelectedItems[0].SubItems[0].Text;
-            price = listView1.SelectedItems[0].SubItems[1].Text;
-            quantity = listView1.SelectedItems[0].SubItems[2].Text;
-
-            MessageBox.Show(productName + " , " + price + " , " + quantity);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            StimulsoftEntities context = new StimulsoftEntities();
-            ListViewItem item;
-            var category = context.ServicesPrice.ToList();
-            string[] a = new string[3];
-            for (int i= 0 ;i < category.Count; i++)
+            int row = 0, h = 0;
+            while (row < dgShow1.RowCount -1)
             {
-                a[0] = category[i].ServiseName;
-                a[1] = category[i].ServiceKala;
-                a[2] = category[i].ServisKind;
-                //a[3] = category[i].ServicePrice.ToString();
-                item = new ListViewItem(a);
-                listView1.Items.Add(item);
+                int m = 00;
+                dgShow1.Rows[row].DefaultCellStyle.BackColor = Color.LightGray;
+                dgShow1.Rows[row].Cells["Hour"].Value = h + ":" + m;
+                dgShow1.Rows[row].Cells["Date"].Value = Practical.Today_Date();
+                m = 30;
+                row++;
+                dgShow1.Rows[row].DefaultCellStyle.BackColor = Color.White;
+
+                dgShow1.Rows[row].Cells["Hour"].Value = h + ":" + m;
+                dgShow1.Rows[row].Cells["Date"].Value = Practical.Today_Date();
+                h++;
+                row++;              
             }
             
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void FormTurn_Load(object sender, EventArgs e)
         {
-
-            MessageBox.Show(click.ToString());
-            listView1.Items.RemoveAt(click);
-            var list2 = listView1;
-
-           }
-        int click;
-        private void listView1_Click(object sender, EventArgs e)
-        {
-           click = listView1.SelectedItems[0].Index;
-
+            Setting_DgShow();
         }
     }
 }

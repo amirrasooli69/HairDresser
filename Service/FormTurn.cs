@@ -81,13 +81,13 @@ namespace Service
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //dgShow1.Rows.Clear();
-            //dgShow2.Rows.Clear();
-            //textBox1.Text = pCalander1.T_Date;
-            //Setting_DgShow1(pCalander1.T_Date);
-            //Setting_DgShow2(pCalander1.T_Date);
-            
-            
+            dgShow1.Rows.Clear();
+            dgShow2.Rows.Clear();
+            textBox1.Text = pCalander1.T_Date;
+            Setting_DgShow1(pCalander1.T_Date);
+            Setting_DgShow2(pCalander1.T_Date);
+
+
         }
 
         private void pCalander1_Click(object sender, EventArgs e)

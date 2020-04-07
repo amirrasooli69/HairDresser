@@ -211,13 +211,7 @@ namespace Papiloo
             YearName--;
             lblYear.Text = YearName.ToString();
         }
-        private void dgCalander_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            FindCurrentCell();
-            PCalander_Click(sender, e);
-
-
-        }
+        
         public string GetSelectDate()
         {
             return this.T_Date;
@@ -312,19 +306,15 @@ namespace Papiloo
             }
         }
 
-        private void PCalander_MouseClick(object sender, MouseEventArgs e)
+        private void dgCalander_Click(object sender, EventArgs e)
         {
-
+            this.T_Date = lblShamsi.Text;
+            GetSelectDate();
         }
 
         private void PCalander_Click(object sender, EventArgs e)
         {
-            GetSelectDate();
-        }
 
-        private void lblShamsi_TextChanged(object sender, EventArgs e)
-        {
-            PCalander_Click(sender, e);
         }
 
         private void FindCurrentCell()

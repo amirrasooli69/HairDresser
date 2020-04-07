@@ -1,4 +1,6 @@
-﻿namespace Papiloo
+﻿using System;
+
+namespace Papiloo
 {
     partial class PCalander
     {
@@ -201,7 +203,6 @@
             this.lblShamsi.Size = new System.Drawing.Size(93, 22);
             this.lblShamsi.TabIndex = 10;
             this.lblShamsi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblShamsi.TextChanged += new System.EventHandler(this.lblShamsi_TextChanged);
             // 
             // btnPrevM
             // 
@@ -356,9 +357,9 @@
             this.dgCalander.Size = new System.Drawing.Size(320, 164);
             this.dgCalander.StandardTab = true;
             this.dgCalander.TabIndex = 23;
-            this.dgCalander.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCalander_CellClick);
             this.dgCalander.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCalander_CellDoubleClick);
             this.dgCalander.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCalander_CellEnter);
+            this.dgCalander.Click += new System.EventHandler(this.dgCalander_Click);
             // 
             // c0
             // 
@@ -430,7 +431,6 @@
             this.Size = new System.Drawing.Size(330, 228);
             this.Load += new System.EventHandler(this.frmCalander_Load);
             this.Click += new System.EventHandler(this.PCalander_Click);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PCalander_MouseClick);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCalander)).EndInit();

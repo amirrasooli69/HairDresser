@@ -201,6 +201,7 @@
             this.lblShamsi.Size = new System.Drawing.Size(93, 22);
             this.lblShamsi.TabIndex = 10;
             this.lblShamsi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblShamsi.TextChanged += new System.EventHandler(this.lblShamsi_TextChanged);
             // 
             // btnPrevM
             // 
@@ -426,8 +427,10 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "PCalander";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(334, 228);
+            this.Size = new System.Drawing.Size(330, 228);
             this.Load += new System.EventHandler(this.frmCalander_Load);
+            this.Click += new System.EventHandler(this.PCalander_Click);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PCalander_MouseClick);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCalander)).EndInit();

@@ -12,11 +12,12 @@ namespace Service
     using System;
     using System.Collections.Generic;
     
-    public partial class Turn
+    public partial class WorkColleague
     {
+        public Nullable<long> IdColleague { get; set; }
         public string Name { get; set; }
         public Nullable<long> Time { get; set; }
         public Nullable<long> Date { get; set; }
-        public long IdTurn { get; set; }
+        public long IdWorkColleague { get; set; }
     }
 }

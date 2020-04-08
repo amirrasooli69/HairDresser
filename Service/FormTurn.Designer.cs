@@ -42,7 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSetDate = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comColleague = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDateTurn = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -92,7 +92,7 @@
             "21",
             "22",
             "23"});
-            this.comHourTurn.Location = new System.Drawing.Point(72, 138);
+            this.comHourTurn.Location = new System.Drawing.Point(6, 137);
             this.comHourTurn.Name = "comHourTurn";
             this.comHourTurn.Size = new System.Drawing.Size(46, 26);
             this.comHourTurn.TabIndex = 3;
@@ -101,9 +101,9 @@
             // 
             this.comMinTurn.FormattingEnabled = true;
             this.comMinTurn.Items.AddRange(new object[] {
-            "0",
+            "00",
             "30"});
-            this.comMinTurn.Location = new System.Drawing.Point(6, 138);
+            this.comMinTurn.Location = new System.Drawing.Point(72, 137);
             this.comMinTurn.Name = "comMinTurn";
             this.comMinTurn.Size = new System.Drawing.Size(46, 26);
             this.comMinTurn.TabIndex = 4;
@@ -141,7 +141,7 @@
             this.groupTurn.Controls.Add(this.label6);
             this.groupTurn.Controls.Add(this.txtDateTurn);
             this.groupTurn.Controls.Add(this.label5);
-            this.groupTurn.Controls.Add(this.comboBox3);
+            this.groupTurn.Controls.Add(this.comColleague);
             this.groupTurn.Controls.Add(this.label4);
             this.groupTurn.Controls.Add(this.txtPhoneNumberTurn);
             this.groupTurn.Controls.Add(this.label3);
@@ -224,16 +224,13 @@
             this.btnSetDate.UseVisualStyleBackColor = true;
             this.btnSetDate.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comboBox3
+            // comColleague
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "00",
-            "30"});
-            this.comboBox3.Location = new System.Drawing.Point(6, 177);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(215, 26);
-            this.comboBox3.TabIndex = 13;
+            this.comColleague.FormattingEnabled = true;
+            this.comColleague.Location = new System.Drawing.Point(6, 177);
+            this.comColleague.Name = "comColleague";
+            this.comColleague.Size = new System.Drawing.Size(215, 26);
+            this.comColleague.TabIndex = 13;
             // 
             // label5
             // 
@@ -338,7 +335,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDateTurn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comColleague;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl1;
     }

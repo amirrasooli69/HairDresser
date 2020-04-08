@@ -29,13 +29,14 @@ namespace Service
             dgShow1.Rows.Add(23);
 
             int row = 0, h = 0;
+
             while (row < dgShow1.RowCount - 1)
             {
-                int m = 00;
+                string m = "00";
                 dgShow1.Rows[row].DefaultCellStyle.BackColor = Color.LightGray;
                 dgShow1.Rows[row].Cells["Time"].Value = h + ":" + m;
                 dgShow1.Rows[row].Cells["Date"].Value = Date;
-                m = 30;
+                m = "30";
                 row++;
                 dgShow1.Rows[row].DefaultCellStyle.BackColor = Color.White;
 
@@ -60,11 +61,11 @@ namespace Service
             int row = 0, h = 12;
             while (row < dgShow2.RowCount - 1)
             {
-                int m = 00;
+                string m = "00";
                 dgShow2.Rows[row].DefaultCellStyle.BackColor = Color.LightGray;
                 dgShow2.Rows[row].Cells["Time"].Value = h + ":" + m;
                 dgShow2.Rows[row].Cells["Date"].Value = Date;
-                m = 30;
+                m = "30";
                 row++;
                 dgShow2.Rows[row].DefaultCellStyle.BackColor = Color.White;
 
@@ -77,9 +78,9 @@ namespace Service
         }
         public void DB_Add_Turn_Person()
         {
+            TurnEntities context = new TurnEntities();
             try
             {
-                TurnEntities context = new TurnEntities();
                 Turn turn = new Turn();
                 turn.Name = txtNameTurn.Text;
                 if (txtDateTurn.Text == "")
@@ -87,8 +88,26 @@ namespace Service
                 turn.Date = Int32.Parse(txtDateTurn.Text.Replace("/", ""));
                 turn.Time = Int32.Parse(comHourTurn.Text + comMinTurn.Text);
                 context.Turn.Add(turn);
+                //context.SaveChanges();
+                lbl1.Text = "add person";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(" /n مشکل ثبت نوبت" + ex.Message, "نوبت دهی", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            //------DB_ADD_WorkColleague
+            try
+            {
+                WorkColleague workColleague = new WorkColleague();
+                workColleague.Name = comColleague.Text;
+                if (txtDateTurn.Text == "")
+                    txtDateTurn.Text = Practical.Today_Date();
+                workColleague.Date = Int32.Parse(txtDateTurn.Text.Replace("/", ""));
+                workColleague.Time = Int32.Parse(comHourTurn.Text + comMinTurn.Text);
+                workColleague.IdColleague = comColleague.SelectedIndex;
+                context.WorkColleague.Add(workColleague);
                 context.SaveChanges();
-                lbl1.Text = "add db";
+                lbl2.Text = "add coll";
             }
             catch (Exception ex)
             {
@@ -131,10 +150,16 @@ namespace Service
         {
             Setting_DgShow1(Practical.Today_Date());
             Setting_DgShow2(Practical.Today_Date());
-            comHourTurn.Text = "11";
-            comMinTurn.Text = "0";
+            comHourTurn.Text = "1";
+            comMinTurn.Text = "00";
             txtDateTurn.Text = Practical.Today_Date();
             pCalander1.dontClose = false;
+            //------
+            {
+                StimulsoftEntities context = new StimulsoftEntities();
+                comColleague.DataSource = context.Colleague.ToList();
+                comColleague.DisplayMember = "Name";
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

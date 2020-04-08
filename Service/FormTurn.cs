@@ -87,7 +87,7 @@ namespace Service
         {
 
 
-            textBox1.Text = pCalander1.T_Date;
+            txtNameTurn.Text = pCalander1.T_Date;
             Setting_DgShow1(pCalander1.T_Date);
             Setting_DgShow2(pCalander1.T_Date);
 
@@ -96,7 +96,7 @@ namespace Service
 
         private void pCalander1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = pCalander1.GetSelectDate();
+            txtNameTurn.Text = pCalander1.GetSelectDate();
         }
     }
 }

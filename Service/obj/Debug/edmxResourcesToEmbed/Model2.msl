@@ -7,7 +7,7 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Time" ColumnName="Time" />
           <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="IdTurn" ColumnName="Id" />
+          <ScalarProperty Name="IdTurn" ColumnName="IdTurn" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

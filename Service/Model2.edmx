@@ -7,12 +7,12 @@
       <Schema Namespace="TurnModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Users\Amir\Desktop\Develop\C#\HairDresser\Service\bin\Debug\Turn.dll" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Turn">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdTurn" />
           </Key>
           <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Time" Type="integer" />
           <Property Name="Date" Type="integer" />
-          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTurn" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="WorkColleague">
           <Key>
@@ -68,7 +68,7 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Time" ColumnName="Time" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="IdTurn" ColumnName="Id" />
+                <ScalarProperty Name="IdTurn" ColumnName="IdTurn" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

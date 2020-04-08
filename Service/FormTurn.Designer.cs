@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTurnPerson = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dgShow1 = new System.Windows.Forms.DataGridView();
@@ -41,21 +41,21 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSetDate = new System.Windows.Forms.Button();
             this.pCalander1 = new Papiloo.PCalander();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow2)).BeginInit();
             this.groupTurn.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnTurnPerson
             // 
-            this.button1.Location = new System.Drawing.Point(6, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "ثبت";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTurnPerson.Location = new System.Drawing.Point(6, 176);
+            this.btnTurnPerson.Name = "btnTurnPerson";
+            this.btnTurnPerson.Size = new System.Drawing.Size(100, 30);
+            this.btnTurnPerson.TabIndex = 2;
+            this.btnTurnPerson.Text = "ثبت نوبت";
+            this.btnTurnPerson.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -95,65 +95,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "00",
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50",
-            "51",
-            "52",
-            "53",
-            "54",
-            "55",
-            "56",
-            "57",
-            "58",
-            "59"});
+            "30"});
             this.comboBox2.Location = new System.Drawing.Point(84, 144);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(57, 26);
@@ -195,12 +137,12 @@
             this.groupTurn.Controls.Add(this.textBox1);
             this.groupTurn.Controls.Add(this.comboBox1);
             this.groupTurn.Controls.Add(this.comboBox2);
-            this.groupTurn.Controls.Add(this.button1);
+            this.groupTurn.Controls.Add(this.btnTurnPerson);
             this.groupTurn.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.groupTurn.Location = new System.Drawing.Point(812, 5);
+            this.groupTurn.Location = new System.Drawing.Point(814, 5);
             this.groupTurn.Name = "groupTurn";
             this.groupTurn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupTurn.Size = new System.Drawing.Size(277, 216);
+            this.groupTurn.Size = new System.Drawing.Size(283, 216);
             this.groupTurn.TabIndex = 8;
             this.groupTurn.TabStop = false;
             this.groupTurn.Text = "نوبت";
@@ -257,15 +199,16 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "نام";
             // 
-            // button2
+            // btnSetDate
             // 
-            this.button2.Location = new System.Drawing.Point(818, 463);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 30);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "ثبت";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSetDate.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnSetDate.Location = new System.Drawing.Point(818, 463);
+            this.btnSetDate.Name = "btnSetDate";
+            this.btnSetDate.Size = new System.Drawing.Size(100, 30);
+            this.btnSetDate.TabIndex = 10;
+            this.btnSetDate.Text = "تاریخ ";
+            this.btnSetDate.UseVisualStyleBackColor = true;
+            this.btnSetDate.Click += new System.EventHandler(this.button2_Click);
             // 
             // pCalander1
             // 
@@ -277,7 +220,7 @@
             this.pCalander1.Name = "pCalander1";
             this.pCalander1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.pCalander1.Size = new System.Drawing.Size(330, 228);
-            this.pCalander1.T_Date = "1399/01/19";
+            this.pCalander1.T_Date = "1399/01/20";
             this.pCalander1.TabIndex = 9;
             this.pCalander1.Click += new System.EventHandler(this.pCalander1_Click);
             // 
@@ -286,7 +229,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1139, 595);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSetDate);
             this.Controls.Add(this.pCalander1);
             this.Controls.Add(this.groupTurn);
             this.Controls.Add(this.dgShow2);
@@ -306,7 +249,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTurnPerson;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DataGridView dgShow1;
@@ -320,6 +263,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Papiloo.PCalander pCalander1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSetDate;
     }
 }

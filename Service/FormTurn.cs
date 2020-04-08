@@ -19,7 +19,9 @@ namespace Service
 
         public void Setting_DgShow1(string Date)
         {
-            
+            dgShow1.Rows.Clear();
+            dgShow1.Columns.Clear();
+            //-------
             dgShow1.Columns.Add("Name", "نام");
             dgShow1.Columns["Name"].Width = 150;
             dgShow1.Columns.Add("Hour", "ساعت");
@@ -46,7 +48,9 @@ namespace Service
         }
         public void Setting_DgShow2(string Date)
         {
-
+            dgShow2.Rows.Clear();
+            dgShow2.Columns.Clear();
+            //------
             dgShow2.Columns.Add("Name", "نام");
             dgShow2.Columns["Name"].Width = 150;
             dgShow2.Columns.Add("Hour", "ساعت");
@@ -81,8 +85,8 @@ namespace Service
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dgShow1.Rows.Clear();
-            dgShow2.Rows.Clear();
+
+
             textBox1.Text = pCalander1.T_Date;
             Setting_DgShow1(pCalander1.T_Date);
             Setting_DgShow2(pCalander1.T_Date);

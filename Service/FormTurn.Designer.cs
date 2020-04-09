@@ -35,6 +35,12 @@
             this.txtNameTurn = new System.Windows.Forms.TextBox();
             this.dgShow2 = new System.Windows.Forms.DataGridView();
             this.groupTurn = new System.Windows.Forms.GroupBox();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDateTurn = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comColleague = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPhoneNumberTurn = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,12 +48,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSetDate = new System.Windows.Forms.Button();
-            this.comColleague = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDateTurn = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.lbl2 = new System.Windows.Forms.Label();
             this.pCalander1 = new Papiloo.PCalander();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow2)).BeginInit();
@@ -112,10 +112,13 @@
             // 
             this.dgShow1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgShow1.Location = new System.Drawing.Point(412, 8);
+            this.dgShow1.MultiSelect = false;
             this.dgShow1.Name = "dgShow1";
             this.dgShow1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgShow1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgShow1.Size = new System.Drawing.Size(394, 575);
             this.dgShow1.TabIndex = 5;
+            this.dgShow1.Enter += new System.EventHandler(this.dgShow1_Enter);
             // 
             // txtNameTurn
             // 
@@ -129,10 +132,13 @@
             // 
             this.dgShow2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgShow2.Location = new System.Drawing.Point(12, 8);
+            this.dgShow2.MultiSelect = false;
             this.dgShow2.Name = "dgShow2";
             this.dgShow2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgShow2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgShow2.Size = new System.Drawing.Size(394, 575);
             this.dgShow2.TabIndex = 7;
+            this.dgShow2.Enter += new System.EventHandler(this.dgShow2_Enter);
             // 
             // groupTurn
             // 
@@ -160,6 +166,60 @@
             this.groupTurn.TabIndex = 8;
             this.groupTurn.TabStop = false;
             this.groupTurn.Text = "همکار";
+            // 
+            // lbl2
+            // 
+            this.lbl2.AutoSize = true;
+            this.lbl2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lbl2.Location = new System.Drawing.Point(273, 228);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(44, 18);
+            this.lbl2.TabIndex = 18;
+            this.lbl2.Text = "همکار";
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(154, 228);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(25, 18);
+            this.lbl1.TabIndex = 17;
+            this.lbl1.Text = "نام";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label6.Location = new System.Drawing.Point(238, 140);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 18);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "تاریخ و زمان";
+            // 
+            // txtDateTurn
+            // 
+            this.txtDateTurn.Location = new System.Drawing.Point(124, 137);
+            this.txtDateTurn.Name = "txtDateTurn";
+            this.txtDateTurn.Size = new System.Drawing.Size(97, 26);
+            this.txtDateTurn.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label5.Location = new System.Drawing.Point(272, 180);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 18);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "همکار";
+            // 
+            // comColleague
+            // 
+            this.comColleague.FormattingEnabled = true;
+            this.comColleague.Location = new System.Drawing.Point(6, 177);
+            this.comColleague.Name = "comColleague";
+            this.comColleague.Size = new System.Drawing.Size(215, 26);
+            this.comColleague.TabIndex = 13;
             // 
             // label4
             // 
@@ -224,60 +284,6 @@
             this.btnSetDate.UseVisualStyleBackColor = true;
             this.btnSetDate.Click += new System.EventHandler(this.button2_Click);
             // 
-            // comColleague
-            // 
-            this.comColleague.FormattingEnabled = true;
-            this.comColleague.Location = new System.Drawing.Point(6, 177);
-            this.comColleague.Name = "comColleague";
-            this.comColleague.Size = new System.Drawing.Size(215, 26);
-            this.comColleague.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.Location = new System.Drawing.Point(272, 180);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 18);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "همکار";
-            // 
-            // txtDateTurn
-            // 
-            this.txtDateTurn.Location = new System.Drawing.Point(124, 137);
-            this.txtDateTurn.Name = "txtDateTurn";
-            this.txtDateTurn.Size = new System.Drawing.Size(97, 26);
-            this.txtDateTurn.TabIndex = 15;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label6.Location = new System.Drawing.Point(238, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 18);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "تاریخ و زمان";
-            // 
-            // lbl1
-            // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(154, 228);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(25, 18);
-            this.lbl1.TabIndex = 17;
-            this.lbl1.Text = "نام";
-            // 
-            // lbl2
-            // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lbl2.Location = new System.Drawing.Point(273, 228);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(44, 18);
-            this.lbl2.TabIndex = 18;
-            this.lbl2.Text = "همکار";
-            // 
             // pCalander1
             // 
             this.pCalander1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -288,7 +294,7 @@
             this.pCalander1.Name = "pCalander1";
             this.pCalander1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.pCalander1.Size = new System.Drawing.Size(330, 228);
-            this.pCalander1.T_Date = "1399/01/20";
+            this.pCalander1.T_Date = "1399/01/21";
             this.pCalander1.TabIndex = 9;
             this.pCalander1.Click += new System.EventHandler(this.pCalander1_Click);
             // 

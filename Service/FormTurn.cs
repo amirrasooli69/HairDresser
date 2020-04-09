@@ -150,6 +150,8 @@ namespace Service
         {
             Setting_DgShow1(Practical.Today_Date());
             Setting_DgShow2(Practical.Today_Date());
+            dgShow1.ClearSelection();
+            dgShow2.ClearSelection();
             comHourTurn.Text = "1";
             comMinTurn.Text = "00";
             txtDateTurn.Text = Practical.Today_Date();
@@ -181,6 +183,16 @@ namespace Service
         {
             DB_Add_Turn_Person();
             DG_Add_Turn_Person();
+        }
+
+        private void dgShow1_Enter(object sender, EventArgs e)
+        {
+            dgShow2.ClearSelection();
+        }
+
+        private void dgShow2_Enter(object sender, EventArgs e)
+        {
+            dgShow1.ClearSelection();
         }
     }
 }

@@ -116,9 +116,9 @@ namespace Service
         }
         public void DG_Add_Turn_Person(string Name,string Time)
         {
-            //string time = comHourTurn.Text + ":" + comMinTurn.Text;
+            string[] h = Time.Split(':');
 
-            if (int.Parse(comHourTurn.Text) >= 12)
+            if (int.Parse(h[0]) >= 12)
             {
                 int i = 0;
                 while (i < 24)
@@ -131,7 +131,7 @@ namespace Service
                     }
                     i++;
                 }
-            } else if(int.Parse(comHourTurn.Text)>=0 )
+            } else if(int.Parse(h[0])>=0 )
             {
                 int i = 0;
                 while (i < 24)
@@ -170,7 +170,8 @@ namespace Service
             txtDateTurn.Text = pCalander1.T_Date;
             Setting_DgShow1(pCalander1.T_Date);
             Setting_DgShow2(pCalander1.T_Date);
-
+            dgShow1.ClearSelection();
+            dgShow2.ClearSelection();
             TurnEntities context = new TurnEntities();
             int date = int.Parse(txtDateTurn.Text.Replace("/", ""));
             var selectDate = context.Turn.Where(c => c.Date == date).ToList();
@@ -179,6 +180,8 @@ namespace Service
                 string time = selectDate[i].Time.ToString();
                 if (time == "0")
                     time = "000";
+                if (time == "30")
+                    time = "030";
                 time = time.Insert(time.Length - 2, ":");
                 DG_Add_Turn_Person(selectDate[i].Name, time);
             }

@@ -114,18 +114,18 @@ namespace Service
                 MessageBox.Show(" /n مشکل ثبت نوبت" + ex.Message, "نوبت دهی", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        public void DG_Add_Turn_Person()
+        public void DG_Add_Turn_Person(string Name,string Time)
         {
-            string time = comHourTurn.Text + ":" + comMinTurn.Text;
+            //string time = comHourTurn.Text + ":" + comMinTurn.Text;
 
             if (int.Parse(comHourTurn.Text) >= 12)
             {
                 int i = 0;
                 while (i < 24)
                 {
-                    if (dgShow2.Rows[i].Cells["Time"].Value.ToString() == time)
+                    if (dgShow2.Rows[i].Cells["Time"].Value.ToString() == Time)
                     {
-                        dgShow2.Rows[i].Cells["Name"].Value = txtNameTurn.Text;
+                        dgShow2.Rows[i].Cells["Name"].Value = Name;
                         lbl2.Text = "add dg";
                         break;
                     }
@@ -136,9 +136,9 @@ namespace Service
                 int i = 0;
                 while (i < 24)
                 {
-                    if (dgShow1.Rows[i].Cells["Time"].Value.ToString() == time)
+                    if (dgShow1.Rows[i].Cells["Time"].Value.ToString() == Time)
                     {
-                        dgShow1.Rows[i].Cells["Name"].Value = txtNameTurn.Text;
+                        dgShow1.Rows[i].Cells["Name"].Value = Name;
                         lbl2.Text = "add dg";
                         break;
                     }
@@ -171,6 +171,18 @@ namespace Service
             Setting_DgShow1(pCalander1.T_Date);
             Setting_DgShow2(pCalander1.T_Date);
 
+            TurnEntities context = new TurnEntities();
+            int date = int.Parse(txtDateTurn.Text.Replace("/", ""));
+            var selectDate = context.Turn.Where(c => c.Date == date).ToList();
+            for(int i=0;i<selectDate.Count();i++)
+            {
+                string time = selectDate[i].Time.ToString();
+                if (time == "0")
+                    time = "000";
+                time = time.Insert(time.Length - 2, ":");
+                DG_Add_Turn_Person(selectDate[i].Name, time);
+            }
+
 
         }
 
@@ -182,7 +194,8 @@ namespace Service
         private void btnTurnPerson_Click(object sender, EventArgs e)
         {
             DB_Add_Turn_Person();
-            DG_Add_Turn_Person();
+            
+            DG_Add_Turn_Person(txtNameTurn.Text, comHourTurn.Text + ":" + comMinTurn.Text);
         }
 
         private void dgShow1_Enter(object sender, EventArgs e)

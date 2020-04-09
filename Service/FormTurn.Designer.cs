@@ -31,7 +31,6 @@
             this.btnTurnPerson = new System.Windows.Forms.Button();
             this.comHourTurn = new System.Windows.Forms.ComboBox();
             this.comMinTurn = new System.Windows.Forms.ComboBox();
-            this.dgShow1 = new System.Windows.Forms.DataGridView();
             this.txtNameTurn = new System.Windows.Forms.TextBox();
             this.dgShow2 = new System.Windows.Forms.DataGridView();
             this.groupTurn = new System.Windows.Forms.GroupBox();
@@ -48,10 +47,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSetDate = new System.Windows.Forms.Button();
+            this.dgShow1 = new System.Windows.Forms.DataGridView();
             this.pCalander1 = new Papiloo.PCalander();
-            ((System.ComponentModel.ISupportInitialize)(this.dgShow1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow2)).BeginInit();
             this.groupTurn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgShow1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnTurnPerson
@@ -109,19 +109,6 @@
             this.comMinTurn.Size = new System.Drawing.Size(46, 26);
             this.comMinTurn.TabIndex = 4;
             // 
-            // dgShow1
-            // 
-            this.dgShow1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgShow1.Location = new System.Drawing.Point(412, 8);
-            this.dgShow1.MultiSelect = false;
-            this.dgShow1.Name = "dgShow1";
-            this.dgShow1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgShow1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgShow1.Size = new System.Drawing.Size(394, 575);
-            this.dgShow1.TabIndex = 5;
-            this.dgShow1.Click += new System.EventHandler(this.dgShow1_Click);
-            this.dgShow1.Enter += new System.EventHandler(this.dgShow1_Enter);
-            // 
             // txtNameTurn
             // 
             this.txtNameTurn.Location = new System.Drawing.Point(6, 23);
@@ -132,13 +119,15 @@
             // 
             // dgShow2
             // 
+            this.dgShow2.AllowUserToDeleteRows = false;
             this.dgShow2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgShow2.Location = new System.Drawing.Point(12, 8);
             this.dgShow2.MultiSelect = false;
             this.dgShow2.Name = "dgShow2";
+            this.dgShow2.ReadOnly = true;
             this.dgShow2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgShow2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgShow2.Size = new System.Drawing.Size(394, 575);
+            this.dgShow2.Size = new System.Drawing.Size(394, 628);
             this.dgShow2.TabIndex = 7;
             this.dgShow2.Click += new System.EventHandler(this.dgShow2_Click);
             this.dgShow2.Enter += new System.EventHandler(this.dgShow2_Enter);
@@ -287,6 +276,21 @@
             this.btnSetDate.UseVisualStyleBackColor = true;
             this.btnSetDate.Click += new System.EventHandler(this.button2_Click);
             // 
+            // dgShow1
+            // 
+            this.dgShow1.AllowUserToDeleteRows = false;
+            this.dgShow1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgShow1.Location = new System.Drawing.Point(412, 8);
+            this.dgShow1.MultiSelect = false;
+            this.dgShow1.Name = "dgShow1";
+            this.dgShow1.ReadOnly = true;
+            this.dgShow1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgShow1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgShow1.Size = new System.Drawing.Size(394, 628);
+            this.dgShow1.TabIndex = 5;
+            this.dgShow1.Click += new System.EventHandler(this.dgShow1_Click);
+            this.dgShow1.Enter += new System.EventHandler(this.dgShow1_Enter);
+            // 
             // pCalander1
             // 
             this.pCalander1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -297,7 +301,7 @@
             this.pCalander1.Name = "pCalander1";
             this.pCalander1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.pCalander1.Size = new System.Drawing.Size(330, 228);
-            this.pCalander1.T_Date = "1399/01/21";
+            this.pCalander1.T_Date = "1399/01/22";
             this.pCalander1.TabIndex = 9;
             this.pCalander1.Click += new System.EventHandler(this.pCalander1_Click);
             // 
@@ -305,7 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1149, 595);
+            this.ClientSize = new System.Drawing.Size(1149, 646);
             this.Controls.Add(this.btnSetDate);
             this.Controls.Add(this.pCalander1);
             this.Controls.Add(this.groupTurn);
@@ -317,10 +321,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "نوبت دهی";
             this.Load += new System.EventHandler(this.FormTurn_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgShow1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow2)).EndInit();
             this.groupTurn.ResumeLayout(false);
             this.groupTurn.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgShow1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -329,7 +333,6 @@
         private System.Windows.Forms.Button btnTurnPerson;
         private System.Windows.Forms.ComboBox comHourTurn;
         private System.Windows.Forms.ComboBox comMinTurn;
-        private System.Windows.Forms.DataGridView dgShow1;
         private System.Windows.Forms.TextBox txtNameTurn;
         private System.Windows.Forms.DataGridView dgShow2;
         private System.Windows.Forms.GroupBox groupTurn;
@@ -347,5 +350,6 @@
         private System.Windows.Forms.ComboBox comColleague;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.DataGridView dgShow1;
     }
 }

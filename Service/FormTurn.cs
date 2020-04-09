@@ -22,10 +22,17 @@ namespace Service
             dgShow1.Rows.Clear();
             dgShow1.Columns.Clear();
             //-------
+            dgShow1.RowTemplate.Height = 25;
             dgShow1.Columns.Add("Name", "نام");
+            dgShow1.Columns["Name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             dgShow1.Columns["Name"].Width = 150;
             dgShow1.Columns.Add("Time", "ساعت");
+            dgShow1.Columns["Time"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             dgShow1.Columns.Add("Date", "تاریخ");
+            dgShow1.Columns["Date"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             dgShow1.Rows.Add(23);
 
             int row = 0, h = 0;
@@ -51,11 +58,19 @@ namespace Service
         {
             dgShow2.Rows.Clear();
             dgShow2.Columns.Clear();
+            dgShow2.RowTemplate.Height = 25;
+            
             //------
+            
             dgShow2.Columns.Add("Name", "نام");
             dgShow2.Columns["Name"].Width = 150;
+            dgShow2.Columns["Name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgShow2.Columns.Add("Time", "ساعت");
+            dgShow2.Columns["Time"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             dgShow2.Columns.Add("Date", "تاریخ");
+            dgShow2.Columns["Date"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             dgShow2.Rows.Add(23);
 
             int row = 0, h = 12;
@@ -114,6 +129,7 @@ namespace Service
                 MessageBox.Show(" /n مشکل ثبت نوبت" + ex.Message, "نوبت دهی", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         public void DG_Add_Turn_Person(string Name,string Time)
         {
             string[] h = Time.Split(':');
@@ -146,6 +162,7 @@ namespace Service
                 }
             }
         }
+        
         private void FormTurn_Load(object sender, EventArgs e)
         {
             Setting_DgShow1(Practical.Today_Date());

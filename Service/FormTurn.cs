@@ -194,5 +194,21 @@ namespace Service
         {
             dgShow1.ClearSelection();
         }
+
+        private void dgShow1_Click(object sender, EventArgs e)
+        {
+            string time = dgShow1.CurrentRow.Cells["Time"].Value.ToString();
+            string[] t = time.Split(':');
+            comMinTurn.Text = t[1];
+            comHourTurn.Text = t[0];
+        }
+
+        private void dgShow2_Click(object sender, EventArgs e)
+        {
+            string time = dgShow2.CurrentRow.Cells["Time"].Value.ToString();
+            string[] t = time.Split(':');
+            comMinTurn.Text = t[1];
+            comHourTurn.Text = t[0];
+        }
     }
 }

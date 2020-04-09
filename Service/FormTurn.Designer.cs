@@ -94,6 +94,7 @@
             "23"});
             this.comHourTurn.Location = new System.Drawing.Point(6, 137);
             this.comHourTurn.Name = "comHourTurn";
+            this.comHourTurn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comHourTurn.Size = new System.Drawing.Size(46, 26);
             this.comHourTurn.TabIndex = 3;
             // 
@@ -118,6 +119,7 @@
             this.dgShow1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgShow1.Size = new System.Drawing.Size(394, 575);
             this.dgShow1.TabIndex = 5;
+            this.dgShow1.Click += new System.EventHandler(this.dgShow1_Click);
             this.dgShow1.Enter += new System.EventHandler(this.dgShow1_Enter);
             // 
             // txtNameTurn
@@ -138,6 +140,7 @@
             this.dgShow2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgShow2.Size = new System.Drawing.Size(394, 575);
             this.dgShow2.TabIndex = 7;
+            this.dgShow2.Click += new System.EventHandler(this.dgShow2_Click);
             this.dgShow2.Enter += new System.EventHandler(this.dgShow2_Enter);
             // 
             // groupTurn

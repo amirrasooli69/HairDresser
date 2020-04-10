@@ -17,6 +17,7 @@ namespace Service
         public string Name { get; set; }
         public Nullable<long> Time { get; set; }
         public Nullable<long> Date { get; set; }
+        public Nullable<long> State { get; set; }
         public long IdTurn { get; set; }
     }
 }

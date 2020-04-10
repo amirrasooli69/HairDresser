@@ -18,6 +18,7 @@ namespace Service
         public string Name { get; set; }
         public Nullable<long> Time { get; set; }
         public Nullable<long> Date { get; set; }
+        public Nullable<long> IdTurn { get; set; }
         public long IdWorkColleague { get; set; }
     }
 }

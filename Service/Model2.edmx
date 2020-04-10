@@ -12,6 +12,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Time" Type="integer" />
           <Property Name="Date" Type="integer" />
+          <Property Name="State" Type="integer" />
           <Property Name="IdTurn" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="WorkColleague">
@@ -22,6 +23,7 @@
           <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Time" Type="integer" />
           <Property Name="Date" Type="integer" />
+          <Property Name="IdTurn" Type="integer" />
           <Property Name="IdWorkColleague" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityContainer Name="TurnModelStoreContainer">
@@ -40,6 +42,7 @@
           <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Time" Type="Int64" />
           <Property Name="Date" Type="Int64" />
+          <Property Name="State" Type="Int64" />
           <Property Name="IdTurn" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="WorkColleague">
@@ -50,6 +53,7 @@
           <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Time" Type="Int64" />
           <Property Name="Date" Type="Int64" />
+          <Property Name="IdTurn" Type="Int64" />
           <Property Name="IdWorkColleague" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityContainer Name="TurnEntities" annotation:LazyLoadingEnabled="true">
@@ -68,6 +72,7 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Time" ColumnName="Time" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="IdTurn" ColumnName="IdTurn" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -79,6 +84,7 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Time" ColumnName="Time" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IdTurn" ColumnName="IdTurn" />
                 <ScalarProperty Name="IdWorkColleague" ColumnName="IdWorkColleague" />
               </MappingFragment>
             </EntityTypeMapping>

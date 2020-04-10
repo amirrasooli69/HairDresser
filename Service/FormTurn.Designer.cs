@@ -297,7 +297,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.Location = new System.Drawing.Point(954, 522);
+            this.button1.Location = new System.Drawing.Point(1036, 571);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 30);
             this.button1.TabIndex = 11;
@@ -315,10 +315,10 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 642);
+            this.progressBar1.Location = new System.Drawing.Point(812, 607);
             this.progressBar1.Maximum = 8760;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1132, 47);
+            this.progressBar1.Size = new System.Drawing.Size(324, 29);
             this.progressBar1.Step = 1;
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 19;

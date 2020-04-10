@@ -102,6 +102,7 @@ namespace Service
                     txtDateTurn.Text = Practical.Today_Date();
                 turn.Date = Int32.Parse(txtDateTurn.Text.Replace("/", ""));
                 turn.Time = Int32.Parse(comHourTurn.Text + comMinTurn.Text);
+                turn.State = 0; //0 active - 1 reserv - 2 cancel
                 context.Turn.Add(turn);
                 //context.SaveChanges();
                 lbl1.Text = "add person";
@@ -120,6 +121,7 @@ namespace Service
                 workColleague.Date = Int32.Parse(txtDateTurn.Text.Replace("/", ""));
                 workColleague.Time = Int32.Parse(comHourTurn.Text + comMinTurn.Text);
                 workColleague.IdColleague = comColleague.SelectedIndex;
+                workColleague.IdTurn = 0;
                 context.WorkColleague.Add(workColleague);
                 context.SaveChanges();
                 lbl2.Text = "add coll";

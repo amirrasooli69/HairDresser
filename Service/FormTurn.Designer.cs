@@ -34,8 +34,12 @@
             this.txtNameTurn = new System.Windows.Forms.TextBox();
             this.dgShow2 = new System.Windows.Forms.DataGridView();
             this.groupTurn = new System.Windows.Forms.GroupBox();
-            this.lbl2 = new System.Windows.Forms.Label();
-            this.lbl1 = new System.Windows.Forms.Label();
+            this.btnDeleteTurn = new System.Windows.Forms.Button();
+            this.btnEditTurn = new System.Windows.Forms.Button();
+            this.btnReportColleague = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comState = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDateTurn = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,10 +55,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.LBLcounter = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comState = new System.Windows.Forms.ComboBox();
             this.pCalander1 = new Papiloo.PCalander();
-            this.btnReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow2)).BeginInit();
             this.groupTurn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow1)).BeginInit();
@@ -64,7 +65,7 @@
             // 
             this.btnTurnPerson.Location = new System.Drawing.Point(6, 281);
             this.btnTurnPerson.Name = "btnTurnPerson";
-            this.btnTurnPerson.Size = new System.Drawing.Size(100, 30);
+            this.btnTurnPerson.Size = new System.Drawing.Size(83, 30);
             this.btnTurnPerson.TabIndex = 2;
             this.btnTurnPerson.Text = "ثبت نوبت";
             this.btnTurnPerson.UseVisualStyleBackColor = true;
@@ -119,7 +120,7 @@
             // 
             this.txtNameTurn.Location = new System.Drawing.Point(6, 23);
             this.txtNameTurn.Name = "txtNameTurn";
-            this.txtNameTurn.Size = new System.Drawing.Size(234, 26);
+            this.txtNameTurn.Size = new System.Drawing.Size(215, 26);
             this.txtNameTurn.TabIndex = 6;
             this.txtNameTurn.Text = "ali";
             // 
@@ -135,16 +136,18 @@
             this.dgShow2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgShow2.Size = new System.Drawing.Size(394, 628);
             this.dgShow2.TabIndex = 7;
+            this.dgShow2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgShow2_CellClick);
             this.dgShow2.Click += new System.EventHandler(this.dgShow2_Click);
             this.dgShow2.Enter += new System.EventHandler(this.dgShow2_Enter);
             // 
             // groupTurn
             // 
+            this.groupTurn.Controls.Add(this.btnDeleteTurn);
+            this.groupTurn.Controls.Add(this.btnEditTurn);
+            this.groupTurn.Controls.Add(this.btnReportColleague);
             this.groupTurn.Controls.Add(this.btnReport);
             this.groupTurn.Controls.Add(this.label7);
             this.groupTurn.Controls.Add(this.comState);
-            this.groupTurn.Controls.Add(this.lbl2);
-            this.groupTurn.Controls.Add(this.lbl1);
             this.groupTurn.Controls.Add(this.label6);
             this.groupTurn.Controls.Add(this.txtDateTurn);
             this.groupTurn.Controls.Add(this.label5);
@@ -168,24 +171,66 @@
             this.groupTurn.TabStop = false;
             this.groupTurn.Text = "همکار";
             // 
-            // lbl2
+            // btnDeleteTurn
             // 
-            this.lbl2.AutoSize = true;
-            this.lbl2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lbl2.Location = new System.Drawing.Point(273, 293);
-            this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(44, 18);
-            this.lbl2.TabIndex = 18;
-            this.lbl2.Text = "همکار";
+            this.btnDeleteTurn.Location = new System.Drawing.Point(216, 281);
+            this.btnDeleteTurn.Name = "btnDeleteTurn";
+            this.btnDeleteTurn.Size = new System.Drawing.Size(98, 30);
+            this.btnDeleteTurn.TabIndex = 24;
+            this.btnDeleteTurn.Text = "حذف نوبت";
+            this.btnDeleteTurn.UseVisualStyleBackColor = true;
             // 
-            // lbl1
+            // btnEditTurn
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(154, 293);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(25, 18);
-            this.lbl1.TabIndex = 17;
-            this.lbl1.Text = "نام";
+            this.btnEditTurn.Location = new System.Drawing.Point(104, 281);
+            this.btnEditTurn.Name = "btnEditTurn";
+            this.btnEditTurn.Size = new System.Drawing.Size(98, 30);
+            this.btnEditTurn.TabIndex = 23;
+            this.btnEditTurn.Text = "ویرایش نوبت";
+            this.btnEditTurn.UseVisualStyleBackColor = true;
+            this.btnEditTurn.Click += new System.EventHandler(this.btnEditTurn_Click);
+            // 
+            // btnReportColleague
+            // 
+            this.btnReportColleague.Location = new System.Drawing.Point(6, 172);
+            this.btnReportColleague.Name = "btnReportColleague";
+            this.btnReportColleague.Size = new System.Drawing.Size(62, 30);
+            this.btnReportColleague.TabIndex = 22;
+            this.btnReportColleague.Text = "گزارش";
+            this.btnReportColleague.UseVisualStyleBackColor = true;
+            this.btnReportColleague.Click += new System.EventHandler(this.btnReportColleague_Click);
+            // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(6, 206);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(62, 30);
+            this.btnReport.TabIndex = 21;
+            this.btnReport.Text = "گزارش";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label7.Location = new System.Drawing.Point(264, 210);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 18);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "وضعیت";
+            // 
+            // comState
+            // 
+            this.comState.FormattingEnabled = true;
+            this.comState.Items.AddRange(new object[] {
+            "فعال",
+            "رزرو",
+            "کنسل"});
+            this.comState.Location = new System.Drawing.Point(72, 207);
+            this.comState.Name = "comState";
+            this.comState.Size = new System.Drawing.Size(149, 26);
+            this.comState.TabIndex = 19;
             // 
             // label6
             // 
@@ -217,9 +262,9 @@
             // comColleague
             // 
             this.comColleague.FormattingEnabled = true;
-            this.comColleague.Location = new System.Drawing.Point(6, 172);
+            this.comColleague.Location = new System.Drawing.Point(72, 172);
             this.comColleague.Name = "comColleague";
-            this.comColleague.Size = new System.Drawing.Size(215, 26);
+            this.comColleague.Size = new System.Drawing.Size(149, 26);
             this.comColleague.TabIndex = 13;
             // 
             // label4
@@ -297,6 +342,8 @@
             this.dgShow1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgShow1.Size = new System.Drawing.Size(394, 628);
             this.dgShow1.TabIndex = 5;
+            this.dgShow1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgShow1_CellClick);
+            this.dgShow1.SelectionChanged += new System.EventHandler(this.dgShow1_SelectionChanged);
             this.dgShow1.Click += new System.EventHandler(this.dgShow1_Click);
             this.dgShow1.Enter += new System.EventHandler(this.dgShow1_Enter);
             // 
@@ -321,35 +368,13 @@
             // 
             // progressBar1
             // 
+            this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
             this.progressBar1.Location = new System.Drawing.Point(812, 607);
-            this.progressBar1.Maximum = 8760;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(324, 29);
-            this.progressBar1.Step = 1;
+            this.progressBar1.Step = 2;
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 19;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(264, 210);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 18);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "وضعیت";
-            // 
-            // comState
-            // 
-            this.comState.FormattingEnabled = true;
-            this.comState.Items.AddRange(new object[] {
-            "فعال",
-            "رزرو",
-            "کنسل"});
-            this.comState.Location = new System.Drawing.Point(97, 207);
-            this.comState.Name = "comState";
-            this.comState.Size = new System.Drawing.Size(124, 26);
-            this.comState.TabIndex = 19;
             // 
             // pCalander1
             // 
@@ -364,16 +389,6 @@
             this.pCalander1.T_Date = "1399/01/22";
             this.pCalander1.TabIndex = 9;
             this.pCalander1.Click += new System.EventHandler(this.pCalander1_Click);
-            // 
-            // btnReport
-            // 
-            this.btnReport.Location = new System.Drawing.Point(6, 207);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(85, 30);
-            this.btnReport.TabIndex = 21;
-            this.btnReport.Text = "گزارش";
-            this.btnReport.UseVisualStyleBackColor = true;
-            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // FormTurn
             // 
@@ -422,8 +437,6 @@
         private System.Windows.Forms.TextBox txtDateTurn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comColleague;
-        private System.Windows.Forms.Label lbl2;
-        private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.DataGridView dgShow1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label LBLcounter;
@@ -431,5 +444,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comState;
         private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button btnReportColleague;
+        private System.Windows.Forms.Button btnDeleteTurn;
+        private System.Windows.Forms.Button btnEditTurn;
     }
 }

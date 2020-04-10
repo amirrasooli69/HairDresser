@@ -16,6 +16,7 @@ namespace Service
         {
             InitializeComponent();
         }
+        string repName, repDate, repTime;
 
         public void Setting_DgShow1(string Date)
         {
@@ -94,6 +95,7 @@ namespace Service
         public void DB_Add_Turn_Person() // ezafe kardane nobat fard to DataBase
         {
             TurnEntities context = new TurnEntities();
+            long idTurn=0;
             try
             {
                 Turn turn = new Turn();
@@ -104,8 +106,11 @@ namespace Service
                 turn.Time = Int32.Parse(comHourTurn.Text + comMinTurn.Text);
                 turn.State = comState.SelectedIndex; //0 active - 1 reserv - 2 cancel
                 context.Turn.Add(turn);
+
+                var endid = context.Turn.ToList();
+                idTurn = endid.LastOrDefault().IdTurn;
+                idTurn++;
                 //context.SaveChanges();
-                lbl1.Text = "add person";
             }
             catch (Exception ex)
             {
@@ -121,14 +126,45 @@ namespace Service
                 workColleague.Date = Int32.Parse(txtDateTurn.Text.Replace("/", ""));
                 workColleague.Time = Int32.Parse(comHourTurn.Text + comMinTurn.Text);
                 workColleague.IdColleague = comColleague.SelectedIndex;
-                workColleague.IdTurn = comState.SelectedIndex;
+                workColleague.IdTurn = idTurn;
                 context.WorkColleague.Add(workColleague);
                 context.SaveChanges();
-                lbl2.Text = "add coll";
             }
             catch (Exception ex)
             {
-                MessageBox.Show(" /n مشکل ثبت نوبت" + ex.Message, "نوبت دهی", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(" /nمشکل نوبت دهی همکار " + ex.Message, "نوبت دهی", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        public void DB_Edit_Person(string Name, string ReplaceName, string Date, string ReplaceDate, string Time, string ReplaceTime,int State)
+        {
+            progressBar1.Value = 0;
+            Int32 date = int.Parse(Date.Replace("/", ""));
+            Int32 time=int.Parse(Time.Replace(":",""));
+            TurnEntities context = new TurnEntities();
+            var selectEdit = context.Turn.Where(c => c.Name == Name && c.Date == date && c.Time == time).FirstOrDefault();
+            if (selectEdit !=null)
+            {
+                selectEdit.Name = ReplaceName;
+                selectEdit.Date = Int32.Parse(ReplaceDate.Replace("/", ""));
+                selectEdit.Time = int.Parse(ReplaceTime.Replace(":",""));
+                selectEdit.State = State;
+                //-----------------------
+
+
+
+
+
+
+
+                context.SaveChanges();
+                progressBar1.Value = 100;
+
+            }
+            else
+            {
+                MessageBox.Show("رزرو پیدا نشد", "ویرایش", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                progressBar1.Value = 100;
+                progressBar1.ForeColor = Color.Red;
             }
         }
 
@@ -144,7 +180,6 @@ namespace Service
                     if (dgShow2.Rows[i].Cells["Time"].Value.ToString() == Time)
                     {
                         dgShow2.Rows[i].Cells["Name"].Value = Name;
-                        lbl2.Text = "add dg";
                         break;
                     }
                     i++;
@@ -158,7 +193,6 @@ namespace Service
                     if (dgShow1.Rows[i].Cells["Time"].Value.ToString() == Time)
                     {
                         dgShow1.Rows[i].Cells["Name"].Value = Name;
-                        lbl2.Text = "add dg";
                         break;
                     }
                     i++;
@@ -166,23 +200,44 @@ namespace Service
             }
         } // ezafe kardane nobate afrad to dgahow1 va dgshow2
 
-        public void DG_Fill(string Date , int State) // por kardane dgshow1 va dgshow2 be soorate koli 
+        public void DG_Fill(string Date,string Name, int State, int who) // por kardane dgshow1 va dgshow2 be soorate koli 
         {
+            Setting_DgShow1(Date);
+            Setting_DgShow2(Date);
             dgShow1.ClearSelection();
             dgShow2.ClearSelection();
             TurnEntities context = new TurnEntities();
             int date = int.Parse(Date.Replace("/", ""));
-            var selectDate = context.Turn.Where(c => c.Date == date && c.State==State).ToList();
-            for (int i = 0; i < selectDate.Count(); i++)
+            if (who == 0) // 0 person
             {
-                string time = selectDate[i].Time.ToString();
-                if (time == "0")
-                    time = "000";
-                if (time == "30")
-                    time = "030";
-                time = time.Insert(time.Length - 2, ":");
-                DG_Add_Turn_Person(selectDate[i].Name, time);
+                var selectDate = context.Turn.Where(c => c.Date == date && c.State == State).ToList();
+                for (int i = 0; i < selectDate.Count(); i++)
+                {
+                    string time = selectDate[i].Time.ToString();
+                    if (time == "0")
+                        time = "000";
+                    if (time == "30")
+                        time = "030";
+                    time = time.Insert(time.Length - 2, ":");
+                    DG_Add_Turn_Person(selectDate[i].Name, time);
+                }
             }
+            //----------
+            if (who == 1) // 1 colleague
+            {
+                var selectDate = context.WorkColleague.Where(c => c.Date == date && c.Name == Name).ToList();
+                for (int i = 0; i < selectDate.Count(); i++)
+                {
+                    string time = selectDate[i].Time.ToString();
+                    if (time == "0")
+                        time = "000";
+                    if (time == "30")
+                        time = "030";
+                    time = time.Insert(time.Length - 2, ":");
+                    DG_Add_Turn_Person(selectDate[i].Name, time);
+                }
+            }
+
         }
 
         private void FormTurn_Load(object sender, EventArgs e)
@@ -202,7 +257,7 @@ namespace Service
                 comColleague.DisplayMember = "Name";
             }
             comState.SelectedIndex = 0;
-            DG_Fill(Practical.Today_Date(),comState.SelectedIndex);
+            DG_Fill(Practical.Today_Date(),"", comState.SelectedIndex, 0);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -211,7 +266,7 @@ namespace Service
             txtDateTurn.Text = pCalander1.T_Date;
             Setting_DgShow1(pCalander1.T_Date);
             Setting_DgShow2(pCalander1.T_Date);
-            DG_Fill(txtDateTurn.Text,comState.SelectedIndex);
+            DG_Fill(txtDateTurn.Text, "", comState.SelectedIndex, 0);
 
 
         }
@@ -226,15 +281,19 @@ namespace Service
             DB_Add_Turn_Person();
             DG_Add_Turn_Person(txtNameTurn.Text, comHourTurn.Text + ":" + comMinTurn.Text);
         }
-
         private void dgShow1_Enter(object sender, EventArgs e)
         {
             dgShow2.ClearSelection();
+
+
+
+
         }
 
         private void dgShow2_Enter(object sender, EventArgs e)
         {
             dgShow1.ClearSelection();
+
         }
 
         private void dgShow1_Click(object sender, EventArgs e)
@@ -253,7 +312,7 @@ namespace Service
             comHourTurn.Text = t[0];
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //test DB
         {
             TurnEntities context = new TurnEntities();
             Turn turn = new Turn();
@@ -274,10 +333,9 @@ namespace Service
 
                     string date = y + month + day;
 
-                    
+
                     for (int a = 0; a < 24; a++) //sat
                     {
-
 
                         string hour = a.ToString();
                         string minuts = "00";
@@ -322,11 +380,6 @@ namespace Service
                         progressBar1.Value++;
                     }
 
-
-
-                    
-                    //----------
-
                 }
 
                 //MessageBox.Show(m);
@@ -337,7 +390,59 @@ namespace Service
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            DG_Fill(txtDateTurn.Text, comState.SelectedIndex);
+            DG_Fill(txtDateTurn.Text,"", comState.SelectedIndex,0); // 0 = person 
+        }
+
+        private void btnReportColleague_Click(object sender, EventArgs e)
+        {
+            DG_Fill(txtDateTurn.Text ,comColleague.Text,0 , 1);
+        }
+
+        private void dgShow1_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgShow1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgShow1.CurrentRow.Cells["Name"].Value!=null)
+            repName = dgShow1.CurrentRow.Cells["Name"].Value.ToString();
+
+            if (dgShow1.CurrentRow.Cells["Date"].Value != null)
+                repDate = dgShow1.CurrentRow.Cells["Date"].Value.ToString();
+
+            if (dgShow1.CurrentRow.Cells["Time"].Value != null)
+                repTime = dgShow1.CurrentRow.Cells["Time"].Value.ToString();
+        }
+
+        private void dgShow2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgShow2.CurrentRow.Cells["Name"].Value != null)
+                repName = dgShow2.CurrentRow.Cells["Name"].Value.ToString();
+
+            if (dgShow2.CurrentRow.Cells["Date"].Value != null)
+                repDate = dgShow2.CurrentRow.Cells["Date"].Value.ToString();
+
+            if (dgShow2.CurrentRow.Cells["Time"].Value != null)
+                repTime = dgShow2.CurrentRow.Cells["Time"].Value.ToString();
+        }
+
+        private void btnEditTurn_Click(object sender, EventArgs e)
+        {
+            DB_Edit_Person(repName,
+                txtNameTurn.Text,
+                repDate,
+                txtDateTurn.Text,
+                repTime,
+                comHourTurn.Text + comMinTurn.Text,
+                comColleague.SelectedIndex);
+            DG_Fill(txtDateTurn.Text, "", comState.SelectedIndex, 0);
+            progressBar1.Value = 0;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

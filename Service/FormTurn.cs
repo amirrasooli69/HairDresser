@@ -106,10 +106,13 @@ namespace Service
                 turn.Time = Int32.Parse(comHourTurn.Text + comMinTurn.Text);
                 turn.State = comState.SelectedIndex; //0 active - 1 reserv - 2 cancel
                 context.Turn.Add(turn);
+                context.SaveChanges();
 
                 var endid = context.Turn.ToList();
-                idTurn = endid.LastOrDefault().IdTurn;
-                idTurn++;
+
+                    idTurn = endid.LastOrDefault().IdTurn;
+                
+
                 //context.SaveChanges();
             }
             catch (Exception ex)
@@ -138,23 +141,27 @@ namespace Service
         public void DB_Edit_Person(string Name, string ReplaceName, string Date, string ReplaceDate, string Time, string ReplaceTime,int State)
         {
             progressBar1.Value = 0;
+            if(Name=="" || Name==null || Date=="" || Date==null || Time=="" || Time==null)
+            {
+                MessageBox.Show("زمان ویرایش را از لیست انتخاب کنید", "ویرایش", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             Int32 date = int.Parse(Date.Replace("/", ""));
             Int32 time=int.Parse(Time.Replace(":",""));
             TurnEntities context = new TurnEntities();
-            var selectEdit = context.Turn.Where(c => c.Name == Name && c.Date == date && c.Time == time).FirstOrDefault();
-            if (selectEdit !=null)
+            var editPerson = context.Turn.Where(c => c.Name == Name && c.Date == date && c.Time == time).FirstOrDefault();
+            if (editPerson != null)
             {
-                selectEdit.Name = ReplaceName;
-                selectEdit.Date = Int32.Parse(ReplaceDate.Replace("/", ""));
-                selectEdit.Time = int.Parse(ReplaceTime.Replace(":",""));
-                selectEdit.State = State;
+                editPerson.Name = ReplaceName;
+                editPerson.Date = Int32.Parse(ReplaceDate.Replace("/", ""));
+                editPerson.Time = int.Parse(ReplaceTime.Replace(":",""));
+                editPerson.State = State;
                 //-----------------------
 
-
-
-
-
-
+                var editColleague = context.WorkColleague.Where(c => c.IdTurn == editPerson.IdTurn).FirstOrDefault();
+                editColleague.Name = comColleague.Text;
+                editColleague.Date = Int32.Parse(ReplaceDate.Replace("/", ""));
+                editColleague.Time = int.Parse(ReplaceTime.Replace(":", ""));
 
                 context.SaveChanges();
                 progressBar1.Value = 100;

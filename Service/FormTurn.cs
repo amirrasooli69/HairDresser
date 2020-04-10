@@ -53,15 +53,15 @@ namespace Service
                 row++;
             }
 
-        }
+        } // tarahi dgshow1
         public void Setting_DgShow2(string Date)
         {
             dgShow2.Rows.Clear();
             dgShow2.Columns.Clear();
             dgShow2.RowTemplate.Height = 25;
-            
+
             //------
-            
+
             dgShow2.Columns.Add("Name", "نام");
             dgShow2.Columns["Name"].Width = 150;
             dgShow2.Columns["Name"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -90,8 +90,8 @@ namespace Service
                 row++;
             }
 
-        }
-        public void DB_Add_Turn_Person()
+        } // tarahi dgshow2
+        public void DB_Add_Turn_Person() // ezafe kardane nobat fard to DataBase
         {
             TurnEntities context = new TurnEntities();
             try
@@ -130,7 +130,7 @@ namespace Service
             }
         }
 
-        public void DG_Add_Turn_Person(string Name,string Time)
+        public void DG_Add_Turn_Person(string Name, string Time)
         {
             string[] h = Time.Split(':');
 
@@ -147,7 +147,8 @@ namespace Service
                     }
                     i++;
                 }
-            } else if(int.Parse(h[0])>=0 )
+            }
+            else if (int.Parse(h[0]) >= 0)
             {
                 int i = 0;
                 while (i < 24)
@@ -161,8 +162,27 @@ namespace Service
                     i++;
                 }
             }
+        } // ezafe kardane nobate afrad to dgahow1 va dgshow2
+
+        public void DG_Fill(string Date) // por kardane dgshow1 va dgshow2 be soorate koli 
+        {
+            dgShow1.ClearSelection();
+            dgShow2.ClearSelection();
+            TurnEntities context = new TurnEntities();
+            int date = int.Parse(Date.Replace("/", ""));
+            var selectDate = context.Turn.Where(c => c.Date == date).ToList();
+            for (int i = 0; i < selectDate.Count(); i++)
+            {
+                string time = selectDate[i].Time.ToString();
+                if (time == "0")
+                    time = "000";
+                if (time == "30")
+                    time = "030";
+                time = time.Insert(time.Length - 2, ":");
+                DG_Add_Turn_Person(selectDate[i].Name, time);
+            }
         }
-        
+
         private void FormTurn_Load(object sender, EventArgs e)
         {
             Setting_DgShow1(Practical.Today_Date());
@@ -179,6 +199,7 @@ namespace Service
                 comColleague.DataSource = context.Colleague.ToList();
                 comColleague.DisplayMember = "Name";
             }
+            DG_Fill(Practical.Today_Date());
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -187,21 +208,7 @@ namespace Service
             txtDateTurn.Text = pCalander1.T_Date;
             Setting_DgShow1(pCalander1.T_Date);
             Setting_DgShow2(pCalander1.T_Date);
-            dgShow1.ClearSelection();
-            dgShow2.ClearSelection();
-            TurnEntities context = new TurnEntities();
-            int date = int.Parse(txtDateTurn.Text.Replace("/", ""));
-            var selectDate = context.Turn.Where(c => c.Date == date).ToList();
-            for(int i=0;i<selectDate.Count();i++)
-            {
-                string time = selectDate[i].Time.ToString();
-                if (time == "0")
-                    time = "000";
-                if (time == "30")
-                    time = "030";
-                time = time.Insert(time.Length - 2, ":");
-                DG_Add_Turn_Person(selectDate[i].Name, time);
-            }
+            DG_Fill(txtDateTurn.Text);
 
 
         }
@@ -214,7 +221,6 @@ namespace Service
         private void btnTurnPerson_Click(object sender, EventArgs e)
         {
             DB_Add_Turn_Person();
-            
             DG_Add_Turn_Person(txtNameTurn.Text, comHourTurn.Text + ":" + comMinTurn.Text);
         }
 
@@ -242,6 +248,88 @@ namespace Service
             string[] t = time.Split(':');
             comMinTurn.Text = t[1];
             comHourTurn.Text = t[0];
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TurnEntities context = new TurnEntities();
+            Turn turn = new Turn();
+            WorkColleague workcolleague = new WorkColleague();
+            string y = "1399";
+            string month = "01";
+            string day = "01";
+            for (int m = 1; m < 13; m++) //mah
+            {
+                month = m.ToString();
+                if (month.Length == 1)
+                    month = "0" + month;
+                for (int d = 1; d < 32; d++) //rooz
+                {
+                    day = d.ToString();
+                    if (day.Length == 1)
+                        day = "0" + day;
+
+                    string date = y + month + day;
+
+                    
+                    for (int a = 0; a < 24; a++) //sat
+                    {
+
+
+                        string hour = a.ToString();
+                        string minuts = "00";
+                        string time = hour + minuts;
+                        //-----------------
+                        turn.Time = int.Parse(time);
+                        workcolleague.Time = int.Parse(time);
+                        //------------------
+                        turn.Date = int.Parse(date);
+                        workcolleague.Date = int.Parse(date);
+                        //------------------
+                        turn.Name = "محمد جواد باقری شیجانی";
+                        workcolleague.Name = "محمد انصاری پور سنگسری";
+                        //-----------------
+                        workcolleague.IdColleague = 1233;
+
+                        context.Turn.Add(turn);
+                        context.WorkColleague.Add(workcolleague);
+                        context.SaveChanges();
+                        //----
+                        minuts = "30";
+                        time = hour + minuts;
+                        //-----------------
+                        turn.Time = int.Parse(time);
+                        workcolleague.Time = int.Parse(time);
+                        //------------------
+                        turn.Date = int.Parse(date);
+                        workcolleague.Date = int.Parse(date);
+                        //------------------
+                        turn.Name = "محمد جواد باقری شیجانی";
+                        workcolleague.Name = "محمد انصاری پور سنگسری";
+                        //-----------------
+                        workcolleague.IdColleague = 1233;
+
+                        context.Turn.Add(turn);
+                        context.WorkColleague.Add(workcolleague);
+                        //----
+
+                        context.Turn.Add(turn);
+                        context.WorkColleague.Add(workcolleague);
+                        context.SaveChanges();
+                        progressBar1.Value++;
+                    }
+
+
+
+                    
+                    //----------
+
+                }
+
+                //MessageBox.Show(m);
+
+            }
+            MessageBox.Show("do it");
         }
     }
 }

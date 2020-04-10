@@ -48,6 +48,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSetDate = new System.Windows.Forms.Button();
             this.dgShow1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.LBLcounter = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pCalander1 = new Papiloo.PCalander();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow2)).BeginInit();
             this.groupTurn.SuspendLayout();
@@ -291,6 +294,35 @@
             this.dgShow1.Click += new System.EventHandler(this.dgShow1_Click);
             this.dgShow1.Enter += new System.EventHandler(this.dgShow1_Enter);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button1.Location = new System.Drawing.Point(954, 522);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 30);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "test DB";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // LBLcounter
+            // 
+            this.LBLcounter.AutoSize = true;
+            this.LBLcounter.Location = new System.Drawing.Point(999, 597);
+            this.LBLcounter.Name = "LBLcounter";
+            this.LBLcounter.Size = new System.Drawing.Size(0, 18);
+            this.LBLcounter.TabIndex = 18;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 642);
+            this.progressBar1.Maximum = 8760;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(1132, 47);
+            this.progressBar1.Step = 1;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 19;
+            // 
             // pCalander1
             // 
             this.pCalander1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -309,7 +341,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1149, 646);
+            this.ClientSize = new System.Drawing.Size(1149, 701);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.LBLcounter);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSetDate);
             this.Controls.Add(this.pCalander1);
             this.Controls.Add(this.groupTurn);
@@ -326,6 +361,7 @@
             this.groupTurn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -351,5 +387,8 @@
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.DataGridView dgShow1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label LBLcounter;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

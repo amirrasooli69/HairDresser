@@ -51,7 +51,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.LBLcounter = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comState = new System.Windows.Forms.ComboBox();
             this.pCalander1 = new Papiloo.PCalander();
+            this.btnReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow2)).BeginInit();
             this.groupTurn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow1)).BeginInit();
@@ -59,7 +62,7 @@
             // 
             // btnTurnPerson
             // 
-            this.btnTurnPerson.Location = new System.Drawing.Point(6, 216);
+            this.btnTurnPerson.Location = new System.Drawing.Point(6, 281);
             this.btnTurnPerson.Name = "btnTurnPerson";
             this.btnTurnPerson.Size = new System.Drawing.Size(100, 30);
             this.btnTurnPerson.TabIndex = 2;
@@ -137,6 +140,9 @@
             // 
             // groupTurn
             // 
+            this.groupTurn.Controls.Add(this.btnReport);
+            this.groupTurn.Controls.Add(this.label7);
+            this.groupTurn.Controls.Add(this.comState);
             this.groupTurn.Controls.Add(this.lbl2);
             this.groupTurn.Controls.Add(this.lbl1);
             this.groupTurn.Controls.Add(this.label6);
@@ -157,7 +163,7 @@
             this.groupTurn.Location = new System.Drawing.Point(814, 5);
             this.groupTurn.Name = "groupTurn";
             this.groupTurn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupTurn.Size = new System.Drawing.Size(323, 256);
+            this.groupTurn.Size = new System.Drawing.Size(323, 324);
             this.groupTurn.TabIndex = 8;
             this.groupTurn.TabStop = false;
             this.groupTurn.Text = "همکار";
@@ -166,7 +172,7 @@
             // 
             this.lbl2.AutoSize = true;
             this.lbl2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lbl2.Location = new System.Drawing.Point(273, 228);
+            this.lbl2.Location = new System.Drawing.Point(273, 293);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(44, 18);
             this.lbl2.TabIndex = 18;
@@ -175,7 +181,7 @@
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(154, 228);
+            this.lbl1.Location = new System.Drawing.Point(154, 293);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(25, 18);
             this.lbl1.TabIndex = 17;
@@ -202,7 +208,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.Location = new System.Drawing.Point(272, 180);
+            this.label5.Location = new System.Drawing.Point(272, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 18);
             this.label5.TabIndex = 14;
@@ -211,7 +217,7 @@
             // comColleague
             // 
             this.comColleague.FormattingEnabled = true;
-            this.comColleague.Location = new System.Drawing.Point(6, 177);
+            this.comColleague.Location = new System.Drawing.Point(6, 172);
             this.comColleague.Name = "comColleague";
             this.comColleague.Size = new System.Drawing.Size(215, 26);
             this.comColleague.TabIndex = 13;
@@ -271,7 +277,7 @@
             // btnSetDate
             // 
             this.btnSetDate.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnSetDate.Location = new System.Drawing.Point(820, 520);
+            this.btnSetDate.Location = new System.Drawing.Point(820, 571);
             this.btnSetDate.Name = "btnSetDate";
             this.btnSetDate.Size = new System.Drawing.Size(100, 30);
             this.btnSetDate.TabIndex = 10;
@@ -323,12 +329,34 @@
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 19;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label7.Location = new System.Drawing.Point(264, 210);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 18);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "وضعیت";
+            // 
+            // comState
+            // 
+            this.comState.FormattingEnabled = true;
+            this.comState.Items.AddRange(new object[] {
+            "فعال",
+            "رزرو",
+            "کنسل"});
+            this.comState.Location = new System.Drawing.Point(97, 207);
+            this.comState.Name = "comState";
+            this.comState.Size = new System.Drawing.Size(124, 26);
+            this.comState.TabIndex = 19;
+            // 
             // pCalander1
             // 
             this.pCalander1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pCalander1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pCalander1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.pCalander1.Location = new System.Drawing.Point(814, 285);
+            this.pCalander1.Location = new System.Drawing.Point(814, 336);
             this.pCalander1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pCalander1.Name = "pCalander1";
             this.pCalander1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -336,6 +364,16 @@
             this.pCalander1.T_Date = "1399/01/22";
             this.pCalander1.TabIndex = 9;
             this.pCalander1.Click += new System.EventHandler(this.pCalander1_Click);
+            // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(6, 207);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(85, 30);
+            this.btnReport.TabIndex = 21;
+            this.btnReport.Text = "گزارش";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // FormTurn
             // 
@@ -390,5 +428,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label LBLcounter;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comState;
+        private System.Windows.Forms.Button btnReport;
     }
 }

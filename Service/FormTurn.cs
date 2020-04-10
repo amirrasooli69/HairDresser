@@ -102,7 +102,7 @@ namespace Service
                     txtDateTurn.Text = Practical.Today_Date();
                 turn.Date = Int32.Parse(txtDateTurn.Text.Replace("/", ""));
                 turn.Time = Int32.Parse(comHourTurn.Text + comMinTurn.Text);
-                turn.State = 0; //0 active - 1 reserv - 2 cancel
+                turn.State = comState.SelectedIndex; //0 active - 1 reserv - 2 cancel
                 context.Turn.Add(turn);
                 //context.SaveChanges();
                 lbl1.Text = "add person";
@@ -121,7 +121,7 @@ namespace Service
                 workColleague.Date = Int32.Parse(txtDateTurn.Text.Replace("/", ""));
                 workColleague.Time = Int32.Parse(comHourTurn.Text + comMinTurn.Text);
                 workColleague.IdColleague = comColleague.SelectedIndex;
-                workColleague.IdTurn = 0;
+                workColleague.IdTurn = comState.SelectedIndex;
                 context.WorkColleague.Add(workColleague);
                 context.SaveChanges();
                 lbl2.Text = "add coll";
@@ -166,13 +166,13 @@ namespace Service
             }
         } // ezafe kardane nobate afrad to dgahow1 va dgshow2
 
-        public void DG_Fill(string Date) // por kardane dgshow1 va dgshow2 be soorate koli 
+        public void DG_Fill(string Date , int State) // por kardane dgshow1 va dgshow2 be soorate koli 
         {
             dgShow1.ClearSelection();
             dgShow2.ClearSelection();
             TurnEntities context = new TurnEntities();
             int date = int.Parse(Date.Replace("/", ""));
-            var selectDate = context.Turn.Where(c => c.Date == date).ToList();
+            var selectDate = context.Turn.Where(c => c.Date == date && c.State==State).ToList();
             for (int i = 0; i < selectDate.Count(); i++)
             {
                 string time = selectDate[i].Time.ToString();
@@ -201,7 +201,8 @@ namespace Service
                 comColleague.DataSource = context.Colleague.ToList();
                 comColleague.DisplayMember = "Name";
             }
-            DG_Fill(Practical.Today_Date());
+            comState.SelectedIndex = 0;
+            DG_Fill(Practical.Today_Date(),comState.SelectedIndex);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -210,7 +211,7 @@ namespace Service
             txtDateTurn.Text = pCalander1.T_Date;
             Setting_DgShow1(pCalander1.T_Date);
             Setting_DgShow2(pCalander1.T_Date);
-            DG_Fill(txtDateTurn.Text);
+            DG_Fill(txtDateTurn.Text,comState.SelectedIndex);
 
 
         }
@@ -332,6 +333,11 @@ namespace Service
 
             }
             MessageBox.Show("do it");
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            DG_Fill(txtDateTurn.Text, comState.SelectedIndex);
         }
     }
 }

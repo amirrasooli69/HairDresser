@@ -346,7 +346,10 @@ namespace Service
         {
 
             DG_Fill(Practical.Today_Date(),"", comState.SelectedIndex, 0);
+            //DG_Fill(txtDateTurn.Text, "", comState.SelectedIndex, 0);
+
             Fill_Element_Form();
+            progressBar1.Value = 0;
 
         }
 
@@ -368,6 +371,8 @@ namespace Service
 
         private void btnTurnPerson_Click(object sender, EventArgs e)
         {
+            if (txtNameTurn.Text == "")
+                return;
             DB_Add_Turn_Person();
             DG_Add_Turn_Person(txtNameTurn.Text, comHourTurn.Text + ":" + comMinTurn.Text);
         }

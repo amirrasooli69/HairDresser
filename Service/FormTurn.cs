@@ -186,9 +186,16 @@ namespace Service
             if (delPerson != null)
             {
                 context.Turn.Remove(delPerson);
+                //context.SaveChanges();
+                //------
+                var delColleague = context.WorkColleague.Where(c => c.IdTurn == delPerson.IdTurn).FirstOrDefault();
+                if (delColleague !=null)
+                    context.WorkColleague.Remove(delColleague);
+
                 context.SaveChanges();
                 DG_Fill(Date, "", comState.SelectedIndex , 0);
                 MessageBox.Show("حذف انجام شد", "حذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 progressBar1.Value = 100;
             }
         }

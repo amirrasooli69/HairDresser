@@ -175,6 +175,23 @@ namespace Service
             }
         }
 
+        public void DB_Delete_Turn_Person(string Name,string Date,string Time)
+        {
+            progressBar1.Value = 0;
+            TurnEntities context = new TurnEntities();
+
+            int date = int.Parse(Date.Replace("/",""));
+            int time = int.Parse(Time);
+            var delPerson = context.Turn.Where(c => c.Name == Name && c.Date == date && c.Time == time).FirstOrDefault();
+            if (delPerson != null)
+            {
+                context.Turn.Remove(delPerson);
+                context.SaveChanges();
+                DG_Fill(Date, "", comState.SelectedIndex , 0);
+                MessageBox.Show("حذف انجام شد", "حذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                progressBar1.Value = 100;
+            }
+        }
         public void DG_Add_Turn_Person(string Name, string Time)
         {
             string[] h = Time.Split(':');
@@ -432,6 +449,12 @@ namespace Service
 
             if (dgShow2.CurrentRow.Cells["Time"].Value != null)
                 repTime = dgShow2.CurrentRow.Cells["Time"].Value.ToString();
+        }
+
+        private void btnDeleteTurn_Click(object sender, EventArgs e)
+        {
+            DB_Delete_Turn_Person(repName, repDate, comHourTurn.Text + comMinTurn.Text);
+            progressBar1.Value = 0;
         }
 
         private void btnEditTurn_Click(object sender, EventArgs e)

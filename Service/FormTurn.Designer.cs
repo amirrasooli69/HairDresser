@@ -179,6 +179,7 @@
             this.btnDeleteTurn.TabIndex = 24;
             this.btnDeleteTurn.Text = "حذف نوبت";
             this.btnDeleteTurn.UseVisualStyleBackColor = true;
+            this.btnDeleteTurn.Click += new System.EventHandler(this.btnDeleteTurn_Click);
             // 
             // btnEditTurn
             // 
@@ -386,7 +387,7 @@
             this.pCalander1.Name = "pCalander1";
             this.pCalander1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.pCalander1.Size = new System.Drawing.Size(330, 228);
-            this.pCalander1.T_Date = "1399/01/22";
+            this.pCalander1.T_Date = "1399/01/23";
             this.pCalander1.TabIndex = 9;
             this.pCalander1.Click += new System.EventHandler(this.pCalander1_Click);
             // 

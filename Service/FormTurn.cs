@@ -18,6 +18,7 @@ namespace Service
         }
         string repName, repDate, repTime;
 
+        // tarahi dgshow1
         public void Setting_DgShow1(string Date)
         {
             dgShow1.Rows.Clear();
@@ -54,7 +55,9 @@ namespace Service
                 row++;
             }
 
-        } // tarahi dgshow1
+        }
+
+        // tarahi dgshow2
         public void Setting_DgShow2(string Date)
         {
             dgShow2.Rows.Clear();
@@ -91,9 +94,12 @@ namespace Service
                 row++;
             }
 
-        } // tarahi dgshow2
-        public void DB_Add_Turn_Person() // ezafe kardane nobat fard to DataBase
+        }
+
+        // ezafe kardane nobat fard to DataBase
+        public void DB_Add_Turn_Person() 
         {
+            progressBar1.Value = 0;
             TurnEntities context = new TurnEntities();
             long idTurn=0;
             try
@@ -137,11 +143,15 @@ namespace Service
             {
                 MessageBox.Show(" /nمشکل نوبت دهی همکار " + ex.Message, "نوبت دهی", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            progressBar1.Value = 100;
         }
+
+        // virayesh nobate fard va hamkar
         public void DB_Edit_Person(string Name, string ReplaceName, string Date, string ReplaceDate, string Time, string ReplaceTime,int State)
         {
             progressBar1.Value = 0;
-            if(Name=="" || Name==null || Date=="" || Date==null || Time=="" || Time==null)
+
+            if (Name=="" || Name==null || Date=="" || Date==null || Time=="" || Time==null)
             {
                 MessageBox.Show("زمان ویرایش را از لیست انتخاب کنید", "ویرایش", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -175,6 +185,7 @@ namespace Service
             }
         }
 
+        // hazfe nobat moshtari va hamkar
         public void DB_Delete_Turn_Person(string Name,string Date,string Time)
         {
             progressBar1.Value = 0;
@@ -194,11 +205,13 @@ namespace Service
 
                 context.SaveChanges();
                 DG_Fill(Date, "", comState.SelectedIndex , 0);
-                MessageBox.Show("حذف انجام شد", "حذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               // MessageBox.Show("حذف انجام شد", "حذف", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 progressBar1.Value = 100;
             }
         }
+
+        // ezafe kardane nobate afrad to dgahow1 va dgshow2
         public void DG_Add_Turn_Person(string Name, string Time)
         {
             string[] h = Time.Split(':');
@@ -229,10 +242,12 @@ namespace Service
                     i++;
                 }
             }
-        } // ezafe kardane nobate afrad to dgahow1 va dgshow2
+        }
 
-        public void DG_Fill(string Date,string Name, int State, int who) // por kardane dgshow1 va dgshow2 be soorate koli 
+        // por kardane dgshow1 va dgshow2 be soorate koli 
+        public void DG_Fill(string Date,string Name, int State, int who) 
         {
+            progressBar1.Value = 0;
             Setting_DgShow1(Date);
             Setting_DgShow2(Date);
             dgShow1.ClearSelection();
@@ -268,8 +283,12 @@ namespace Service
                     DG_Add_Turn_Person(selectDate[i].Name, time);
                 }
             }
+            progressBar1.Value = 100;
+
 
         }
+
+        
 
         private void FormTurn_Load(object sender, EventArgs e)
         {
@@ -461,11 +480,11 @@ namespace Service
         private void btnDeleteTurn_Click(object sender, EventArgs e)
         {
             DB_Delete_Turn_Person(repName, repDate, comHourTurn.Text + comMinTurn.Text);
-            progressBar1.Value = 0;
         }
 
         private void btnEditTurn_Click(object sender, EventArgs e)
         {
+
             DB_Edit_Person(repName,
                 txtNameTurn.Text,
                 repDate,
@@ -474,7 +493,6 @@ namespace Service
                 comHourTurn.Text + comMinTurn.Text,
                 comColleague.SelectedIndex);
             DG_Fill(txtDateTurn.Text, "", comState.SelectedIndex, 0);
-            progressBar1.Value = 0;
         }
 
         private void button2_Click_1(object sender, EventArgs e)

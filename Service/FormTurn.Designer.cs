@@ -53,7 +53,7 @@
             this.btnSetDate = new System.Windows.Forms.Button();
             this.dgShow1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.LBLcounter = new System.Windows.Forms.Label();
+            this.lblResult = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pCalander1 = new Papiloo.PCalander();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow2)).BeginInit();
@@ -63,7 +63,7 @@
             // 
             // btnTurnPerson
             // 
-            this.btnTurnPerson.Location = new System.Drawing.Point(6, 281);
+            this.btnTurnPerson.Location = new System.Drawing.Point(6, 242);
             this.btnTurnPerson.Name = "btnTurnPerson";
             this.btnTurnPerson.Size = new System.Drawing.Size(83, 30);
             this.btnTurnPerson.TabIndex = 2;
@@ -142,6 +142,8 @@
             // 
             // groupTurn
             // 
+            this.groupTurn.Controls.Add(this.lblResult);
+            this.groupTurn.Controls.Add(this.progressBar1);
             this.groupTurn.Controls.Add(this.btnDeleteTurn);
             this.groupTurn.Controls.Add(this.btnEditTurn);
             this.groupTurn.Controls.Add(this.btnReportColleague);
@@ -166,14 +168,13 @@
             this.groupTurn.Location = new System.Drawing.Point(814, 5);
             this.groupTurn.Name = "groupTurn";
             this.groupTurn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupTurn.Size = new System.Drawing.Size(323, 324);
+            this.groupTurn.Size = new System.Drawing.Size(323, 306);
             this.groupTurn.TabIndex = 8;
             this.groupTurn.TabStop = false;
-            this.groupTurn.Text = "همکار";
             // 
             // btnDeleteTurn
             // 
-            this.btnDeleteTurn.Location = new System.Drawing.Point(216, 281);
+            this.btnDeleteTurn.Location = new System.Drawing.Point(217, 242);
             this.btnDeleteTurn.Name = "btnDeleteTurn";
             this.btnDeleteTurn.Size = new System.Drawing.Size(98, 30);
             this.btnDeleteTurn.TabIndex = 24;
@@ -183,7 +184,7 @@
             // 
             // btnEditTurn
             // 
-            this.btnEditTurn.Location = new System.Drawing.Point(104, 281);
+            this.btnEditTurn.Location = new System.Drawing.Point(104, 242);
             this.btnEditTurn.Name = "btnEditTurn";
             this.btnEditTurn.Size = new System.Drawing.Size(98, 30);
             this.btnEditTurn.TabIndex = 23;
@@ -323,7 +324,7 @@
             // btnSetDate
             // 
             this.btnSetDate.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnSetDate.Location = new System.Drawing.Point(820, 571);
+            this.btnSetDate.Location = new System.Drawing.Point(817, 570);
             this.btnSetDate.Name = "btnSetDate";
             this.btnSetDate.Size = new System.Drawing.Size(100, 30);
             this.btnSetDate.TabIndex = 10;
@@ -351,7 +352,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.Location = new System.Drawing.Point(1036, 571);
+            this.button1.Location = new System.Drawing.Point(1033, 570);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 30);
             this.button1.TabIndex = 11;
@@ -359,20 +360,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // LBLcounter
+            // lblResult
             // 
-            this.LBLcounter.AutoSize = true;
-            this.LBLcounter.Location = new System.Drawing.Point(999, 597);
-            this.LBLcounter.Name = "LBLcounter";
-            this.LBLcounter.Size = new System.Drawing.Size(0, 18);
-            this.LBLcounter.TabIndex = 18;
+            this.lblResult.AutoSize = true;
+            this.lblResult.Location = new System.Drawing.Point(260, 296);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(0, 18);
+            this.lblResult.TabIndex = 18;
             // 
             // progressBar1
             // 
             this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
-            this.progressBar1.Location = new System.Drawing.Point(812, 607);
+            this.progressBar1.Location = new System.Drawing.Point(6, 278);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(324, 29);
+            this.progressBar1.Size = new System.Drawing.Size(309, 22);
             this.progressBar1.Step = 2;
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 19;
@@ -382,7 +383,7 @@
             this.pCalander1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pCalander1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pCalander1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.pCalander1.Location = new System.Drawing.Point(814, 336);
+            this.pCalander1.Location = new System.Drawing.Point(811, 335);
             this.pCalander1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.pCalander1.Name = "pCalander1";
             this.pCalander1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -395,9 +396,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1149, 701);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.LBLcounter);
+            this.ClientSize = new System.Drawing.Size(1144, 642);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSetDate);
             this.Controls.Add(this.pCalander1);
@@ -415,7 +414,6 @@
             this.groupTurn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -440,7 +438,7 @@
         private System.Windows.Forms.ComboBox comColleague;
         private System.Windows.Forms.DataGridView dgShow1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label LBLcounter;
+        private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comState;

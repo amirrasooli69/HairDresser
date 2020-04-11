@@ -531,12 +531,17 @@ namespace Service
                 txtEshterakTurn.Text = select.Eshterak;
                 txtPhoneNumberTurn.Text = select.Phone;
             }
+            if(txtNameTurn.Text=="")
+            {
+                txtEshterakTurn.Text = "";
+                txtPhoneNumberTurn.Text = "";
+            }
         }
 
         private void txtEshterakTurn_TextChanged(object sender, EventArgs e)
         {
             StimulsoftEntities context = new StimulsoftEntities();
-            var select = context.User.Where(serv => serv.Eshterak == txtNameTurn.Text).FirstOrDefault();
+            var select = context.User.Where(serv => serv.Eshterak == txtEshterakTurn.Text).FirstOrDefault();
             if (select != null)
             {
                 txtNameTurn.Text = select.Name;
@@ -555,6 +560,16 @@ namespace Service
                     txtNameTurn.Text = select.Name;
                 }
             
+        }
+
+        private void txtEshterakTurn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Practical.Enter_Number(sender, e);
+        }
+
+        private void txtPhoneNumberTurn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Practical.Enter_Number(sender, e);
         }
 
         private void btnEditTurn_Click(object sender, EventArgs e)

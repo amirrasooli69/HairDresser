@@ -250,6 +250,7 @@
             // 
             this.txtDateTurn.Location = new System.Drawing.Point(124, 137);
             this.txtDateTurn.Name = "txtDateTurn";
+            this.txtDateTurn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDateTurn.Size = new System.Drawing.Size(97, 26);
             this.txtDateTurn.TabIndex = 15;
             // 
@@ -287,9 +288,11 @@
             this.txtPhoneNumberTurn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtPhoneNumberTurn.Location = new System.Drawing.Point(6, 99);
             this.txtPhoneNumberTurn.Name = "txtPhoneNumberTurn";
+            this.txtPhoneNumberTurn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPhoneNumberTurn.Size = new System.Drawing.Size(215, 26);
             this.txtPhoneNumberTurn.TabIndex = 11;
             this.txtPhoneNumberTurn.TextChanged += new System.EventHandler(this.txtPhoneNumberTurn_TextChanged);
+            this.txtPhoneNumberTurn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumberTurn_KeyPress);
             // 
             // label3
             // 
@@ -306,9 +309,11 @@
             this.txtEshterakTurn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtEshterakTurn.Location = new System.Drawing.Point(6, 61);
             this.txtEshterakTurn.Name = "txtEshterakTurn";
+            this.txtEshterakTurn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtEshterakTurn.Size = new System.Drawing.Size(215, 26);
             this.txtEshterakTurn.TabIndex = 9;
             this.txtEshterakTurn.TextChanged += new System.EventHandler(this.txtEshterakTurn_TextChanged);
+            this.txtEshterakTurn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEshterakTurn_KeyPress);
             // 
             // label2
             // 

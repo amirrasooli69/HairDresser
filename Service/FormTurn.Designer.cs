@@ -118,11 +118,13 @@
             // 
             // txtNameTurn
             // 
+            this.txtNameTurn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtNameTurn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtNameTurn.Location = new System.Drawing.Point(6, 23);
             this.txtNameTurn.Name = "txtNameTurn";
             this.txtNameTurn.Size = new System.Drawing.Size(215, 26);
             this.txtNameTurn.TabIndex = 6;
-            this.txtNameTurn.Text = "ali";
+            this.txtNameTurn.TextChanged += new System.EventHandler(this.txtNameTurn_TextChanged);
             // 
             // dgShow2
             // 
@@ -281,10 +283,13 @@
             // 
             // txtPhoneNumberTurn
             // 
+            this.txtPhoneNumberTurn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtPhoneNumberTurn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtPhoneNumberTurn.Location = new System.Drawing.Point(6, 99);
             this.txtPhoneNumberTurn.Name = "txtPhoneNumberTurn";
             this.txtPhoneNumberTurn.Size = new System.Drawing.Size(215, 26);
             this.txtPhoneNumberTurn.TabIndex = 11;
+            this.txtPhoneNumberTurn.TextChanged += new System.EventHandler(this.txtPhoneNumberTurn_TextChanged);
             // 
             // label3
             // 
@@ -297,10 +302,13 @@
             // 
             // txtEshterakTurn
             // 
+            this.txtEshterakTurn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtEshterakTurn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtEshterakTurn.Location = new System.Drawing.Point(6, 61);
             this.txtEshterakTurn.Name = "txtEshterakTurn";
             this.txtEshterakTurn.Size = new System.Drawing.Size(215, 26);
             this.txtEshterakTurn.TabIndex = 9;
+            this.txtEshterakTurn.TextChanged += new System.EventHandler(this.txtEshterakTurn_TextChanged);
             // 
             // label2
             // 

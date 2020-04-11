@@ -1316,10 +1316,10 @@ namespace Service
             Run_Program();
             //-----
             Detect_BirthDay();
+            Design_Notidication();
+            //-----
             timer_Sms();
             timSms.Start();
-            //-----
-            Design_Notidication();
         }
 
         private void toolReportProdoct_Click(object sender, EventArgs e)

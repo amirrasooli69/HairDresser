@@ -288,9 +288,8 @@ namespace Service
 
         }
 
-        
-
-        private void FormTurn_Load(object sender, EventArgs e)
+        // por kardane eleman haye rooye form nam
+        public void Fill_Element_Form()
         {
             Setting_DgShow1(Practical.Today_Date());
             Setting_DgShow2(Practical.Today_Date());
@@ -300,14 +299,55 @@ namespace Service
             comMinTurn.Text = "00";
             txtDateTurn.Text = Practical.Today_Date();
             pCalander1.dontClose = false;
-            //------
+            comState.SelectedIndex = 0;
+            //------------
+            // auto fill baraye nam va shomare eshterak va shomare tamas
+            StimulsoftEntities context = new StimulsoftEntities();
+            if (context.User.Count() > 0) 
             {
-                StimulsoftEntities context = new StimulsoftEntities();
+                var select = context.User.ToList();
+
+                string[] eshterak = new string[select.Count];
+                for (int i = 0; i < select.Count; i++)
+                {
+                    eshterak[i] = select[i].Eshterak.ToString();
+                }
+                AutoCompleteStringCollection suggest = new AutoCompleteStringCollection();
+                txtEshterakTurn.AutoCompleteCustomSource = suggest;
+                suggest.AddRange(eshterak);
+                //-----------
+                string[] Name = new string[select.Count];
+                for (int i = 0; i < select.Count; i++)
+                {
+                    Name[i] = select[i].Name.ToString();
+                }
+                AutoCompleteStringCollection suggestName = new AutoCompleteStringCollection();
+                txtNameTurn.AutoCompleteCustomSource = suggestName;
+                suggestName.AddRange(Name);
+                //-------
+                string[] Phone = new string[select.Count];
+                for (int i = 0; i < select.Count; i++)
+                {
+                    Phone[i] = select[i].Phone.ToString();
+                }
+                AutoCompleteStringCollection suggestPhone = new AutoCompleteStringCollection();
+                txtPhoneNumberTurn.AutoCompleteCustomSource = suggestPhone;
+                suggestPhone.AddRange(Phone);
+            }
+            //-------------------
+            // por kardane hamkara
+            {
                 comColleague.DataSource = context.Colleague.ToList();
                 comColleague.DisplayMember = "Name";
             }
-            comState.SelectedIndex = 0;
+        }
+
+        private void FormTurn_Load(object sender, EventArgs e)
+        {
+
             DG_Fill(Practical.Today_Date(),"", comState.SelectedIndex, 0);
+            Fill_Element_Form();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -480,6 +520,41 @@ namespace Service
         private void btnDeleteTurn_Click(object sender, EventArgs e)
         {
             DB_Delete_Turn_Person(repName, repDate, comHourTurn.Text + comMinTurn.Text);
+        }
+
+        private void txtNameTurn_TextChanged(object sender, EventArgs e)
+        {
+            StimulsoftEntities context = new StimulsoftEntities();
+            var select = context.User.Where(serv => serv.Name == txtNameTurn.Text).FirstOrDefault();
+            if (select != null)
+            {
+                txtEshterakTurn.Text = select.Eshterak;
+                txtPhoneNumberTurn.Text = select.Phone;
+            }
+        }
+
+        private void txtEshterakTurn_TextChanged(object sender, EventArgs e)
+        {
+            StimulsoftEntities context = new StimulsoftEntities();
+            var select = context.User.Where(serv => serv.Eshterak == txtNameTurn.Text).FirstOrDefault();
+            if (select != null)
+            {
+                txtNameTurn.Text = select.Name;
+                txtPhoneNumberTurn.Text = select.Phone;
+            }
+        }
+
+        private void txtPhoneNumberTurn_TextChanged(object sender, EventArgs e)
+        {
+            StimulsoftEntities context = new StimulsoftEntities();
+            var select = context.User.Where(serv => serv.Phone == txtPhoneNumberTurn.Text).FirstOrDefault();
+
+                if (select != null)
+                {
+                    txtEshterakTurn.Text = select.Eshterak;
+                    txtNameTurn.Text = select.Name;
+                }
+            
         }
 
         private void btnEditTurn_Click(object sender, EventArgs e)

@@ -34,6 +34,8 @@
             this.txtNameTurn = new System.Windows.Forms.TextBox();
             this.dgShow2 = new System.Windows.Forms.DataGridView();
             this.groupTurn = new System.Windows.Forms.GroupBox();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnDeleteTurn = new System.Windows.Forms.Button();
             this.btnEditTurn = new System.Windows.Forms.Button();
             this.btnReportColleague = new System.Windows.Forms.Button();
@@ -53,8 +55,6 @@
             this.btnSetDate = new System.Windows.Forms.Button();
             this.dgShow1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblResult = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pCalander1 = new Papiloo.PCalander();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow2)).BeginInit();
             this.groupTurn.SuspendLayout();
@@ -66,7 +66,7 @@
             this.btnTurnPerson.Location = new System.Drawing.Point(6, 242);
             this.btnTurnPerson.Name = "btnTurnPerson";
             this.btnTurnPerson.Size = new System.Drawing.Size(83, 30);
-            this.btnTurnPerson.TabIndex = 2;
+            this.btnTurnPerson.TabIndex = 21;
             this.btnTurnPerson.Text = "ثبت نوبت";
             this.btnTurnPerson.UseVisualStyleBackColor = true;
             this.btnTurnPerson.Click += new System.EventHandler(this.btnTurnPerson_Click);
@@ -103,7 +103,7 @@
             this.comHourTurn.Name = "comHourTurn";
             this.comHourTurn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comHourTurn.Size = new System.Drawing.Size(46, 26);
-            this.comHourTurn.TabIndex = 3;
+            this.comHourTurn.TabIndex = 7;
             // 
             // comMinTurn
             // 
@@ -114,7 +114,7 @@
             this.comMinTurn.Location = new System.Drawing.Point(72, 137);
             this.comMinTurn.Name = "comMinTurn";
             this.comMinTurn.Size = new System.Drawing.Size(46, 26);
-            this.comMinTurn.TabIndex = 4;
+            this.comMinTurn.TabIndex = 9;
             // 
             // txtNameTurn
             // 
@@ -123,7 +123,7 @@
             this.txtNameTurn.Location = new System.Drawing.Point(6, 23);
             this.txtNameTurn.Name = "txtNameTurn";
             this.txtNameTurn.Size = new System.Drawing.Size(215, 26);
-            this.txtNameTurn.TabIndex = 6;
+            this.txtNameTurn.TabIndex = 1;
             this.txtNameTurn.TextChanged += new System.EventHandler(this.txtNameTurn_TextChanged);
             // 
             // dgShow2
@@ -137,7 +137,7 @@
             this.dgShow2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgShow2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgShow2.Size = new System.Drawing.Size(394, 628);
-            this.dgShow2.TabIndex = 7;
+            this.dgShow2.TabIndex = 33;
             this.dgShow2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgShow2_CellClick);
             this.dgShow2.Click += new System.EventHandler(this.dgShow2_Click);
             this.dgShow2.Enter += new System.EventHandler(this.dgShow2_Enter);
@@ -174,12 +174,30 @@
             this.groupTurn.TabIndex = 8;
             this.groupTurn.TabStop = false;
             // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.Location = new System.Drawing.Point(260, 296);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(0, 18);
+            this.lblResult.TabIndex = 18;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
+            this.progressBar1.Location = new System.Drawing.Point(6, 278);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(309, 22);
+            this.progressBar1.Step = 2;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 19;
+            // 
             // btnDeleteTurn
             // 
             this.btnDeleteTurn.Location = new System.Drawing.Point(217, 242);
             this.btnDeleteTurn.Name = "btnDeleteTurn";
             this.btnDeleteTurn.Size = new System.Drawing.Size(98, 30);
-            this.btnDeleteTurn.TabIndex = 24;
+            this.btnDeleteTurn.TabIndex = 25;
             this.btnDeleteTurn.Text = "حذف نوبت";
             this.btnDeleteTurn.UseVisualStyleBackColor = true;
             this.btnDeleteTurn.Click += new System.EventHandler(this.btnDeleteTurn_Click);
@@ -199,7 +217,7 @@
             this.btnReportColleague.Location = new System.Drawing.Point(6, 172);
             this.btnReportColleague.Name = "btnReportColleague";
             this.btnReportColleague.Size = new System.Drawing.Size(62, 30);
-            this.btnReportColleague.TabIndex = 22;
+            this.btnReportColleague.TabIndex = 15;
             this.btnReportColleague.Text = "گزارش";
             this.btnReportColleague.UseVisualStyleBackColor = true;
             this.btnReportColleague.Click += new System.EventHandler(this.btnReportColleague_Click);
@@ -209,7 +227,7 @@
             this.btnReport.Location = new System.Drawing.Point(6, 206);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(62, 30);
-            this.btnReport.TabIndex = 21;
+            this.btnReport.TabIndex = 19;
             this.btnReport.Text = "گزارش";
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
@@ -234,7 +252,7 @@
             this.comState.Location = new System.Drawing.Point(72, 207);
             this.comState.Name = "comState";
             this.comState.Size = new System.Drawing.Size(149, 26);
-            this.comState.TabIndex = 19;
+            this.comState.TabIndex = 17;
             // 
             // label6
             // 
@@ -252,7 +270,7 @@
             this.txtDateTurn.Name = "txtDateTurn";
             this.txtDateTurn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDateTurn.Size = new System.Drawing.Size(97, 26);
-            this.txtDateTurn.TabIndex = 15;
+            this.txtDateTurn.TabIndex = 11;
             // 
             // label5
             // 
@@ -290,7 +308,7 @@
             this.txtPhoneNumberTurn.Name = "txtPhoneNumberTurn";
             this.txtPhoneNumberTurn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPhoneNumberTurn.Size = new System.Drawing.Size(215, 26);
-            this.txtPhoneNumberTurn.TabIndex = 11;
+            this.txtPhoneNumberTurn.TabIndex = 5;
             this.txtPhoneNumberTurn.TextChanged += new System.EventHandler(this.txtPhoneNumberTurn_TextChanged);
             this.txtPhoneNumberTurn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumberTurn_KeyPress);
             // 
@@ -311,7 +329,7 @@
             this.txtEshterakTurn.Name = "txtEshterakTurn";
             this.txtEshterakTurn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtEshterakTurn.Size = new System.Drawing.Size(215, 26);
-            this.txtEshterakTurn.TabIndex = 9;
+            this.txtEshterakTurn.TabIndex = 3;
             this.txtEshterakTurn.TextChanged += new System.EventHandler(this.txtEshterakTurn_TextChanged);
             this.txtEshterakTurn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEshterakTurn_KeyPress);
             // 
@@ -340,7 +358,7 @@
             this.btnSetDate.Location = new System.Drawing.Point(817, 570);
             this.btnSetDate.Name = "btnSetDate";
             this.btnSetDate.Size = new System.Drawing.Size(100, 30);
-            this.btnSetDate.TabIndex = 10;
+            this.btnSetDate.TabIndex = 29;
             this.btnSetDate.Text = "تاریخ ";
             this.btnSetDate.UseVisualStyleBackColor = true;
             this.btnSetDate.Click += new System.EventHandler(this.button2_Click);
@@ -356,7 +374,7 @@
             this.dgShow1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgShow1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgShow1.Size = new System.Drawing.Size(394, 628);
-            this.dgShow1.TabIndex = 5;
+            this.dgShow1.TabIndex = 31;
             this.dgShow1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgShow1_CellClick);
             this.dgShow1.SelectionChanged += new System.EventHandler(this.dgShow1_SelectionChanged);
             this.dgShow1.Click += new System.EventHandler(this.dgShow1_Click);
@@ -368,28 +386,10 @@
             this.button1.Location = new System.Drawing.Point(1033, 570);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "test DB";
+            this.button1.TabIndex = 50;
+            this.button1.Text = "3";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lblResult
-            // 
-            this.lblResult.AutoSize = true;
-            this.lblResult.Location = new System.Drawing.Point(260, 296);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(0, 18);
-            this.lblResult.TabIndex = 18;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.SystemColors.Control;
-            this.progressBar1.Location = new System.Drawing.Point(6, 278);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(309, 22);
-            this.progressBar1.Step = 2;
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 19;
             // 
             // pCalander1
             // 
@@ -401,8 +401,8 @@
             this.pCalander1.Name = "pCalander1";
             this.pCalander1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.pCalander1.Size = new System.Drawing.Size(330, 228);
-            this.pCalander1.T_Date = "1399/01/23";
-            this.pCalander1.TabIndex = 9;
+            this.pCalander1.T_Date = "1399/01/24";
+            this.pCalander1.TabIndex = 27;
             this.pCalander1.Click += new System.EventHandler(this.pCalander1_Click);
             // 
             // FormTurn

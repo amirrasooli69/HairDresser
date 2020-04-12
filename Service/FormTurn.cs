@@ -300,6 +300,8 @@ namespace Service
             txtDateTurn.Text = Practical.Today_Date();
             pCalander1.dontClose = false;
             comState.SelectedIndex = 0;
+            DG_Fill(pCalander1.T_Date, "", comState.SelectedIndex, 0);
+
             //------------
             // auto fill baraye nam va shomare eshterak va shomare tamas
             StimulsoftEntities context = new StimulsoftEntities();
@@ -340,16 +342,15 @@ namespace Service
                 comColleague.DataSource = context.Colleague.ToList();
                 comColleague.DisplayMember = "Name";
             }
+            //string d = dgShow1.Rows[0].Cells["Date"].Value.ToString();
+
         }
 
         private void FormTurn_Load(object sender, EventArgs e)
         {
-
-            DG_Fill(Practical.Today_Date(),"", comState.SelectedIndex, 0);
-            //DG_Fill(txtDateTurn.Text, "", comState.SelectedIndex, 0);
+            progressBar1.Value = 0;
 
             Fill_Element_Form();
-            progressBar1.Value = 0;
 
         }
 

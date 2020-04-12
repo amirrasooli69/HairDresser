@@ -373,7 +373,10 @@ namespace Service
         private void btnTurnPerson_Click(object sender, EventArgs e)
         {
             if (txtNameTurn.Text == "")
+            {
+                txtNameTurn.Focus();
                 return;
+            }
             DB_Add_Turn_Person();
             DG_Add_Turn_Person(txtNameTurn.Text, comHourTurn.Text + ":" + comMinTurn.Text);
         }
@@ -525,6 +528,11 @@ namespace Service
 
         private void btnDeleteTurn_Click(object sender, EventArgs e)
         {
+            if(repName =="" )
+            {
+                MessageBox.Show("ساعت مورد نظر را انتخاب کنید", "حذف", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             DB_Delete_Turn_Person(repName, repDate, comHourTurn.Text + comMinTurn.Text);
         }
 

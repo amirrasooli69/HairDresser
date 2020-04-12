@@ -13,10 +13,10 @@ namespace Service
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new FormTurn());
+            Application.Run(new log());
             //log
         }
-        public class AppContext:ApplicationContext
+        public class AppContext : ApplicationContext
         {
             public AppContext()
             {
@@ -32,7 +32,7 @@ namespace Service
                 if (Application.OpenForms.Count == 0)
                     Application.Exit();
             }
-            
+
         }
     }
 }

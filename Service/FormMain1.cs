@@ -1536,6 +1536,10 @@ namespace Service
         private void toolTurn_Click(object sender, EventArgs e)
         {
             FormTurn frmTurn = new FormTurn();
+            frmTurn.MdiParent = this;
+            frmTurn.Visible = true;
+            splitContainer1.Panel1.Controls.Add(frmTurn);
+            frmTurn.BringToFront();
             frmTurn.Show();
         }
     }

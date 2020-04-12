@@ -342,15 +342,14 @@ namespace Service
                 comColleague.DataSource = context.Colleague.ToList();
                 comColleague.DisplayMember = "Name";
             }
-            //string d = dgShow1.Rows[0].Cells["Date"].Value.ToString();
 
         }
 
         private void FormTurn_Load(object sender, EventArgs e)
         {
-            progressBar1.Value = 0;
 
             Fill_Element_Form();
+            progressBar1.Value = 0;
 
         }
 

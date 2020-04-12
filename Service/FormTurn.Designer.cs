@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTurn));
             this.btnTurnPerson = new System.Windows.Forms.Button();
             this.comHourTurn = new System.Windows.Forms.ComboBox();
             this.comMinTurn = new System.Windows.Forms.ComboBox();
@@ -54,7 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSetDate = new System.Windows.Forms.Button();
             this.dgShow1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.pCalander1 = new Papiloo.PCalander();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow2)).BeginInit();
             this.groupTurn.SuspendLayout();
@@ -380,17 +380,6 @@
             this.dgShow1.Click += new System.EventHandler(this.dgShow1_Click);
             this.dgShow1.Enter += new System.EventHandler(this.dgShow1_Enter);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button1.Location = new System.Drawing.Point(1033, 570);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 30);
-            this.button1.TabIndex = 50;
-            this.button1.Text = "3";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // pCalander1
             // 
             this.pCalander1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -410,14 +399,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 642);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSetDate);
             this.Controls.Add(this.pCalander1);
             this.Controls.Add(this.groupTurn);
             this.Controls.Add(this.dgShow2);
             this.Controls.Add(this.dgShow1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1160, 681);
+            this.MinimumSize = new System.Drawing.Size(1160, 681);
             this.Name = "FormTurn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "نوبت دهی";
@@ -450,7 +442,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comColleague;
         private System.Windows.Forms.DataGridView dgShow1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblResult;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label7;
